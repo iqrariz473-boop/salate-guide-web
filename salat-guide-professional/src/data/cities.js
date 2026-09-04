@@ -16,4 +16,4 @@ const cities = [
   { name: "Kuala Lumpur", country: "Malaysia" },
 ];
 
-export default cities;
+export default cities  ;
