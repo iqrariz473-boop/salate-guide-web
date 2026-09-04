@@ -1,0 +1,25 @@
+.cities-page {
+  padding: 48px 0 72px;
+}
+
+.cities-page__filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 420px;
+  margin: 0 auto 32px;
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  color: var(--primary);
+}
+
+.cities-page__filter input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 14px;
+}

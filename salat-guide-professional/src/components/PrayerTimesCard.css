@@ -1,0 +1,75 @@
+.prayer-dashboard {
+  background: linear-gradient(155deg, var(--primary-dark), var(--primary-mid));
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  color: var(--white);
+}
+
+.prayer-dashboard--plain {
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.prayer-dashboard__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.prayer-dashboard__location {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.prayer-dashboard__date {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 4px 0 0;
+}
+
+.prayer-dashboard__method {
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+  color: rgba(255, 255, 255, 0.75);
+  white-space: nowrap;
+}
+
+.prayer-dashboard__fallback-note {
+  background: rgba(236, 185, 46, 0.18);
+  border: 1px solid rgba(236, 185, 46, 0.4);
+  color: var(--gold);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.prayer-dashboard__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 800px) {
+  .prayer-dashboard__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 460px) {
+  .prayer-dashboard {
+    padding: 22px 18px;
+  }
+
+  .prayer-dashboard__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

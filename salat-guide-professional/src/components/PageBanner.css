@@ -1,0 +1,416 @@
+/* =========================
+   PAGE BANNER / HERO
+========================= */
+
+.page-banner {
+  position: relative;
+  min-height: 360px;
+
+  display: flex;
+  align-items: center;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  isolation: isolate;
+  overflow: hidden;
+
+  margin: 0 0 48px;
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.page-banner__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Dark Hero */
+
+.page-banner--dark .page-banner__overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(15, 51, 32, 0.97) 0%,
+      rgba(15, 51, 32, 0.90) 30%,
+      rgba(15, 51, 32, 0.60) 55%,
+      rgba(15, 51, 32, 0.25) 78%,
+      rgba(15, 51, 32, 0.08) 100%
+    );
+}
+
+/* Light Hero */
+
+.page-banner--light .page-banner__overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 253, 246, 0.98) 0%,
+      rgba(255, 253, 246, 0.93) 25%,
+      rgba(255, 253, 246, 0.72) 45%,
+      rgba(255, 253, 246, 0.35) 65%,
+      rgba(255, 253, 246, 0.08) 100%
+    );
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.page-banner__inner {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 650px;
+
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+/* =========================
+   ICON
+========================= */
+
+.page-banner__icon {
+  display: block;
+
+  width: 40px;
+  height: 40px;
+
+  margin-bottom: 14px;
+}
+
+/* Dark icon */
+
+.page-banner--dark .page-banner__icon {
+  color: var(--gold);
+}
+
+/* Light icon */
+
+.page-banner--light .page-banner__icon {
+  color: var(--gold-dark);
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.page-banner__inner h2 {
+  position: relative;
+
+  margin: 0 0 14px;
+
+  padding-bottom: 14px;
+
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+/* Underline */
+
+.page-banner__inner h2::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 48px;
+  height: 3px;
+
+  border-radius: 3px;
+
+  background: var(--gold);
+}
+
+/* Dark title */
+
+.page-banner--dark .page-banner__inner h2 {
+  color: var(--white);
+}
+
+/* Light title */
+
+.page-banner--light .page-banner__inner h2 {
+  color: var(--primary-dark);
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.page-banner__inner p {
+  max-width: 55ch;
+
+  margin: 0;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Dark description */
+
+.page-banner--dark .page-banner__inner p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* Light description */
+
+.page-banner--light .page-banner__inner p {
+  color: var(--text);
+}
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+.page-banner__search {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  max-width: 580px;
+
+  margin-top: 25px;
+
+  padding: 5px;
+
+  background: var(--white);
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  border-radius: 10px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================
+   SEARCH ICON
+========================= */
+
+.page-banner__search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  min-width: 42px;
+  height: 42px;
+
+  font-size: 16px;
+
+  color: var(--muted);
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.page-banner__search input {
+  flex: 1;
+
+  width: 100%;
+  min-width: 0;
+
+  height: 44px;
+
+  padding: 0 12px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: var(--text);
+
+  font-family: inherit;
+  font-size: 14px;
+}
+
+/* Placeholder */
+
+.page-banner__search input::placeholder {
+  color: var(--text-muted, #98a2b3);
+}
+
+/* =========================
+   SEARCH BUTTON
+========================= */
+
+.page-banner__search button {
+  height: 44px;
+
+  padding: 0 24px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: var(--primary);
+
+  color: var(--white);
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.page-banner__search button:hover {
+  background: var(--primary-dark);
+}
+
+.page-banner__search button:active {
+  transform: scale(0.98);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .page-banner {
+    min-height: 330px;
+
+    background-position: center;
+  }
+
+  .page-banner__inner {
+    max-width: 600px;
+
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .page-banner--dark .page-banner__overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(15, 51, 32, 0.97) 0%,
+        rgba(15, 51, 32, 0.88) 40%,
+        rgba(15, 51, 32, 0.50) 75%,
+        rgba(15, 51, 32, 0.20) 100%
+      );
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 760px) {
+  .page-banner {
+    min-height: 320px;
+
+    margin-bottom: 36px;
+
+    background-position: center;
+  }
+
+  .page-banner__inner {
+    max-width: 100%;
+
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
+  .page-banner__icon {
+    width: 34px;
+    height: 34px;
+
+    margin-bottom: 10px;
+  }
+
+  .page-banner__inner h2 {
+    font-size: 28px;
+
+    margin-bottom: 12px;
+  }
+
+  .page-banner__inner p {
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+  .page-banner__search {
+    margin-top: 20px;
+  }
+
+  .page-banner--dark .page-banner__overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(15, 51, 32, 0.97) 0%,
+        rgba(15, 51, 32, 0.90) 50%,
+        rgba(15, 51, 32, 0.70) 100%
+      );
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .page-banner {
+    min-height: 310px;
+  }
+
+  .page-banner__inner {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  .page-banner__inner h2 {
+    font-size: 25px;
+  }
+
+  .page-banner__inner p {
+    font-size: 13px;
+  }
+
+  .page-banner__search {
+    padding: 4px;
+  }
+
+  .page-banner__search-icon {
+    width: 36px;
+    min-width: 36px;
+
+    font-size: 14px;
+  }
+
+  .page-banner__search input {
+    height: 40px;
+
+    padding: 0 8px;
+
+    font-size: 13px;
+  }
+
+  .page-banner__search button {
+    height: 40px;
+
+    padding: 0 15px;
+
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,352 @@
+.qibla-compass {
+  width: 100%;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   PROMPT
+========================================= */
+
+.qibla-compass__prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  color: var(--primary);
+}
+
+.qibla-compass__prompt-icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--primary-lighter);
+  color: var(--primary);
+}
+
+.qibla-compass__prompt h3 {
+  margin: 0;
+  color: var(--primary-dark);
+  font-size: 22px;
+}
+
+.qibla-compass__prompt p {
+  max-width: 40ch;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* =========================================
+   RESULT
+========================================= */
+
+.qibla-compass__result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* =========================================
+   COMPASS DIAL
+========================================= */
+
+.qibla-compass__dial {
+  position: relative;
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+
+  background:
+    radial-gradient(
+      circle,
+      var(--white) 0%,
+      var(--primary-lighter) 65%,
+      var(--primary-lighter) 100%
+    );
+
+  display: grid;
+  place-items: center;
+
+  margin: 0 0 6px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================
+   INNER CIRCLE
+========================================= */
+
+.qibla-compass__dial::before {
+  content: "";
+
+  position: absolute;
+
+  width: 170px;
+  height: 170px;
+
+  border-radius: 50%;
+
+  border: 1px solid var(--border);
+
+  pointer-events: none;
+}
+
+/* =========================================
+   COMPASS MARKS
+========================================= */
+
+.qibla-compass__marks {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.qibla-compass__mark {
+  position: absolute;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  color: var(--primary-dark);
+}
+
+.qibla-compass__mark--n {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.qibla-compass__mark--s {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.qibla-compass__mark--e {
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.qibla-compass__mark--w {
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* =========================================
+   CENTER KAABA
+========================================= */
+
+.qibla-compass__center {
+  position: relative;
+  z-index: 3;
+
+  width: 64px;
+  height: 64px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: var(--white);
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.qibla-compass__kaaba {
+  font-size: 32px;
+  line-height: 1;
+}
+
+/* =========================================
+   QIBLA ARROW
+========================================= */
+
+.qibla-compass__arrow {
+  position: absolute;
+
+  z-index: 4;
+
+  top: 22px;
+  left: 50%;
+
+  width: 3px;
+  height: 86px;
+
+  background: var(--gold);
+
+  transform-origin: 50% 86px;
+
+  transition: transform 0.25s ease;
+
+  border-radius: 4px;
+}
+
+/* Arrow Head */
+
+.qibla-compass__arrow::before {
+  content: "";
+
+  position: absolute;
+
+  top: -8px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 0;
+  height: 0;
+
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 12px solid var(--gold);
+}
+
+/* =========================================
+   BEARING
+========================================= */
+
+.qibla-compass__bearing {
+  margin: 0;
+
+  font-family: var(--font-display);
+
+  font-size: 20px;
+  font-weight: 600;
+
+  color: var(--primary-dark);
+}
+
+/* =========================================
+   COORDINATES
+========================================= */
+
+.qibla-compass__coords {
+  margin: 0;
+
+  font-size: 13px;
+  color: var(--text);
+}
+
+/* =========================================
+   LIVE NOTE
+========================================= */
+
+.qibla-compass__live-note {
+  margin: 0;
+
+  max-width: 50ch;
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  color: var(--primary);
+
+  font-weight: 600;
+}
+
+/* =========================================
+   ERROR
+========================================= */
+
+.qibla-compass__error {
+  margin: 0;
+
+  max-width: 50ch;
+
+  font-size: 13px;
+  line-height: 1.5;
+
+  color: #b42318;
+}
+
+/* =========================================
+   DISCLAIMER
+========================================= */
+
+.qibla-compass__disclaimer {
+  max-width: 44ch;
+
+  margin: 8px 0 0;
+
+  font-size: 12px;
+  line-height: 1.6;
+
+  color: var(--text-muted, #6b7280);
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .qibla-compass {
+    padding: 24px 18px;
+  }
+
+  .qibla-compass__dial {
+    width: 200px;
+    height: 200px;
+  }
+
+  .qibla-compass__dial::before {
+    width: 154px;
+    height: 154px;
+  }
+
+  .qibla-compass__arrow {
+    height: 78px;
+    transform-origin: 50% 78px;
+  }
+}
+
+@media (max-width: 480px) {
+  .qibla-compass {
+    padding: 22px 14px;
+  }
+
+  .qibla-compass__dial {
+    width: 180px;
+    height: 180px;
+  }
+
+  .qibla-compass__dial::before {
+    width: 138px;
+    height: 138px;
+  }
+
+  .qibla-compass__center {
+    width: 54px;
+    height: 54px;
+  }
+
+  .qibla-compass__kaaba {
+    font-size: 27px;
+  }
+
+  .qibla-compass__arrow {
+    top: 20px;
+    height: 68px;
+    transform-origin: 50% 68px;
+  }
+
+  .qibla-compass__bearing {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,12 @@
+.prayer-times-page {
+  padding: 48px 0 72px;
+}
+
+.prayer-times-page__search {
+  margin-bottom: 28px;
+  max-width: 640px;
+}
+
+.prayer-times-page__calendar {
+  margin-top: 32px;
+}
