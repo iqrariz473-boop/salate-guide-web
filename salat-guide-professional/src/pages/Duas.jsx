@@ -1,6 +1,11 @@
 import Seo from "../components/Seo.jsx";
 import DuaBanner from "../components/DuaBanner.jsx";
+
 import "./Duas.css";
+
+/* =========================================================
+   DUA CATEGORIES
+========================================================= */
 
 const DUA_CATEGORIES = [
   {
@@ -30,6 +35,79 @@ const DUA_CATEGORIES = [
   },
 ];
 
+/* =========================================================
+   DUA COLLECTION
+========================================================= */
+
+const DUAS = [
+  {
+    category: "Daily",
+    title: "Dua Before Eating",
+    arabic: "بِسْمِ اللَّهِ",
+    transliteration: "Bismillah",
+    meaning: "In the name of Allah.",
+  },
+
+  {
+    category: "Daily",
+    title: "Dua After Eating",
+    arabic:
+      "الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنِي هَذَا وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلَا قُوَّةٍ",
+    transliteration:
+      "Alhamdu lillahil-ladhi at'amani hadha wa razaqanihi min ghayri hawlin minni wa la quwwah.",
+    meaning:
+      "All praise is for Allah who fed me this and provided it for me without any power or strength from me.",
+  },
+
+  {
+    category: "Protection",
+    title: "Dua for Protection",
+    arabic:
+      "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ",
+    transliteration:
+      "A'udhu bi kalimatillahit-tammati min sharri ma khalaq.",
+    meaning:
+      "I seek refuge in the perfect words of Allah from the evil of what He has created.",
+  },
+
+  {
+    category: "Forgiveness",
+    title: "Dua for Forgiveness",
+    arabic:
+      "رَبِّ اغْفِرْ لِي وَتُبْ عَلَيَّ إِنَّكَ أَنْتَ التَّوَّابُ الرَّحِيمُ",
+    transliteration:
+      "Rabbighfir li wa tub 'alayya innaka antat-Tawwabur-Rahim.",
+    meaning:
+      "My Lord, forgive me and accept my repentance. You are the Most Accepting of repentance, the Most Merciful.",
+  },
+
+  {
+    category: "Morning & Evening",
+    title: "Morning Dua",
+    arabic:
+      "اللَّهُمَّ بِكَ أَصْبَحْنَا وَبِكَ أَمْسَيْنَا وَبِكَ نَحْيَا وَبِكَ نَمُوتُ وَإِلَيْكَ النُّشُورُ",
+    transliteration:
+      "Allahumma bika asbahna wa bika amsayna wa bika nahya wa bika namutu wa ilaykan-nushur.",
+    meaning:
+      "O Allah, by You we enter the morning, by You we enter the evening, by You we live and by You we die, and to You is the resurrection.",
+  },
+
+  {
+    category: "Gratitude",
+    title: "Dua for Gratitude",
+    arabic:
+      "رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ الَّتِي أَنْعَمْتَ عَلَيَّ",
+    transliteration:
+      "Rabbi awzi'ni an ashkura ni'mataka allati an'amta 'alayya.",
+    meaning:
+      "My Lord, enable me to be grateful for Your favor which You have bestowed upon me.",
+  },
+];
+
+/* =========================================================
+   TIPS
+========================================================= */
+
 const DUA_TIPS = [
   {
     icon: "♥",
@@ -53,6 +131,10 @@ const DUA_TIPS = [
   },
 ];
 
+/* =========================================================
+   COMPONENT
+========================================================= */
+
 function Duas() {
   return (
     <>
@@ -63,12 +145,15 @@ function Duas() {
 
       <main className="dua-page">
 
-        {/* Background overlay */}
-        <div className="dua-page__overlay" />
+        {/* =================================================
+            BACKGROUND
+        ================================================= */}
 
-        {/* =========================================
+        <div className="dua-page__overlay"></div>
+
+        {/* =================================================
             HERO
-        ========================================= */}
+        ================================================= */}
 
         <section className="dua-page__hero">
 
@@ -88,22 +173,21 @@ function Duas() {
           <h1>Duas</h1>
 
           <p>
-            Supplications to strengthen your faith
-            and bring peace to your heart.
+            Beautiful supplications to bring peace, gratitude and
+            remembrance into your daily life.
           </p>
 
           <div className="dua-page__ornament">
             <span></span>
-            <b>❀</b>
+            <b>✦</b>
             <span></span>
           </div>
 
         </section>
 
-
-        {/* =========================================
+        {/* =================================================
             DUA OF THE DAY
-        ========================================= */}
+        ================================================= */}
 
         <section className="dua-page__main-card">
 
@@ -127,17 +211,108 @@ function Duas() {
 
         </section>
 
+        {/* =================================================
+            BEAUTIFUL DUAS
+        ================================================= */}
 
-        {/* =========================================
-            CATEGORIES
-        ========================================= */}
+        <section className="dua-page__collection">
+
+          <div className="dua-section-heading">
+
+            <span className="dua-section-heading__label">
+              DAILY REMEMBRANCE
+            </span>
+
+            <h2>Beautiful Duas</h2>
+
+            <p>
+              Short and meaningful supplications for everyday moments.
+            </p>
+
+            <div className="dua-section-heading__line">
+              <span></span>
+              <b>✦</b>
+              <span></span>
+            </div>
+
+          </div>
+
+          <div className="dua-list">
+
+            {DUAS.map((dua) => (
+              <article
+                className="dua-card"
+                key={dua.title}
+              >
+
+                <div className="dua-card__header">
+
+                  <div>
+
+                    <span className="dua-card__category">
+                      {dua.category}
+                    </span>
+
+                    <h3>{dua.title}</h3>
+
+                  </div>
+
+                  <button
+                    type="button"
+                    className="dua-card__bookmark"
+                    aria-label={`Bookmark ${dua.title}`}
+                  >
+                    ♡
+                  </button>
+
+                </div>
+
+                <div className="dua-card__arabic">
+                  {dua.arabic}
+                </div>
+
+                <div className="dua-card__divider"></div>
+
+                <p className="dua-card__transliteration">
+                  {dua.transliteration}
+                </p>
+
+                <p className="dua-card__meaning">
+                  <strong>Meaning:</strong> {dua.meaning}
+                </p>
+
+              </article>
+            ))}
+
+          </div>
+
+        </section>
+
+        {/* =================================================
+            MODERN CATEGORIES
+        ================================================= */}
 
         <section className="dua-page__categories">
 
-          <div className="dua-section-title">
-            <span></span>
-            <h2>Browse Duas by Category</h2>
-            <span></span>
+          <div className="dua-section-heading">
+
+            <span className="dua-section-heading__label">
+              EXPLORE DUAS
+            </span>
+
+            <h2>Find a Dua for Every Moment</h2>
+
+            <p>
+              Explore supplications by category and find the right
+              dua for you.
+            </p>
+
+            <div className="dua-section-heading__line">
+              <span></span>
+              <b>✦</b>
+              <span></span>
+            </div>
+
           </div>
 
           <div className="dua-category-grid">
@@ -148,17 +323,21 @@ function Duas() {
                 key={category.title}
               >
 
-                <div className="dua-category-card__icon">
-                  {category.icon}
+                <div className="dua-category-card__top">
+
+                  <div className="dua-category-card__icon">
+                    {category.icon}
+                  </div>
+
+                  <span className="dua-category-card__arrow">
+                    ↗
+                  </span>
+
                 </div>
 
                 <h3>{category.title}</h3>
 
                 <p>{category.text}</p>
-
-                <span className="dua-category-card__arrow">
-                  →
-                </span>
 
               </article>
             ))}
@@ -167,19 +346,15 @@ function Duas() {
 
         </section>
 
-
-        {/* =========================================
+        {/* =================================================
             TIPS
-        ========================================= */}
+        ================================================= */}
 
         <section className="dua-page__tips">
 
           <div className="dua-page__tips-title">
-
             <h2>Tips for Making Dua</h2>
-
             <span></span>
-
           </div>
 
           <div className="dua-tips-grid">
@@ -196,7 +371,6 @@ function Duas() {
 
                 <div>
                   <h3>{tip.title}</h3>
-
                   <p>{tip.text}</p>
                 </div>
 
@@ -207,10 +381,9 @@ function Duas() {
 
         </section>
 
-
-        {/* =========================================
-            QURAN QUOTE
-        ========================================= */}
+        {/* =================================================
+            QUOTE
+        ================================================= */}
 
         <section className="dua-page__quote">
 
@@ -219,8 +392,7 @@ function Duas() {
           </span>
 
           <p>
-            Your Lord says, “Call upon Me;
-            I will respond to you.”
+            Your Lord says, “Call upon Me; I will respond to you.”
           </p>
 
           <span className="dua-page__quote-mark">

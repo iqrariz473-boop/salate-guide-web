@@ -1,37 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
 
 import { getMonthlyPrayerTimes } from "../services/prayerService.js";
-import { formatMonthYear } from "../utils/dateUtils.js";
-
-import {
-  ChevronLeftIcon,
-  ChevronRightIcon,
-} from "./Icons.jsx";
 
 import Loading from "./Loading.jsx";
 import ErrorMessage from "./ErrorMessage.jsx";
 
 import "./MonthlyCalendar.css";
-
-
-/* =========================================
-   MONTHS
-========================================= */
-
-const MONTHS = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
 
 
 /* =========================================
@@ -42,20 +16,9 @@ function getTodayInfo() {
   const date = new Date();
 
   return {
-    date,
     day: date.getDate(),
     month: date.getMonth() + 1,
     year: date.getFullYear(),
-
-    dayName: date.toLocaleDateString("en-US", {
-      weekday: "long",
-    }),
-
-    fullDate: date.toLocaleDateString("en-US", {
-      day: "2-digit",
-      month: "long",
-      year: "numeric",
-    }),
   };
 }
 
@@ -67,6 +30,8 @@ function getTodayInfo() {
 function formatTime(time) {
   if (!time) return "—";
 
+  const value = String(time).trim();
+
   /*
     Handles:
     05:12
@@ -75,16 +40,17 @@ function formatTime(time) {
     17:30
   */
 
-  const value = String(time).trim();
-
   const amPmMatch = value.match(
     /^(\d{1,2}):(\d{2})\s*(AM|PM)$/i
   );
 
   if (amPmMatch) {
     let hour = Number(amPmMatch[1]);
+
     const minutes = amPmMatch[2];
-    const period = amPmMatch[3].toUpperCase();
+
+    const period =
+      amPmMatch[3].toUpperCase();
 
     hour = hour % 12 || 12;
 
@@ -98,10 +64,14 @@ function formatTime(time) {
   if (!timeMatch) return value;
 
   const hours = Number(timeMatch[1]);
+
   const minutes = timeMatch[2];
 
-  const period = hours >= 12 ? "PM" : "AM";
-  const hour12 = hours % 12 || 12;
+  const period =
+    hours >= 12 ? "PM" : "AM";
+
+  const hour12 =
+    hours % 12 || 12;
 
   return `${hour12}:${minutes} ${period}`;
 }
@@ -114,10 +84,11 @@ function formatTime(time) {
 function normalizeDate(dateValue) {
   if (!dateValue) return "";
 
-  const value = String(dateValue).trim();
+  const value =
+    String(dateValue).trim();
 
   /*
-    Expected API date examples:
+    API date examples:
     01
     1
     2026-09-01
@@ -129,21 +100,38 @@ function normalizeDate(dateValue) {
     return value.padStart(2, "0");
   }
 
-  const parts = value.split(/[-/]/);
+  const parts =
+    value.split(/[-/]/);
 
   if (parts.length === 3) {
-    const possibleDay = Number(parts[2]);
+    const possibleDay =
+      Number(parts[2]);
+
+    /* YYYY-MM-DD */
 
     if (parts[0].length === 4) {
-      return parts[2].padStart(2, "0");
+      return parts[2].padStart(
+        2,
+        "0"
+      );
     }
+
+    /* DD-MM-YYYY */
 
     if (parts[2].length === 4) {
-      return parts[0].padStart(2, "0");
+      return parts[0].padStart(
+        2,
+        "0"
+      );
     }
 
+    /* Fallback */
+
     if (!Number.isNaN(possibleDay)) {
-      return parts[0].padStart(2, "0");
+      return parts[0].padStart(
+        2,
+        "0"
+      );
     }
   }
 
@@ -155,21 +143,41 @@ function normalizeDate(dateValue) {
    COMPONENT
 ========================================= */
 
-function MonthlyCalendar({ city, country }) {
-  const today = useMemo(() => getTodayInfo(), []);
+function MonthlyCalendar({
+  city,
+  country,
+}) {
+  /*
+    Current date is used internally only
+    for loading the current month and
+    highlighting today's row.
+  */
 
-  const [month, setMonth] = useState(today.month);
-  const [year, setYear] = useState(today.year);
+  const today = useMemo(
+    () => getTodayInfo(),
+    []
+  );
 
-  const [days, setDays] = useState([]);
+  /*
+    Month navigation has been removed.
+    Calendar always loads the current month.
+  */
 
-  const [status, setStatus] = useState("loading");
+  const month = today.month;
+  const year = today.year;
 
-  const [errorMessage, setErrorMessage] = useState("");
+  const [days, setDays] =
+    useState([]);
+
+  const [status, setStatus] =
+    useState("loading");
+
+  const [errorMessage, setErrorMessage] =
+    useState("");
 
 
   /* =========================================
-     LOAD MONTH
+     LOAD CURRENT MONTH
   ========================================= */
 
   useEffect(() => {
@@ -182,16 +190,22 @@ function MonthlyCalendar({ city, country }) {
       setErrorMessage("");
 
       try {
-        const result = await getMonthlyPrayerTimes(
-          city,
-          country,
-          month,
-          year
-        );
+        const result =
+          await getMonthlyPrayerTimes(
+            city,
+            country,
+            month,
+            year
+          );
 
         if (isCancelled) return;
 
-        setDays(Array.isArray(result) ? result : []);
+        setDays(
+          Array.isArray(result)
+            ? result
+            : []
+        );
+
         setStatus("success");
       } catch (error) {
         if (isCancelled) return;
@@ -210,54 +224,12 @@ function MonthlyCalendar({ city, country }) {
     return () => {
       isCancelled = true;
     };
-  }, [city, country, month, year]);
-
-
-  /* =========================================
-     PREVIOUS MONTH
-  ========================================= */
-
-  function goToPreviousMonth() {
-    if (month === 1) {
-      setMonth(12);
-      setYear((currentYear) => currentYear - 1);
-    } else {
-      setMonth((currentMonth) => currentMonth - 1);
-    }
-  }
-
-
-  /* =========================================
-     NEXT MONTH
-  ========================================= */
-
-  function goToNextMonth() {
-    if (month === 12) {
-      setMonth(1);
-      setYear((currentYear) => currentYear + 1);
-    } else {
-      setMonth((currentMonth) => currentMonth + 1);
-    }
-  }
-
-
-  /* =========================================
-     SELECT MONTH
-  ========================================= */
-
-  function selectMonth(index) {
-    setMonth(index + 1);
-  }
-
-
-  /* =========================================
-     GO TO TODAY
-  ========================================= */
-
-  function goToToday() {
-    setMonth(today.month);
-    setYear(today.year);
-  }
+  }, [
+    city,
+    country,
+    month,
+    year,
+  ]);
 
 
   /* =========================================
@@ -265,157 +237,32 @@ function MonthlyCalendar({ city, country }) {
   ========================================= */
 
   function isToday(day) {
-    if (year !== today.year || month !== today.month) {
+    if (
+      year !== today.year ||
+      month !== today.month
+    ) {
       return false;
     }
 
-    const normalizedApiDate = normalizeDate(day?.date);
+    const normalizedApiDate =
+      normalizeDate(day?.date);
 
-    return normalizedApiDate ===
-      String(today.day).padStart(2, "0");
+    return (
+      normalizedApiDate ===
+      String(today.day).padStart(
+        2,
+        "0"
+      )
+    );
   }
 
 
+  /* =========================================
+     RENDER
+  ========================================= */
+
   return (
     <section className="monthly-calendar">
-
-      {/* =====================================
-          HEADER
-      ===================================== */}
-
-      <div className="monthly-calendar__header">
-
-        <div className="monthly-calendar__title">
-
-          <span className="monthly-calendar__icon">
-            ☾
-          </span>
-
-          <div>
-            <h3>Monthly Prayer Calendar</h3>
-
-            <p>
-              Prayer timings for {city}, {country}
-            </p>
-          </div>
-
-        </div>
-
-
-        {/* ===================================
-            MONTH NAVIGATION
-        =================================== */}
-
-        <div className="monthly-calendar__nav">
-
-          <button
-            type="button"
-            className="monthly-calendar__nav-btn"
-            onClick={goToPreviousMonth}
-            aria-label="Previous month"
-          >
-            <ChevronLeftIcon
-              width={18}
-              height={18}
-            />
-          </button>
-
-
-          <span className="monthly-calendar__current-month">
-            {formatMonthYear(month, year)}
-          </span>
-
-
-          <button
-            type="button"
-            className="monthly-calendar__nav-btn"
-            onClick={goToNextMonth}
-            aria-label="Next month"
-          >
-            <ChevronRightIcon
-              width={18}
-              height={18}
-            />
-          </button>
-
-        </div>
-
-      </div>
-
-
-      {/* =====================================
-          PROMINENT CURRENT DATE
-      ===================================== */}
-
-      <div className="monthly-calendar__today-card">
-
-        <div className="monthly-calendar__today-icon">
-          📅
-        </div>
-
-
-        <div className="monthly-calendar__today-content">
-
-          <span className="monthly-calendar__today-label">
-            TODAY
-          </span>
-
-          <strong>
-            {today.fullDate}
-          </strong>
-
-          <span className="monthly-calendar__today-day">
-            {today.dayName}
-          </span>
-
-        </div>
-
-
-        <button
-          type="button"
-          className="monthly-calendar__today-button"
-          onClick={goToToday}
-        >
-          View Today
-        </button>
-
-      </div>
-
-
-      {/* =====================================
-          12 MONTH SELECTOR
-      ===================================== */}
-
-      <div className="monthly-calendar__months">
-
-        {MONTHS.map((monthName, index) => {
-          const isActive = month === index + 1;
-
-          return (
-            <button
-              key={monthName}
-              type="button"
-              className={
-                isActive
-                  ? "monthly-calendar__month active"
-                  : "monthly-calendar__month"
-              }
-              onClick={() => selectMonth(index)}
-            >
-
-              <span className="monthly-calendar__month-short">
-                {monthName.substring(0, 3)}
-              </span>
-
-              <small>
-                {monthName}
-              </small>
-
-            </button>
-          );
-        })}
-
-      </div>
 
 
       {/* =====================================
@@ -424,7 +271,11 @@ function MonthlyCalendar({ city, country }) {
 
       {status === "loading" && (
         <div className="monthly-calendar__state">
-          <Loading label="Loading monthly calendar..." />
+
+          <Loading
+            label="Loading monthly calendar..."
+          />
+
         </div>
       )}
 
@@ -435,7 +286,11 @@ function MonthlyCalendar({ city, country }) {
 
       {status === "error" && (
         <div className="monthly-calendar__state">
-          <ErrorMessage message={errorMessage} />
+
+          <ErrorMessage
+            message={errorMessage}
+          />
+
         </div>
       )}
 
@@ -444,28 +299,32 @@ function MonthlyCalendar({ city, country }) {
           EMPTY
       ===================================== */}
 
-      {status === "success" && days.length === 0 && (
-        <div className="monthly-calendar__state">
+      {status === "success" &&
+        days.length === 0 && (
+          <div className="monthly-calendar__state">
 
-          <ErrorMessage
-            message="No prayer times available for this month."
-          />
+            <ErrorMessage
+              message="No prayer times available for this month."
+            />
 
-        </div>
-      )}
+          </div>
+        )}
 
 
       {/* =====================================
-          TABLE
+          PRAYER TABLE
       ===================================== */}
 
-      {status === "success" && days.length > 0 && (
+      {status === "success" &&
+        days.length > 0 && (
 
-        <div className="monthly-calendar__table-wrapper">
-
-          <div className="monthly-calendar__scroll">
+          <div className="monthly-calendar__table-wrapper">
 
             <table className="monthly-calendar__table">
+
+              {/* ===========================
+                  TABLE HEADER
+              =========================== */}
 
               <thead>
 
@@ -504,76 +363,113 @@ function MonthlyCalendar({ city, country }) {
               </thead>
 
 
+              {/* ===========================
+                  TABLE BODY
+              =========================== */}
+
               <tbody>
 
-                {days.map((day, index) => {
+                {days.map(
+                  (day, index) => {
 
-                  const todayRow = isToday(day);
+                    const todayRow =
+                      isToday(day);
 
-                  return (
-                    <tr
-                      key={
-                        day?.date ||
-                        `${month}-${year}-${index}`
-                      }
-                      className={
-                        todayRow
-                          ? "monthly-calendar__today-row"
-                          : ""
-                      }
-                    >
+                    return (
+                      <tr
+                        key={
+                          day?.date ||
+                          `${month}-${year}-${index}`
+                        }
+                        className={
+                          todayRow
+                            ? "monthly-calendar__today-row"
+                            : ""
+                        }
+                      >
 
-                      <td className="monthly-calendar__date">
+                        {/* DATE */}
 
-                        <span>
-                          {day?.date || "—"}
-                        </span>
+                        <td className="monthly-calendar__date">
 
-                        {todayRow && (
-                          <small className="monthly-calendar__today-badge">
-                            TODAY
-                          </small>
-                        )}
+                          <span>
+                            {day?.date ||
+                              "—"}
+                          </span>
 
-                      </td>
+                          {todayRow && (
+                            <small className="monthly-calendar__today-badge">
+                              TODAY
+                            </small>
+                          )}
 
-                      <td>
-                        {formatTime(day?.fajr)}
-                      </td>
+                        </td>
 
-                      <td>
-                        {formatTime(day?.sunrise)}
-                      </td>
 
-                      <td>
-                        {formatTime(day?.dhuhr)}
-                      </td>
+                        {/* FAJR */}
 
-                      <td>
-                        {formatTime(day?.asr)}
-                      </td>
+                        <td>
+                          {formatTime(
+                            day?.fajr
+                          )}
+                        </td>
 
-                      <td>
-                        {formatTime(day?.maghrib)}
-                      </td>
 
-                      <td>
-                        {formatTime(day?.isha)}
-                      </td>
+                        {/* SUNRISE */}
 
-                    </tr>
-                  );
-                })}
+                        <td>
+                          {formatTime(
+                            day?.sunrise
+                          )}
+                        </td>
+
+
+                        {/* DHUHR */}
+
+                        <td>
+                          {formatTime(
+                            day?.dhuhr
+                          )}
+                        </td>
+
+
+                        {/* ASR */}
+
+                        <td>
+                          {formatTime(
+                            day?.asr
+                          )}
+                        </td>
+
+
+                        {/* MAGHRIB */}
+
+                        <td>
+                          {formatTime(
+                            day?.maghrib
+                          )}
+                        </td>
+
+
+                        {/* ISHA */}
+
+                        <td>
+                          {formatTime(
+                            day?.isha
+                          )}
+                        </td>
+
+                      </tr>
+                    );
+                  }
+                )}
 
               </tbody>
 
             </table>
 
           </div>
-
-        </div>
-
-      )}
+        )}
 
     </section>
   );

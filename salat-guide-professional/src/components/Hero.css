@@ -1,251 +1,333 @@
-/* =========================================================
-   HERO SECTION
-   Islamic Professional Design
-   Desktop | Laptop | Tablet | Mobile
-========================================================= */
-
-html,
-body,
-#root {
-  margin: 0 !important;
-  padding: 0 !important;
-}
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero {
   position: relative;
   width: 100%;
-  min-height: 620px;
-  margin: 0 !important;
-  padding: 0;
+  min-height: 500px;
   overflow: hidden;
+  isolation: isolate;
+
+  color: #ffffff;
+
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
-  color: #fff;
 }
 
-/* =========================================================
-   DARK ISLAMIC OVERLAY
-========================================================= */
+
+/* =====================================================
+   BACKGROUND OVERLAY
+===================================================== */
 
 .hero__overlay {
   position: absolute;
   inset: 0;
   z-index: 0;
 
-  background: linear-gradient(
-    90deg,
-    rgba(3, 35, 27, 0.98) 0%,
-    rgba(3, 35, 27, 0.94) 25%,
-    rgba(3, 35, 27, 0.80) 45%,
-    rgba(3, 35, 27, 0.48) 70%,
-    rgba(3, 35, 27, 0.22) 100%
-  );
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 45, 34, 0.82) 0%,
+      rgba(2, 45, 34, 0.68) 28%,
+      rgba(2, 45, 34, 0.38) 55%,
+      rgba(2, 45, 34, 0.12) 100%
+    );
+
+  pointer-events: none;
 }
 
-/* =========================================================
+
+/* =====================================================
+   TOP / BOTTOM SOFT OVERLAY
+===================================================== */
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 25, 19, 0.15) 0%,
+      transparent 30%,
+      transparent 72%,
+      rgba(1, 31, 23, 0.35) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
    ISLAMIC PATTERN
-========================================================= */
+===================================================== */
 
 .hero__pattern {
   position: absolute;
   inset: 0;
   z-index: 1;
+
+  opacity: 0.035;
+
   pointer-events: none;
-  opacity: 0.10;
 
   background-image:
     linear-gradient(
       30deg,
-      rgba(214, 177, 92, 0.20) 12%,
+      rgba(230, 195, 105, 0.8) 12%,
       transparent 12.5%,
       transparent 87%,
-      rgba(214, 177, 92, 0.20) 87.5%
+      rgba(230, 195, 105, 0.8) 87.5%
     ),
     linear-gradient(
       150deg,
-      rgba(214, 177, 92, 0.20) 12%,
+      rgba(230, 195, 105, 0.8) 12%,
       transparent 12.5%,
       transparent 87%,
-      rgba(214, 177, 92, 0.20) 87.5%
+      rgba(230, 195, 105, 0.8) 87.5%
     );
 
-  background-size: 42px 42px;
+  background-size: 46px 46px;
 }
 
-/* =========================================================
-   HERO INNER
-========================================================= */
+
+/* =====================================================
+   DECORATIVE GLOW
+===================================================== */
+
+.hero__glow {
+  position: absolute;
+  z-index: 1;
+
+  width: 280px;
+  height: 280px;
+
+  border-radius: 50%;
+
+  filter: blur(80px);
+  opacity: 0.10;
+
+  pointer-events: none;
+}
+
+
+.hero__glow--one {
+  top: -120px;
+  right: 18%;
+
+  background: rgba(230, 190, 90, 0.8);
+}
+
+
+.hero__glow--two {
+  left: -90px;
+  bottom: -130px;
+
+  background: rgba(0, 135, 95, 0.8);
+}
+
+
+/* =====================================================
+   INNER
+===================================================== */
 
 .hero__inner {
   position: relative;
   z-index: 3;
 
-  width: 100%;
-  min-height: 620px;
+  min-height: 500px;
 
   display: flex;
   align-items: center;
 
   box-sizing: border-box;
 
-  padding: 50px 0 60px;
+  padding: 38px 0 48px;
 }
 
-/* =========================================================
-   HERO CONTENT
-========================================================= */
+
+/* =====================================================
+   CONTENT
+===================================================== */
 
 .hero__content {
   width: 100%;
-  max-width: 700px;
+  max-width: 780px;
 }
 
-/* =========================================================
+
+/* =====================================================
    EYEBROW
-========================================================= */
+===================================================== */
 
 .hero__eyebrow {
-  position: relative;
-
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  gap: 10px;
 
-  margin: 0 0 14px;
-  padding-left: 48px;
+  margin-bottom: 13px;
 
-  color: #e1bd69;
+  color: #e4bd62;
 
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  line-height: 1.3;
 
-  letter-spacing: 0.08em;
+  letter-spacing: 0.15em;
+
   text-transform: uppercase;
 }
 
-.hero__eyebrow::before {
-  content: "";
 
-  position: absolute;
-  left: 0;
-  top: 50%;
-
-  width: 36px;
+.hero__eyebrow-line {
+  width: 40px;
   height: 1px;
 
-  background: #d6b15c;
+  background: #dcb45c;
 }
 
-/* =========================================================
-   TITLE
-========================================================= */
+
+.hero__eyebrow-star {
+  color: #e0b75e;
+
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   MAIN TITLE
+===================================================== */
 
 .hero__title {
-  max-width: 650px;
-
   margin: 0;
 
-  color: #fff;
+  max-width: 780px;
 
-  font-family: Georgia, "Times New Roman", serif;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
-  font-size: clamp(30px, 3.8vw, 48px);
+  font-size: clamp(44px, 5vw, 64px);
+
   font-weight: 700;
 
-  line-height: 1.08;
+  line-height: 0.98;
 
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
 
-  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+
+  text-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* =========================================================
-   GOLD DIVIDER
-========================================================= */
+
+/* =====================================================
+   TITLE GOLD TEXT
+===================================================== */
+
+.hero__title span {
+  color: #e4b957;
+
+  text-shadow:
+    0 3px 18px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =====================================================
+   DIVIDER
+===================================================== */
 
 .hero__divider {
   display: flex;
   align-items: center;
 
+  gap: 10px;
+
   width: 300px;
-  max-width: 100%;
 
-  margin: 18px 0 18px;
-
-  gap: 8px;
+  margin: 18px 0 15px;
 }
+
 
 .hero__divider span {
-  height: 1px;
   flex: 1;
 
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #d6b15c
-  );
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(224, 184, 89, 0.9)
+    );
 }
+
 
 .hero__divider span:last-child {
-  background: linear-gradient(
-    90deg,
-    #d6b15c,
-    transparent
-  );
+  background:
+    linear-gradient(
+      90deg,
+      rgba(224, 184, 89, 0.9),
+      transparent
+    );
 }
+
 
 .hero__divider b {
-  color: #d6b15c;
+  color: #e0b75b;
 
   font-size: 14px;
-  font-weight: 400;
-  line-height: 1;
 }
 
-/* =========================================================
+
+/* =====================================================
    DESCRIPTION
-========================================================= */
+===================================================== */
 
 .hero__description {
-  max-width: 600px;
+  max-width: 690px;
 
-  margin: 0 0 22px;
+  margin: 0 0 20px;
 
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.94);
 
   font-size: 14px;
-  font-weight: 400;
 
-  line-height: 1.65;
+  line-height: 1.55;
 
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  text-shadow:
+    0 2px 9px rgba(0, 0, 0, 0.35);
 }
 
-/* =========================================================
+
+/* =====================================================
    FEATURES
-========================================================= */
+===================================================== */
 
 .hero__features {
-  width: 100%;
-  max-width: 700px;
-
   display: grid;
 
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(4, 1fr);
 
-  gap: 9px;
+  gap: 10px;
 
-  margin: 0;
+  max-width: 760px;
 }
 
-/* =========================================================
+
+/* =====================================================
    FEATURE CARD
-========================================================= */
+===================================================== */
 
 .hero__feature {
-  min-width: 0;
-  min-height: 92px;
+  min-height: 88px;
 
   display: flex;
   flex-direction: column;
@@ -253,157 +335,185 @@ body,
   align-items: center;
   justify-content: center;
 
-  padding: 10px 8px;
+  padding: 10px 7px;
 
-  box-sizing: border-box;
+  border:
+    1px solid
+    rgba(222, 183, 88, 0.48);
 
-  border: 1px solid rgba(214, 177, 92, 0.48);
+  border-radius: 13px;
 
-  border-radius: 11px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(2, 65, 48, 0.72),
+      rgba(2, 47, 37, 0.58)
+    );
 
-  background: rgba(3, 42, 32, 0.62);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
-  backdrop-filter: blur(8px);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.10);
 
   transition:
     transform 0.25s ease,
-    background 0.25s ease,
     border-color 0.25s ease,
+    background 0.25s ease,
     box-shadow 0.25s ease;
 }
+
+
+/* =====================================================
+   FEATURE HOVER
+===================================================== */
 
 .hero__feature:hover {
   transform: translateY(-4px);
 
-  background: rgba(7, 54, 41, 0.78);
+  border-color: #e4bd62;
 
-  border-color: rgba(214, 177, 92, 0.85);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(4, 79, 58, 0.84),
+      rgba(2, 56, 43, 0.76)
+    );
 
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.22);
 }
 
-/* =========================================================
+
+/* =====================================================
    FEATURE ICON
-========================================================= */
+===================================================== */
 
 .hero__feature-icon {
-  width: 42px;
-  height: 42px;
+  width: 39px;
+  height: 39px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
-  margin-bottom: 7px;
+  margin-bottom: 6px;
 
-  border: 2px solid #d6b15c;
+  border:
+    1.5px solid
+    #dfb95e;
 
   border-radius: 50%;
 
-  color: #d6b15c;
+  color: #e6bd5e;
 
-  font-size: 19px;
+  font-size: 17px;
 
-  line-height: 1;
+  background:
+    rgba(1, 52, 40, 0.38);
 
-  box-sizing: border-box;
+  box-shadow:
+    0 0 0 5px
+    rgba(224, 185, 92, 0.035);
 }
 
-/* =========================================================
+
+/* =====================================================
    FEATURE TEXT
-========================================================= */
+===================================================== */
 
 .hero__feature-text {
-  min-width: 0;
-
   text-align: center;
 }
+
 
 .hero__feature strong {
   display: block;
 
-  margin: 0;
-
-  color: #fff;
+  color: #ffffff;
 
   font-size: 10px;
+
   font-weight: 700;
-
-  line-height: 1.3;
-
-  white-space: nowrap;
 }
+
 
 .hero__feature small {
   display: block;
 
   margin-top: 3px;
 
-  color: #e0bd68;
+  color: #e2bd66;
 
   font-size: 8px;
 
   line-height: 1.3;
-
-  white-space: nowrap;
 }
 
-/* =========================================================
-   QURAN QUOTE
-========================================================= */
+
+/* =====================================================
+   QUOTE
+===================================================== */
 
 .hero__quote {
-  width: 100%;
-  max-width: 650px;
+  display: flex;
+  align-items: flex-start;
 
-  margin-top: 18px;
+  gap: 10px;
 
-  padding-top: 13px;
+  max-width: 690px;
 
-  border-top: 1px solid rgba(214, 177, 92, 0.35);
+  margin-top: 14px;
 
-  text-align: left;
+  padding-top: 10px;
+
+  border-top:
+    1px solid
+    rgba(221, 183, 91, 0.35);
 }
+
 
 .hero__quote-icon {
-  display: block;
+  flex-shrink: 0;
 
-  margin-bottom: 5px;
+  color: #dfb75b;
 
-  color: #d6b15c;
-
-  font-size: 20px;
-
-  line-height: 1;
+  font-size: 21px;
 }
 
+
 .hero__quote p {
-  margin: 0 0 5px;
+  margin: 0 0 4px;
 
-  color: rgba(255, 255, 255, 0.82);
+  color:
+    rgba(255, 255, 255, 0.90);
 
-  font-family: Georgia, "Times New Roman", serif;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
-  font-size: 12px;
+  font-size: 11px;
 
   font-style: italic;
 
-  line-height: 1.5;
+  line-height: 1.4;
+
+  text-shadow:
+    0 2px 7px rgba(0, 0, 0, 0.3);
 }
+
 
 .hero__quote small {
-  color: #d6b15c;
+  color: #e2b95d;
 
-  font-size: 9px;
-  font-weight: 600;
-
-  letter-spacing: 0.03em;
+  font-size: 8px;
 }
 
-/* =========================================================
-   BOTTOM DECORATIVE SHAPE
-========================================================= */
+
+/* =====================================================
+   BOTTOM SHAPE
+===================================================== */
 
 .hero__bottom-shape {
   position: absolute;
@@ -411,119 +521,123 @@ body,
   left: -5%;
   bottom: -1px;
 
-  z-index: 4;
+  z-index: 5;
 
   width: 110%;
-  height: 40px;
+  height: 30px;
 
   background: #07382b;
 
-  clip-path: ellipse(55% 55% at 50% 100%);
+  clip-path:
+    ellipse(
+      55% 55%
+      at 50% 100%
+    );
 }
 
-/* =========================================================
-   LAPTOP
-   1200px AND BELOW
-========================================================= */
 
-@media (max-width: 1200px) {
+/* =====================================================
+   LARGE TABLET
+===================================================== */
 
-  .hero {
-    min-height: 570px;
-  }
+@media (max-width: 1100px) {
 
   .hero__inner {
-    min-height: 570px;
-
-    padding: 40px 0 50px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   .hero__content {
-    max-width: 650px;
+    max-width: 700px;
+  }
+
+  .hero__features {
+    max-width: 700px;
+  }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1024px) {
+
+  .hero {
+    min-height: 470px;
+
+    background-position: center center;
+  }
+
+  .hero__inner {
+    min-height: 470px;
+
+    padding:
+      35px 25px 50px;
   }
 
   .hero__title {
     font-size: 50px;
   }
 
-  .hero__description {
-    max-width: 560px;
-
-    font-size: 13px;
-  }
-
   .hero__features {
     max-width: 650px;
   }
 
   .hero__feature {
-    min-height: 85px;
+    min-height: 82px;
   }
 }
 
-/* =========================================================
-   TABLET
-   1024px AND BELOW
-========================================================= */
 
-@media (max-width: 1024px) {
+/* =====================================================
+   SMALL TABLET
+===================================================== */
+
+@media (max-width: 768px) {
 
   .hero {
-    min-height: 540px;
+    min-height: 450px;
 
-    background-position: 60% center;
+    background-position: center center;
   }
 
   .hero__inner {
-    min-height: 540px;
+    min-height: 450px;
 
-    padding: 35px 0 45px;
+    padding:
+      30px 20px 45px;
   }
 
   .hero__content {
     max-width: 600px;
   }
 
-  .hero__eyebrow {
-    margin-bottom: 10px;
-
-    font-size: 10px;
-  }
-
   .hero__title {
-    max-width: 600px;
+    font-size: 40px;
 
-    font-size: 42px;
-
-    line-height: 1.08;
-  }
-
-  .hero__divider {
-    width: 270px;
-
-    margin: 15px 0;
+    line-height: 1.03;
   }
 
   .hero__description {
-    max-width: 520px;
-
-    margin-bottom: 18px;
-
     font-size: 12px;
 
-    line-height: 1.6;
+    max-width: 580px;
+
+    margin-bottom: 17px;
   }
 
   .hero__features {
-    max-width: 600px;
+    grid-template-columns:
+      repeat(2, 1fr);
 
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 550px;
 
     gap: 8px;
   }
 
   .hero__feature {
-    min-height: 72px;
+    min-height: 70px;
 
     flex-direction: row;
 
@@ -531,457 +645,326 @@ body,
 
     gap: 9px;
 
-    padding: 9px;
+    padding: 8px;
   }
 
   .hero__feature-icon {
-    width: 36px;
-    height: 36px;
-
-    flex: 0 0 36px;
+    flex-shrink: 0;
 
     margin-bottom: 0;
 
-    font-size: 16px;
+    width: 35px;
+    height: 35px;
   }
 
   .hero__feature-text {
     text-align: left;
   }
 
-  .hero__feature strong {
-    font-size: 9px;
-  }
-
-  .hero__feature small {
-    font-size: 7px;
-  }
-
   .hero__quote {
-    max-width: 570px;
-
-    margin-top: 17px;
-
-    padding-top: 11px;
+    margin-top: 12px;
   }
 }
 
-/* =========================================================
-   SMALL TABLET
-   768px AND BELOW
-========================================================= */
 
-@media (max-width: 768px) {
-
-  .hero {
-    min-height: 500px;
-
-    background-position: center;
-  }
-
-  .hero__inner {
-    min-height: 500px;
-
-    align-items: center;
-
-    padding: 25px 15px 40px;
-  }
-
-  .hero__content {
-    width: 100%;
-
-    max-width: 600px;
-  }
-
-  .hero__eyebrow {
-    padding-left: 38px;
-
-    font-size: 9px;
-  }
-
-  .hero__eyebrow::before {
-    width: 28px;
-  }
-
-  .hero__title {
-    max-width: 570px;
-
-    font-size: 34px;
-  }
-
-  .hero__description {
-    max-width: 540px;
-
-    font-size: 11px;
-
-    line-height: 1.55;
-  }
-
-  .hero__features {
-    max-width: 580px;
-  }
-
-  .hero__quote {
-    max-width: 550px;
-  }
-}
-
-/* =========================================================
+/* =====================================================
    MOBILE
-   600px AND BELOW
-========================================================= */
+   FULL IMAGE - NO CROPPING
+===================================================== */
 
 @media (max-width: 600px) {
 
-  body {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  #root {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
   .hero {
+    /*
+      IMPORTANT:
+      Mobile par image crop nahi hogi.
+      Image screen ki width ke according full show hogi.
+    */
+
     min-height: auto;
 
     height: auto;
 
-    margin-top: 0 !important;
+    background-size: 100% auto;
 
-    padding: 0 !important;
+    background-position: center top;
 
-    background-position: center;
+    background-repeat: no-repeat;
   }
+
+
+  /* ===================================================
+     MOBILE OVERLAY
+  =================================================== */
 
   .hero__overlay {
-    background: linear-gradient(
-      180deg,
-      rgba(3, 35, 27, 0.88) 0%,
-      rgba(3, 35, 27, 0.84) 50%,
-      rgba(3, 35, 27, 0.96) 100%
-    );
+    background:
+      linear-gradient(
+        180deg,
+        rgba(2, 43, 33, 0.58) 0%,
+        rgba(2, 43, 33, 0.72) 55%,
+        rgba(2, 43, 33, 0.94) 100%
+      );
   }
+
+
+  /* ===================================================
+     INNER
+  =================================================== */
 
   .hero__inner {
     min-height: auto;
 
-    height: auto;
+    padding:
+      28px 12px 35px;
+  }
 
-    padding: 22px 12px 38px !important;
 
-    margin: 0 !important;
+  /* ===================================================
+     CONTENT
+  =================================================== */
 
+  .hero__content {
     text-align: center;
   }
 
-  .hero__content {
-    width: 100%;
 
-    max-width: 100%;
-
-    margin: 0;
-  }
-
-  /* SMALLER HEADING */
+  /* ===================================================
+     EYEBROW
+  =================================================== */
 
   .hero__eyebrow {
     justify-content: center;
 
-    margin: 0 0 8px;
+    gap: 6px;
 
-    padding-left: 0;
+    margin-bottom: 11px;
 
-    font-size: 8px;
+    font-size: 7px;
 
-    letter-spacing: 0.07em;
+    letter-spacing: 0.08em;
   }
 
-  .hero__eyebrow::before {
-    display: none;
+
+  .hero__eyebrow-line {
+    width: 22px;
   }
+
+
+  .hero__eyebrow-star {
+    font-size: 10px;
+  }
+
+
+  /* ===================================================
+     TITLE
+  =================================================== */
 
   .hero__title {
-    max-width: 100%;
+    font-size: 31px;
 
-    margin: 0;
+    line-height: 1.02;
 
-    font-size: clamp(24px, 7vw, 30px);
+    letter-spacing: -0.025em;
 
-    line-height: 1.08;
-
-    letter-spacing: -0.02em;
+    color: #ffffff;
   }
 
-  .hero__desktop-break {
-    display: none;
+
+  .hero__title span {
+    color: #e4b957;
   }
+
+
+  /* ===================================================
+     DIVIDER
+  =================================================== */
 
   .hero__divider {
     width: 170px;
 
-    margin: 12px auto 12px;
+    margin:
+      12px auto 13px;
   }
+
 
   .hero__divider b {
     font-size: 11px;
   }
 
+
+  /* ===================================================
+     DESCRIPTION
+  =================================================== */
+
   .hero__description {
-    width: 100%;
+    max-width: 400px;
 
-    max-width: 480px;
+    margin:
+      0 auto 15px;
 
-    margin: 0 auto 16px;
-
-    font-size: 10px;
+    font-size: 9px;
 
     line-height: 1.5;
   }
 
+
+  /* ===================================================
+     FEATURES
+  =================================================== */
+
   .hero__features {
-    width: 100%;
-
-    max-width: 480px;
-
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+      repeat(2, 1fr);
 
     gap: 6px;
 
-    margin: 0 auto;
+    max-width: 400px;
+
+    margin: auto;
   }
+
+
+  /* ===================================================
+     FEATURE
+  =================================================== */
 
   .hero__feature {
-    min-height: 62px;
+    min-height: 60px;
+
+    padding: 6px;
+
+    border-radius: 9px;
 
     gap: 6px;
-
-    padding: 7px 6px;
-
-    border-radius: 8px;
   }
 
-  .hero__feature-icon {
-    width: 30px;
-    height: 30px;
 
-    flex: 0 0 30px;
+  /* ===================================================
+     FEATURE ICON
+  =================================================== */
+
+  .hero__feature-icon {
+    width: 29px;
+    height: 29px;
 
     font-size: 13px;
   }
 
+
+  /* ===================================================
+     FEATURE TEXT
+  =================================================== */
+
   .hero__feature strong {
-    font-size: 8px;
+    font-size: 7px;
   }
+
 
   .hero__feature small {
-    margin-top: 2px;
-
-    font-size: 6px;
+    font-size: 5.5px;
   }
 
+
+  /* ===================================================
+     QUOTE
+  =================================================== */
+
   .hero__quote {
-    max-width: 450px;
+    justify-content: center;
 
-    margin: 14px auto 0;
+    max-width: 380px;
 
-    padding-top: 9px;
+    margin:
+      10px auto 0;
+
+    padding-top: 8px;
 
     text-align: center;
   }
 
-  .hero__quote-icon {
-    margin-bottom: 3px;
 
-    font-size: 16px;
+  .hero__quote-icon {
+    display: none;
   }
+
 
   .hero__quote p {
-    font-size: 8px;
-
-    line-height: 1.4;
+    font-size: 7px;
   }
+
 
   .hero__quote small {
-    font-size: 6px;
+    font-size: 5.5px;
   }
 
+
+  /* ===================================================
+     BOTTOM SHAPE
+  =================================================== */
+
   .hero__bottom-shape {
-    height: 28px;
+    height: 20px;
   }
 }
 
-/* =========================================================
-   SMALL MOBILE
-   400px AND BELOW
-========================================================= */
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
 
 @media (max-width: 400px) {
 
   .hero {
-    min-height: auto;
+    /*
+      Keep full image visible on very small screens too
+    */
+
+    background-size: 100% auto;
+
+    background-position: center top;
+
+    background-repeat: no-repeat;
   }
+
 
   .hero__inner {
-    min-height: auto;
-
-    padding: 16px 9px 32px !important;
+    padding:
+      24px 10px 30px;
   }
 
-  .hero__eyebrow {
-    font-size: 7px;
-
-    margin-bottom: 6px;
-  }
 
   .hero__title {
-    font-size: 23px;
-
-    line-height: 1.08;
+    font-size: 28px;
   }
 
-  .hero__divider {
-    width: 145px;
-
-    margin: 10px auto;
-  }
 
   .hero__description {
-    font-size: 9px;
+    font-size: 8px;
 
-    line-height: 1.45;
-
-    margin-bottom: 13px;
+    margin-bottom: 12px;
   }
+
 
   .hero__features {
     gap: 5px;
   }
+
 
   .hero__feature {
     min-height: 56px;
 
-    padding: 6px 5px;
-
-    gap: 5px;
-
-    border-radius: 7px;
+    padding: 5px;
   }
+
 
   .hero__feature-icon {
     width: 27px;
     height: 27px;
-
-    flex-basis: 27px;
-
-    font-size: 12px;
   }
 
-  .hero__feature strong {
-    font-size: 7px;
-  }
-
-  .hero__feature small {
-    font-size: 5.5px;
-  }
 
   .hero__quote {
-    margin-top: 11px;
-
-    padding-top: 7px;
-  }
-
-  .hero__quote-icon {
-    font-size: 14px;
-  }
-
-  .hero__quote p {
-    font-size: 7px;
-  }
-
-  .hero__quote small {
-    font-size: 5.5px;
-  }
-
-  .hero__bottom-shape {
-    height: 24px;
-  }
-}
-
-/* =========================================================
-   EXTRA SMALL MOBILE
-   350px AND BELOW
-========================================================= */
-
-@media (max-width: 350px) {
-
-  .hero__inner {
-    padding: 12px 7px 28px !important;
-  }
-
-  .hero__title {
-    font-size: 21px;
-  }
-
-  .hero__description {
-    font-size: 8px;
-  }
-
-  .hero__features {
-    gap: 4px;
-  }
-
-  .hero__feature {
-    min-height: 51px;
-
-    padding: 5px 4px;
-  }
-
-  .hero__feature-icon {
-    width: 24px;
-    height: 24px;
-
-    flex-basis: 24px;
-
-    font-size: 10px;
-  }
-
-  .hero__feature strong {
-    font-size: 6.5px;
-  }
-
-  .hero__feature small {
-    font-size: 5px;
-  }
-
-  .hero__quote p {
-    font-size: 6.5px;
-  }
-
-  .hero__quote small {
-    font-size: 5px;
-  }
-}
-
-/* =========================================================
-   FINAL TOP SPACE FIX
-   Removes unwanted space above hero
-========================================================= */
-
-.hero:first-child,
-.hero:first-of-type {
-  margin-top: 0 !important;
-}
-
-@media (max-width: 600px) {
-
-  .hero:first-child,
-  .hero:first-of-type {
-    margin-top: 0 !important;
-  }
-
-  .hero + * {
-    margin-top: 0;
+    margin-top: 8px;
   }
 }

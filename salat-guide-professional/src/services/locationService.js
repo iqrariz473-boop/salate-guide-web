@@ -1,13 +1,24 @@
-// Wraps the browser Geolocation API and a free reverse-geocoding lookup
-// so "Use My Location" can resolve a city/country the same way a typed
-// search does. Kept separate from prayerService because it deals with
-// device location, not prayer time data.
+// Wraps the browser Geolocation API and a free reverse-geocoding lookup.
+// "Use My Location" can resolve a city/country the same way a typed
+// search does.
+//
+// Kept separate from prayerService because this file deals with
+// device location, not prayer-time data.
 
-/** Resolves the user's current coordinates, or rejects with a readable message. */
+/**
+ * Gets the user's current coordinates using the browser Geolocation API.
+ *
+ * @returns {Promise<{latitude: number, longitude: number}>}
+ */
 export function getCurrentPosition() {
   return new Promise((resolve, reject) => {
+    // Check whether the browser supports Geolocation.
     if (!("geolocation" in navigator)) {
-      reject(new Error("Your browser does not support location detection."));
+      reject(
+        new Error(
+          "Your browser does not support location detection."
+        )
+      );
       return;
     }
 
@@ -18,30 +29,102 @@ export function getCurrentPosition() {
           longitude: position.coords.longitude,
         });
       },
-      () => {
-        reject(new Error("Unable to determine your location. Please allow location access, or search for a city instead."));
+
+      (error) => {
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            reject(
+              new Error(
+                "Location access was denied. Please allow location access or search for a city instead."
+              )
+            );
+            break;
+
+          case error.POSITION_UNAVAILABLE:
+            reject(
+              new Error(
+                "Your location is currently unavailable. Please try again or search for a city instead."
+              )
+            );
+            break;
+
+          case error.TIMEOUT:
+            reject(
+              new Error(
+                "Location detection timed out. Please try again or search for a city instead."
+              )
+            );
+            break;
+
+          default:
+            reject(
+              new Error(
+                "Unable to determine your location. Please try again or search for a city instead."
+              )
+            );
+        }
       },
-      { timeout: 10000 }
+
+      {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 300000,
+      }
     );
   });
 }
 
-/** Converts coordinates into a city/country pair using a free, no-key API. */
+/**
+ * Converts latitude/longitude into a city/country pair
+ * using BigDataCloud's free reverse-geocoding API.
+ *
+ * @param {number} latitude
+ * @param {number} longitude
+ * @returns {Promise<{city: string, country: string}>}
+ */
 export async function reverseGeocode(latitude, longitude) {
-  const url = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`;
+  const url =
+    `https://api.bigdatacloud.net/data/reverse-geocode-client` +
+    `?latitude=${latitude}` +
+    `&longitude=${longitude}` +
+    `&localityLanguage=en`;
 
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error("Unable to determine your city from your location.");
+  try {
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(
+        "Unable to determine your city from your location."
+      );
+    }
+
+    const payload = await response.json();
+
+    const city =
+      payload.city ||
+      payload.locality ||
+      payload.principalSubdivision;
+
+    const country = payload.countryName;
+
+    if (!city || !country) {
+      throw new Error(
+        "Unable to determine your city from your location."
+      );
+    }
+
+    return {
+      city,
+      country,
+    };
+  } catch (error) {
+    // Preserve our readable errors.
+    if (error instanceof Error && error.message) {
+      throw error;
+    }
+
+    throw new Error(
+      "Unable to determine your city from your location."
+    );
   }
-
-  const payload = await response.json();
-  const city = payload.city || payload.locality || payload.principalSubdivision;
-  const country = payload.countryName;
-
-  if (!city || !country) {
-    throw new Error("Unable to determine your city from your location.");
-  }
-
-  return { city, country };
 }

@@ -1,19 +1,22 @@
 import Seo from "../components/Seo.jsx";
 import QiblaCompass from "../components/QiblaCompass.jsx";
-import { CompassIcon } from "../components/Icons.jsx";
 
 import qiblaBanner from "../assets/images/qibla-banner.jpg";
 
 import "./Qibla.css";
 
+/* =========================================================
+   FEATURES
+========================================================= */
+
 const FEATURES = [
   {
-    icon: "⌖",
+    icon: "➤",
     title: "Location Based",
     text: "Accurate direction from your location",
   },
   {
-    icon: "◎",
+    icon: "◉",
     title: "Live Compass",
     text: "Real-time compass with live direction",
   },
@@ -23,6 +26,10 @@ const FEATURES = [
     text: "Qibla for every Muslim, anywhere",
   },
 ];
+
+/* =========================================================
+   HOW IT WORKS
+========================================================= */
 
 const STEPS = [
   {
@@ -46,15 +53,6 @@ const STEPS = [
 ];
 
 function Qibla() {
-  const scrollToCompass = () => {
-    document
-      .getElementById("qibla-compass")
-      ?.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
-  };
-
   return (
     <>
       <Seo
@@ -64,9 +62,9 @@ function Qibla() {
 
       <main className="qibla-page">
 
-        {/* =====================================
-            HERO
-        ===================================== */}
+        {/* =================================================
+            HERO SECTION
+        ================================================= */}
 
         <section
           className="qibla-hero"
@@ -75,36 +73,52 @@ function Qibla() {
           }}
         >
 
+          {/* Background Overlay */}
+
           <div className="qibla-hero-overlay"></div>
 
           <div className="container qibla-hero-inner">
 
-            {/* LEFT CONTENT */}
+            {/* =================================================
+                LEFT CONTENT
+            ================================================= */}
 
             <div className="qibla-hero-content">
 
+              {/* EYEBROW */}
+
               <div className="qibla-eyebrow">
-                <CompassIcon
-                  width={23}
-                  height={23}
-                />
+
+                <div className="qibla-eyebrow-icon">
+                  <span aria-hidden="true">⌖</span>
+                </div>
 
                 <span>QIBLA DIRECTION</span>
 
                 <i>◆</i>
+
               </div>
+
+
+              {/* MAIN HEADING */}
 
               <h1>
                 Turn Towards
                 <span>The Holy Kaaba</span>
               </h1>
 
-              <p>
+
+              {/* DESCRIPTION */}
+
+              <p className="qibla-hero-description">
                 Find the exact direction of the Kaaba in
                 Makkah from your current location.
               </p>
 
-              {/* FEATURES */}
+
+              {/* =================================================
+                  FEATURE CARDS
+              ================================================= */}
 
               <div className="qibla-features">
 
@@ -113,108 +127,46 @@ function Qibla() {
                     className="qibla-feature"
                     key={feature.title}
                   >
+
                     <div className="qibla-feature-icon">
                       {feature.icon}
                     </div>
 
-                    <div>
-                      <strong>{feature.title}</strong>
+                    <div className="qibla-feature-info">
 
-                      <span>{feature.text}</span>
+                      <strong>
+                        {feature.title}
+                      </strong>
+
+                      <span>
+                        {feature.text}
+                      </span>
+
                     </div>
+
                   </div>
                 ))}
-
-              </div>
-
-              {/* LOCATION CARD */}
-
-              <div className="qibla-location-card">
-
-                <div className="qibla-location-icon">
-                  <CompassIcon
-                    width={46}
-                    height={46}
-                  />
-                </div>
-
-                <div className="qibla-location-content">
-
-                  <h3>
-                    Find Your Qibla Direction
-                  </h3>
-
-                  <p>
-                    Allow location access to get your
-                    accurate Qibla direction based on
-                    your current position.
-                  </p>
-
-                  <button
-                    type="button"
-                    onClick={scrollToCompass}
-                  >
-                    <CompassIcon
-                      width={20}
-                      height={20}
-                    />
-
-                    Find My Qibla Direction
-                  </button>
-
-                </div>
 
               </div>
 
             </div>
 
 
-            {/* RIGHT COMPASS */}
+            {/* =================================================
+                RIGHT COMPASS CARD
+            ================================================= */}
 
             <div
               className="qibla-hero-compass"
               id="qibla-compass"
             >
 
-              <div className="qibla-compass-heading">
-
-                <div>
-                  <strong>
-                    QIBLA COMPASS
-                  </strong>
-
-                  <span>
-                    Direction to Makkah
-                  </span>
-                </div>
-
-                <div className="qibla-live">
-                  <i></i>
-                  LIVE
-                </div>
-
-              </div>
+              {/* =================================================
+                  COMPASS
+              ================================================= */}
 
               <div className="qibla-compass-wrapper">
                 <QiblaCompass />
-              </div>
-
-              <div className="qibla-compass-location">
-
-                <div>
-                  <strong>
-                    ⌖ Lahore, Pakistan
-                  </strong>
-
-                  <span>
-                    Pakistan Standard Time (PKT)
-                  </span>
-                </div>
-
-                <button type="button">
-                  ↻ &nbsp; Calibrate
-                </button>
-
               </div>
 
             </div>
@@ -224,9 +176,9 @@ function Qibla() {
         </section>
 
 
-        {/* =====================================
+        {/* =================================================
             HOW IT WORKS
-        ===================================== */}
+        ================================================= */}
 
         <section className="qibla-guide">
 
@@ -282,9 +234,9 @@ function Qibla() {
             </div>
 
 
-            {/* =================================
+            {/* =================================================
                 ABOUT KAABA
-            ================================= */}
+            ================================================= */}
 
             <div className="qibla-about">
 
@@ -315,9 +267,15 @@ function Qibla() {
             </div>
 
 
+            {/* =================================================
+                INFO NOTE
+            ================================================= */}
+
             <div className="qibla-note">
 
-              <span>ⓘ</span>
+              <span>
+                ⓘ
+              </span>
 
               <p>
                 For better compass accuracy, enable

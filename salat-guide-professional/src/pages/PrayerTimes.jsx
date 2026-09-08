@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
 import Seo from "../components/Seo.jsx";
-import LocationSearch from "../components/LocationSearch.jsx";
 import PrayerTimesCard from "../components/PrayerTimesCard.jsx";
 import MonthlyCalendar from "../components/MonthlyCalendar.jsx";
 
@@ -16,18 +15,18 @@ function PrayerTimes() {
     city,
     country,
     selectCity,
-    useMyLocation,
-    locateStatus,
-    locateError,
   } = useCityContext();
 
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] =
+    useSearchParams();
 
   /* =========================================================
-     LIVE CURRENT DATE & TIME
+     LIVE CURRENT TIME
+     Used for Current & Next Prayer calculation
   ========================================================= */
 
-  const [currentDateTime, setCurrentDateTime] = useState(new Date());
+  const [currentDateTime, setCurrentDateTime] =
+    useState(new Date());
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -46,8 +45,15 @@ function PrayerTimes() {
     const paramCountry = searchParams.get("country");
 
     if (paramCity && paramCountry) {
-      selectCity(paramCity, paramCountry);
-      setSearchParams({}, { replace: true });
+      selectCity(
+        paramCity,
+        paramCountry
+      );
+
+      setSearchParams(
+        {},
+        { replace: true }
+      );
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -64,35 +70,10 @@ function PrayerTimes() {
     hijriDate,
     methodName,
     isFallback,
-  } = usePrayerTimes(city, country);
-
-  /* =========================================================
-     FORMAT CURRENT TIME
-  ========================================================= */
-
-  const currentTime = currentDateTime.toLocaleTimeString("en-US", {
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-  });
-
-  /* =========================================================
-     CURRENT DATE
-  ========================================================= */
-
-  const currentDate = currentDateTime.toLocaleDateString("en-US", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-
-  /* =========================================================
-     CURRENT DAY
-  ========================================================= */
-
-  const currentDay = currentDateTime.toLocaleDateString("en-US", {
-    weekday: "long",
-  });
+  } = usePrayerTimes(
+    city,
+    country
+  );
 
   /* =========================================================
      PRAYER LIST
@@ -128,22 +109,38 @@ function PrayerTimes() {
   const getPrayerDate = (time) => {
     if (!time) return null;
 
-    const cleanTime = String(time).split(" ")[0];
+    const cleanTime =
+      String(time).split(" ")[0];
 
-    const parts = cleanTime.split(":");
+    const parts =
+      cleanTime.split(":");
 
-    if (parts.length < 2) return null;
-
-    let hours = Number(parts[0]);
-    const minutes = Number(parts[1]);
-
-    if (Number.isNaN(hours) || Number.isNaN(minutes)) {
+    if (parts.length < 2) {
       return null;
     }
 
-    const date = new Date(currentDateTime);
+    const hours =
+      Number(parts[0]);
 
-    date.setHours(hours, minutes, 0, 0);
+    const minutes =
+      Number(parts[1]);
+
+    if (
+      Number.isNaN(hours) ||
+      Number.isNaN(minutes)
+    ) {
+      return null;
+    }
+
+    const date =
+      new Date(currentDateTime);
+
+    date.setHours(
+      hours,
+      minutes,
+      0,
+      0
+    );
 
     return date;
   };
@@ -152,9 +149,10 @@ function PrayerTimes() {
      VALID PRAYERS
   ========================================================= */
 
-  const validPrayers = prayerList.filter(
-    (prayer) => prayer.time
-  );
+  const validPrayers =
+    prayerList.filter(
+      (prayer) => prayer.time
+    );
 
   /* =========================================================
      CURRENT & NEXT PRAYER
@@ -167,20 +165,43 @@ function PrayerTimes() {
   let nextPrayerTime = null;
 
   if (validPrayers.length > 0) {
-    const now = currentDateTime;
+    const now =
+      currentDateTime;
 
-    for (let i = 0; i < validPrayers.length; i++) {
-      const prayerDate = getPrayerDate(
-        validPrayers[i].time
-      );
+    /* -------------------------------------------------------
+       FIND NEXT PRAYER
+    ------------------------------------------------------- */
 
-      if (prayerDate && prayerDate > now) {
-        nextPrayer = validPrayers[i].name;
-        nextPrayerTime = validPrayers[i].time;
+    for (
+      let i = 0;
+      i < validPrayers.length;
+      i++
+    ) {
+      const prayerDate =
+        getPrayerDate(
+          validPrayers[i].time
+        );
+
+      if (
+        prayerDate &&
+        prayerDate > now
+      ) {
+        nextPrayer =
+          validPrayers[i].name;
+
+        nextPrayerTime =
+          validPrayers[i].time;
+
+        /* -----------------------------------------------
+           CURRENT PRAYER
+        ----------------------------------------------- */
 
         if (i > 0) {
-          currentPrayer = validPrayers[i - 1].name;
-          currentPrayerTime = validPrayers[i - 1].time;
+          currentPrayer =
+            validPrayers[i - 1].name;
+
+          currentPrayerTime =
+            validPrayers[i - 1].time;
         }
 
         break;
@@ -189,202 +210,144 @@ function PrayerTimes() {
 
     /* =======================================================
        AFTER ISHA
+       Current = Isha
+       Next = Tomorrow's Fajr
     ======================================================= */
 
-    if (!nextPrayer && validPrayers.length > 0) {
+    if (!nextPrayer) {
       const lastPrayer =
-        validPrayers[validPrayers.length - 1];
+        validPrayers[
+          validPrayers.length - 1
+        ];
 
-      currentPrayer = lastPrayer.name;
-      currentPrayerTime = lastPrayer.time;
+      currentPrayer =
+        lastPrayer.name;
+
+      currentPrayerTime =
+        lastPrayer.time;
 
       nextPrayer = "Fajr";
-      nextPrayerTime = validPrayers[0].time;
+
+      nextPrayerTime =
+        validPrayers[0].time;
     }
 
     /* =======================================================
        BEFORE FAJR
+       Current = Isha
+       Next = Fajr
     ======================================================= */
 
-    if (!currentPrayer && validPrayers.length > 0) {
+    if (!currentPrayer) {
       currentPrayer = "Isha";
+
       currentPrayerTime =
-        validPrayers[validPrayers.length - 1].time;
+        validPrayers[
+          validPrayers.length - 1
+        ].time;
     }
   }
 
+  /* =========================================================
+     RENDER
+  ========================================================= */
+
   return (
     <div className="page prayer-times-page">
+
+      {/* =====================================================
+          SEO
+      ===================================================== */}
+
       <Seo
         title="Prayer Times"
-        description="Today's Fajr, Dhuhr, Asr, Maghrib, and Isha prayer times, the current and next prayer, and a full monthly prayer calendar."
+        description="Today's Fajr, Dhuhr, Asr, Maghrib, and Isha prayer times for your city."
       />
+
 
       <div className="container">
 
-        {/* =====================================================
+        {/* ===================================================
             PAGE HEADING
-        ===================================================== */}
+        =================================================== */}
 
         <div className="section-heading section-heading--left">
+
           <span className="section-eyebrow">
-            Today's schedule
+            Daily Worship Schedule
           </span>
 
-          <h2>Prayer Times</h2>
+          <h1>
+            Today’s Prayer Times
+          </h1>
 
           <p>
-            Search any city to see today's prayer timings
-            and the full month ahead.
+            View accurate Fajr, Dhuhr, Asr,
+            Maghrib, and Isha timings for your city.
           </p>
-        </div>
-
-        {/* =====================================================
-            UNIQUE PRAYER STATUS
-        ===================================================== */}
-
-        <div className="prayer-status">
-
-          {/* Current Time */}
-
-          <div className="prayer-status__clock">
-            <span className="prayer-status__moon">
-              ☾
-            </span>
-
-            <div>
-              <span className="prayer-status__label">
-                Local Time
-              </span>
-
-              <strong>
-                {currentTime}
-              </strong>
-
-              <small>
-                {currentDay}
-              </small>
-            </div>
-          </div>
-
-          {/* Current Prayer */}
-
-          <div className="prayer-status__current">
-            <span className="prayer-status__mosque">
-              🕌
-            </span>
-
-            <div>
-              <span className="prayer-status__label">
-                Current Prayer
-              </span>
-
-              <strong>
-                {currentPrayer || "Prayer Time"}
-              </strong>
-
-              {currentPrayerTime && (
-                <small>
-                  Started at {currentPrayerTime}
-                </small>
-              )}
-            </div>
-          </div>
-
-          {/* Next Prayer */}
-
-          <div className="prayer-status__next">
-            <div>
-              <span className="prayer-status__label">
-                Up Next
-              </span>
-
-              <strong>
-                {nextPrayer || "Next Prayer"}
-              </strong>
-
-              {nextPrayerTime && (
-                <small>
-                  at {nextPrayerTime}
-                </small>
-              )}
-            </div>
-
-            <span className="prayer-status__arrow">
-              →
-            </span>
-          </div>
 
         </div>
 
-        {/* =====================================================
-            CURRENT DATE
-        ===================================================== */}
 
-        <div className="prayer-date-line">
-          <span>Today</span>
-
-          <strong>
-            {currentDate}
-          </strong>
-
-          {city && (
-            <>
-              <span className="prayer-date-line__dot">
-                •
-              </span>
-
-              <span>
-                {city}
-                {country ? `, ${country}` : ""}
-              </span>
-            </>
-          )}
-        </div>
-
-        {/* =====================================================
-            LOCATION SEARCH
-        ===================================================== */}
-
-        <div className="prayer-times-page__search">
-          <LocationSearch
-            city={city}
-            country={country}
-            onSearch={selectCity}
-            onLocate={useMyLocation}
-            locateStatus={locateStatus}
-            locateError={locateError}
-          />
-        </div>
-
-        {/* =====================================================
+        {/* ===================================================
             TODAY'S PRAYER TIMES
-        ===================================================== */}
+        =================================================== */}
 
         <PrayerTimesCard
           city={city}
           country={country}
+
           status={status}
           errorMessage={errorMessage}
+
           prayers={prayers}
+
           hijriDate={hijriDate}
           methodName={methodName}
           isFallback={isFallback}
-          onRetry={() => selectCity(city, country)}
+
+          /* -----------------------------------------------
+             CURRENT PRAYER
+          ----------------------------------------------- */
+
+          currentPrayer={currentPrayer}
+          currentPrayerTime={currentPrayerTime}
+
+          /* -----------------------------------------------
+             NEXT PRAYER
+          ----------------------------------------------- */
+
+          nextPrayer={nextPrayer}
+          nextPrayerTime={nextPrayerTime}
+
+          /* -----------------------------------------------
+             RETRY
+          ----------------------------------------------- */
+
+          onRetry={() =>
+            selectCity(
+              city,
+              country
+            )
+          }
         />
 
-        {/* =====================================================
+
+        {/* ===================================================
             MONTHLY CALENDAR
-        ===================================================== */}
+        =================================================== */}
 
         <div className="prayer-times-page__calendar">
+
           <MonthlyCalendar
             city={city}
             country={country}
           />
+
         </div>
 
       </div>
+
     </div>
   );
 }

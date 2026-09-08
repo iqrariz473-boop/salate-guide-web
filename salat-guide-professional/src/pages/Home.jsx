@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
+
 import Seo from "../components/Seo.jsx";
 import Hero from "../components/Hero.jsx";
 import PrayerTimesCard from "../components/PrayerTimesCard.jsx";
+
 import { useCityContext } from "../context/LocationContext.jsx";
 import usePrayerTimes from "../hooks/usePrayerTimes.js";
+
 import "./Home.css";
 
 /* =========================================================
@@ -136,6 +139,31 @@ const FEATURES = [
 ];
 
 /* =========================================================
+   REUSABLE SECTION HEADING
+========================================================= */
+
+function SectionHeading({
+  eyebrow,
+  title,
+  description,
+  centered = false,
+}) {
+  return (
+    <div
+      className={`home-section-heading ${
+        centered ? "home-section-heading--center" : ""
+      }`}
+    >
+      <span>{eyebrow}</span>
+
+      <h2>{title}</h2>
+
+      {description && <p>{description}</p>}
+    </div>
+  );
+}
+
+/* =========================================================
    HOME COMPONENT
 ========================================================= */
 
@@ -182,15 +210,11 @@ function Home() {
 
       <section className="section home-prayer-section">
         <div className="container">
-          <div className="home-section-heading">
-            <span>Today's Salah</span>
-
-            <h2>Prayer Times for {city}</h2>
-
-            <p>
-              Stay connected with your five daily prayers.
-            </p>
-          </div>
+          <SectionHeading
+            eyebrow="Today's Salah"
+            title={`Prayer Times for ${city}`}
+            description="Stay connected with your five daily prayers."
+          />
 
           <PrayerTimesCard
             city={city}
@@ -205,9 +229,13 @@ function Home() {
           />
 
           <div className="home__more-link">
-            <Link to="/prayer-times" className="btn-link">
+            <Link
+              to="/prayer-times"
+              className="btn-link"
+              aria-label="View full prayer times"
+            >
               View full prayer times
-              <span>→</span>
+              <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>
@@ -227,11 +255,15 @@ function Home() {
 
             <div className="home-quran-card__content">
               <div className="home-quran-card__label">
-                <span>▣</span>
+                <span aria-hidden="true">▣</span>
                 <span>Quran Verse of the Day</span>
               </div>
 
-              <div className="home-quran-card__arabic">
+              <div
+                className="home-quran-card__arabic"
+                dir="rtl"
+                lang="ar"
+              >
                 إِنَّ مَعَ الْعُسْرِ يُسْرًا
               </div>
 
@@ -242,9 +274,12 @@ function Home() {
               <div className="home-quran-card__bottom">
                 <span>Surah Ash-Sharh · 94:6</span>
 
-                <Link to="/quran">
+                <Link
+                  to="/quran"
+                  aria-label="Read Quran"
+                >
                   Read Quran
-                  <span>→</span>
+                  <span aria-hidden="true">→</span>
                 </Link>
               </div>
             </div>
@@ -258,15 +293,12 @@ function Home() {
 
       <section className="home-tools-section">
         <div className="container">
-          <div className="home-section-heading home-section-heading--center">
-            <span>Explore</span>
-
-            <h2>Quick Islamic Tools</h2>
-
-            <p>
-              Useful Islamic resources designed for everyday life.
-            </p>
-          </div>
+          <SectionHeading
+            eyebrow="Explore"
+            title="Quick Islamic Tools"
+            description="Useful Islamic resources designed for everyday life."
+            centered
+          />
 
           <div className="home-tools-grid">
             {ISLAMIC_TOOLS.map((tool) => (
@@ -274,8 +306,12 @@ function Home() {
                 to={tool.to}
                 className="home-tool-card"
                 key={tool.id}
+                aria-label={`${tool.title} - ${tool.action}`}
               >
-                <div className="home-tool-card__icon">
+                <div
+                  className="home-tool-card__icon"
+                  aria-hidden="true"
+                >
                   {tool.icon}
                 </div>
 
@@ -286,8 +322,7 @@ function Home() {
 
                   <span className="home-tool-card__link">
                     {tool.action}
-
-                    <span>→</span>
+                    <span aria-hidden="true">→</span>
                   </span>
                 </div>
               </Link>
@@ -302,24 +337,23 @@ function Home() {
 
       <section className="home-features-section">
         <div className="container">
-          <div className="home-section-heading home-section-heading--center">
-            <span>Why Salat Guide?</span>
-
-            <h2>Your Simple Islamic Companion</h2>
-
-            <p>
-              Helpful tools designed to make your daily worship
-              easier and more meaningful.
-            </p>
-          </div>
+          <SectionHeading
+            eyebrow="Why Salat Guide?"
+            title="Your Simple Islamic Companion"
+            description="Helpful tools designed to make your daily worship easier and more meaningful."
+            centered
+          />
 
           <div className="home-features-grid">
             {FEATURES.map((feature) => (
-              <div
+              <article
                 className="home-feature-card"
                 key={feature.title}
               >
-                <div className="home-feature-card__icon">
+                <div
+                  className="home-feature-card__icon"
+                  aria-hidden="true"
+                >
                   {feature.icon}
                 </div>
 
@@ -328,7 +362,7 @@ function Home() {
 
                   <p>{feature.description}</p>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
@@ -340,15 +374,12 @@ function Home() {
 
       <section className="home-cities-section">
         <div className="container">
-          <div className="home-section-heading home-section-heading--center">
-            <span>Worldwide</span>
-
-            <h2>Popular Cities</h2>
-
-            <p>
-              Quickly find prayer times in cities around the world.
-            </p>
-          </div>
+          <SectionHeading
+            eyebrow="Worldwide"
+            title="Popular Cities"
+            description="Quickly find prayer times in cities around the world."
+            centered
+          />
 
           <div className="home-cities-grid">
             {POPULAR_CITIES.map((item) => (
@@ -362,18 +393,24 @@ function Home() {
                     item.country
                   )
                 }
+                aria-label={`View prayer times for ${item.city}, ${item.country}`}
               >
-                <span className="home-city-card__icon">
+                <span
+                  className="home-city-card__icon"
+                  aria-hidden="true"
+                >
                   {item.icon}
                 </span>
 
                 <span className="home-city-card__info">
                   <strong>{item.city}</strong>
-
                   <small>{item.country}</small>
                 </span>
 
-                <span className="home-city-card__arrow">
+                <span
+                  className="home-city-card__arrow"
+                  aria-hidden="true"
+                >
                   →
                 </span>
               </button>
@@ -384,10 +421,10 @@ function Home() {
             <Link
               to="/prayer-times"
               className="home-outline-btn"
+              aria-label="Explore prayer times"
             >
               Explore Prayer Times
-
-              <span>→</span>
+              <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>
@@ -400,7 +437,10 @@ function Home() {
       <section className="home-reminder-section">
         <div className="container">
           <div className="home-reminder">
-            <div className="home-reminder__icon">
+            <div
+              className="home-reminder__icon"
+              aria-hidden="true"
+            >
               ☾
             </div>
 
@@ -440,10 +480,10 @@ function Home() {
             <Link
               to="/prayer-times"
               className="home-cta__button"
+              aria-label="Check prayer times"
             >
               Check Prayer Times
-
-              <span>→</span>
+              <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>

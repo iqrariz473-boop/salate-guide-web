@@ -1,127 +1,329 @@
+/* =========================================================
+   DUA BANNER
+========================================================= */
+
 .dua-banner {
   position: relative;
-  margin: 60px 0;
+
+  width: 100%;
+  margin: 0;
+
   overflow: hidden;
-  background: linear-gradient(
-    135deg,
-    #0b3525 0%,
-    #124632 50%,
-    #0b3525 100%
-  );
-  border-radius: 24px;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0b3525 0%,
+      #124632 50%,
+      #0b3525 100%
+    );
+
+  border: 1px solid rgba(227, 184, 107, 0.15);
+
+  box-shadow:
+    0 12px 30px rgba(5, 35, 25, 0.18);
 }
+
+
+/* =========================================================
+   TOP GLOW
+========================================================= */
 
 .dua-banner::before {
   content: "";
+
   position: absolute;
+
   width: 260px;
   height: 260px;
+
   top: -120px;
   right: -80px;
+
   border-radius: 50%;
-  background: rgba(227, 184, 107, 0.12);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(227, 184, 107, 0.16),
+      rgba(227, 184, 107, 0)
+    );
+
+  pointer-events: none;
 }
+
+
+/* =========================================================
+   BOTTOM GLOW
+========================================================= */
 
 .dua-banner::after {
   content: "";
+
   position: absolute;
+
   width: 220px;
   height: 220px;
+
   bottom: -120px;
   left: -80px;
+
   border-radius: 50%;
-  background: rgba(227, 184, 107, 0.08);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(227, 184, 107, 0.11),
+      rgba(227, 184, 107, 0)
+    );
+
+  pointer-events: none;
 }
+
+
+/* =========================================================
+   INNER
+========================================================= */
 
 .dua-banner__inner {
   position: relative;
+
   z-index: 1;
+
   display: flex;
+
   justify-content: center;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 28px 22px 20px;
+
   text-align: center;
-  padding: 70px 30px;
 }
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
 
 .dua-banner__content {
   width: 100%;
+
   max-width: 850px;
+
+  margin: 0 auto;
 }
 
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
 .dua-banner__eyebrow {
-  display: inline-block;
-  margin-bottom: 14px;
-  color: var(--gold);
-  font-size: 13px;
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 7px;
+
+  color: #e7bd61;
+
+  font-size: 9px;
+
   font-weight: 700;
-  letter-spacing: 0.14em;
+
+  letter-spacing: 0.16em;
+
   text-transform: uppercase;
 }
 
+
+/* =========================================================
+   DECORATION
+========================================================= */
+
 .dua-banner__decoration {
-  color: var(--gold);
-  font-size: 22px;
-  margin-bottom: 18px;
+  margin-bottom: 8px;
+
+  color: #d4a44d;
+
+  font-size: 14px;
+
+  line-height: 1;
 }
+
+
+/* =========================================================
+   ARABIC
+========================================================= */
 
 .dua-banner__arabic {
-  margin: 0 auto 26px;
   max-width: 800px;
-  color: var(--white);
-  font-family: "Noto Naskh Arabic", "Amiri", serif;
-  font-size: clamp(26px, 3vw, 40px);
-  line-height: 2;
+
+  margin: 0 auto 13px;
+
+  color: #ffffff;
+
+  direction: rtl;
+
+  text-align: center;
+
+  font-family:
+    "Noto Naskh Arabic",
+    "Amiri",
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(21px, 2.4vw, 31px);
+
+  line-height: 1.9;
+
   font-weight: 500;
+
+  overflow-wrap: anywhere;
 }
 
+
+/* =========================================================
+   TRANSLATION
+========================================================= */
+
 .dua-banner__translation {
-  max-width: 680px;
-  margin: 0 auto 20px;
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 16px;
-  line-height: 1.7;
+  max-width: 650px;
+
+  margin: 0 auto 10px;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 11px;
+
+  line-height: 1.55;
 }
+
+
+/* =========================================================
+   CITATION
+========================================================= */
 
 .dua-banner__citation {
   margin: 0;
-  color: var(--gold);
-  font-size: 14px;
+
+  color: #e9bd5f;
+
+  font-size: 9px;
+
   font-weight: 600;
+
+  letter-spacing: 0.02em;
 }
 
-@media (max-width: 700px) {
-  .dua-banner {
-    margin: 40px 0;
-    border-radius: 18px;
-  }
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
 
   .dua-banner__inner {
-    padding: 50px 20px;
+    padding: 25px 20px 18px;
   }
 
   .dua-banner__arabic {
-    font-size: 25px;
-    line-height: 1.9;
+    font-size: 26px;
   }
 
   .dua-banner__translation {
-    font-size: 15px;
+    font-size: 10px;
   }
 }
 
-@media (max-width: 430px) {
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .dua-banner {
+    border-radius: 14px;
+  }
+
   .dua-banner__inner {
-    padding: 40px 18px;
+    padding: 20px 12px 15px;
   }
 
   .dua-banner__eyebrow {
-    font-size: 12px;
+    margin-bottom: 5px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.13em;
+  }
+
+  .dua-banner__decoration {
+    margin-bottom: 6px;
+
+    font-size: 11px;
   }
 
   .dua-banner__arabic {
-    font-size: 22px;
+    margin-bottom: 9px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
   }
 
   .dua-banner__translation {
-    font-size: 14px;
+    max-width: 330px;
+
+    margin-bottom: 7px;
+
+    font-size: 8px;
+
+    line-height: 1.5;
+  }
+
+  .dua-banner__citation {
+    font-size: 7px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .dua-banner__inner {
+    padding: 17px 9px 13px;
+  }
+
+  .dua-banner__eyebrow {
+    font-size: 6px;
+  }
+
+  .dua-banner__decoration {
+    font-size: 10px;
+  }
+
+  .dua-banner__arabic {
+    font-size: 16px;
+
+    line-height: 1.75;
+  }
+
+  .dua-banner__translation {
+    font-size: 7px;
+  }
+
+  .dua-banner__citation {
+    font-size: 6.5px;
   }
 }

@@ -21,31 +21,89 @@ function App() {
   return (
     <LocationProvider>
       <div className="app">
+
         <Navbar />
 
         <main>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/prayer-times" element={<PrayerTimes />} />
-            <Route path="/cities" element={<Cities />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/pillars" element={<Pillars />} />
-            <Route path="/prayer-guide" element={<PrayerGuide />} />
-            <Route path="/qibla" element={<Qibla />} />
 
-            {/* Dua Page */}
-            <Route path="/duas" element={<Duas />} />
+            {/* Home */}
+            <Route
+              path="/"
+              element={<Home />}
+            />
 
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/terms" element={<Terms />} />
+            {/* Prayer Times */}
+            <Route
+              path="/prayer-times"
+              element={<PrayerTimes />}
+            />
 
-            {/* 404 Page */}
-            <Route path="*" element={<NotFound />} />
+            {/* Cities */}
+            <Route
+              path="/cities"
+              element={<Cities />}
+            />
+
+            {/* About */}
+            <Route
+              path="/about"
+              element={<About />}
+            />
+
+            {/* Pillars */}
+            <Route
+              path="/pillars"
+              element={<Pillars />}
+            />
+
+            {/* Prayer Guide */}
+            <Route
+              path="/prayer-guide"
+              element={<PrayerGuide />}
+            />
+
+            {/* Qibla */}
+            <Route
+              path="/qibla"
+              element={<Qibla />}
+            />
+
+            {/* Duas */}
+            <Route
+              path="/duas"
+              element={<Duas />}
+            />
+
+            {/* Contact */}
+            <Route
+              path="/contact"
+              element={<Contact />}
+            />
+
+            {/* Privacy */}
+            <Route
+              path="/privacy"
+              element={<Privacy />}
+            />
+
+            {/* Terms */}
+            <Route
+              path="/terms"
+              element={<Terms />}
+            />
+
+            {/* 404 */}
+            <Route
+              path="*"
+              element={<NotFound />}
+            />
+
           </Routes>
         </main>
 
         <Footer />
+
       </div>
     </LocationProvider>
   );

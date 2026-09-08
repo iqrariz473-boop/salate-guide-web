@@ -1,11 +1,20 @@
 import { useState } from "react";
+
 import Seo from "../components/Seo.jsx";
-import PageBanner from "../components/PageBanner.jsx";
-import { MailIcon, CheckIcon } from "../components/Icons.jsx";
+
+import {
+  MailIcon,
+  CheckIcon,
+} from "../components/Icons.jsx";
+
 import contactBanner from "../assets/images/contact-banner.jpg";
 
 import "./pages.css";
 import "./Contact.css";
+
+/* =========================================================
+   INITIAL FORM
+========================================================= */
 
 const INITIAL_FORM = {
   name: "",
@@ -14,7 +23,47 @@ const INITIAL_FORM = {
   message: "",
 };
 
-const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+/* =========================================================
+   CONTACT TOPICS
+========================================================= */
+
+const CONTACT_TOPICS = [
+  {
+    number: "01",
+    title: "Prayer Times",
+    description: "Questions about prayer timings or locations.",
+    subject: "Prayer Times",
+  },
+  {
+    number: "02",
+    title: "Qibla Direction",
+    description: "Need help with the Qibla finder or compass?",
+    subject: "Qibla Direction",
+  },
+  {
+    number: "03",
+    title: "Feedback",
+    description: "Share an idea or tell us how we can improve.",
+    subject: "Feedback",
+  },
+  {
+    number: "04",
+    title: "Report an Issue",
+    description: "Found something that isn't working correctly?",
+    subject: "Report an Issue",
+  },
+];
+
+/* =========================================================
+   EMAIL VALIDATION
+========================================================= */
+
+const EMAIL_PATTERN =
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+/* =========================================================
+   FORM VALIDATION
+========================================================= */
 
 function validate(form) {
   const errors = {};
@@ -36,16 +85,25 @@ function validate(form) {
   if (!form.message.trim()) {
     errors.message = "Please enter your message.";
   } else if (form.message.trim().length < 10) {
-    errors.message = "Your message should be at least 10 characters.";
+    errors.message =
+      "Your message should be at least 10 characters.";
   }
 
   return errors;
 }
 
+/* =========================================================
+   CONTACT PAGE
+========================================================= */
+
 function Contact() {
   const [form, setForm] = useState(INITIAL_FORM);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle");
+
+  /* =======================================================
+     HANDLE INPUT CHANGE
+  ======================================================= */
 
   function handleChange(field, value) {
     setForm((previous) => ({
@@ -60,6 +118,28 @@ function Contact() {
       }));
     }
   }
+
+  /* =======================================================
+     SELECT CONTACT TOPIC
+  ======================================================= */
+
+  function handleTopicSelect(subject) {
+    setForm((previous) => ({
+      ...previous,
+      subject,
+    }));
+
+    if (errors.subject) {
+      setErrors((previous) => ({
+        ...previous,
+        subject: "",
+      }));
+    }
+  }
+
+  /* =======================================================
+     HANDLE FORM SUBMIT
+  ======================================================= */
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -81,11 +161,19 @@ function Contact() {
     }, 900);
   }
 
+  /* =======================================================
+     NEW MESSAGE
+  ======================================================= */
+
   function handleNewMessage() {
     setStatus("idle");
     setForm(INITIAL_FORM);
     setErrors({});
   }
+
+  /* =========================================================
+     SUCCESS SCREEN
+  ========================================================= */
 
   if (status === "success") {
     return (
@@ -95,31 +183,37 @@ function Contact() {
           description="Get in touch with the Salat Guide team."
         />
 
-        <PageBanner
-          image={contactBanner}
-          icon={MailIcon}
-          title="Contact Us"
-          description="We're here to listen and help."
-          variant="light"
-        />
+        <main
+          className="contact-page"
+          style={{
+            "--contact-bg": `url(${contactBanner})`,
+          }}
+        >
+          <div className="contact-page__overlay" />
 
-        <main className="contact-page">
-          <div className="container">
-            <div className="contact-success">
+          <div className="container contact-page__content">
+            <section className="contact-success">
               <div className="contact-success__icon">
-                <CheckIcon width={34} height={34} />
+                <CheckIcon
+                  width={34}
+                  height={34}
+                />
               </div>
 
               <span className="contact-success__small">
                 MESSAGE SENT
               </span>
 
-              <h2>Thank You for Reaching Out</h2>
+              <h1>
+                Thank You for Reaching Out
+              </h1>
 
               <p>
-                Your message has been received successfully. We appreciate
-                your feedback and will continue working to make Salat Guide
-                more helpful for your daily prayer journey.
+                Your message has been received
+                successfully. We appreciate your
+                feedback and will continue working
+                to make Salat Guide more helpful
+                for your daily prayer journey.
               </p>
 
               <button
@@ -127,15 +221,23 @@ function Contact() {
                 className="btn btn-primary"
                 onClick={handleNewMessage}
               >
-                <MailIcon width={17} height={17} />
+                <MailIcon
+                  width={17}
+                  height={17}
+                />
+
                 Send Another Message
               </button>
-            </div>
+            </section>
           </div>
         </main>
       </>
     );
   }
+
+  /* =========================================================
+     MAIN CONTACT PAGE
+  ========================================================= */
 
   return (
     <>
@@ -144,101 +246,172 @@ function Contact() {
         description="Get in touch with the Salat Guide team."
       />
 
-      <PageBanner
-        image={contactBanner}
-        icon={MailIcon}
-        title="Contact Us"
-        description="Questions, suggestions, or feedback? We're here to help."
-        variant="light"
-      />
+      <main
+        className="contact-page"
+        style={{
+          "--contact-bg": `url(${contactBanner})`,
+        }}
+      >
+        {/* =================================================
+            BACKGROUND OVERLAY
+        ================================================= */}
 
-      <main className="contact-page">
-        <div className="container">
+        <div className="contact-page__overlay" />
 
-          {/* Intro */}
-          <section className="contact-intro">
-            <span className="contact-intro__label">
-              GET IN TOUCH
-            </span>
+        <div className="container contact-page__content">
 
-            <h2>We'd Love to Hear From You</h2>
+          {/* =================================================
+              CONTACT HEADER
+          ================================================= */}
 
-            <p>
-              Have a question about prayer times, Qibla direction, or any
-              Salat Guide feature? Send us a message and share your thoughts.
-            </p>
+          <section className="contact-header">
+
+            <div className="contact-header__icon">
+              <MailIcon
+                width={28}
+                height={28}
+              />
+            </div>
+
+            <div className="contact-header__content">
+
+              <span className="contact-header__label">
+                SALAT GUIDE
+              </span>
+
+              <h1>
+                Contact Us
+              </h1>
+
+              <p>
+                Questions, suggestions, or feedback?
+                We're here to listen and help.
+              </p>
+
+            </div>
           </section>
 
-          {/* Main Contact Area */}
+          {/* =================================================
+              CONTACT GRID
+          ================================================= */}
+
           <section className="contact-wrapper">
 
-            {/* Left Content */}
+            {/* =================================================
+                LEFT ISLAMIC PANEL
+            ================================================= */}
+
             <div className="contact-info">
 
               <div className="contact-info__top">
+
                 <div className="contact-info__icon">
-                  <MailIcon width={25} height={25} />
+                  <MailIcon
+                    width={25}
+                    height={25}
+                  />
                 </div>
 
-                <span>CONTACT SALAT GUIDE</span>
+                <span>
+                  CONTACT SALAT GUIDE
+                </span>
+
               </div>
 
               <h2>
                 Your Questions
                 <br />
-                <strong>Matter to Us.</strong>
+
+                <strong>
+                  Matter to Us.
+                </strong>
               </h2>
 
               <p className="contact-info__description">
-                We're always happy to hear from our users. Whether you have
-                feedback, found something that needs improvement, or simply
-                have a question, feel free to reach out.
+                We're always happy to hear from
+                our users. Whether you have feedback,
+                found something that needs improvement,
+                or simply have a question, feel free
+                to reach out.
               </p>
 
               <div className="contact-info__line" />
 
-              <div className="contact-feature">
-                <div className="contact-feature__number">
-                  01
-                </div>
+              {/* =================================================
+                  TOPICS
+              ================================================= */}
 
-                <div>
-                  <h4>Questions & Support</h4>
-                  <p>
-                    Ask anything about using Salat Guide.
-                  </p>
-                </div>
+              <div className="contact-topics">
+
+                <span className="contact-topics__label">
+                  CHOOSE A TOPIC
+                </span>
+
+                {CONTACT_TOPICS.map((topic) => (
+                  <button
+                    key={topic.number}
+                    type="button"
+                    className={`contact-topic ${
+                      form.subject === topic.subject
+                        ? "contact-topic--active"
+                        : ""
+                    }`}
+                    onClick={() =>
+                      handleTopicSelect(
+                        topic.subject
+                      )
+                    }
+                  >
+
+                    <span className="contact-topic__number">
+                      {topic.number}
+                    </span>
+
+                    <span className="contact-topic__content">
+
+                      <strong>
+                        {topic.title}
+                      </strong>
+
+                      <small>
+                        {topic.description}
+                      </small>
+
+                    </span>
+
+                    <span className="contact-topic__arrow">
+                      →
+                    </span>
+
+                  </button>
+                ))}
+
               </div>
 
-              <div className="contact-feature">
-                <div className="contact-feature__number">
-                  02
-                </div>
+              {/* =================================================
+                  ISLAMIC MESSAGE
+              ================================================= */}
 
-                <div>
-                  <h4>Share Feedback</h4>
-                  <p>
-                    Tell us how we can improve your experience.
-                  </p>
-                </div>
-              </div>
+              <div className="contact-quote">
 
-              <div className="contact-feature">
-                <div className="contact-feature__number">
-                  03
-                </div>
+                <span className="contact-quote__symbol">
+                  ✦
+                </span>
 
-                <div>
-                  <h4>Report an Issue</h4>
-                  <p>
-                    Help us identify and fix problems.
-                  </p>
-                </div>
+                <p>
+                  Every message matters.
+                  Your feedback helps us build
+                  a more useful prayer companion.
+                </p>
+
               </div>
 
             </div>
 
-            {/* Right Form */}
+            {/* =================================================
+                RIGHT FORM
+            ================================================= */}
+
             <form
               className="contact-form"
               onSubmit={handleSubmit}
@@ -246,77 +419,120 @@ function Contact() {
             >
 
               <div className="contact-form__heading">
-                <span>WRITE TO US</span>
 
-                <h2>Send a Message</h2>
+                <span>
+                  WRITE TO US
+                </span>
+
+                <h2>
+                  Send a Message
+                </h2>
 
                 <p>
-                  Complete the form below and we'll receive your message.
+                  Complete the form below and
+                  we'll receive your message.
                 </p>
+
               </div>
 
-              {/* Name */}
-              <div
-                className={`contact-field ${
-                  errors.name ? "contact-field--error" : ""
-                }`}
-              >
-                <label htmlFor="contact-name">
-                  Name
-                </label>
+              {/* =================================================
+                  NAME + EMAIL
+              ================================================= */}
 
-                <input
-                  id="contact-name"
-                  type="text"
-                  placeholder="Enter your full name"
-                  value={form.name}
-                  onChange={(event) =>
-                    handleChange("name", event.target.value)
-                  }
-                  aria-invalid={Boolean(errors.name)}
-                />
+              <div className="contact-form__row">
 
-                {errors.name && (
-                  <span className="contact-error">
-                    {errors.name}
-                  </span>
-                )}
+                {/* NAME */}
+
+                <div
+                  className={`contact-field ${
+                    errors.name
+                      ? "contact-field--error"
+                      : ""
+                  }`}
+                >
+
+                  <label htmlFor="contact-name">
+                    Your Name
+                  </label>
+
+                  <input
+                    id="contact-name"
+                    type="text"
+                    placeholder="Enter your full name"
+                    value={form.name}
+                    onChange={(event) =>
+                      handleChange(
+                        "name",
+                        event.target.value
+                      )
+                    }
+                    aria-invalid={Boolean(
+                      errors.name
+                    )}
+                  />
+
+                  {errors.name && (
+                    <span className="contact-error">
+                      <span>!</span>
+                      {errors.name}
+                    </span>
+                  )}
+
+                </div>
+
+                {/* EMAIL */}
+
+                <div
+                  className={`contact-field ${
+                    errors.email
+                      ? "contact-field--error"
+                      : ""
+                  }`}
+                >
+
+                  <label htmlFor="contact-email">
+                    Email Address
+                  </label>
+
+                  <input
+                    id="contact-email"
+                    type="email"
+                    placeholder="Enter your email address"
+                    value={form.email}
+                    onChange={(event) =>
+                      handleChange(
+                        "email",
+                        event.target.value
+                      )
+                    }
+                    aria-invalid={Boolean(
+                      errors.email
+                    )}
+                  />
+
+                  {errors.email && (
+                    <span className="contact-error">
+                      <span>!</span>
+                      {errors.email}
+                    </span>
+                  )}
+
+                </div>
+
               </div>
 
-              {/* Email */}
+              {/* =================================================
+                  SUBJECT
+              ================================================= */}
+
               <div
                 className={`contact-field ${
-                  errors.email ? "contact-field--error" : ""
+                  errors.subject
+                    ? "contact-field--error"
+                    : ""
                 }`}
               >
-                <label htmlFor="contact-email">
-                  Email Address
-                </label>
 
-                <input
-                  id="contact-email"
-                  type="email"
-                  placeholder="Enter your email address"
-                  value={form.email}
-                  onChange={(event) =>
-                    handleChange("email", event.target.value)
-                  }
-                  aria-invalid={Boolean(errors.email)}
-                />
-
-                {errors.email && (
-                  <span className="contact-error">
-                    {errors.email}
-                  </span>
-                )}
-              </div>
-
-              {/* Subject */}
-              <div
-                className={`contact-field ${
-                  errors.subject ? "contact-field--error" : ""
-                }`}
-              >
                 <label htmlFor="contact-subject">
                   Subject
                 </label>
@@ -327,64 +543,111 @@ function Contact() {
                   placeholder="What is your message about?"
                   value={form.subject}
                   onChange={(event) =>
-                    handleChange("subject", event.target.value)
+                    handleChange(
+                      "subject",
+                      event.target.value
+                    )
                   }
-                  aria-invalid={Boolean(errors.subject)}
+                  aria-invalid={Boolean(
+                    errors.subject
+                  )}
                 />
 
                 {errors.subject && (
                   <span className="contact-error">
+                    <span>!</span>
                     {errors.subject}
                   </span>
                 )}
+
               </div>
 
-              {/* Message */}
+              {/* =================================================
+                  MESSAGE
+              ================================================= */}
+
               <div
                 className={`contact-field ${
-                  errors.message ? "contact-field--error" : ""
+                  errors.message
+                    ? "contact-field--error"
+                    : ""
                 }`}
               >
-                <label htmlFor="contact-message">
-                  Message
-                </label>
+
+                <div className="contact-message-label">
+
+                  <label htmlFor="contact-message">
+                    Message
+                  </label>
+
+                  <span>
+                    {form.message.length}/500
+                  </span>
+
+                </div>
 
                 <textarea
                   id="contact-message"
-                  rows={5}
+                  rows={6}
+                  maxLength={500}
                   placeholder="Write your message here..."
                   value={form.message}
                   onChange={(event) =>
-                    handleChange("message", event.target.value)
+                    handleChange(
+                      "message",
+                      event.target.value
+                    )
                   }
-                  aria-invalid={Boolean(errors.message)}
+                  aria-invalid={Boolean(
+                    errors.message
+                  )}
                 />
 
                 {errors.message && (
                   <span className="contact-error">
+                    <span>!</span>
                     {errors.message}
                   </span>
                 )}
+
               </div>
 
-              {/* Submit */}
+              {/* =================================================
+                  SUBMIT
+              ================================================= */}
+
               <button
                 type="submit"
                 className="btn btn-primary contact-submit"
                 disabled={status === "submitting"}
               >
-                <MailIcon width={17} height={17} />
+
+                <MailIcon
+                  width={18}
+                  height={18}
+                />
 
                 {status === "submitting"
                   ? "Sending..."
                   : "Send Message"}
+
               </button>
 
-              <p className="contact-form__note">
-                We appreciate your time and feedback.
-              </p>
+              <div className="contact-form__note">
+
+                <span />
+
+                <p>
+                  We appreciate your time
+                  and feedback.
+                </p>
+
+                <span />
+
+              </div>
 
             </form>
+
           </section>
 
         </div>

@@ -1,5 +1,3 @@
-// Popular cities featured on the Cities and Home pages. Each maps to a
-// city/country pair that the Aladhan API accepts directly.
 const cities = [
   { name: "Lahore", country: "Pakistan" },
   { name: "Karachi", country: "Pakistan" },
@@ -16,4 +14,4 @@ const cities = [
   { name: "Kuala Lumpur", country: "Malaysia" },
 ];
 
-export default cities  ;
+export default cities;

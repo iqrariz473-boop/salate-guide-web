@@ -1,18 +1,46 @@
 /* =========================================================
    HOME PAGE
-   COMPACT RESPONSIVE DESIGN
+========================================================= */
 
-   Desktop  = 3 Columns
-   Tablet   = 3 Columns
-   Mobile   = 2 Columns
+:root {
+  --home-green: #0d3025;
+  --home-green-light: #174637;
+  --home-gold: #d6b15c;
+  --home-gold-dark: #b48c35;
+  --home-bg: #f7f5e9;
+  --home-border: #e5e0d3;
+  --home-text: #17372d;
+  --home-muted: #68766f;
+  --home-white: #ffffff;
+  --home-radius: 14px;
+  --home-shadow: 0 8px 24px rgba(13, 48, 37, 0.07);
+}
+
+/* =========================================================
+   GLOBAL
 ========================================================= */
 
 .home-prayer-section,
-.home-tools-section,
-.home-cities-section,
 .home-quran-section,
+.home-tools-section,
+.home-features-section,
+.home-cities-section,
+.home-reminder-section,
 .home-cta-section {
   width: 100%;
+  max-width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.home-prayer-section *,
+.home-quran-section *,
+.home-tools-section *,
+.home-features-section *,
+.home-cities-section *,
+.home-reminder-section *,
+.home-cta-section * {
   box-sizing: border-box;
 }
 
@@ -22,44 +50,39 @@
 
 .home-section-heading {
   width: 100%;
-  max-width: 600px;
-  margin: 0 0 20px;
-  padding: 0;
+  max-width: 680px;
+  margin: 0 auto 32px;
 }
 
 .home-section-heading--center {
-  margin-left: auto;
-  margin-right: auto;
   text-align: center;
 }
 
 .home-section-heading > span {
   display: inline-block;
-  margin: 0 0 5px;
-  color: var(--gold, #d6b15c);
-  font-size: 9px;
+  margin-bottom: 8px;
+  color: var(--home-gold-dark);
+  font-size: 11px;
   font-weight: 700;
   line-height: 1.2;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .home-section-heading h2 {
-  margin: 0 0 6px;
-  padding: 0;
-  color: var(--dark-green, #0d3025);
+  margin: 0 0 10px;
+  color: var(--home-green);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 27px;
+  font-size: clamp(26px, 3vw, 36px);
   font-weight: 700;
-  line-height: 1.12;
+  line-height: 1.15;
 }
 
 .home-section-heading p {
   margin: 0;
-  padding: 0;
-  color: #68766f;
-  font-size: 11px;
-  line-height: 1.5;
+  color: var(--home-muted);
+  font-size: 14px;
+  line-height: 1.65;
 }
 
 /* =========================================================
@@ -67,34 +90,30 @@
 ========================================================= */
 
 .home-prayer-section {
-  width: 100%;
-  margin: 0;
-  padding: 42px 0;
-  background: #f7f5e9;
+  padding: 60px 0;
+  background: var(--home-bg);
 }
 
 .home__more-link {
   display: flex;
   justify-content: center;
-  margin: 18px 0 0;
+  margin-top: 20px;
 }
 
 .btn-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  color: #0d3025;
-  font-size: 11px;
-  font-weight: 700;
+  gap: 5px;
+  color: var(--home-green);
+  font-size: 13px;
+  font-weight: 750;
   text-decoration: none;
-  transition:
-    color 0.2s ease,
-    gap 0.2s ease;
+  transition: color 0.2s ease, gap 0.2s ease;
 }
 
 .btn-link:hover {
-  color: #b48c35;
-  gap: 10px;
+  color: var(--home-gold-dark);
+  gap: 11px;
 }
 
 /* =========================================================
@@ -102,27 +121,25 @@
 ========================================================= */
 
 .home-quran-section {
-  margin: 0;
-  padding: 42px 0;
-  background: #0d3025;
+  padding: 60px 0;
+  background: var(--home-green);
 }
 
 .home-quran-card {
   position: relative;
   width: 100%;
-  min-height: 220px;
+  min-height: 270px;
   display: flex;
   align-items: center;
   overflow: hidden;
-  box-sizing: border-box;
   border: 1px solid rgba(214, 177, 92, 0.35);
-  border-radius: 15px;
+  border-radius: 20px;
   background: linear-gradient(
     135deg,
-    #0d3025,
-    #174637
+    var(--home-green),
+    var(--home-green-light)
   );
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
 }
 
 .home-quran-card__pattern {
@@ -133,165 +150,154 @@
   background-image: linear-gradient(
     45deg,
     transparent 45%,
-    #d6b15c 45%,
-    #d6b15c 55%,
+    var(--home-gold) 45%,
+    var(--home-gold) 55%,
     transparent 55%
   );
-  background-size: 40px 40px;
+  background-size: 45px 45px;
 }
 
 .home-quran-card__content {
   position: relative;
   z-index: 2;
   width: 100%;
-  padding: 28px 35px;
-  box-sizing: border-box;
+  min-width: 0;
+  padding: 42px 48px;
 }
 
 .home-quran-card__label {
   display: flex;
   align-items: center;
-  gap: 6px;
-  margin: 0 0 13px;
-  color: #d6b15c;
-  font-size: 9px;
+  gap: 8px;
+  margin-bottom: 18px;
+  color: var(--home-gold);
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .home-quran-card__arabic {
-  margin: 0 0 9px;
-  color: #ffffff;
+  margin: 0 0 14px;
+  color: #fff;
   font-family: "Times New Roman", serif;
-  font-size: 28px;
-  line-height: 1.4;
+  font-size: clamp(25px, 3vw, 34px);
+  line-height: 1.6;
   direction: rtl;
+  text-align: right;
 }
 
 .home-quran-card__translation {
-  margin: 0 0 15px;
+  margin: 0 0 20px;
   color: rgba(255, 255, 255, 0.84);
   font-family: Georgia, serif;
-  font-size: 12px;
+  font-size: 15px;
   font-style: italic;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .home-quran-card__bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 15px;
-  padding-top: 10px;
+  gap: 20px;
+  padding-top: 14px;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   color: rgba(255, 255, 255, 0.65);
-  font-size: 9px;
+  font-size: 11px;
 }
 
 .home-quran-card__bottom a {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  color: #d6b15c;
+  gap: 6px;
+  color: var(--home-gold);
   font-weight: 700;
   text-decoration: none;
 }
 
 /* =========================================================
-   TOOLS SECTION
+   TOOLS
 ========================================================= */
 
 .home-tools-section {
-  margin: 0;
-  padding: 45px 0;
-  background: #ffffff;
+  padding: 65px 0;
+  background: #fff;
 }
-
-/* =========================================================
-   TOOLS GRID
-========================================================= */
 
 .home-tools-grid {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+  gap: 20px;
 }
-
-/* =========================================================
-   TOOL CARD
-========================================================= */
 
 .home-tool-card {
   min-width: 0;
+  min-height: 190px;
   display: flex;
   flex-direction: column;
-  padding: 18px;
-  box-sizing: border-box;
-  border: 1px solid #e5e0d3;
-  border-radius: 11px;
-  background: #ffffff;
+  padding: 24px;
+  border: 1px solid var(--home-border);
+  border-radius: var(--home-radius);
+  background: #fff;
   text-decoration: none;
-  box-shadow: 0 6px 18px rgba(13, 48, 37, 0.05);
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
+  box-shadow: var(--home-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
     border-color 0.25s ease;
 }
 
 .home-tool-card:hover {
   transform: translateY(-4px);
-  border-color: #d6b15c;
-  box-shadow: 0 12px 28px rgba(13, 48, 37, 0.1);
+  border-color: var(--home-gold);
+  box-shadow: 0 15px 32px rgba(13, 48, 37, 0.11);
 }
 
-/* =========================================================
-   TOOL ICON
-========================================================= */
-
 .home-tool-card__icon {
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 0 12px;
+  margin-bottom: 16px;
   border-radius: 50%;
   background: #f1ead8;
-  color: #0d3025;
-  font-size: 18px;
+  color: var(--home-green);
+  font-size: 20px;
 }
 
 .home-tool-card__content {
   flex: 1;
+  min-width: 0;
 }
 
 .home-tool-card h3 {
-  margin: 0 0 6px;
-  color: #0d3025;
+  margin: 0 0 8px;
+  color: var(--home-green);
   font-family: Georgia, serif;
-  font-size: 16px;
-  line-height: 1.2;
+  font-size: 18px;
+  line-height: 1.25;
 }
 
 .home-tool-card p {
-  margin: 0 0 12px;
-  color: #68766f;
-  font-size: 10px;
-  line-height: 1.5;
+  margin: 0 0 16px;
+  color: var(--home-muted);
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 .home-tool-card__link {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  color: #b48c35;
-  font-size: 9px;
+  gap: 6px;
+  color: var(--home-gold-dark);
+  font-size: 11px;
   font-weight: 700;
 }
 
-.home-tool-card__link span {
+.home-tool-card__link span,
+.home-city-card__arrow {
   transition: transform 0.2s ease;
 }
 
@@ -300,67 +306,124 @@
 }
 
 /* =========================================================
-   CITIES SECTION
+   FEATURES
 ========================================================= */
 
-.home-cities-section {
+.home-features-section {
+  padding: 65px 0;
+  background: #fffdf7;
+}
+
+.home-features-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 22px;
+}
+
+.home-feature-card {
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid var(--home-border);
+  border-radius: var(--home-radius);
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(13, 48, 37, 0.045);
+  transition: transform 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.home-feature-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(180, 140, 53, 0.5);
+  box-shadow: 0 12px 28px rgba(13, 48, 37, 0.08);
+}
+
+.home-feature-card__icon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background: #f1ead8;
+  color: var(--home-green);
+  font-size: 17px;
+}
+
+.home-feature-card__content {
+  min-width: 0;
+  flex: 1;
+}
+
+.home-feature-card h3 {
+  margin: 0 0 6px;
+  color: var(--home-green);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.home-feature-card p {
   margin: 0;
-  padding: 45px 0;
-  background: #f7f5e9;
+  color: var(--home-muted);
+  font-size: 13px;
+  line-height: 1.55;
 }
 
 /* =========================================================
-   CITIES GRID
+   CITIES
 ========================================================= */
+
+.home-cities-section {
+  padding: 65px 0;
+  background: var(--home-bg);
+}
 
 .home-cities-grid {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 9px;
+  gap: 14px;
 }
-
-/* =========================================================
-   CITY CARD
-========================================================= */
 
 .home-city-card {
   width: 100%;
   min-width: 0;
-  min-height: 62px;
+  min-height: 78px;
   display: flex;
   align-items: center;
-  gap: 9px;
-  padding: 9px 12px;
-  box-sizing: border-box;
+  gap: 12px;
+  padding: 12px 15px;
   border: 1px solid #e3dece;
-  border-radius: 9px;
-  background: #ffffff;
+  border-radius: 12px;
+  background: #fff;
   cursor: pointer;
   text-align: left;
-  transition:
-    transform 0.2s ease,
-    border-color 0.2s ease,
+  transition: transform 0.2s ease, border-color 0.2s ease,
     box-shadow 0.2s ease;
 }
 
 .home-city-card:hover {
-  transform: translateY(-2px);
-  border-color: #d6b15c;
-  box-shadow: 0 7px 18px rgba(13, 48, 37, 0.07);
+  transform: translateY(-3px);
+  border-color: var(--home-gold);
+  box-shadow: 0 9px 22px rgba(13, 48, 37, 0.08);
 }
 
 .home-city-card__icon {
-  width: 32px;
-  height: 32px;
-  flex: 0 0 32px;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   background: #f1ead8;
-  color: #0d3025;
-  font-size: 14px;
+  color: var(--home-green);
+  font-size: 16px;
 }
 
 .home-city-card__info {
@@ -371,27 +434,30 @@
 }
 
 .home-city-card__info strong {
-  color: #17372d;
-  font-size: 10px;
+  overflow: hidden;
+  color: var(--home-text);
+  font-size: 13px;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .home-city-card__info small {
-  margin-top: 2px;
+  margin-top: 3px;
   color: #7b857f;
-  font-size: 7px;
-  line-height: 1.25;
+  font-size: 10px;
+  line-height: 1.3;
 }
 
 .home-city-card__arrow {
-  color: #b48c35;
-  font-size: 14px;
-  transition: transform 0.2s ease;
+  flex: 0 0 auto;
+  color: var(--home-gold-dark);
+  font-size: 16px;
 }
 
 .home-city-card:hover .home-city-card__arrow {
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
 
 /* =========================================================
@@ -401,30 +467,89 @@
 .home-cities-action {
   display: flex;
   justify-content: center;
-  margin: 18px 0 0;
+  margin-top: 25px;
 }
 
 .home-outline-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 9px 15px;
-  border: 1px solid #0d3025;
-  border-radius: 7px;
-  color: #0d3025;
-  font-size: 9px;
+  gap: 7px;
+  padding: 11px 18px;
+  border: 1px solid var(--home-green);
+  border-radius: 8px;
+  color: var(--home-green);
+  font-size: 12px;
   font-weight: 700;
   text-decoration: none;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    gap 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, gap 0.2s ease;
 }
 
 .home-outline-btn:hover {
-  background: #0d3025;
-  color: #ffffff;
-  gap: 10px;
+  background: var(--home-green);
+  color: #fff;
+  gap: 11px;
+}
+
+/* =========================================================
+   DAILY REMINDER
+========================================================= */
+
+.home-reminder-section {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.home-reminder {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 30px;
+  border: 1px solid var(--home-border);
+  border-radius: 18px;
+  background: #fffdf7;
+  box-shadow: 0 8px 25px rgba(13, 48, 37, 0.05);
+}
+
+.home-reminder__icon {
+  width: 54px;
+  height: 54px;
+  flex: 0 0 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f1ead8;
+  color: var(--home-gold-dark);
+  font-size: 22px;
+}
+
+.home-reminder__content {
+  min-width: 0;
+  flex: 1;
+}
+
+.home-reminder__content > span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--home-gold-dark);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.home-reminder h2 {
+  margin: 0 0 7px;
+  color: var(--home-green);
+  font-family: Georgia, serif;
+  font-size: 22px;
+  line-height: 1.35;
+}
+
+.home-reminder p {
+  margin: 0;
+  color: var(--home-muted);
+  font-size: 11px;
 }
 
 /* =========================================================
@@ -432,574 +557,382 @@
 ========================================================= */
 
 .home-cta-section {
-  margin: 0;
-  padding: 38px 0;
-  background: #ffffff;
+  padding: 55px 0;
+  background: #fff;
 }
 
 .home-cta {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 25px;
-  padding: 25px 30px;
-  box-sizing: border-box;
-  border-radius: 12px;
+  gap: 35px;
+  padding: 35px 42px;
+  border-radius: 17px;
   background: linear-gradient(
     135deg,
-    #0d3025,
-    #174637
+    var(--home-green),
+    var(--home-green-light)
   );
-  box-shadow: 0 12px 28px rgba(13, 48, 37, 0.1);
+  box-shadow: 0 16px 35px rgba(13, 48, 37, 0.12);
 }
 
 .home-cta__content {
   min-width: 0;
+  flex: 1;
 }
 
 .home-cta__eyebrow {
   display: block;
-  margin: 0 0 5px;
-  color: #d6b15c;
-  font-size: 8px;
+  margin-bottom: 7px;
+  color: var(--home-gold);
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .home-cta h2 {
-  margin: 0 0 5px;
-  color: #ffffff;
+  margin: 0 0 8px;
+  color: #fff;
   font-family: Georgia, serif;
-  font-size: 23px;
-  line-height: 1.15;
+  font-size: 29px;
+  line-height: 1.2;
 }
 
 .home-cta p {
-  max-width: 560px;
+  max-width: 650px;
   margin: 0;
   color: rgba(255, 255, 255, 0.72);
-  font-size: 10px;
-  line-height: 1.5;
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 .home-cta__button {
   flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 10px 15px;
-  border-radius: 7px;
-  background: #d6b15c;
+  gap: 7px;
+  padding: 12px 19px;
+  border-radius: 8px;
+  background: var(--home-gold);
   color: #102f25;
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease,
-    gap 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease, gap 0.2s ease;
 }
 
 .home-cta__button:hover {
   transform: translateY(-2px);
   background: #e1bd69;
-  gap: 10px;
+  gap: 11px;
 }
 
 /* =========================================================
-   LARGE LAPTOP
-   1025px - 1200px
+   TABLET
 ========================================================= */
 
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
   .home-prayer-section,
   .home-tools-section,
-  .home-cities-section {
-    padding-top: 35px;
-    padding-bottom: 35px;
+  .home-features-section,
+  .home-cities-section,
+  .home-quran-section,
+  .home-reminder-section,
+  .home-cta-section {
+    padding-top: 45px;
+    padding-bottom: 45px;
   }
 
   .home-tools-grid,
   .home-cities-grid {
-    gap: 9px;
+    gap: 12px;
   }
 
   .home-tool-card {
-    padding: 15px;
+    padding: 18px;
+    min-height: 175px;
+  }
+
+  .home-tool-card__icon {
+    width: 43px;
+    height: 43px;
+    flex-basis: 43px;
+    margin-bottom: 12px;
+  }
+
+  .home-tool-card h3 {
+    font-size: 16px;
+  }
+
+  .home-tool-card p {
+    font-size: 12px;
+  }
+
+  .home-quran-card__content {
+    padding: 32px;
+  }
+
+  .home-cta {
+    padding: 30px;
+    gap: 25px;
   }
 }
 
 /* =========================================================
    TABLET
-   769px - 1024px
-   3 COLUMNS
 ========================================================= */
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .home-prayer-section,
-  .home-tools-section,
-  .home-cities-section {
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-
-  .home-section-heading {
-    margin-bottom: 15px;
-  }
-
-  .home-section-heading > span {
-    font-size: 8px;
-  }
-
-  .home-section-heading h2 {
-    font-size: 23px;
-  }
-
-  .home-section-heading p {
-    font-size: 10px;
-  }
-
-  .home-tools-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 7px;
-  }
-
-  .home-cities-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 6px;
-  }
-
-  .home-tool-card {
-    padding: 12px;
-  }
-
-  .home-tool-card__icon {
-    width: 35px;
-    height: 35px;
-    margin-bottom: 8px;
-    font-size: 15px;
-  }
-
-  .home-tool-card h3 {
-    font-size: 13px;
-  }
-
-  .home-tool-card p {
-    margin-bottom: 9px;
-    font-size: 8px;
-  }
-
-  .home-tool-card__link {
-    font-size: 7px;
-  }
-
-  .home-city-card {
-    min-height: 54px;
-    gap: 6px;
-    padding: 6px;
-  }
-
-  .home-city-card__icon {
-    width: 28px;
-    height: 28px;
-    flex-basis: 28px;
-    font-size: 12px;
-  }
-
-  .home-city-card__info strong {
-    font-size: 8px;
-  }
-
-  .home-city-card__info small {
-    font-size: 6px;
-  }
-
-  .home-city-card__arrow {
-    font-size: 12px;
-  }
-
-  .home-quran-section {
-    padding: 30px 0;
-  }
-
-  .home-quran-card {
-    min-height: 185px;
-  }
-
-  .home-quran-card__content {
-    padding: 21px;
-  }
-
-  .home-quran-card__arabic {
-    font-size: 24px;
-  }
-
-  .home-quran-card__translation {
-    font-size: 11px;
-  }
-
-  .home-cta-section {
-    padding: 30px 0;
-  }
-
-  .home-cta {
-    padding: 20px 23px;
-  }
-
-  .home-cta h2 {
-    font-size: 20px;
-  }
-}
-
-/* =========================================================
-   SMALL TABLET
-   601px - 768px
-   3 COLUMNS
-========================================================= */
-
-@media (min-width: 601px) and (max-width: 768px) {
-  .home-prayer-section,
-  .home-tools-section,
-  .home-cities-section {
-    padding-top: 25px;
-    padding-bottom: 25px;
-  }
-
-  .home-section-heading {
-    max-width: 470px;
-    margin: 0 auto 13px;
-    text-align: center;
-  }
-
-  .home-section-heading > span {
-    font-size: 7px;
-  }
-
-  .home-section-heading h2 {
-    font-size: 20px;
-  }
-
-  .home-section-heading p {
-    font-size: 8px;
-  }
-
-  .home-tools-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 6px;
-  }
-
-  .home-cities-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 5px;
-  }
-
-  .home-tool-card {
-    padding: 9px;
-  }
-
-  .home-tool-card__icon {
-    width: 30px;
-    height: 30px;
-    margin-bottom: 6px;
-    font-size: 13px;
-  }
-
-  .home-tool-card h3 {
-    font-size: 10px;
-  }
-
-  .home-tool-card p {
-    font-size: 7px;
-    line-height: 1.4;
-    margin-bottom: 6px;
-  }
-
-  .home-tool-card__link {
-    font-size: 6px;
-  }
-
-  .home-city-card {
-    min-height: 50px;
-    padding: 5px;
-    gap: 5px;
-  }
-
-  .home-city-card__icon {
-    width: 24px;
-    height: 24px;
-    flex-basis: 24px;
-    font-size: 10px;
-  }
-
-  .home-city-card__info strong {
-    font-size: 7px;
-  }
-
-  .home-city-card__info small {
-    font-size: 5px;
-  }
-
-  .home-city-card__arrow {
-    font-size: 10px;
-  }
-
-  .home-quran-section {
-    padding: 27px 0;
-  }
-
-  .home-quran-card {
-    min-height: 165px;
-  }
-
-  .home-quran-card__content {
-    padding: 17px;
-  }
-
-  .home-quran-card__arabic {
-    font-size: 21px;
-  }
-
-  .home-quran-card__translation {
-    font-size: 9px;
-  }
-
-  .home-cta-section {
-    padding: 25px 0;
-  }
-
-  .home-cta {
-    padding: 16px;
-    gap: 13px;
-  }
-
-  .home-cta h2 {
-    font-size: 18px;
-  }
-
-  .home-cta p {
-    font-size: 8px;
-  }
-
-  .home-cta__button {
-    padding: 8px 10px;
-    font-size: 7px;
+@media (min-width: 769px) and (max-width: 900px) {
+  .home-tools-grid,
+  .home-cities-grid,
+  .home-features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 /* =========================================================
    MOBILE
-   600px AND BELOW
-   2 COLUMNS
 ========================================================= */
 
-@media (max-width: 600px) {
-  /* Remove ALL unnecessary top spacing */
-
+@media (max-width: 768px) {
   .home-prayer-section,
   .home-tools-section,
-  .home-cities-section {
-    margin-top: 0 !important;
-    padding-top: 10px;
-    padding-bottom: 22px;
+  .home-features-section,
+  .home-cities-section,
+  .home-quran-section,
+  .home-reminder-section,
+  .home-cta-section {
+    padding: 32px 12px;
   }
 
   .home-section-heading {
-    max-width: 400px;
-    margin: 0 auto 11px;
-    padding: 0;
+    margin-bottom: 20px;
     text-align: center;
   }
 
   .home-section-heading > span {
-    display: block;
-    margin: 0 0 3px;
-    font-size: 6px;
-    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+    font-size: 9px;
   }
 
   .home-section-heading h2 {
-    margin: 0 0 4px;
-    padding: 0;
-    font-size: 18px;
-    line-height: 1.1;
+    font-size: 25px;
   }
 
   .home-section-heading p {
-    margin: 0;
-    padding: 0;
-    font-size: 8px;
-    line-height: 1.4;
+    font-size: 11px;
+    line-height: 1.5;
   }
 
   /* =======================================================
-     TOOLS = 2 COLUMNS
+     PRAYER - ONE CARD PER ROW
+  ======================================================= */
+
+  .home-prayer-section .prayer-times-grid,
+  .home-prayer-section .prayer-cards,
+  .home-prayer-section .prayer-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .home-prayer-section .prayer-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* =======================================================
+     TOOLS - 2 COLUMNS
   ======================================================= */
 
   .home-tools-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 5px;
+    gap: 10px;
   }
 
   .home-tool-card {
-    min-height: 120px;
-    padding: 8px;
-    border-radius: 7px;
+    min-height: 155px;
+    padding: 14px;
+    border-radius: 11px;
   }
 
   .home-tool-card__icon {
-    width: 27px;
-    height: 27px;
-    margin-bottom: 6px;
-    font-size: 12px;
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+    margin-bottom: 10px;
+    font-size: 16px;
   }
 
   .home-tool-card h3 {
-    margin: 0 0 4px;
-    font-size: 10px;
+    font-size: 14px;
   }
 
   .home-tool-card p {
-    margin: 0 0 6px;
-    font-size: 6px;
-    line-height: 1.4;
+    margin-bottom: 10px;
+    font-size: 10px;
+    line-height: 1.45;
   }
 
   .home-tool-card__link {
-    font-size: 6px;
-    gap: 3px;
+    font-size: 9px;
   }
 
   /* =======================================================
-     CITIES = 2 COLUMNS
+     FEATURES - 2 COLUMNS
+  ======================================================= */
+
+  .home-features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .home-feature-card {
+    gap: 10px;
+    padding: 13px;
+    border-radius: 11px;
+  }
+
+  .home-feature-card__icon {
+    width: 34px;
+    height: 34px;
+    flex-basis: 34px;
+    border-radius: 9px;
+    font-size: 14px;
+  }
+
+  .home-feature-card h3 {
+    margin-bottom: 4px;
+    font-size: 13px;
+  }
+
+  .home-feature-card p {
+    font-size: 9px;
+    line-height: 1.45;
+  }
+
+  /* =======================================================
+     CITIES - 2 COLUMNS
   ======================================================= */
 
   .home-cities-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 5px;
+    gap: 8px;
   }
 
   .home-city-card {
-    min-height: 48px;
-    gap: 5px;
-    padding: 5px;
-    border-radius: 6px;
+    min-height: 62px;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: 9px;
   }
 
   .home-city-card__icon {
-    width: 23px;
-    height: 23px;
-    flex: 0 0 23px;
-    font-size: 9px;
+    width: 30px;
+    height: 30px;
+    flex-basis: 30px;
+    font-size: 12px;
   }
 
   .home-city-card__info strong {
-    font-size: 6px;
+    font-size: 10px;
   }
 
   .home-city-card__info small {
-    margin-top: 1px;
-    font-size: 4.8px;
+    font-size: 8px;
   }
 
   .home-city-card__arrow {
-    font-size: 9px;
-  }
-
-  /* =======================================================
-     CITY BUTTON
-  ======================================================= */
-
-  .home-cities-action {
-    margin: 12px 0 0;
-  }
-
-  .home-outline-btn {
-    padding: 7px 10px;
-    border-radius: 5px;
-    font-size: 7px;
+    font-size: 13px;
   }
 
   /* =======================================================
      QURAN
   ======================================================= */
 
-  .home-quran-section {
-    margin: 0;
-    padding: 22px 0;
-  }
-
   .home-quran-card {
-    min-height: 155px;
-    border-radius: 9px;
+    min-height: 205px;
+    border-radius: 14px;
   }
 
   .home-quran-card__content {
-    padding: 14px 12px;
+    padding: 24px 20px;
   }
 
   .home-quran-card__label {
-    gap: 4px;
-    margin: 0 0 7px;
-    font-size: 6px;
+    margin-bottom: 10px;
+    font-size: 8px;
   }
 
   .home-quran-card__arabic {
-    margin: 0 0 6px;
-    font-size: 18px;
-    line-height: 1.3;
+    margin-bottom: 9px;
+    font-size: 23px;
   }
 
   .home-quran-card__translation {
-    margin: 0 0 9px;
-    font-size: 8px;
-    line-height: 1.35;
+    margin-bottom: 13px;
+    font-size: 10px;
   }
 
   .home-quran-card__bottom {
-    gap: 7px;
-    padding-top: 7px;
-    font-size: 5px;
+    font-size: 8px;
+  }
+
+  /* =======================================================
+     REMINDER
+  ======================================================= */
+
+  .home-reminder {
+    gap: 14px;
+    padding: 20px;
+    border-radius: 13px;
+  }
+
+  .home-reminder__icon {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+    font-size: 18px;
+  }
+
+  .home-reminder h2 {
+    font-size: 17px;
+  }
+
+  .home-reminder p {
+    font-size: 9px;
   }
 
   /* =======================================================
      CTA
   ======================================================= */
 
-  .home-cta-section {
-    margin: 0;
-    padding: 22px 0;
-  }
-
   .home-cta {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
-    padding: 14px;
-    border-radius: 8px;
-  }
-
-  .home-cta__eyebrow {
-    margin: 0 0 3px;
-    font-size: 6px;
+    gap: 17px;
+    padding: 23px;
+    border-radius: 12px;
   }
 
   .home-cta h2 {
-    margin: 0 0 4px;
-    font-size: 16px;
+    font-size: 22px;
   }
 
   .home-cta p {
-    margin: 0;
-    font-size: 7px;
-    line-height: 1.4;
+    font-size: 10px;
   }
 
   .home-cta__button {
-    padding: 7px 10px;
-    border-radius: 5px;
-    font-size: 7px;
+    padding: 10px 14px;
+    font-size: 9px;
   }
 
   /* =======================================================
@@ -1007,258 +940,458 @@
   ======================================================= */
 
   .home__more-link {
-    margin: 12px 0 0;
+    margin-top: 17px;
   }
 
   .btn-link {
-    font-size: 7px;
-    gap: 4px;
+    font-size: 9px;
   }
 }
 
 /* =========================================================
    SMALL MOBILE
-   400px AND BELOW
 ========================================================= */
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .home-prayer-section,
   .home-tools-section,
-  .home-cities-section {
-    padding-top: 6px;
-    padding-bottom: 19px;
+  .home-features-section,
+  .home-cities-section,
+  .home-quran-section,
+  .home-reminder-section,
+  .home-cta-section {
+    padding: 25px 10px;
   }
 
   .home-section-heading {
-    margin: 0 auto 9px;
+    margin-bottom: 17px;
   }
 
   .home-section-heading > span {
-    margin-bottom: 2px;
-    font-size: 5px;
+    font-size: 8px;
   }
 
   .home-section-heading h2 {
-    margin-bottom: 3px;
-    font-size: 16px;
+    font-size: 21px;
   }
 
   .home-section-heading p {
-    font-size: 6.5px;
+    font-size: 10px;
   }
 
   /* TOOLS */
 
   .home-tools-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 4px;
+    gap: 8px;
   }
 
   .home-tool-card {
-    min-height: 108px;
-    padding: 7px;
-    border-radius: 6px;
+    min-height: 140px;
+    padding: 11px;
+    border-radius: 9px;
   }
 
   .home-tool-card__icon {
-    width: 24px;
-    height: 24px;
-    margin-bottom: 5px;
-    font-size: 10px;
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+    margin-bottom: 8px;
+    font-size: 13px;
   }
 
   .home-tool-card h3 {
-    font-size: 8px;
+    margin-bottom: 5px;
+    font-size: 11px;
   }
 
   .home-tool-card p {
-    font-size: 5.5px;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
+    font-size: 8px;
   }
 
   .home-tool-card__link {
-    font-size: 5.5px;
+    font-size: 7px;
+  }
+
+  /* FEATURES */
+
+  .home-features-grid {
+    gap: 7px;
+  }
+
+  .home-feature-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+    padding: 11px;
+    border-radius: 9px;
+  }
+
+  .home-feature-card__icon {
+    width: 30px;
+    height: 30px;
+    flex-basis: 30px;
+    font-size: 12px;
+  }
+
+  .home-feature-card h3 {
+    font-size: 11px;
+  }
+
+  .home-feature-card p {
+    font-size: 7px;
+    line-height: 1.45;
   }
 
   /* CITIES */
 
   .home-cities-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 4px;
+    gap: 7px;
   }
 
   .home-city-card {
-    min-height: 43px;
-    padding: 4px;
-    gap: 4px;
+    min-height: 56px;
+    gap: 6px;
+    padding: 7px 8px;
+    border-radius: 8px;
   }
 
   .home-city-card__icon {
-    width: 20px;
-    height: 20px;
-    flex-basis: 20px;
-    font-size: 8px;
+    width: 27px;
+    height: 27px;
+    flex-basis: 27px;
+    font-size: 11px;
   }
 
   .home-city-card__info strong {
-    font-size: 5.5px;
+    font-size: 9px;
   }
 
   .home-city-card__info small {
-    font-size: 4.3px;
+    font-size: 7px;
   }
 
   .home-city-card__arrow {
+    font-size: 11px;
+  }
+
+  /* CITIES BUTTON */
+
+  .home-cities-action {
+    margin-top: 17px;
+  }
+
+  .home-outline-btn {
+    padding: 8px 12px;
+    border-radius: 7px;
     font-size: 8px;
   }
 
   /* QURAN */
 
-  .home-quran-section {
-    padding: 19px 0;
-  }
-
   .home-quran-card {
-    min-height: 140px;
+    min-height: 180px;
+    border-radius: 11px;
   }
 
   .home-quran-card__content {
-    padding: 11px 9px;
+    padding: 17px 13px;
   }
 
   .home-quran-card__label {
-    font-size: 5px;
-    margin-bottom: 5px;
+    gap: 4px;
+    margin-bottom: 7px;
+    font-size: 7px;
   }
 
   .home-quran-card__arabic {
-    font-size: 16px;
+    margin-bottom: 7px;
+    font-size: 19px;
+    line-height: 1.45;
   }
 
   .home-quran-card__translation {
-    font-size: 6px;
+    margin-bottom: 10px;
+    font-size: 8px;
+    line-height: 1.45;
   }
 
   .home-quran-card__bottom {
-    font-size: 4.5px;
+    gap: 8px;
+    padding-top: 8px;
+    font-size: 6px;
+  }
+
+  /* REMINDER */
+
+  .home-reminder {
+    gap: 10px;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .home-reminder__icon {
+    width: 34px;
+    height: 34px;
+    flex-basis: 34px;
+    font-size: 15px;
+  }
+
+  .home-reminder h2 {
+    font-size: 14px;
+  }
+
+  .home-reminder p {
+    font-size: 7px;
   }
 
   /* CTA */
 
-  .home-cta-section {
-    padding: 19px 0;
-  }
-
   .home-cta {
-    padding: 11px;
-    gap: 8px;
+    gap: 12px;
+    padding: 17px;
+    border-radius: 10px;
   }
 
   .home-cta__eyebrow {
-    font-size: 5px;
+    margin-bottom: 4px;
+    font-size: 7px;
   }
 
   .home-cta h2 {
-    font-size: 14px;
+    margin-bottom: 5px;
+    font-size: 18px;
   }
 
   .home-cta p {
-    font-size: 6px;
+    font-size: 8px;
+    line-height: 1.45;
   }
 
   .home-cta__button {
-    padding: 6px 8px;
-    font-size: 6px;
+    padding: 8px 11px;
+    border-radius: 6px;
+    font-size: 8px;
+  }
+
+  .home__more-link {
+    margin-top: 15px;
+  }
+
+  .btn-link {
+    font-size: 8px;
   }
 }
 
 /* =========================================================
-   EXTRA SMALL
-   350px AND BELOW
+   VERY SMALL MOBILE
 ========================================================= */
 
-@media (max-width: 350px) {
+@media (max-width: 360px) {
   .home-prayer-section,
   .home-tools-section,
-  .home-cities-section {
-    padding-top: 3px;
-    padding-bottom: 17px;
-  }
-
-  .home-section-heading {
-    margin-bottom: 7px;
+  .home-features-section,
+  .home-cities-section,
+  .home-quran-section,
+  .home-reminder-section,
+  .home-cta-section {
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
   .home-section-heading h2 {
-    font-size: 14px;
+    font-size: 19px;
   }
 
   .home-section-heading p {
-    font-size: 5.5px;
-  }
-
-  .home-tools-grid,
-  .home-cities-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 3px;
-  }
-
-  .home-tool-card {
-    min-height: 100px;
-    padding: 6px;
-  }
-
-  .home-tool-card__icon {
-    width: 22px;
-    height: 22px;
     font-size: 9px;
   }
 
+  /* TOOLS */
+
+  .home-tools-grid {
+    gap: 6px;
+  }
+
+  .home-tool-card {
+    min-height: 130px;
+    padding: 9px;
+  }
+
   .home-tool-card h3 {
-    font-size: 7px;
+    font-size: 10px;
   }
 
   .home-tool-card p {
-    font-size: 5px;
+    font-size: 7px;
   }
 
-  .home-tool-card__link {
-    font-size: 5px;
+  /* FEATURES */
+
+  .home-features-grid {
+    gap: 6px;
+  }
+
+  .home-feature-card {
+    padding: 9px;
+  }
+
+  .home-feature-card__icon {
+    width: 27px;
+    height: 27px;
+    flex-basis: 27px;
+    font-size: 11px;
+  }
+
+  .home-feature-card h3 {
+    font-size: 10px;
+  }
+
+  .home-feature-card p {
+    font-size: 6.5px;
+  }
+
+  /* CITIES */
+
+  .home-cities-grid {
+    gap: 5px;
   }
 
   .home-city-card {
-    min-height: 40px;
-    padding: 3px;
+    min-height: 50px;
+    padding: 5px;
   }
 
   .home-city-card__icon {
-    width: 18px;
-    height: 18px;
-    flex-basis: 18px;
-    font-size: 7px;
+    width: 24px;
+    height: 24px;
+    flex-basis: 24px;
+    font-size: 9px;
   }
 
   .home-city-card__info strong {
-    font-size: 5px;
+    font-size: 7.5px;
   }
 
   .home-city-card__info small {
-    font-size: 4px;
+    font-size: 6px;
   }
 
-  .home-city-card__arrow {
-    font-size: 7px;
+  /* QURAN */
+
+  .home-quran-card {
+    min-height: 165px;
+  }
+
+  .home-quran-card__content {
+    padding: 14px 10px;
   }
 
   .home-quran-card__arabic {
-    font-size: 14px;
+    font-size: 17px;
   }
 
   .home-quran-card__translation {
+    font-size: 7px;
+  }
+
+  .home-quran-card__bottom {
     font-size: 5.5px;
   }
 
+  /* REMINDER */
+
+  .home-reminder {
+    padding: 12px;
+  }
+
+  .home-reminder h2 {
+    font-size: 12px;
+  }
+
+  /* CTA */
+
+  .home-cta {
+    padding: 14px;
+  }
+
   .home-cta h2 {
-    font-size: 13px;
+    font-size: 16px;
+  }
+
+  .home-cta p {
+    font-size: 7px;
+  }
+
+  .home-cta__button {
+    padding: 7px 9px;
+    font-size: 7px;
+  }
+}
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) {
+  .home-tool-card:hover,
+  .home-feature-card:hover,
+  .home-city-card:hover {
+    transform: none;
+  }
+
+  .home-tool-card:hover {
+    box-shadow: var(--home-shadow);
+  }
+
+  .home-feature-card:hover {
+    box-shadow: 0 6px 20px rgba(13, 48, 37, 0.045);
+  }
+
+  .home-city-card:hover {
+    box-shadow: none;
+  }
+
+  .home-tool-card:hover .home-tool-card__link span,
+  .home-city-card:hover .home-city-card__arrow {
+    transform: none;
+  }
+}
+
+/* =========================================================
+   MOBILE OVERFLOW PROTECTION
+========================================================= */
+
+@media (max-width: 768px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .home-prayer-section,
+  .home-quran-section,
+  .home-tools-section,
+  .home-features-section,
+  .home-cities-section,
+  .home-reminder-section,
+  .home-cta-section {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .home-quran-card,
+  .home-quran-card__content,
+  .home-reminder,
+  .home-cta {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .home-quran-card__bottom {
+    min-width: 0;
+    flex-wrap: wrap;
   }
 }
