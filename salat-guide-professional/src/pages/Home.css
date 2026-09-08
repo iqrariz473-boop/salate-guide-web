@@ -97,7 +97,7 @@
 .home__more-link {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 .btn-link {
@@ -105,8 +105,8 @@
   align-items: center;
   gap: 5px;
   color: var(--home-green);
-  font-size: 13px;
-  font-weight: 750;
+  font-size: 15px;
+  font-weight: 700;
   text-decoration: none;
   transition: color 0.2s ease, gap 0.2s ease;
 }

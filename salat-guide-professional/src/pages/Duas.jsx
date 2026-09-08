@@ -146,10 +146,10 @@ function Duas() {
       <main className="dua-page">
 
         {/* =================================================
-            BACKGROUND
+            BACKGROUND OVERLAY
         ================================================= */}
 
-        <div className="dua-page__overlay"></div>
+        <div className="dua-page__overlay" />
 
         {/* =================================================
             HERO
@@ -240,21 +240,16 @@ function Duas() {
           <div className="dua-list">
 
             {DUAS.map((dua) => (
-              <article
-                className="dua-card"
-                key={dua.title}
-              >
+              <article className="dua-card" key={dua.title}>
 
                 <div className="dua-card__header">
 
                   <div>
-
                     <span className="dua-card__category">
                       {dua.category}
                     </span>
 
                     <h3>{dua.title}</h3>
-
                   </div>
 
                   <button
@@ -289,7 +284,7 @@ function Duas() {
         </section>
 
         {/* =================================================
-            MODERN CATEGORIES
+            CATEGORIES
         ================================================= */}
 
         <section className="dua-page__categories">
@@ -297,14 +292,13 @@ function Duas() {
           <div className="dua-section-heading">
 
             <span className="dua-section-heading__label">
-              EXPLORE DUAS
+              EXPLORE
             </span>
 
-            <h2>Find a Dua for Every Moment</h2>
+            <h2>Browse Duas by Category</h2>
 
             <p>
-              Explore supplications by category and find the right
-              dua for you.
+              Find meaningful duas for every moment of your daily life.
             </p>
 
             <div className="dua-section-heading__line">
@@ -323,21 +317,17 @@ function Duas() {
                 key={category.title}
               >
 
-                <div className="dua-category-card__top">
-
-                  <div className="dua-category-card__icon">
-                    {category.icon}
-                  </div>
-
-                  <span className="dua-category-card__arrow">
-                    ↗
-                  </span>
-
+                <div className="dua-category-card__icon">
+                  {category.icon}
                 </div>
 
                 <h3>{category.title}</h3>
 
                 <p>{category.text}</p>
+
+                <span className="dua-category-card__arrow">
+                  →
+                </span>
 
               </article>
             ))}
@@ -353,17 +343,17 @@ function Duas() {
         <section className="dua-page__tips">
 
           <div className="dua-page__tips-title">
+
             <h2>Tips for Making Dua</h2>
+
             <span></span>
+
           </div>
 
           <div className="dua-tips-grid">
 
             {DUA_TIPS.map((tip) => (
-              <article
-                className="dua-tip"
-                key={tip.title}
-              >
+              <article className="dua-tip" key={tip.title}>
 
                 <div className="dua-tip__icon">
                   {tip.icon}
