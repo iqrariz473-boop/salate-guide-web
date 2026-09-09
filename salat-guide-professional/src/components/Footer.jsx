@@ -26,12 +26,18 @@ function Footer() {
 
       <div className="footer__inner">
 
-        {/* BRAND */}
+        {/* =================================================
+            BRAND
+        ================================================= */}
+
         <div className="footer__brand-col">
 
           <Link to="/" className="footer__brand">
 
-            <span className="footer__moon" aria-hidden="true">
+            <span
+              className="footer__moon"
+              aria-hidden="true"
+            >
               ☾
             </span>
 
@@ -39,10 +45,14 @@ function Footer() {
 
           </Link>
 
+
           <p className="footer__description">
             Accurate Islamic prayer times, Qibla direction,
             and prayer guidance for Muslims worldwide.
           </p>
+
+
+          {/* SOCIAL */}
 
           <div className="footer__social">
 
@@ -61,94 +71,136 @@ function Footer() {
         </div>
 
 
-        {/* EXPLORE */}
-        <nav
-          className="footer__column"
-          aria-label="Explore"
-        >
+        {/* =================================================
+            EXPLORE + LEGAL
+        ================================================= */}
 
-          <h3>Explore</h3>
+        <div className="footer__explore-legal">
 
-          <span className="footer__line"></span>
+          {/* =================================================
+              EXPLORE
+          ================================================= */}
 
-          <ul>
+          <nav
+            className="footer__column footer__explore"
+            aria-label="Explore"
+          >
 
-            {FOOTER_LINKS.map((link) => (
-              <li key={link.to}>
-                <Link to={link.to}>
-                  {link.label}
+            <h3>Explore</h3>
+
+            <span
+              className="footer__line"
+              aria-hidden="true"
+            ></span>
+
+            <ul>
+
+              {FOOTER_LINKS.map((link) => (
+                <li key={link.to}>
+
+                  <Link to={link.to}>
+                    {link.label}
+                  </Link>
+
+                </li>
+              ))}
+
+            </ul>
+
+          </nav>
+
+
+          {/* =================================================
+              LEGAL - BELOW EXPLORE
+          ================================================= */}
+
+          <div className="footer__column footer__legal">
+
+            <h3>Legal</h3>
+
+            <span
+              className="footer__line"
+              aria-hidden="true"
+            ></span>
+
+            <ul>
+
+              <li>
+                <Link to="/privacy">
+                  Privacy Policy
                 </Link>
               </li>
-            ))}
 
-          </ul>
+              <li>
+                <Link to="/terms">
+                  Terms
+                </Link>
+              </li>
 
-        </nav>
+            </ul>
 
-
-        {/* LEGAL */}
-        <div className="footer__column">
-
-          <h3>Legal</h3>
-
-          <span className="footer__line"></span>
-
-          <ul>
-
-            <li>
-              <Link to="/privacy">
-                Privacy Policy
-              </Link>
-            </li>
-
-            <li>
-              <Link to="/terms">
-                Terms
-              </Link>
-            </li>
-
-          </ul>
+          </div>
 
         </div>
 
 
-        {/* CONTACT */}
+        {/* =================================================
+            CONTACT
+        ================================================= */}
+
         <div className="footer__column footer__contact">
 
           <h3>Stay Connected</h3>
 
-          <span className="footer__line"></span>
+          <span
+            className="footer__line"
+            aria-hidden="true"
+          ></span>
 
+
+          {/* WORLDWIDE */}
 
           <div className="footer__contact-item">
 
-            <span className="footer__contact-icon">
+            <span
+              className="footer__contact-icon"
+              aria-hidden="true"
+            >
               ✦
             </span>
 
             <div>
+
               <strong>Worldwide</strong>
 
               <p>
                 Serving Muslims worldwide
               </p>
+
             </div>
 
           </div>
 
 
+          {/* EMAIL */}
+
           <div className="footer__contact-item">
 
-            <span className="footer__contact-icon">
+            <span
+              className="footer__contact-icon"
+              aria-hidden="true"
+            >
               @
             </span>
 
             <div>
+
               <strong>Email</strong>
 
               <p>
                 contact@salatguide.com
               </p>
+
             </div>
 
           </div>
@@ -158,7 +210,10 @@ function Footer() {
       </div>
 
 
-      {/* BOTTOM */}
+      {/* =================================================
+          BOTTOM
+      ================================================= */}
+
       <div className="footer__bottom-wrapper">
 
         <div className="footer__bottom">

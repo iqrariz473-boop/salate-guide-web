@@ -1,7 +1,6 @@
 import Seo from "../components/Seo.jsx";
 import QiblaCompass from "../components/QiblaCompass.jsx";
 
-import qiblaBanner from "../assets/images/qibla-banner.jpg";
 
 import "./Qibla.css";
 
@@ -69,7 +68,7 @@ function Qibla() {
         <section
           className="qibla-hero"
           style={{
-            backgroundImage: `url(${qiblaBanner})`,
+
           }}
         >
 

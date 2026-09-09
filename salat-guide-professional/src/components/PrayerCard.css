@@ -33,6 +33,36 @@
 }
 
 /* =========================================================
+   NEXT  (fully highlighted card — green fill, gold ring,
+   white text — matches reference UI)
+========================================================= */
+
+.prayer-card--next {
+  border: 2px solid #f2c94c;
+  background: linear-gradient(145deg, #1f5f42, #123f31);
+  box-shadow: 0 8px 22px rgba(18, 63, 49, 0.28);
+}
+
+.prayer-card--next .prayer-card__time,
+.prayer-card--next .prayer-card__label {
+  color: #ffffff;
+}
+
+.prayer-card--next .prayer-card__badge {
+  position: absolute;
+  background: #ffffff;
+  color: #123f31;
+}
+
+.prayer-card--next .prayer-card__icon {
+  color: #ffffff;
+}
+
+.prayer-card--next .prayer-card__arabic {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* =========================================================
    BADGE
 ========================================================= */
 
@@ -138,55 +168,96 @@
 
 /* =========================================================
    MOBILE - ONE CARD PER ROW
+   (icon left in a box, badge+label stacked in middle,
+   time large on the right — matches reference UI)
 ========================================================= */
 
 @media (max-width: 600px) {
   .prayer-card {
     width: 100%;
-    min-height: 58px;
-    display: flex;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 40px 1fr auto;
+    grid-template-rows: auto auto;
     align-items: center;
-    gap: 10px;
-    padding: 9px 14px;
-    border-radius: 9px;
+    column-gap: 12px;
+    row-gap: 2px;
+    min-height: 60px;
+    padding: 10px 14px;
+    border-radius: 12px;
     text-align: left;
     box-shadow: 0 3px 10px rgba(30, 50, 40, 0.06);
   }
 
+  /* icon sits in its own boxed column, spanning both rows */
   .prayer-card__icon {
-    flex: 0 0 22px;
-    width: 22px;
-    height: 22px;
+    grid-column: 1;
+    grid-row: 1 / 3;
+    width: 20px;
+    height: 20px;
     margin: 0;
+    padding: 8px;
+    box-sizing: content-box;
+    border-radius: 10px;
+    background: rgba(214, 173, 85, 0.12);
+    border: 1.5px solid rgba(189, 147, 73, 0.35);
+    color: #a87c31;
+    justify-self: start;
   }
 
-  .prayer-card__time {
-    margin: 0;
-    font-size: 16px;
-    line-height: 1;
-    white-space: nowrap;
+  .prayer-card--active .prayer-card__icon {
+    background: #123f31;
+    border-color: #123f31;
+    color: #fff;
   }
 
+  /* on the highlighted "next" card, the icon box turns white like the reference UI */
+  .prayer-card--next .prayer-card__icon {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #123f31;
+  }
+
+  /* badge becomes an inline pill, top of the middle column */
+  .prayer-card__badge,
+  .prayer-card--next .prayer-card__badge {
+    position: static;
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start;
+    align-self: end;
+    padding: 2px 6px;
+    font-size: 8px;
+    border-radius: 4px;
+  }
+
+  /* label sits below the badge (or centered alone if no badge) */
   .prayer-card__label {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: start;
+    align-self: start;
     margin: 0;
     font-size: 12px;
-    line-height: 1;
+    line-height: 1.3;
     white-space: nowrap;
   }
 
+  /* time is large, right-aligned, vertically centered across both rows */
+  .prayer-card__time {
+    grid-column: 3;
+    grid-row: 1 / 3;
+    justify-self: end;
+    align-self: center;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+
+  /* arabic text hidden on mobile row layout (not present in reference UI) */
   .prayer-card__arabic {
-    margin: 0 0 0 auto;
-    font-size: 15px;
-    line-height: 1;
-    white-space: nowrap;
-  }
-
-  .prayer-card__badge {
-    top: 4px;
-    right: 7px;
-    padding: 2px 5px;
-    border-radius: 4px;
-    font-size: 6px;
+    display: none;
   }
 }
 
@@ -196,31 +267,28 @@
 
 @media (max-width: 400px) {
   .prayer-card {
-    min-height: 54px;
-    gap: 8px;
-    padding: 8px 11px;
+    grid-template-columns: 36px 1fr auto;
+    min-height: 56px;
+    column-gap: 10px;
+    padding: 9px 11px;
   }
 
   .prayer-card__icon {
-    flex-basis: 20px;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
+    padding: 7px;
   }
 
   .prayer-card__time {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .prayer-card__label {
     font-size: 11px;
   }
 
-  .prayer-card__arabic {
-    font-size: 13px;
-  }
-
   .prayer-card__badge {
-    font-size: 5px;
-    padding: 2px 4px;
+    font-size: 7px;
+    padding: 2px 5px;
   }
 }

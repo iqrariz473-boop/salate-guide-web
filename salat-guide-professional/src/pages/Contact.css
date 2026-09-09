@@ -7,7 +7,9 @@
 .contact-page {
   position: relative;
   min-height: calc(100vh - 80px);
-  padding: 45px 0 70px;
+
+  /* SHORTER HERO / TOP SPACE */
+  padding: 25px 0 45px;
 
   background-image:
     linear-gradient(
@@ -47,6 +49,7 @@
   z-index: 2;
 }
 
+
 /* =========================================================
    HEADER
 ========================================================= */
@@ -54,9 +57,10 @@
 .contact-header {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 
-  margin-bottom: 35px;
+  /* REDUCED */
+  margin-bottom: 22px;
 }
 
 .contact-header__icon {
@@ -74,7 +78,8 @@
   background: rgba(225, 241, 232, 0.95);
   color: #0d604b;
 
-  box-shadow: 0 8px 25px rgba(13, 48, 37, 0.08);
+  box-shadow:
+    0 8px 25px rgba(13, 48, 37, 0.08);
 }
 
 .contact-header__label {
@@ -86,7 +91,6 @@
 
   font-size: 12px;
   font-weight: 800;
-
   letter-spacing: 2px;
 }
 
@@ -109,6 +113,7 @@
   line-height: 1.5;
 }
 
+
 /* =========================================================
    MAIN GRID
 ========================================================= */
@@ -124,6 +129,7 @@
 
   align-items: stretch;
 }
+
 
 /* =========================================================
    LEFT CONTACT INFORMATION
@@ -181,6 +187,7 @@
   line-height: 1;
 }
 
+
 /* =========================================================
    INFO TOP
 ========================================================= */
@@ -191,6 +198,7 @@
 
   display: flex;
   align-items: center;
+
   gap: 14px;
 
   margin-bottom: 20px;
@@ -207,6 +215,7 @@
   border-radius: 16px;
 
   background: rgba(255, 255, 255, 0.12);
+
   border: 1px solid rgba(255, 255, 255, 0.12);
 
   color: #ffffff;
@@ -221,6 +230,7 @@
   color: rgba(255, 255, 255, 0.82);
 }
 
+
 /* =========================================================
    INFO HEADING
 ========================================================= */
@@ -232,7 +242,9 @@
   margin: 0 0 16px;
 
   font-size: clamp(32px, 3vw, 44px);
+
   line-height: 1.08;
+
   font-weight: 800;
 
   color: #ffffff;
@@ -241,6 +253,7 @@
 .contact-info h2 strong {
   color: #f1c45d;
 }
+
 
 /* =========================================================
    DESCRIPTION
@@ -257,8 +270,10 @@
   color: rgba(255, 255, 255, 0.82);
 
   font-size: 15px;
+
   line-height: 1.65;
 }
+
 
 /* =========================================================
    DIVIDER
@@ -271,6 +286,7 @@
 
   background: rgba(255, 255, 255, 0.25);
 }
+
 
 /* =========================================================
    TOPICS
@@ -294,6 +310,7 @@
   letter-spacing: 2px;
 }
 
+
 /* =========================================================
    TOPIC BUTTON
 ========================================================= */
@@ -311,6 +328,7 @@
   margin-bottom: 9px;
 
   border: 1px solid rgba(255, 255, 255, 0.23);
+
   border-radius: 15px;
 
   background: rgba(255, 255, 255, 0.035);
@@ -341,6 +359,7 @@
   border-color: rgba(241, 196, 93, 0.7);
 }
 
+
 /* =========================================================
    TOPIC NUMBER
 ========================================================= */
@@ -364,6 +383,7 @@
   font-size: 13px;
   font-weight: 800;
 }
+
 
 /* =========================================================
    TOPIC CONTENT
@@ -392,6 +412,7 @@
   line-height: 1.35;
 }
 
+
 /* =========================================================
    ARROW
 ========================================================= */
@@ -404,6 +425,7 @@
   color: #f1c45d;
 }
 
+
 /* =========================================================
    ISLAMIC QUOTE
 ========================================================= */
@@ -414,9 +436,11 @@
 
   display: flex;
   align-items: center;
+
   gap: 14px;
 
   margin-top: 17px;
+
   padding: 15px 17px;
 
   border-radius: 15px;
@@ -447,8 +471,10 @@
   color: rgba(255, 255, 255, 0.88);
 
   font-size: 12px;
+
   line-height: 1.5;
 }
+
 
 /* =========================================================
    FORM
@@ -468,6 +494,7 @@
 
   backdrop-filter: blur(8px);
 }
+
 
 /* =========================================================
    FORM HEADING
@@ -496,7 +523,9 @@
   color: #0d3025;
 
   font-size: clamp(30px, 3vw, 42px);
+
   line-height: 1.1;
+
   font-weight: 800;
 }
 
@@ -506,8 +535,10 @@
   color: #66807b;
 
   font-size: 15px;
+
   line-height: 1.5;
 }
+
 
 /* =========================================================
    FORM ROW
@@ -520,6 +551,7 @@
 
   gap: 18px;
 }
+
 
 /* =========================================================
    FIELD
@@ -540,6 +572,7 @@
   font-weight: 700;
 }
 
+
 /* =========================================================
    INPUT + TEXTAREA
 ========================================================= */
@@ -551,6 +584,7 @@
   box-sizing: border-box;
 
   border: 1px solid #ddd5c2;
+
   border-radius: 13px;
 
   background: #fcfbf7;
@@ -558,6 +592,7 @@
   color: #163d34;
 
   font-family: inherit;
+
   font-size: 15px;
 
   outline: none;
@@ -597,6 +632,7 @@
     0 0 0 3px rgba(22, 128, 97, 0.10);
 }
 
+
 /* =========================================================
    MESSAGE LABEL
 ========================================================= */
@@ -619,6 +655,7 @@
   font-size: 12px;
 }
 
+
 /* =========================================================
    ERROR
 ========================================================= */
@@ -631,6 +668,7 @@
 .contact-error {
   display: flex;
   align-items: center;
+
   gap: 7px;
 
   margin-top: 7px;
@@ -638,6 +676,7 @@
   color: #ed2939;
 
   font-size: 12px;
+
   line-height: 1.4;
 }
 
@@ -659,6 +698,7 @@
   font-weight: 800;
 }
 
+
 /* =========================================================
    SUBMIT BUTTON
 ========================================================= */
@@ -677,6 +717,7 @@
   margin-top: 3px;
 
   border: 0;
+
   border-radius: 30px;
 
   background:
@@ -714,6 +755,7 @@
   cursor: not-allowed;
 }
 
+
 /* =========================================================
    FORM NOTE
 ========================================================= */
@@ -721,6 +763,7 @@
 .contact-form__note {
   display: flex;
   align-items: center;
+
   gap: 15px;
 
   margin: 20px 0 0;
@@ -743,6 +786,7 @@
 
   white-space: nowrap;
 }
+
 
 /* =========================================================
    SUCCESS
@@ -813,16 +857,19 @@
   color: #627974;
 
   font-size: 15px;
+
   line-height: 1.7;
 }
 
 .contact-success .btn {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
   gap: 8px;
 }
+
 
 /* =========================================================
    TABLET
@@ -832,11 +879,12 @@
 @media (max-width: 1100px) {
 
   .contact-page {
-    padding: 35px 0 55px;
+    padding: 25px 0 40px;
   }
 
   .contact-wrapper {
     grid-template-columns: 1fr 1fr;
+
     gap: 18px;
   }
 
@@ -861,6 +909,7 @@
   }
 }
 
+
 /* =========================================================
    TABLET
    769px - 900px
@@ -875,6 +924,7 @@
   .contact-info,
   .contact-form {
     width: 100%;
+
     box-sizing: border-box;
   }
 
@@ -895,6 +945,7 @@
   }
 }
 
+
 /* =========================================================
    MOBILE
    601px - 768px
@@ -903,7 +954,7 @@
 @media (max-width: 768px) {
 
   .contact-page {
-    padding: 28px 0 45px;
+    padding: 20px 0 35px;
 
     background-position:
       center center;
@@ -912,9 +963,9 @@
   .contact-header {
     align-items: flex-start;
 
-    gap: 14px;
+    gap: 12px;
 
-    margin-bottom: 25px;
+    margin-bottom: 18px;
   }
 
   .contact-header__icon {
@@ -954,6 +1005,7 @@
 
   .contact-form__row {
     grid-template-columns: 1fr;
+
     gap: 0;
   }
 
@@ -976,6 +1028,7 @@
   }
 }
 
+
 /* =========================================================
    SMALL MOBILE
    <= 600px
@@ -984,13 +1037,16 @@
 @media (max-width: 600px) {
 
   .contact-page {
-    padding: 22px 0 35px;
+    /* SHORTER MOBILE HERO */
+    padding: 15px 0 25px;
   }
 
   .contact-header {
     flex-direction: column;
 
-    gap: 10px;
+    gap: 8px;
+
+    margin-bottom: 16px;
   }
 
   .contact-header__icon {
@@ -1137,6 +1193,7 @@
     font-size: 13px;
   }
 }
+
 
 /* =========================================================
    VERY SMALL MOBILE

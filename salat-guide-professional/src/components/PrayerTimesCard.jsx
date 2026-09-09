@@ -25,6 +25,11 @@ function PrayerTimesCard({
   isFallback,
   onRetry,
 }) {
+
+  /* =========================================================
+     LOADING
+  ========================================================= */
+
   if (status === "loading") {
     return (
       <div className="prayer-dashboard prayer-dashboard--plain">
@@ -32,6 +37,11 @@ function PrayerTimesCard({
       </div>
     );
   }
+
+
+  /* =========================================================
+     ERROR
+  ========================================================= */
 
   if (status === "error") {
     return (
@@ -47,6 +57,11 @@ function PrayerTimesCard({
     );
   }
 
+
+  /* =========================================================
+     EMPTY DATA
+  ========================================================= */
+
   if (!prayers || prayers.length === 0) {
     return (
       <div className="prayer-dashboard prayer-dashboard--plain">
@@ -58,23 +73,43 @@ function PrayerTimesCard({
     );
   }
 
-  const dailyPrayers = prayers.filter(
-    (prayer) => prayer.key !== "Sunrise"
-  );
+
+  /* =========================================================
+     CURRENT + NEXT PRAYER
+
+     IMPORTANT:
+     Sunrise is INCLUDED so that:
+
+     Fajr     → Current
+     Sunrise  → Next
+
+     After Sunrise:
+
+     Sunrise  → Current
+     Dhuhr    → Next
+     ========================================================= */
 
   const {
     currentPrayer,
     nextPrayer,
     nextDayOffset,
-  } = getCurrentAndNextPrayer(
-    dailyPrayers
-  );
+  } = getCurrentAndNextPrayer(prayers);
+
+
+  /* =========================================================
+     NEXT PRAYER DATE
+  ========================================================= */
 
   const targetDate = toDateOnDay(
     nextPrayer.time,
     new Date(),
     nextDayOffset
   );
+
+
+  /* =========================================================
+     UI
+  ========================================================= */
 
   return (
     <div className="prayer-dashboard">
@@ -86,27 +121,50 @@ function PrayerTimesCard({
         </p>
       )}
 
+
+      {/* =====================================================
+          COUNTDOWN
+      ===================================================== */}
+
       <PrayerCountdown
         nextLabel={nextPrayer.label}
         nextTime={to12Hour(nextPrayer.time)}
         targetDate={targetDate}
       />
 
+
+      {/* =====================================================
+          PRAYER CARDS
+      ===================================================== */}
+
       <div className="prayer-dashboard__grid">
-        {prayers.map((prayer) => (
-          <PrayerCard
-            key={prayer.key}
-            label={prayer.label}
-            arabic={prayer.arabic}
-            time={prayer.time}
-            isActive={
-              prayer.key === currentPrayer.key
-            }
-            isNext={
-              prayer.key === nextPrayer.key
-            }
-          />
-        ))}
+
+        {prayers.map((prayer) => {
+
+          const isCurrent =
+            prayer.key === currentPrayer?.key;
+
+          const isNext =
+            prayer.key === nextPrayer?.key;
+
+
+          return (
+            <PrayerCard
+              key={prayer.key}
+
+              label={prayer.label}
+
+              arabic={prayer.arabic}
+
+              time={prayer.time}
+
+              isActive={isCurrent}
+
+              isNext={isNext}
+            />
+          );
+        })}
+
       </div>
 
     </div>

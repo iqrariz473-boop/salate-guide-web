@@ -1,181 +1,80 @@
 /* =========================================================
-   MOBILE PRAYER UI
-   ONE PRAYER PER ROW
-   Desktop UI remains unchanged
+   MOBILE PRAYER CARD
 ========================================================= */
 
 @media (max-width: 600px) {
 
-  /* =====================================================
-     MAIN PRAYER SECTION
-  ===================================================== */
-
-  .home-prayer-section {
-    width: 100% !important;
-
-    padding: 0 10px !important;
-    margin: 0 !important;
-
-    box-sizing: border-box;
-
-    overflow: hidden;
-  }
-
-
-  /* =====================================================
-     MAIN PRAYER CONTAINER
-  ===================================================== */
-
-  .prayer-times-container {
-    width: 100% !important;
-    max-width: 100% !important;
-
-    padding: 0 !important;
-    margin: 0 !important;
-
-    background: transparent !important;
-
-    border-radius: 0 !important;
-
-    box-shadow: none !important;
-
-    box-sizing: border-box;
-  }
-
-
-  /* =====================================================
-     HIDE DESKTOP NEXT PRAYER BANNER
-  ===================================================== */
-
-  .prayer-next-banner,
-  .next-prayer-banner {
-    display: none !important;
-  }
-
-
-  /* =====================================================
-     PRAYER GRID
-     ONE CARD PER ROW
-  ===================================================== */
-
-  .prayer-times-grid,
-  .prayer-cards,
-  .prayer-grid {
-
+  .prayer-card {
     display: grid !important;
 
     grid-template-columns:
-      minmax(0, 1fr) !important;
-
-    gap: 8px !important;
-
-    width: 100% !important;
-    max-width: 100% !important;
-
-    padding: 0 !important;
-    margin: 0 !important;
-
-    box-sizing: border-box;
-
-    overflow: visible !important;
-  }
-
-
-  /* =====================================================
-     PRAYER CARD
-  ===================================================== */
-
-  .prayer-card {
-
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-
-    min-height: 65px !important;
-    height: 65px !important;
-
-    padding: 7px 10px !important;
-
-    margin: 0 !important;
-
-    display: flex !important;
-
-    flex-direction: column !important;
+      34px
+      minmax(0, 1fr)
+      auto !important;
 
     align-items: center !important;
 
-    justify-content: center !important;
-
-    box-sizing: border-box;
-
-    background: #ffffff !important;
-
-    border: 1px solid #e4e4e4 !important;
-
-    border-radius: 14px !important;
-
-    box-shadow:
-      0 2px 7px rgba(0, 0, 0, 0.05);
-
-    position: relative;
-
-    overflow: hidden;
+    column-gap: 10px !important;
   }
 
 
   /* =====================================================
-     HIDE ICONS ON MOBILE
+     PRAYER ICON
   ===================================================== */
 
   .prayer-card__icon,
   .prayer-icon {
+    display: flex !important;
 
-    display: none !important;
+    width: 30px !important;
+    height: 30px !important;
 
-    width: 0 !important;
-    height: 0 !important;
+    min-width: 30px !important;
+    min-height: 30px !important;
 
-    min-width: 0 !important;
-    min-height: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
 
     margin: 0 !important;
     padding: 0 !important;
-  }
 
+    border-radius: 50% !important;
 
-  .prayer-card__icon svg,
-  .prayer-icon svg {
+    background: #eef3ed !important;
 
-    display: none !important;
+    color: #12352a !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    flex-shrink: 0 !important;
   }
 
 
   /* =====================================================
-     PRAYER CONTENT
+     PRAYER ICON SVG
   ===================================================== */
 
-  .prayer-card__content {
+  .prayer-card__icon svg,
+  .prayer-icon svg {
+    display: block !important;
 
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
+    width: 17px !important;
+    height: 17px !important;
 
-    display: flex !important;
+    min-width: 17px !important;
+    min-height: 17px !important;
 
-    flex-direction: column !important;
+    stroke: currentColor !important;
 
-    align-items: center !important;
+    fill: none !important;
 
-    justify-content: center !important;
+    stroke-width: 1.8 !important;
 
-    gap: 3px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 
-    margin: 0 !important;
-    padding: 0 !important;
-
-    text-align: center;
-
-    box-sizing: border-box;
+    flex-shrink: 0 !important;
   }
 
 
@@ -184,29 +83,17 @@
   ===================================================== */
 
   .prayer-card__name {
+    text-align: left !important;
 
-    display: block !important;
-
-    width: 100% !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    font-size: 12px !important;
+    font-size: 14px !important;
 
     font-weight: 600 !important;
 
-    line-height: 1.2 !important;
+    margin: 0 !important;
 
-    color: #52635d !important;
+    line-height: 1.3 !important;
 
-    text-align: center !important;
-
-    white-space: nowrap;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
+    min-width: 0 !important;
   }
 
 
@@ -215,348 +102,54 @@
   ===================================================== */
 
   .prayer-card__time {
+    text-align: right !important;
 
-    display: block !important;
-
-    width: 100% !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    font-size: 17px !important;
+    font-size: 16px !important;
 
     font-weight: 700 !important;
 
-    line-height: 1.1 !important;
-
-    color: #102923 !important;
-
-    text-align: center !important;
-
-    white-space: nowrap;
-  }
-
-
-  /* =====================================================
-     HIDE ARABIC NAME
-  ===================================================== */
-
-  .prayer-card__arabic {
-
-    display: none !important;
-  }
-
-
-  /* =====================================================
-     CURRENT / NEXT PRAYER CARD
-  ===================================================== */
-
-  .prayer-card.current,
-  .prayer-card.next,
-  .prayer-card--current,
-  .prayer-card--next {
-
-    background: #087b0d !important;
-
-    border: 2px solid #f2c500 !important;
-
-    box-shadow:
-      0 3px 9px rgba(0, 0, 0, 0.16);
-
-    color: #ffffff !important;
-  }
-
-
-  /* =====================================================
-     CURRENT / NEXT PRAYER NAME
-  ===================================================== */
-
-  .prayer-card.current .prayer-card__name,
-  .prayer-card.next .prayer-card__name,
-  .prayer-card--current .prayer-card__name,
-  .prayer-card--next .prayer-card__name {
-
-    color: #ffffff !important;
-  }
-
-
-  /* =====================================================
-     CURRENT / NEXT PRAYER TIME
-  ===================================================== */
-
-  .prayer-card.current .prayer-card__time,
-  .prayer-card.next .prayer-card__time,
-  .prayer-card--current .prayer-card__time,
-  .prayer-card--next .prayer-card__time {
-
-    color: #ffffff !important;
-  }
-
-
-  /* =====================================================
-     NEXT / CURRENT LABEL
-  ===================================================== */
-
-  .prayer-card .next-label,
-  .prayer-card .current-label,
-  .prayer-card__badge {
-
-    position: absolute !important;
-
-    top: 3px !important;
-
-    left: 50% !important;
-
-    transform: translateX(-50%) !important;
-
-    z-index: 5;
-
-    font-size: 7px !important;
-
-    font-weight: 700 !important;
-
-    line-height: 1 !important;
-
-    padding: 2px 5px !important;
+    white-space: nowrap !important;
 
     margin: 0 !important;
 
-    background: #29932f !important;
-
-    color: #ffffff !important;
-
-    border-radius: 4px !important;
-
-    white-space: nowrap;
-
-    max-width: 90%;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
+    line-height: 1.3 !important;
   }
 
-
-  /* =====================================================
-     IF LABEL EXISTS
-  ===================================================== */
-
-  .prayer-card:has(.next-label) .prayer-card__content,
-  .prayer-card:has(.current-label) .prayer-card__content,
-  .prayer-card:has(.prayer-card__badge) .prayer-card__content {
-
-    padding-top: 7px !important;
-  }
-
-
-  /* =====================================================
-     REMOVE UNNECESSARY CHILD SPACING
-  ===================================================== */
-
-  .prayer-card > * {
-
-    max-width: 100%;
-
-    box-sizing: border-box;
-  }
-
-
-  /* =====================================================
-     381px - 600px
-  ===================================================== */
-
-  @media (min-width: 381px) and (max-width: 600px) {
-
-    .home-prayer-section {
-
-      padding-left: 10px !important;
-      padding-right: 10px !important;
-    }
-
-
-    .prayer-times-grid,
-    .prayer-cards,
-    .prayer-grid {
-
-      grid-template-columns:
-        minmax(0, 1fr) !important;
-
-      gap: 8px !important;
-    }
-
-
-    .prayer-card {
-
-      min-height: 65px !important;
-      height: 65px !important;
-
-      padding: 7px 10px !important;
-
-      border-radius: 14px !important;
-    }
-
-
-    .prayer-card__name {
-
-      font-size: 12px !important;
-    }
-
-
-    .prayer-card__time {
-
-      font-size: 17px !important;
-    }
-  }
-
-
-  /* =====================================================
-     320px - 380px
-  ===================================================== */
-
-  @media (max-width: 380px) {
-
-    .home-prayer-section {
-
-      padding-left: 8px !important;
-      padding-right: 8px !important;
-    }
-
-
-    .prayer-times-grid,
-    .prayer-cards,
-    .prayer-grid {
-
-      grid-template-columns:
-        minmax(0, 1fr) !important;
-
-      gap: 6px !important;
-    }
-
-
-    .prayer-card {
-
-      min-height: 62px !important;
-      height: 62px !important;
-
-      padding: 6px 8px !important;
-
-      border-radius: 12px !important;
-    }
-
-
-    .prayer-card__content {
-
-      gap: 2px !important;
-    }
-
-
-    .prayer-card__name {
-
-      font-size: 11px !important;
-
-      line-height: 1.1 !important;
-    }
-
-
-    .prayer-card__time {
-
-      font-size: 15px !important;
-
-      line-height: 1.1 !important;
-    }
-
-
-    .prayer-card .next-label,
-    .prayer-card .current-label,
-    .prayer-card__badge {
-
-      top: 2px !important;
-
-      font-size: 6px !important;
-
-      padding: 2px 4px !important;
-
-      border-radius: 3px !important;
-    }
-
-
-    .prayer-card:has(.next-label) .prayer-card__content,
-    .prayer-card:has(.current-label) .prayer-card__content,
-    .prayer-card:has(.prayer-card__badge) .prayer-card__content {
-
-      padding-top: 7px !important;
-    }
-  }
-
-
-  /* =====================================================
-     VERY SMALL SCREEN
-     320px - 340px
-  ===================================================== */
-
-  @media (max-width: 340px) {
-
-    .home-prayer-section {
-
-      padding-left: 6px !important;
-      padding-right: 6px !important;
-    }
-
-
-    .prayer-times-grid,
-    .prayer-cards,
-    .prayer-grid {
-
-      grid-template-columns:
-        minmax(0, 1fr) !important;
-
-      gap: 5px !important;
-    }
-
-
-    .prayer-card {
-
-      min-height: 58px !important;
-      height: 58px !important;
-
-      padding: 5px 7px !important;
-
-      border-radius: 10px !important;
-    }
-
-
-    .prayer-card__name {
-
-      font-size: 10px !important;
-    }
-
-
-    .prayer-card__time {
-
-      font-size: 14px !important;
-    }
-  }
 }
 
 
 /* =========================================================
-   EXTRA SAFETY
-   PREVENT HORIZONTAL SCROLL
+   CALENDAR → FOOTER SPACE
+   DESKTOP + TABLET + MOBILE
 ========================================================= */
 
-@media (max-width: 600px) {
+.calendar-section {
+  width: 100% !important;
 
-  html,
-  body {
+  box-sizing: border-box !important;
 
-    max-width: 100%;
+  /* Clear space between Calendar and Footer */
+  margin-bottom: 50px !important;
+}
 
-    overflow-x: hidden !important;
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  margin-top: 0 !important;
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .calendar-section {
+    margin-bottom: 40px !important;
   }
 
-
-  * {
-
-    box-sizing: border-box;
-  }
 }

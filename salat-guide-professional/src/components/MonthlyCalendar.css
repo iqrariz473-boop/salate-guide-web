@@ -11,13 +11,21 @@
   box-sizing: border-box;
 
   background: #ffffff;
-  border: 1px solid #eadcc9;
+
+  border: 1px solid #c9eadc;
   border-radius: 20px;
 
   padding: 18px;
 
   overflow: hidden;
+
   color: #504d28;
+
+  /* =====================================================
+     SPACE BETWEEN CALENDAR AND FOOTER
+     Desktop + Tablet + Mobile
+  ===================================================== */
+  margin-bottom: 50px;
 }
 
 
@@ -28,7 +36,6 @@
 .monthly-calendar__nav {
   width: fit-content;
   max-width: 100%;
-
   min-height: 48px;
 
   display: flex;
@@ -41,6 +48,7 @@
   padding: 4px;
 
   background: #fffdf9;
+
   border: 1px solid #eadcc9;
   border-radius: 12px;
 
@@ -68,7 +76,7 @@
   border-radius: 9px;
 
   background: #ffffff;
-  color: #4a2850;
+  color: #285036;
 
   cursor: pointer;
 
@@ -80,9 +88,9 @@
 }
 
 .monthly-calendar__nav-btn:hover {
-  background: #504d28;
+  background: #285035;
   color: #ffffff;
-  border-color: #504d28;
+  border-color: #28502d;
 
   transform: translateY(-1px);
 }
@@ -111,7 +119,7 @@
 
   line-height: 1;
 
-  color: #504928;
+  color: #28502f;
 
   white-space: nowrap;
 }
@@ -163,7 +171,7 @@
   border-radius: 11px;
 
   background: #fffdf9;
-  color: #4a2850;
+  color: #285045;
 
   cursor: pointer;
 
@@ -178,7 +186,7 @@
 }
 
 .monthly-calendar__month:hover {
-  border-color: #504928;
+  border-color: #285046;
   background: #f7f1f7;
 
   transform: translateY(-1px);
@@ -190,8 +198,9 @@
 ========================================================= */
 
 .monthly-calendar__month.active {
-  background: #504b28;
-  border-color: #504b28;
+  background: #285033;
+
+  border-color: #28502f;
 
   color: #ffffff;
 
@@ -319,7 +328,7 @@
 ========================================================= */
 
 .monthly-calendar__table thead {
-  background: #504d28;
+  background: #285036;
   color: #ffffff;
 }
 
@@ -357,7 +366,7 @@
 
   text-align: center;
 
-  color: #4b4250;
+  color: #425049;
 
   border-bottom: 1px solid #eee4d8;
 
@@ -402,7 +411,7 @@
 }
 
 .monthly-calendar__today-row td {
-  color: #4f5028;
+  color: #285036;
 
   font-weight: 600;
 }
@@ -421,7 +430,7 @@
 
   border-radius: 5px;
 
-  background: #504828;
+  background: #28503c;
   color: #ffffff;
 
   font-size: 7px;
@@ -440,6 +449,9 @@
 
   .monthly-calendar {
     padding: 15px;
+
+    /* Keep Calendar → Footer spacing */
+    margin-bottom: 50px;
   }
 
   .monthly-calendar__months {
@@ -459,13 +471,16 @@
 
   .monthly-calendar__table th {
     font-size: 11px;
+
     padding: 7px 4px;
   }
 
   .monthly-calendar__table td {
     font-size: 11px;
+
     padding: 6px 4px;
   }
+
 }
 
 
@@ -480,6 +495,9 @@
     padding: 12px;
 
     border-radius: 16px;
+
+    /* Calendar → Footer */
+    margin-bottom: 50px;
   }
 
 
@@ -579,6 +597,7 @@
 
     font-size: 6px;
   }
+
 }
 
 
@@ -596,6 +615,9 @@
     padding: 10px;
 
     border-radius: 14px;
+
+    /* Calendar → Footer */
+    margin-bottom: 50px;
   }
 
 
@@ -615,6 +637,7 @@
 
   .monthly-calendar__nav-btn {
     width: 34px;
+
     height: 34px;
 
     flex: 0 0 34px;
@@ -735,6 +758,7 @@
 
     font-size: 5px;
   }
+
 }
 
 
@@ -747,6 +771,9 @@
 
   .monthly-calendar {
     padding: 8px;
+
+    /* Calendar → Footer */
+    margin-bottom: 40px;
   }
 
 
@@ -760,6 +787,7 @@
 
   .monthly-calendar__nav-btn {
     width: 32px;
+
     height: 32px;
 
     flex-basis: 32px;
@@ -821,4 +849,5 @@
 
     padding: 1px 2px;
   }
+
 }

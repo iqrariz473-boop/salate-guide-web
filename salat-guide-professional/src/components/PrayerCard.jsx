@@ -2,8 +2,32 @@ import { PRAYER_ICONS } from "./Icons.jsx";
 import { to12Hour } from "../utils/dateUtils.js";
 import "./PrayerCard.css";
 
+function getPrayerIcon(label) {
+  if (!label) return null;
+
+  // exact match first (fast path)
+  if (PRAYER_ICONS[label]) return PRAYER_ICONS[label];
+
+  // fallback: case-insensitive / trimmed match, in case the label
+  // coming from the data source is like "fajr" or " Fajr "
+  const normalized = String(label).trim().toLowerCase();
+  const matchKey = Object.keys(PRAYER_ICONS).find(
+    (key) => key.toLowerCase() === normalized
+  );
+
+  if (matchKey) return PRAYER_ICONS[matchKey];
+
+  // still nothing? log it so we can see the real value being passed
+  if (typeof window !== "undefined") {
+    console.warn(
+      `[PrayerCard] No icon found for label: ${JSON.stringify(label)}`
+    );
+  }
+  return null;
+}
+
 function PrayerCard({ label, arabic, time, isActive, isNext }) {
-  const Icon = PRAYER_ICONS[label];
+  const Icon = getPrayerIcon(label);
   const stateLabel = isActive ? "Current" : isNext ? "Next" : "";
 
   return (
