@@ -1,254 +1,611 @@
-// Talks to the free Aladhan Prayer Times API.
-// This is the only file that knows about the API's URL shape
-// and response format — components and hooks never call fetch()
-// directly.
-
 import { PRAYER_DEFINITIONS } from "../utils/prayerUtils.js";
 
-/* =========================================================
-   API URLs
-========================================================= */
+// =========================================================
+// API CONFIGURATION
+// =========================================================
 
-const TIMINGS_URL =
-  "https://api.aladhan.com/v1/timingsByCity";
+const API_URL =
+  "https://prayertimes.al-muslims.com/api/prayer/get-data";
 
-const CALENDAR_URL =
-  "https://api.aladhan.com/v1/calendarByCity";
+const API_KEY =
+  import.meta.env.VITE_PRAYER_API_KEY;
 
-/* =========================================================
-   CALCULATION METHOD
-========================================================= */
 
-// 2 = Islamic Society of North America (ISNA)
-const CALCULATION_METHOD = 2;
+// =========================================================
+// CACHE
+// =========================================================
+//
+// Same city + country + year + month ke liye
+// API sirf ek baar hit hogi.
+//
+// Example:
+//
+// Lahore + Pakistan + 2026 + 9
+//              ↓
+//          API request
+//              ↓
+//            CACHE
+//
+// Dobara Lahore search:
+//              ↓
+//          CACHE DATA
+//              ↓
+//        API request nahi
+// =========================================================
 
-/* =========================================================
-   CLEAN TIME
-========================================================= */
+const prayerCache = new Map();
 
-/**
- * Removes timezone text such as:
- * "(PKT)", "PKT", etc.
- *
- * Keeps only the actual prayer time.
- *
- * Examples:
- * "05:02 (PKT)" → "05:02"
- * "05:02 PKT"    → "05:02"
- */
+
+// =========================================================
+// IN-FLIGHT REQUEST CACHE
+// =========================================================
+//
+// Agar ek hi waqt mein 2 components same data maangte hain,
+// dono alag API requests nahi bhejenge.
+//
+// Dono same Promise use karenge.
+// =========================================================
+
+const pendingRequests = new Map();
+
+
+// =========================================================
+// CLEAN TIME
+// =========================================================
+
 function cleanTime(time) {
-  if (!time) return "";
+  if (!time) {
+    return "";
+  }
 
   return String(time)
     .replace(/\s*\([^)]*\)/g, "")
-    .replace(/\s*PKT/gi, "")
     .trim();
 }
 
-/* =========================================================
-   FALLBACK DATA
-========================================================= */
 
-/**
- * Demo data used only if the live API is unreachable.
- *
- * This allows the UI to remain usable when:
- * - Internet is unavailable
- * - API is temporarily down
- * - API request fails
- */
+// =========================================================
+// FALLBACK TIMINGS
+// =========================================================
+//
+// Currently API error par fallback use nahi ho raha.
+// Isko future use ke liye rakha gaya hai.
+// =========================================================
+
 const FALLBACK_TIMINGS = {
-  Fajr: "05:02",
-  Sunrise: "06:24",
-  Dhuhr: "12:14",
-  Asr: "15:45",
-  Maghrib: "18:03",
-  Isha: "19:25",
+  fajr: "4:20 AM",
+  sunrise: "5:43 AM",
+  dhuhr: "12:01 PM",
+  asr: "3:33 PM",
+  maghrib: "6:17 PM",
+  isha: "7:40 PM",
 };
 
-/* =========================================================
-   BUILD PRAYER LIST
-========================================================= */
 
-/**
- * Converts the API timings into the application's
- * standard prayer format.
- */
-function buildPrayerList(timings) {
+// =========================================================
+// BUILD PRAYER LIST
+// =========================================================
+
+function buildPrayerList(timings = {}) {
   return PRAYER_DEFINITIONS.map(
     ({ key, label, arabic }) => ({
       key,
       label,
       arabic,
-      time: cleanTime(timings[key]),
+
+      time: cleanTime(
+        timings[key] ||
+        timings[key?.toLowerCase()]
+      ),
     })
   );
 }
 
-/* =========================================================
-   GET TODAY'S PRAYER TIMES
-========================================================= */
 
-/**
- * Fetches today's prayer timings for a city/country.
- *
- * @param {string} city
- * @param {string} country
- *
- * @returns {Promise<Object>}
- */
-export async function getPrayerTimes(city, country) {
-  const url =
-    `${TIMINGS_URL}?city=${encodeURIComponent(
-      city
-    )}&country=${encodeURIComponent(
+// =========================================================
+// CACHE KEY
+// =========================================================
+
+function createCacheKey(
+  year,
+  month,
+  city,
+  country
+) {
+  return [
+    year,
+    month,
+    city.trim().toLowerCase(),
+    country.trim().toLowerCase(),
+  ].join("|");
+}
+
+
+// =========================================================
+// FETCH MONTH DATA
+// =========================================================
+//
+// IMPORTANT:
+//
+// API ka response:
+// - today
+// - calendar
+// dono provide karta hai.
+//
+// Isliye same API response ko cache karenge.
+//
+// getPrayerTimes()
+// aur
+// getMonthlyPrayerTimes()
+//
+// dono isi function ko use karenge.
+// =========================================================
+
+async function fetchPrayerData(
+  year,
+  month,
+  city,
+  country
+) {
+  if (!API_KEY) {
+    throw new Error(
+      "Prayer API key is missing. Add VITE_PRAYER_API_KEY to your .env file."
+    );
+  }
+
+
+  // -------------------------------------------------------
+  // CACHE KEY
+  // -------------------------------------------------------
+
+  const cacheKey = createCacheKey(
+    year,
+    month,
+    city,
+    country
+  );
+
+
+  // -------------------------------------------------------
+  // 1. CHECK COMPLETED CACHE
+  // -------------------------------------------------------
+
+  if (prayerCache.has(cacheKey)) {
+    console.log(
+      "PRAYER CACHE HIT:",
+      city,
+      country,
+      year,
+      month
+    );
+
+    return prayerCache.get(cacheKey);
+  }
+
+
+  // -------------------------------------------------------
+  // 2. CHECK PENDING REQUEST
+  // -------------------------------------------------------
+  //
+  // Agar request already chal rahi hai,
+  // new fetch nahi karna.
+  // -------------------------------------------------------
+
+  if (pendingRequests.has(cacheKey)) {
+    console.log(
+      "PRAYER REQUEST ALREADY IN PROGRESS:",
+      city,
       country
-    )}&method=${CALCULATION_METHOD}`;
+    );
+
+    return pendingRequests.get(cacheKey);
+  }
+
+
+  // -------------------------------------------------------
+  // 3. CREATE NEW REQUEST
+  // -------------------------------------------------------
+
+  const requestPromise =
+    (async () => {
+
+      const params =
+        new URLSearchParams();
+
+      params.set(
+        "year",
+        year
+      );
+
+      params.set(
+        "month",
+        month
+      );
+
+      params.set(
+        "city",
+        city
+      );
+
+      params.set(
+        "country",
+        country
+      );
+
+
+      const url =
+        `${API_URL}?${params.toString()}`;
+
+
+      console.log(
+        "PRAYER API REQUEST:",
+        url
+      );
+
+
+      const response =
+        await fetch(
+          url,
+          {
+            method: "GET",
+
+            headers: {
+              "x-api-key": API_KEY,
+              Accept: "application/json",
+            },
+          }
+        );
+
+
+      if (!response.ok) {
+        throw new Error(
+          `Prayer API error: ${response.status} ${response.statusText}`
+        );
+      }
+
+
+      const payload =
+        await response.json();
+
+
+      console.log(
+        "PRAYER API RESPONSE:",
+        payload
+      );
+
+
+      if (!payload?.success) {
+        throw new Error(
+          "Prayer API returned an unsuccessful response."
+        );
+      }
+
+
+      // ---------------------------------------------------
+      // SAVE SUCCESSFUL RESPONSE
+      // ---------------------------------------------------
+
+      prayerCache.set(
+        cacheKey,
+        payload
+      );
+
+
+      console.log(
+        "PRAYER DATA CACHED:",
+        cacheKey
+      );
+
+
+      return payload;
+
+    })();
+
+
+  // -------------------------------------------------------
+  // SAVE PENDING REQUEST
+  // -------------------------------------------------------
+
+  pendingRequests.set(
+    cacheKey,
+    requestPromise
+  );
+
 
   try {
-    const response = await fetch(url);
 
-    if (!response.ok) {
-      throw new Error("Unable to load prayer times.");
-    }
+    return await requestPromise;
 
-    const payload = await response.json();
+  } finally {
 
-    const data = payload?.data;
+    // Request complete hone ke baad
+    // pending list se remove.
 
-    if (!data?.timings) {
-      throw new Error("Prayer times were not found.");
-    }
+    pendingRequests.delete(
+      cacheKey
+    );
 
-    return {
-      prayers: buildPrayerList(data.timings),
-
-      hijriDate: data?.date?.hijri
-        ? `${data.date.hijri.day} ${data.date.hijri.month.en} ${data.date.hijri.year} AH`
-        : "",
-
-      gregorianDate:
-        data?.date?.readable || "",
-
-      methodName:
-        data?.meta?.method?.name ||
-        "Islamic Society of North America",
-
-      isFallback: false,
-    };
-  } catch {
-    /*
-      If the API fails, return demo timings
-      instead of breaking the entire UI.
-    */
-
-    return {
-      prayers: buildPrayerList(
-        FALLBACK_TIMINGS
-      ),
-
-      hijriDate: "",
-
-      gregorianDate: "",
-
-      methodName: "Demo data (offline)",
-
-      isFallback: true,
-    };
   }
 }
 
-/* =========================================================
-   GET MONTHLY PRAYER TIMES
-========================================================= */
 
-/**
- * Fetches a full month of prayer timings
- * for a city/country.
- *
- * Returns:
- *
- * [
- *   {
- *     date,
- *     fajr,
- *     sunrise,
- *     dhuhr,
- *     asr,
- *     maghrib,
- *     isha
- *   }
- * ]
- *
- * @param {string} city
- * @param {string} country
- * @param {number|string} month
- * @param {number|string} year
- *
- * @returns {Promise<Array>}
- */
+// =========================================================
+// GET TODAY'S PRAYER TIMES
+// =========================================================
+
+export async function getPrayerTimes(
+  city,
+  country
+) {
+  if (!city || !country) {
+    throw new Error(
+      "City and country are required."
+    );
+  }
+
+
+  try {
+
+    const now =
+      new Date();
+
+
+    const year =
+      now.getFullYear();
+
+
+    const month =
+      now.getMonth() + 1;
+
+
+    // -----------------------------------------------------
+    // IMPORTANT
+    // -----------------------------------------------------
+    //
+    // Ye function cache use karta hai.
+    //
+    // Agar same city/month pehle load ho chuka hai:
+    //
+    // API HIT ❌
+    // CACHE ✅
+    //
+    // -----------------------------------------------------
+
+    const payload =
+      await fetchPrayerData(
+        year,
+        month,
+        city,
+        country
+      );
+
+
+    const today =
+      payload?.today;
+
+
+    if (!today?.timings) {
+      throw new Error(
+        "Today's prayer timings were not found."
+      );
+    }
+
+
+    return {
+
+      prayers:
+        buildPrayerList(
+          today.timings
+        ),
+
+      hijriDate:
+        today.hijri || "",
+
+      gregorianDate:
+        today.gregorian || "",
+
+      methodName:
+        payload?.method_meta?.display_name ||
+        payload?.method ||
+        "University Of Islamic Sciences, Karachi",
+
+      city:
+        payload?.city ||
+        city ||
+        "",
+
+      country:
+        payload?.country ||
+        country ||
+        "",
+
+      timezone:
+        payload?.timezone ?? 5,
+
+      isFallback:
+        false,
+    };
+
+  } catch (error) {
+
+    console.error(
+      "Prayer Times API Error:",
+      error
+    );
+
+    throw error;
+  }
+}
+
+
+// =========================================================
+// GET MONTHLY PRAYER TIMES
+// =========================================================
+
 export async function getMonthlyPrayerTimes(
   city,
   country,
   month,
   year
 ) {
-  const url =
-    `${CALENDAR_URL}/${year}/${month}` +
-    `?city=${encodeURIComponent(
-      city
-    )}` +
-    `&country=${encodeURIComponent(
+  if (!city || !country) {
+    throw new Error(
+      "City and country are required."
+    );
+  }
+
+
+  try {
+
+    // -----------------------------------------------------
+    // SAME CACHE
+    // -----------------------------------------------------
+    //
+    // Monthly calendar bhi exactly same cached payload
+    // use karega.
+    //
+    // Isliye:
+    //
+    // getPrayerTimes()
+    // +
+    // getMonthlyPrayerTimes()
+    //
+    // = ONE API REQUEST
+    //
+    // -----------------------------------------------------
+
+    const payload =
+      await fetchPrayerData(
+        year,
+        month,
+        city,
+        country
+      );
+
+
+    const days =
+      payload?.calendar;
+
+
+    if (
+      !Array.isArray(days) ||
+      days.length === 0
+    ) {
+      throw new Error(
+        "No prayer times available for this month."
+      );
+    }
+
+
+    return days.map(
+      (day) => ({
+
+        date:
+          day?.gregorian || "",
+
+        day:
+          day?.day || "",
+
+        weekday:
+          day?.weekday || "",
+
+        hijri:
+          day?.hijri || "",
+
+        fajr:
+          cleanTime(
+            day?.timings?.fajr
+          ),
+
+        sunrise:
+          cleanTime(
+            day?.timings?.sunrise
+          ),
+
+        dhuhr:
+          cleanTime(
+            day?.timings?.dhuhr
+          ),
+
+        asr:
+          cleanTime(
+            day?.timings?.asr
+          ),
+
+        maghrib:
+          cleanTime(
+            day?.timings?.maghrib
+          ),
+
+        isha:
+          cleanTime(
+            day?.timings?.isha
+          ),
+      })
+    );
+
+  } catch (error) {
+
+    console.error(
+      "Monthly Prayer API Error:",
+      error
+    );
+
+    throw new Error(
+      error?.message ||
+      "Unable to load the monthly prayer calendar."
+    );
+  }
+}
+
+
+// =========================================================
+// OPTIONAL: CLEAR PRAYER CACHE
+// =========================================================
+//
+// Normally is function ki zaroorat nahi.
+//
+// Agar future mein "Refresh Prayer Times"
+// button banana ho to:
+//
+// clearPrayerCache();
+//
+// use kar sakte hain.
+// =========================================================
+
+export function clearPrayerCache() {
+  prayerCache.clear();
+
+  console.log(
+    "PRAYER CACHE CLEARED"
+  );
+}
+
+
+// =========================================================
+// OPTIONAL: CLEAR SPECIFIC CITY CACHE
+// =========================================================
+
+export function clearCityPrayerCache(
+  city,
+  country,
+  year,
+  month
+) {
+  const cacheKey =
+    createCacheKey(
+      year,
+      month,
+      city,
       country
-    )}` +
-    `&method=${CALCULATION_METHOD}`;
-
-  const response = await fetch(url);
-
-  if (!response.ok) {
-    throw new Error(
-      "Unable to load the monthly prayer calendar. Please try again."
     );
-  }
 
-  const payload = await response.json();
+  prayerCache.delete(
+    cacheKey
+  );
 
-  const days = payload?.data;
-
-  if (!Array.isArray(days) || days.length === 0) {
-    throw new Error(
-      "No prayer times available for this month."
-    );
-  }
-
-  return days.map((day) => ({
-    date:
-      day.date.gregorian.day +
-      " " +
-      day.date.gregorian.month.en,
-
-    fajr: cleanTime(
-      day.timings?.Fajr
-    ),
-
-    sunrise: cleanTime(
-      day.timings?.Sunrise
-    ),
-
-    dhuhr: cleanTime(
-      day.timings?.Dhuhr
-    ),
-
-    asr: cleanTime(
-      day.timings?.Asr
-    ),
-
-    maghrib: cleanTime(
-      day.timings?.Maghrib
-    ),
-
-    isha: cleanTime(
-      day.timings?.Isha
-    ),
-  }));
+  console.log(
+    "CITY PRAYER CACHE CLEARED:",
+    cacheKey
+  );
 }

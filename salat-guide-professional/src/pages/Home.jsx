@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Seo from "../components/Seo.jsx";
 import Hero from "../components/Hero.jsx";
 import PrayerTimesCard from "../components/PrayerTimesCard.jsx";
+import LocationSearch from "../components/LocationSearch.jsx";
 
 import { useCityContext } from "../context/LocationContext.jsx";
 import usePrayerTimes from "../hooks/usePrayerTimes.js";
@@ -168,7 +169,14 @@ function SectionHeading({
 ========================================================= */
 
 function Home() {
-  const { city, country, selectCity } = useCityContext();
+  const {
+    city,
+    country,
+    selectCity,
+    useMyLocation,
+    locateStatus,
+    locateError,
+  } = useCityContext();
 
   const {
     prayers,
@@ -179,28 +187,16 @@ function Home() {
     isFallback,
   } = usePrayerTimes(city, country);
 
-  /* =======================================================
-     CITY SELECT
-  ======================================================= */
-
   function handleCitySelect(selectedCity, selectedCountry) {
     selectCity(selectedCity, selectedCountry);
   }
 
   return (
     <>
-      {/* =====================================================
-          SEO
-      ===================================================== */}
-
       <Seo
         title="Home"
         description="Find accurate Islamic prayer times, Quran verses, Qibla direction and daily duas."
       />
-
-      {/* =====================================================
-          HERO
-      ===================================================== */}
 
       <Hero />
 
@@ -210,11 +206,38 @@ function Home() {
 
       <section className="section home-prayer-section">
         <div className="container">
-          <SectionHeading
-            eyebrow="Today's Salah"
-            title={`Prayer Times for ${city}`}
-            description="Stay connected with your five daily prayers."
-          />
+
+          <div className="home-prayer-header">
+
+            <SectionHeading
+              eyebrow="Today's Salah"
+              title={`Prayer Times for ${city}`}
+              description="Stay connected with your five daily prayers."
+            />
+
+{/* =====================================================
+    LOCATION SEARCH
+===================================================== */}
+
+<section className="home-location-search-section">
+
+  <div className="container">
+
+    <LocationSearch
+      city={city}
+      country={country}
+      onSearch={handleCitySelect}
+      onLocate={useMyLocation}
+      locateStatus={locateStatus}
+      locateError={locateError}
+    />
+
+  </div>
+
+</section>
+
+
+          </div>
 
           <PrayerTimesCard
             city={city}
@@ -225,7 +248,9 @@ function Home() {
             hijriDate={hijriDate}
             methodName={methodName}
             isFallback={isFallback}
-            onRetry={() => selectCity(city, country)}
+            onRetry={() =>
+              selectCity(city, country)
+            }
           />
 
           <div className="home__more-link">
@@ -238,9 +263,9 @@ function Home() {
               <span aria-hidden="true">→</span>
             </Link>
           </div>
+
         </div>
       </section>
-
       {/* =====================================================
           QURAN VERSE
       ===================================================== */}

@@ -1,58 +1,243 @@
-import { createContext, useContext, useState } from "react";
-import useLocalStorage from "../hooks/useLocalStorage.js";
-import { getCurrentPosition, reverseGeocode } from "../services/locationService.js";
 
-const DEFAULT_CITY = { city: "Lahore", country: "Pakistan" };
+import {
+  createContext,
+  useContext,
+  useState,
+} from "react";
+
+import useLocalStorage from "../hooks/useLocalStorage.js";
+
+import {
+  getCurrentPosition,
+  reverseGeocode,
+} from "../services/locationService.js";
+
+
+// =========================================================
+// DEFAULT LOCATION
+// =========================================================
+
+const DEFAULT_CITY = {
+  city: "Lahore",
+  country: "Pakistan",
+  latitude: 31.558,
+  longitude: 74.35071,
+};
+
+
+// =========================================================
+// LOCATION CONTEXT
+// =========================================================
 
 const LocationContext = createContext(null);
 
-/**
- * Holds the site-wide "selected city" — persisted to localStorage so a
- * returning visitor sees their last city again — plus the "Use My
- * Location" flow shared by the Home hero and the Prayer Times page.
- */
-export function LocationProvider({ children }) {
-  const [selected, setSelected] = useLocalStorage("salat-guide:last-city", DEFAULT_CITY);
-  const [locateStatus, setLocateStatus] = useState("idle"); // idle | loading | error
-  const [locateError, setLocateError] = useState("");
 
-  function selectCity(city, country) {
-    setSelected({ city, country });
-    setLocateStatus("idle");
+// =========================================================
+// LOCATION PROVIDER
+// =========================================================
+
+export function LocationProvider({ children }) {
+
+  // -------------------------------------------------------
+  // Selected location
+  // -------------------------------------------------------
+
+  const [
+    selected,
+    setSelected,
+  ] = useLocalStorage(
+    "salat-guide:last-city",
+    DEFAULT_CITY
+  );
+
+
+  // -------------------------------------------------------
+  // Browser location status
+  // -------------------------------------------------------
+
+  const [
+    locateStatus,
+    setLocateStatus,
+  ] = useState("idle");
+
+
+  const [
+    locateError,
+    setLocateError,
+  ] = useState("");
+
+
+  // =======================================================
+  // SELECT CITY FROM SEARCH
+  // =======================================================
+
+  function selectCity(
+    city,
+    country,
+    latitude = null,
+    longitude = null
+  ) {
+
+    setSelected({
+      city,
+      country,
+      latitude,
+      longitude,
+    });
+
+
+    setLocateStatus(
+      "idle"
+    );
+
+
     setLocateError("");
   }
 
+
+  // =======================================================
+  // USE MY CURRENT LOCATION
+  // =======================================================
+
   async function useMyLocation() {
-    setLocateStatus("loading");
+
+    setLocateStatus(
+      "loading"
+    );
+
     setLocateError("");
+
+
     try {
-      const { latitude, longitude } = await getCurrentPosition();
-      const { city, country } = await reverseGeocode(latitude, longitude);
-      setSelected({ city, country });
-      setLocateStatus("idle");
+
+      // ---------------------------------------------------
+      // Get browser GPS coordinates
+      // ---------------------------------------------------
+
+      const {
+        latitude,
+        longitude,
+      } = await getCurrentPosition();
+
+
+      // ---------------------------------------------------
+      // Convert coordinates into city + country
+      // ---------------------------------------------------
+
+      const {
+        city,
+        country,
+      } = await reverseGeocode(
+        latitude,
+        longitude
+      );
+
+
+      // ---------------------------------------------------
+      // Save complete location
+      // ---------------------------------------------------
+
+      setSelected({
+        city,
+        country,
+        latitude,
+        longitude,
+      });
+
+
+      setLocateStatus(
+        "idle"
+      );
+
+
     } catch (error) {
-      setLocateStatus("error");
-      setLocateError(error.message || "Unable to determine your location.");
+
+      setLocateStatus(
+        "error"
+      );
+
+
+      setLocateError(
+        error?.message ||
+        "Unable to determine your location."
+      );
     }
   }
 
+
+  // =======================================================
+  // CONTEXT VALUE
+  // =======================================================
+
   const value = {
-    city: selected.city,
-    country: selected.country,
+
+    // City
+    city:
+      selected?.city || DEFAULT_CITY.city,
+
+
+    // Country
+    country:
+      selected?.country || DEFAULT_CITY.country,
+
+
+    // Exact coordinates
+    latitude:
+      selected?.latitude ??
+      DEFAULT_CITY.latitude,
+
+
+    longitude:
+      selected?.longitude ??
+      DEFAULT_CITY.longitude,
+
+
+    // Functions
     selectCity,
+
     useMyLocation,
+
+
+    // Location status
     locateStatus,
+
     locateError,
   };
 
-  return <LocationContext.Provider value={value}>{children}</LocationContext.Provider>;
+
+  // =======================================================
+  // PROVIDER
+  // =======================================================
+
+  return (
+    <LocationContext.Provider
+      value={value}
+    >
+      {children}
+    </LocationContext.Provider>
+  );
 }
 
-/** Access the shared selected-city state from any component. */
+
+// =========================================================
+// CUSTOM HOOK
+// =========================================================
+
 export function useCityContext() {
-  const context = useContext(LocationContext);
+
+  const context =
+    useContext(
+      LocationContext
+    );
+
+
   if (!context) {
-    throw new Error("useCityContext must be used within a LocationProvider");
+
+    throw new Error(
+      "useCityContext must be used within a LocationProvider"
+    );
   }
+
+
   return context;
 }

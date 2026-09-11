@@ -1,8 +1,8 @@
 import Seo from "../components/Seo.jsx";
 import QiblaCompass from "../components/QiblaCompass.jsx";
 
-
 import "./Qibla.css";
+
 
 /* =========================================================
    FEATURES
@@ -25,6 +25,7 @@ const FEATURES = [
     text: "Qibla for every Muslim, anywhere",
   },
 ];
+
 
 /* =========================================================
    HOW IT WORKS
@@ -51,6 +52,11 @@ const STEPS = [
   },
 ];
 
+
+/* =========================================================
+   QIBLA PAGE
+========================================================= */
+
 function Qibla() {
   return (
     <>
@@ -61,22 +67,22 @@ function Qibla() {
 
       <main className="qibla-page">
 
+
         {/* =================================================
             HERO SECTION
         ================================================= */}
 
-        <section
-          className="qibla-hero"
-          style={{
+        <section className="qibla-hero">
 
-          }}
-        >
+          {/* Decorative background */}
 
-          {/* Background Overlay */}
+          <div className="qibla-hero-pattern"></div>
 
           <div className="qibla-hero-overlay"></div>
 
+
           <div className="container qibla-hero-inner">
+
 
             {/* =================================================
                 LEFT CONTENT
@@ -84,17 +90,26 @@ function Qibla() {
 
             <div className="qibla-hero-content">
 
+
               {/* EYEBROW */}
 
               <div className="qibla-eyebrow">
 
+                <span className="qibla-eyebrow-line"></span>
+
                 <div className="qibla-eyebrow-icon">
-                  <span aria-hidden="true">⌖</span>
+                  <span aria-hidden="true">
+                    ⌖
+                  </span>
                 </div>
 
-                <span>QIBLA DIRECTION</span>
+                <span>
+                  QIBLA DIRECTION
+                </span>
 
-                <i>◆</i>
+                <i aria-hidden="true">
+                  ◆
+                </i>
 
               </div>
 
@@ -103,7 +118,9 @@ function Qibla() {
 
               <h1>
                 Turn Towards
-                <span>The Holy Kaaba</span>
+                <span>
+                  The Holy Kaaba
+                </span>
               </h1>
 
 
@@ -116,34 +133,51 @@ function Qibla() {
 
 
               {/* =================================================
-                  FEATURE CARDS
+                  FEATURES
               ================================================= */}
 
               <div className="qibla-features">
 
-                {FEATURES.map((feature) => (
+                {FEATURES.map((feature, index) => (
+
                   <div
                     className="qibla-feature"
                     key={feature.title}
                   >
 
+                    {/* ICON */}
+
                     <div className="qibla-feature-icon">
-                      {feature.icon}
+                      <span>
+                        {feature.icon}
+                      </span>
                     </div>
+
+
+                    {/* CONTENT */}
 
                     <div className="qibla-feature-info">
 
-                      <strong>
-                        {feature.title}
-                      </strong>
+                      <div className="qibla-feature-top">
 
-                      <span>
+                        <span>
+                          0{index + 1}
+                        </span>
+
+                        <strong>
+                          {feature.title}
+                        </strong>
+
+                      </div>
+
+                      <p>
                         {feature.text}
-                      </span>
+                      </p>
 
                     </div>
 
                   </div>
+
                 ))}
 
               </div>
@@ -152,7 +186,7 @@ function Qibla() {
 
 
             {/* =================================================
-                RIGHT COMPASS CARD
+                RIGHT COMPASS
             ================================================= */}
 
             <div
@@ -160,12 +194,10 @@ function Qibla() {
               id="qibla-compass"
             >
 
-              {/* =================================================
-                  COMPASS
-              ================================================= */}
-
               <div className="qibla-compass-wrapper">
+
                 <QiblaCompass />
+
               </div>
 
             </div>
@@ -183,37 +215,59 @@ function Qibla() {
 
           <div className="container">
 
-            <div className="qibla-guide-heading">
 
-              <span>
+            {/* SECTION HEADING */}
+
+            <div className="qibla-section-heading">
+
+              <span className="section-kicker">
                 ✦ HOW IT WORKS ✦
               </span>
 
               <h2>
                 Find your Qibla in{" "}
-                <strong>
+                <em>
                   three simple steps
-                </strong>
+                </em>
               </h2>
+
+              <p>
+                Follow these simple steps to find the
+                direction of the Holy Kaaba accurately.
+              </p>
 
             </div>
 
 
+            {/* =================================================
+                STEPS
+            ================================================= */}
+
             <div className="qibla-steps">
 
               {STEPS.map((step) => (
+
                 <article
                   className="qibla-step"
                   key={step.number}
                 >
 
-                  <div className="qibla-step-icon">
-                    {step.icon}
-                  </div>
+
+                  {/* STEP NUMBER */}
 
                   <div className="qibla-step-number">
                     {step.number}
                   </div>
+
+
+                  {/* ICON */}
+
+                  <div className="qibla-step-icon">
+                    {step.icon}
+                  </div>
+
+
+                  {/* CONTENT */}
 
                   <div className="qibla-step-content">
 
@@ -227,7 +281,18 @@ function Qibla() {
 
                   </div>
 
+
+                  {/* ARROW */}
+
+                  <div
+                    className="qibla-step-arrow"
+                    aria-hidden="true"
+                  >
+                    →
+                  </div>
+
                 </article>
+
               ))}
 
             </div>
@@ -239,14 +304,25 @@ function Qibla() {
 
             <div className="qibla-about">
 
-              <div>
 
-                <span>
+              {/* DECORATION */}
+
+              <div className="qibla-about-decoration"></div>
+
+
+              {/* CONTENT */}
+
+              <div className="qibla-about-content">
+
+                <span className="section-kicker">
                   THE HOLY QIBLA
                 </span>
 
                 <h2>
-                  The Kaaba in Makkah
+                  The Kaaba
+                  <span>
+                    {" "}in Makkah
+                  </span>
                 </h2>
 
                 <p>
@@ -257,30 +333,81 @@ function Qibla() {
                   worship wherever they are.
                 </p>
 
+
+                {/* POINTS */}
+
+                <div className="qibla-about-points">
+
+                  <div>
+                    <span>✦</span>
+                    <p>
+                      Sacred direction of prayer
+                    </p>
+                  </div>
+
+                  <div>
+                    <span>✦</span>
+                    <p>
+                      Center of Masjid al-Haram
+                    </p>
+                  </div>
+
+                  <div>
+                    <span>✦</span>
+                    <p>
+                      Faced by Muslims worldwide
+                    </p>
+                  </div>
+
+                </div>
+
               </div>
 
-              <div className="qibla-kaaba">
-                🕋
+
+              {/* KAABA ART */}
+
+              <div className="qibla-kaaba-art">
+
+                <div className="kaaba-ring">
+
+                  <div className="kaaba-symbol">
+                    🕋
+                  </div>
+
+                </div>
+
+                <span>
+                  MAKKAH
+                </span>
+
               </div>
 
             </div>
 
 
             {/* =================================================
-                INFO NOTE
+                INFORMATION NOTE
             ================================================= */}
 
             <div className="qibla-note">
 
-              <span>
+              <div className="qibla-note-icon">
                 ⓘ
-              </span>
+              </div>
 
-              <p>
-                For better compass accuracy, enable
-                location services and keep your device
-                away from magnetic objects.
-              </p>
+              <div>
+
+                <strong>
+                  Compass Accuracy
+                </strong>
+
+                <p>
+                  For better compass accuracy, enable
+                  location services and keep your device
+                  away from magnetic objects.
+                </p>
+
+              </div>
 
             </div>
 
@@ -292,5 +419,6 @@ function Qibla() {
     </>
   );
 }
+
 
 export default Qibla;

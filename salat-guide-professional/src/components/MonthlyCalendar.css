@@ -11,7 +11,6 @@
   box-sizing: border-box;
 
   background: #ffffff;
-
   border: 1px solid #c9eadc;
   border-radius: 20px;
 
@@ -21,10 +20,7 @@
 
   color: #504d28;
 
-  /* =====================================================
-     SPACE BETWEEN CALENDAR AND FOOTER
-     Desktop + Tablet + Mobile
-  ===================================================== */
+  /* Calendar → Footer spacing */
   margin-bottom: 50px;
 }
 
@@ -36,6 +32,7 @@
 .monthly-calendar__nav {
   width: fit-content;
   max-width: 100%;
+
   min-height: 48px;
 
   display: flex;
@@ -95,6 +92,11 @@
   transform: translateY(-1px);
 }
 
+.monthly-calendar__nav-btn:focus-visible {
+  outline: 2px solid #285035;
+  outline-offset: 2px;
+}
+
 .monthly-calendar__nav-btn svg {
   width: 18px;
   height: 18px;
@@ -116,7 +118,6 @@
 
   font-size: 17px;
   font-weight: 700;
-
   line-height: 1;
 
   color: #28502f;
@@ -127,7 +128,7 @@
 
 /* =========================================================
    12 MONTH SELECTOR
-   DESKTOP = ALL 12 IN ONE ROW
+   DESKTOP = 12 MONTHS IN ONE ROW
 ========================================================= */
 
 .monthly-calendar__months {
@@ -192,6 +193,11 @@
   transform: translateY(-1px);
 }
 
+.monthly-calendar__month:focus-visible {
+  outline: 2px solid #285035;
+  outline-offset: 2px;
+}
+
 
 /* =========================================================
    ACTIVE MONTH
@@ -199,13 +205,12 @@
 
 .monthly-calendar__month.active {
   background: #285033;
-
   border-color: #28502f;
 
   color: #ffffff;
 
   box-shadow:
-    0 7px 16px rgba(74, 40, 80, 0.16);
+    0 7px 16px rgba(40, 80, 52, 0.16);
 }
 
 
@@ -218,7 +223,6 @@
 
   font-size: 16px;
   font-weight: 700;
-
   line-height: 1.1;
 
   margin-bottom: 3px;
@@ -234,7 +238,6 @@
 
   font-size: 10px;
   font-weight: 400;
-
   line-height: 1;
 
   opacity: 0.7;
@@ -289,7 +292,7 @@
 
 /* =========================================================
    TABLE SCROLL
-   NO SCROLL
+   NO HORIZONTAL SCROLL
 ========================================================= */
 
 .monthly-calendar__scroll {
@@ -407,12 +410,11 @@
 ========================================================= */
 
 .monthly-calendar__today-row {
-  background: #f4edf5 !important;
+  background: #28503639!important;
 }
 
 .monthly-calendar__today-row td {
   color: #285036;
-
   font-weight: 600;
 }
 
@@ -446,11 +448,9 @@
 ========================================================= */
 
 @media (max-width: 1100px) {
-
   .monthly-calendar {
     padding: 15px;
 
-    /* Keep Calendar → Footer spacing */
     margin-bottom: 50px;
   }
 
@@ -471,16 +471,13 @@
 
   .monthly-calendar__table th {
     font-size: 11px;
-
     padding: 7px 4px;
   }
 
   .monthly-calendar__table td {
     font-size: 11px;
-
     padding: 6px 4px;
   }
-
 }
 
 
@@ -490,18 +487,18 @@
 ========================================================= */
 
 @media (max-width: 768px) {
-
   .monthly-calendar {
     padding: 12px;
 
     border-radius: 16px;
 
-    /* Calendar → Footer */
     margin-bottom: 50px;
   }
 
 
-  /* NAVIGATION */
+  /* =======================================================
+     NAVIGATION
+  ======================================================= */
 
   .monthly-calendar__nav {
     width: 100%;
@@ -522,7 +519,9 @@
   }
 
 
-  /* MONTHS */
+  /* =======================================================
+     MONTHS
+  ======================================================= */
 
   .monthly-calendar__months {
     width: 100%;
@@ -556,7 +555,9 @@
   }
 
 
-  /* TABLE */
+  /* =======================================================
+     TABLE
+  ======================================================= */
 
   .monthly-calendar__table-wrapper {
     margin-top: 12px;
@@ -597,18 +598,16 @@
 
     font-size: 6px;
   }
-
 }
 
 
 /* =========================================================
    MOBILE
    12 MONTHS = 3 COLUMNS × 4 ROWS
-   NO SCROLL
+   NO HORIZONTAL SCROLL
 ========================================================= */
 
 @media (max-width: 480px) {
-
   .monthly-calendar {
     width: 100%;
 
@@ -616,12 +615,13 @@
 
     border-radius: 14px;
 
-    /* Calendar → Footer */
     margin-bottom: 50px;
   }
 
 
-  /* NAV */
+  /* =======================================================
+     NAVIGATION
+  ======================================================= */
 
   .monthly-calendar__nav {
     width: 100%;
@@ -637,7 +637,6 @@
 
   .monthly-calendar__nav-btn {
     width: 34px;
-
     height: 34px;
 
     flex: 0 0 34px;
@@ -654,10 +653,10 @@
   }
 
 
-  /* =====================================================
+  /* =======================================================
      12 MONTHS
      3 COLUMNS × 4 ROWS
-  ===================================================== */
+  ======================================================= */
 
   .monthly-calendar__months {
     width: 100%;
@@ -695,9 +694,9 @@
   }
 
 
-  /* =====================================================
+  /* =======================================================
      TABLE
-  ===================================================== */
+  ======================================================= */
 
   .monthly-calendar__table-wrapper {
     width: 100%;
@@ -758,7 +757,6 @@
 
     font-size: 5px;
   }
-
 }
 
 
@@ -768,16 +766,16 @@
 ========================================================= */
 
 @media (max-width: 360px) {
-
   .monthly-calendar {
     padding: 8px;
 
-    /* Calendar → Footer */
     margin-bottom: 40px;
   }
 
 
-  /* NAV */
+  /* =======================================================
+     NAVIGATION
+  ======================================================= */
 
   .monthly-calendar__nav {
     min-height: 40px;
@@ -787,7 +785,6 @@
 
   .monthly-calendar__nav-btn {
     width: 32px;
-
     height: 32px;
 
     flex-basis: 32px;
@@ -798,7 +795,9 @@
   }
 
 
-  /* MONTHS */
+  /* =======================================================
+     MONTHS
+  ======================================================= */
 
   .monthly-calendar__months {
     grid-template-columns:
@@ -822,7 +821,9 @@
   }
 
 
-  /* TABLE */
+  /* =======================================================
+     TABLE
+  ======================================================= */
 
   .monthly-calendar__table th {
     height: 31px;
@@ -849,5 +850,21 @@
 
     padding: 1px 2px;
   }
+}
 
+
+/* =========================================================
+   EXTRA SAFETY
+   PREVENT PAGE-LEVEL HORIZONTAL SCROLL
+========================================================= */
+
+.monthly-calendar,
+.monthly-calendar * {
+  box-sizing: border-box;
+}
+
+.monthly-calendar__table-wrapper,
+.monthly-calendar__scroll,
+.monthly-calendar__table {
+  max-width: 100%;
 }

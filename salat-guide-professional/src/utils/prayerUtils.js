@@ -143,104 +143,178 @@ function toMinutes(rawTime) {
  * 0 = next prayer is today
  * 1 = next prayer is tomorrow
  */
-export function getCurrentAndNextPrayer(
-  prayers,
-  now = new Date()
-) {
-  /* -------------------------------------------------------
-     Validate prayer list
-  ------------------------------------------------------- */
+// =========================================================
+// CURRENT + NEXT PRAYER
+// =========================================================
 
+export function getCurrentAndNextPrayer(prayers) {
   if (!Array.isArray(prayers) || prayers.length === 0) {
     return {
-      currentIndex: -1,
       currentPrayer: null,
-      nextIndex: -1,
       nextPrayer: null,
       nextDayOffset: 0,
     };
   }
 
-  /* -------------------------------------------------------
-     Current time in minutes
-  ------------------------------------------------------- */
+  const now = new Date();
 
-  const nowMinutes =
-    now.getHours() * 60 +
-    now.getMinutes();
+  // Convert "4:20 AM" / "12:01 PM" to today's Date
+  function getPrayerDate(time, dayOffset = 0) {
+    if (!time) return null;
 
-  /* -------------------------------------------------------
-     Convert prayer times to minutes
-  ------------------------------------------------------- */
+    const match = String(time)
+      .trim()
+      .match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
 
-  const times = prayers.map((prayer) =>
-    toMinutes(prayer?.time)
-  );
-
-  /* -------------------------------------------------------
-     Find latest prayer that has already started
-  ------------------------------------------------------- */
-
-  let currentIndex = -1;
-
-  for (let i = 0; i < times.length; i += 1) {
-    const prayerMinutes = times[i];
-
-    if (
-      prayerMinutes !== null &&
-      prayerMinutes <= nowMinutes
-    ) {
-      currentIndex = i;
+    if (!match) {
+      return null;
     }
+
+    let hour = Number(match[1]);
+    const minute = Number(match[2]);
+    const period = match[3].toUpperCase();
+
+    // Convert 12-hour → 24-hour
+    if (period === "AM") {
+      if (hour === 12) {
+        hour = 0;
+      }
+    } else {
+      if (hour !== 12) {
+        hour += 12;
+      }
+    }
+
+    const date = new Date(now);
+
+    date.setDate(
+      date.getDate() + dayOffset
+    );
+
+    date.setHours(
+      hour,
+      minute,
+      0,
+      0
+    );
+
+    return date;
   }
 
-  /* -------------------------------------------------------
-     Before Fajr
+  // ---------------------------------------------------------
+  // Create today's prayer dates
+  // ---------------------------------------------------------
 
-     Example:
-     Current time = 04:30
-     Fajr = 05:00
+  const prayerDates = prayers
+    .map((prayer) => ({
+      ...prayer,
+      date: getPrayerDate(prayer.time),
+    }))
+    .filter((prayer) => prayer.date);
 
-     Conceptually current prayer is yesterday's Isha.
-     Next prayer is today's Fajr.
-  ------------------------------------------------------- */
-
-  if (currentIndex === -1) {
+  if (prayerDates.length === 0) {
     return {
-      currentIndex: prayers.length - 1,
-      currentPrayer: prayers[prayers.length - 1],
-      nextIndex: 0,
-      nextPrayer: prayers[0],
+      currentPrayer: null,
+      nextPrayer: null,
       nextDayOffset: 0,
     };
   }
 
-  /* -------------------------------------------------------
-     Determine next prayer
-  ------------------------------------------------------- */
+  // ---------------------------------------------------------
+  // Find NEXT prayer
+  // ---------------------------------------------------------
 
-  const isLast =
-    currentIndex === prayers.length - 1;
+  let nextPrayer = prayerDates.find(
+    (prayer) => prayer.date > now
+  );
 
-  const nextIndex =
-    isLast ? 0 : currentIndex + 1;
+  let nextDayOffset = 0;
 
-  /* -------------------------------------------------------
-     Return result
-  ------------------------------------------------------- */
+  // ---------------------------------------------------------
+  // After Isha:
+  // next prayer is tomorrow's Fajr
+  // ---------------------------------------------------------
+
+  if (!nextPrayer) {
+    const firstPrayer = prayerDates[0];
+
+    nextPrayer = {
+      ...firstPrayer,
+      date: getPrayerDate(
+        firstPrayer.time,
+        1
+      ),
+    };
+
+    nextDayOffset = 1;
+  }
+
+  // ---------------------------------------------------------
+  // Find CURRENT prayer
+  // ---------------------------------------------------------
+
+  let currentPrayer = null;
+
+  for (let i = 0; i < prayerDates.length; i++) {
+    const prayer = prayerDates[i];
+
+    const next = prayerDates[i + 1];
+
+    // Current prayer is active from its time
+    // until the next prayer starts.
+
+    if (
+      now >= prayer.date &&
+      next &&
+      now < next.date
+    ) {
+      currentPrayer = prayer;
+      break;
+    }
+  }
+
+  // ---------------------------------------------------------
+  // Before Fajr
+  // ---------------------------------------------------------
+  //
+  // Example:
+  // Current time = 3:30 AM
+  // Fajr = 4:20 AM
+  //
+  // There is no current prayer yet.
+  //
+
+  if (!currentPrayer) {
+    const fajr = prayerDates[0];
+
+    if (now < fajr.date) {
+      currentPrayer = null;
+    }
+  }
+
+  // ---------------------------------------------------------
+  // After Isha
+  // ---------------------------------------------------------
+  //
+  // Example:
+  // Current time = 9:00 PM
+  // Isha = 7:40 PM
+  //
+  // Isha becomes current until midnight.
+  //
+
+  if (!currentPrayer) {
+    const lastPrayer =
+      prayerDates[prayerDates.length - 1];
+
+    if (now >= lastPrayer.date) {
+      currentPrayer = lastPrayer;
+    }
+  }
 
   return {
-    currentIndex,
-
-    currentPrayer:
-      prayers[currentIndex],
-
-    nextIndex,
-
-    nextPrayer:
-      prayers[nextIndex],
-
-    nextDayOffset:
-      isLast ? 1 : 0,
+    currentPrayer,
+    nextPrayer,
+    nextDayOffset,
   };
 }

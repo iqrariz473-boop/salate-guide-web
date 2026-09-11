@@ -1,45 +1,133 @@
 import { PRAYER_ICONS } from "./Icons.jsx";
-import { to12Hour } from "../utils/dateUtils.js";
 import "./PrayerCard.css";
 
+/* =========================================================
+   GET PRAYER ICON
+========================================================= */
+
 function getPrayerIcon(label) {
-  if (!label) return null;
+  if (!label) {
+    return null;
+  }
 
-  // exact match first (fast path)
-  if (PRAYER_ICONS[label]) return PRAYER_ICONS[label];
+  /* -------------------------------------------------------
+     EXACT MATCH
+  ------------------------------------------------------- */
 
-  // fallback: case-insensitive / trimmed match, in case the label
-  // coming from the data source is like "fajr" or " Fajr "
-  const normalized = String(label).trim().toLowerCase();
-  const matchKey = Object.keys(PRAYER_ICONS).find(
-    (key) => key.toLowerCase() === normalized
-  );
+  if (PRAYER_ICONS[label]) {
+    return PRAYER_ICONS[label];
+  }
 
-  if (matchKey) return PRAYER_ICONS[matchKey];
+  /* -------------------------------------------------------
+     CASE-INSENSITIVE MATCH
+  ------------------------------------------------------- */
 
-  // still nothing? log it so we can see the real value being passed
-  if (typeof window !== "undefined") {
+  const normalized =
+    String(label)
+      .trim()
+      .toLowerCase();
+
+  const matchKey =
+    Object.keys(PRAYER_ICONS).find(
+      (key) =>
+        key
+          .trim()
+          .toLowerCase() === normalized
+    );
+
+  if (matchKey) {
+    return PRAYER_ICONS[matchKey];
+  }
+
+  /* -------------------------------------------------------
+     ICON NOT FOUND
+  ------------------------------------------------------- */
+
+  if (
+    typeof window !== "undefined"
+  ) {
     console.warn(
-      `[PrayerCard] No icon found for label: ${JSON.stringify(label)}`
+      `[PrayerCard] No icon found for label: ${JSON.stringify(
+        label
+      )}`
     );
   }
+
   return null;
 }
 
-function PrayerCard({ label, arabic, time, isActive, isNext }) {
-  const Icon = getPrayerIcon(label);
-  const stateLabel = isActive ? "Current" : isNext ? "Next" : "";
+/* =========================================================
+   PRAYER CARD
+========================================================= */
+
+function PrayerCard({
+  label,
+  arabic,
+  time,
+  isActive = false,
+  isNext = false,
+}) {
+  /* =======================================================
+     ICON
+  ======================================================= */
+
+  const Icon =
+    getPrayerIcon(label);
+
+  /* =======================================================
+     STATE LABEL
+  ======================================================= */
+
+  const stateLabel =
+    isActive
+      ? "Current"
+      : isNext
+      ? "Next"
+      : "";
+
+  /* =======================================================
+     CSS CLASS
+  ======================================================= */
+
+  const cardClassName = [
+    "prayer-card",
+    isActive
+      ? "prayer-card--active"
+      : "",
+    isNext
+      ? "prayer-card--next"
+      : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  /* =======================================================
+     UI
+  ======================================================= */
 
   return (
     <div
-      className={`prayer-card ${isActive ? "prayer-card--active" : ""} ${
-        isNext ? "prayer-card--next" : ""
-      }`}
-      aria-current={isActive ? "true" : undefined}
+      className={cardClassName}
+      aria-current={
+        isActive
+          ? "true"
+          : undefined
+      }
     >
+
+      {/* =================================================
+          CURRENT / NEXT BADGE
+      ================================================= */}
+
       {stateLabel && (
-        <span className="prayer-card__badge">{stateLabel}</span>
+        <span className="prayer-card__badge">
+          {stateLabel}
+        </span>
       )}
+
+      {/* =================================================
+          PRAYER ICON
+      ================================================= */}
 
       {Icon && (
         <Icon
@@ -48,12 +136,36 @@ function PrayerCard({ label, arabic, time, isActive, isNext }) {
         />
       )}
 
-      <p className="prayer-card__time">{to12Hour(time)}</p>
-      <p className="prayer-card__label">{label}</p>
+      {/* =================================================
+          PRAYER TIME
+      ================================================= */}
 
-      <p className="prayer-card__arabic" lang="ar" dir="rtl">
-        {arabic}
+      <p className="prayer-card__time">
+         {time || "--"}
       </p>
+
+      {/* =================================================
+          PRAYER NAME
+      ================================================= */}
+
+      <p className="prayer-card__label">
+        {label}
+      </p>
+
+      {/* =================================================
+          ARABIC NAME
+      ================================================= */}
+
+      {arabic && (
+        <p
+          className="prayer-card__arabic"
+          lang="ar"
+          dir="rtl"
+        >
+          {arabic}
+        </p>
+      )}
+
     </div>
   );
 }

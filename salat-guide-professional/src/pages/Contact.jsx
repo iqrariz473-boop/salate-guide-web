@@ -43,7 +43,7 @@ const CONTACT_TOPICS = [
   {
     number: "03",
     title: "Feedback",
-    description: "Share an idea or tell us how we can improve.",
+    description: "Share an idea or suggestion with us.",
     subject: "Feedback",
   },
   {
@@ -51,6 +51,33 @@ const CONTACT_TOPICS = [
     title: "Report an Issue",
     description: "Found something that isn't working correctly?",
     subject: "Report an Issue",
+  },
+];
+
+/* =========================================================
+   FAQ DATA
+========================================================= */
+
+const FAQS = [
+  {
+    question: "How accurate are the prayer times?",
+    answer:
+      "Our prayer times are calculated using reliable astronomical methods and the selected calculation method for your location.",
+  },
+  {
+    question: "Can I search prayer times for another city?",
+    answer:
+      "Yes. You can search for cities and countries from the Prayer Times section and view their daily and monthly prayer schedules.",
+  },
+  {
+    question: "How does the Qibla finder work?",
+    answer:
+      "The Qibla finder uses your location to calculate the direction of the Kaaba and can provide a compass-based direction on supported devices.",
+  },
+  {
+    question: "Can I suggest a new feature?",
+    answer:
+      "Absolutely. Choose Feedback from the contact topics and tell us what you would like to see improved or added.",
   },
 ];
 
@@ -100,6 +127,7 @@ function Contact() {
   const [form, setForm] = useState(INITIAL_FORM);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle");
+  const [openFaq, setOpenFaq] = useState(0);
 
   /* =======================================================
      HANDLE INPUT CHANGE
@@ -120,7 +148,7 @@ function Contact() {
   }
 
   /* =======================================================
-     SELECT CONTACT TOPIC
+     SELECT TOPIC
   ======================================================= */
 
   function handleTopicSelect(subject) {
@@ -138,7 +166,7 @@ function Contact() {
   }
 
   /* =======================================================
-     HANDLE FORM SUBMIT
+     SUBMIT
   ======================================================= */
 
   function handleSubmit(event) {
@@ -209,16 +237,15 @@ function Contact() {
               </h1>
 
               <p>
-                Your message has been received
-                successfully. We appreciate your
-                feedback and will continue working
-                to make Salat Guide more helpful
-                for your daily prayer journey.
+                Your message has been received successfully.
+                We appreciate your feedback and will continue
+                working to make Salat Guide more helpful for
+                your daily prayer journey.
               </p>
 
               <button
                 type="button"
-                className="btn btn-primary"
+                className="contact-success__button"
                 onClick={handleNewMessage}
               >
                 <MailIcon
@@ -236,7 +263,7 @@ function Contact() {
   }
 
   /* =========================================================
-     MAIN CONTACT PAGE
+     MAIN PAGE
   ========================================================= */
 
   return (
@@ -252,164 +279,42 @@ function Contact() {
           "--contact-bg": `url(${contactBanner})`,
         }}
       >
-        {/* =================================================
-            BACKGROUND OVERLAY
-        ================================================= */}
-
         <div className="contact-page__overlay" />
 
         <div className="container contact-page__content">
 
           {/* =================================================
-              CONTACT HEADER
+              TOP HERO
           ================================================= */}
 
-          <section className="contact-header">
+          <section className="contact-hero">
 
-            <div className="contact-header__icon">
-              <MailIcon
-                width={28}
-                height={28}
-              />
-            </div>
+            <span className="contact-hero__eyebrow">
+              GET IN TOUCH
+            </span>
 
-            <div className="contact-header__content">
+            <h1>
+              We'd Love to Hear
+              <span> From You</span>
+            </h1>
 
-              <span className="contact-header__label">
-                SALAT GUIDE
-              </span>
+            <p>
+              Have a question about prayer times, need help
+              with the Qibla finder, or simply want to share
+              an idea? We're always happy to hear from you.
+            </p>
 
-              <h1>
-                Contact Us
-              </h1>
-
-              <p>
-                Questions, suggestions, or feedback?
-                We're here to listen and help.
-              </p>
-
-            </div>
           </section>
 
+
           {/* =================================================
-              CONTACT GRID
+              CONTACT AREA
           ================================================= */}
 
-          <section className="contact-wrapper">
+          <section className="contact-main-grid">
 
             {/* =================================================
-                LEFT ISLAMIC PANEL
-            ================================================= */}
-
-            <div className="contact-info">
-
-              <div className="contact-info__top">
-
-                <div className="contact-info__icon">
-                  <MailIcon
-                    width={25}
-                    height={25}
-                  />
-                </div>
-
-                <span>
-                  CONTACT SALAT GUIDE
-                </span>
-
-              </div>
-
-              <h2>
-                Your Questions
-                <br />
-
-                <strong>
-                  Matter to Us.
-                </strong>
-              </h2>
-
-              <p className="contact-info__description">
-                We're always happy to hear from
-                our users. Whether you have feedback,
-                found something that needs improvement,
-                or simply have a question, feel free
-                to reach out.
-              </p>
-
-              <div className="contact-info__line" />
-
-              {/* =================================================
-                  TOPICS
-              ================================================= */}
-
-              <div className="contact-topics">
-
-                <span className="contact-topics__label">
-                  CHOOSE A TOPIC
-                </span>
-
-                {CONTACT_TOPICS.map((topic) => (
-                  <button
-                    key={topic.number}
-                    type="button"
-                    className={`contact-topic ${
-                      form.subject === topic.subject
-                        ? "contact-topic--active"
-                        : ""
-                    }`}
-                    onClick={() =>
-                      handleTopicSelect(
-                        topic.subject
-                      )
-                    }
-                  >
-
-                    <span className="contact-topic__number">
-                      {topic.number}
-                    </span>
-
-                    <span className="contact-topic__content">
-
-                      <strong>
-                        {topic.title}
-                      </strong>
-
-                      <small>
-                        {topic.description}
-                      </small>
-
-                    </span>
-
-                    <span className="contact-topic__arrow">
-                      →
-                    </span>
-
-                  </button>
-                ))}
-
-              </div>
-
-              {/* =================================================
-                  ISLAMIC MESSAGE
-              ================================================= */}
-
-              <div className="contact-quote">
-
-                <span className="contact-quote__symbol">
-                  ✦
-                </span>
-
-                <p>
-                  Every message matters.
-                  Your feedback helps us build
-                  a more useful prayer companion.
-                </p>
-
-              </div>
-
-            </div>
-
-            {/* =================================================
-                RIGHT FORM
+                FORM
             ================================================= */}
 
             <form
@@ -421,27 +326,26 @@ function Contact() {
               <div className="contact-form__heading">
 
                 <span>
-                  WRITE TO US
+                  SEND US A MESSAGE
                 </span>
 
                 <h2>
-                  Send a Message
+                  How Can We Help?
                 </h2>
 
                 <p>
-                  Complete the form below and
-                  we'll receive your message.
+                  Fill in the form below and our team will
+                  receive your message.
                 </p>
 
               </div>
+
 
               {/* =================================================
                   NAME + EMAIL
               ================================================= */}
 
               <div className="contact-form__row">
-
-                {/* NAME */}
 
                 <div
                   className={`contact-field ${
@@ -452,13 +356,13 @@ function Contact() {
                 >
 
                   <label htmlFor="contact-name">
-                    Your Name
+                    Full Name
                   </label>
 
                   <input
                     id="contact-name"
                     type="text"
-                    placeholder="Enter your full name"
+                    placeholder="Your full name"
                     value={form.name}
                     onChange={(event) =>
                       handleChange(
@@ -466,9 +370,7 @@ function Contact() {
                         event.target.value
                       )
                     }
-                    aria-invalid={Boolean(
-                      errors.name
-                    )}
+                    aria-invalid={Boolean(errors.name)}
                   />
 
                   {errors.name && (
@@ -480,7 +382,6 @@ function Contact() {
 
                 </div>
 
-                {/* EMAIL */}
 
                 <div
                   className={`contact-field ${
@@ -497,7 +398,7 @@ function Contact() {
                   <input
                     id="contact-email"
                     type="email"
-                    placeholder="Enter your email address"
+                    placeholder="you@example.com"
                     value={form.email}
                     onChange={(event) =>
                       handleChange(
@@ -505,9 +406,7 @@ function Contact() {
                         event.target.value
                       )
                     }
-                    aria-invalid={Boolean(
-                      errors.email
-                    )}
+                    aria-invalid={Boolean(errors.email)}
                   />
 
                   {errors.email && (
@@ -520,6 +419,7 @@ function Contact() {
                 </div>
 
               </div>
+
 
               {/* =================================================
                   SUBJECT
@@ -548,9 +448,7 @@ function Contact() {
                       event.target.value
                     )
                   }
-                  aria-invalid={Boolean(
-                    errors.subject
-                  )}
+                  aria-invalid={Boolean(errors.subject)}
                 />
 
                 {errors.subject && (
@@ -561,6 +459,7 @@ function Contact() {
                 )}
 
               </div>
+
 
               {/* =================================================
                   MESSAGE
@@ -590,7 +489,7 @@ function Contact() {
                   id="contact-message"
                   rows={6}
                   maxLength={500}
-                  placeholder="Write your message here..."
+                  placeholder="Tell us how we can help..."
                   value={form.message}
                   onChange={(event) =>
                     handleChange(
@@ -598,9 +497,7 @@ function Contact() {
                       event.target.value
                     )
                   }
-                  aria-invalid={Boolean(
-                    errors.message
-                  )}
+                  aria-invalid={Boolean(errors.message)}
                 />
 
                 {errors.message && (
@@ -612,13 +509,14 @@ function Contact() {
 
               </div>
 
+
               {/* =================================================
                   SUBMIT
               ================================================= */}
 
               <button
                 type="submit"
-                className="btn btn-primary contact-submit"
+                className="contact-submit"
                 disabled={status === "submitting"}
               >
 
@@ -633,20 +531,305 @@ function Contact() {
 
               </button>
 
-              <div className="contact-form__note">
 
-                <span />
+              <p className="contact-form__privacy">
+                We respect your privacy and will only use
+                your information to respond to your message.
+              </p>
 
-                <p>
-                  We appreciate your time
-                  and feedback.
-                </p>
+            </form>
 
-                <span />
+
+            {/* =================================================
+                RIGHT SIDE
+            ================================================= */}
+
+            <aside className="contact-side">
+
+              {/* =================================================
+                  CONTACT CARDS
+              ================================================= */}
+
+              <div className="contact-details">
+
+                <div className="contact-detail-card">
+
+                  <div className="contact-detail-card__icon">
+                    ☎
+                  </div>
+
+                  <div>
+                    <span>
+                      CALL US
+                    </span>
+
+                    <strong>
+                      +92 321 9835232
+                    </strong>
+
+                    <small>
+                      Mon – Fri, 9 AM – 6 PM
+                    </small>
+                  </div>
+
+                </div>
+
+
+                <div className="contact-detail-card">
+
+                  <div className="contact-detail-card__icon">
+                    ✉
+                  </div>
+
+                  <div>
+                    <span>
+                      EMAIL US
+                    </span>
+
+                    <strong>
+                      contact@salatguide.com
+                    </strong>
+
+                    <small>
+                      We reply within 24–48 hours
+                    </small>
+                  </div>
+
+                </div>
+
+
+                <div className="contact-detail-card">
+
+                  <div className="contact-detail-card__icon">
+                    ◎
+                  </div>
+
+                  <div>
+                    <span>
+                      ONLINE SUPPORT
+                    </span>
+
+                    <strong>
+                      Salat Guide Community
+                    </strong>
+
+                    <small>
+                      Questions, feedback & suggestions
+                    </small>
+                  </div>
+
+                </div>
+
+
+                <div className="contact-detail-card">
+
+                  <div className="contact-detail-card__icon">
+                    ◷
+                  </div>
+
+                  <div>
+                    <span>
+                      OFFICE HOURS
+                    </span>
+
+                    <strong>
+                      9:00 AM – 6:00 PM
+                    </strong>
+
+                    <small>
+                      Monday – Friday
+                    </small>
+                  </div>
+
+                </div>
 
               </div>
 
-            </form>
+
+              {/* =================================================
+                  QUICK TOPICS
+              ================================================= */}
+
+              <div className="contact-topics-box">
+
+                <div className="contact-topics-box__heading">
+                  <span>
+                    QUICK HELP
+                  </span>
+
+                  <h3>
+                    Choose a Topic
+                  </h3>
+                </div>
+
+
+                <div className="contact-topics">
+
+                  {CONTACT_TOPICS.map((topic) => (
+                    <button
+                      key={topic.number}
+                      type="button"
+                      className={`contact-topic ${
+                        form.subject === topic.subject
+                          ? "contact-topic--active"
+                          : ""
+                      }`}
+                      onClick={() =>
+                        handleTopicSelect(
+                          topic.subject
+                        )
+                      }
+                    >
+
+                      <span className="contact-topic__number">
+                        {topic.number}
+                      </span>
+
+                      <span className="contact-topic__content">
+
+                        <strong>
+                          {topic.title}
+                        </strong>
+
+                        <small>
+                          {topic.description}
+                        </small>
+
+                      </span>
+
+                      <span className="contact-topic__arrow">
+                        →
+                      </span>
+
+                    </button>
+                  ))}
+
+                </div>
+
+              </div>
+
+            </aside>
+
+          </section>
+
+
+          {/* =================================================
+              FAQ
+          ================================================= */}
+
+          <section className="contact-faq">
+
+            <div className="contact-section-heading">
+
+              <span>
+                COMMON QUESTIONS
+              </span>
+
+              <h2>
+                Before You Write
+              </h2>
+
+              <p>
+                You may find the answer you're looking for
+                in these frequently asked questions.
+              </p>
+
+            </div>
+
+
+            <div className="faq-list">
+
+              {FAQS.map((faq, index) => {
+
+                const isOpen =
+                  openFaq === index;
+
+                return (
+                  <div
+                    key={faq.question}
+                    className={`faq-item ${
+                      isOpen
+                        ? "faq-item--open"
+                        : ""
+                    }`}
+                  >
+
+                    <button
+                      type="button"
+                      className="faq-question"
+                      onClick={() =>
+                        setOpenFaq(
+                          isOpen
+                            ? -1
+                            : index
+                        )
+                      }
+                    >
+
+                      <span>
+                        {faq.question}
+                      </span>
+
+                      <span className="faq-icon">
+                        {isOpen ? "−" : "+"}
+                      </span>
+
+                    </button>
+
+
+                    {isOpen && (
+                      <div className="faq-answer">
+                        <p>
+                          {faq.answer}
+                        </p>
+                      </div>
+                    )}
+
+                  </div>
+                );
+              })}
+
+            </div>
+
+          </section>
+
+
+          {/* =================================================
+              NEWSLETTER
+          ================================================= */}
+
+          <section className="contact-newsletter">
+
+            <div>
+
+              <span>
+                STAY CONNECTED
+              </span>
+
+              <h2>
+                Prayer & Ramadan Updates
+              </h2>
+
+              <p>
+                Get useful Islamic reminders, prayer resources,
+                and important updates from Salat Guide.
+              </p>
+
+            </div>
+
+
+            <div className="newsletter-form">
+
+              <input
+                type="email"
+                placeholder="Enter your email address"
+              />
+
+              <button type="button">
+                Subscribe
+              </button>
+
+            </div>
 
           </section>
 

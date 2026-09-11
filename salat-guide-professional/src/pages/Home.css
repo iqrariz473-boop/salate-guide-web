@@ -89,31 +89,64 @@
    PRAYER SECTION
 ========================================================= */
 
-.home-prayer-section {
-  padding: 60px 0;
-  background: var(--home-bg);
-}
-
-.home__more-link {
+.home-prayer-header {
   display: flex;
-  justify-content: center;
-  margin-top: 5px;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
 }
 
-.btn-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  color: var(--home-green);
-  font-size: 15px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: color 0.2s ease, gap 0.2s ease;
+.home-prayer-search {
+  width: 480px;
+  flex-shrink: 0;
 }
 
-.btn-link:hover {
-  color: var(--home-gold-dark);
-  gap: 11px;
+@media (max-width: 900px) {
+  .home-prayer-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .home-prayer-search {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   LOCATION SEARCH BELOW HERO
+========================================================= */
+
+.home-location-search-section {
+  position: relative;
+
+  padding:
+    28px 0
+    10px;
+
+  background: #fbf8f1;
+
+  z-index: 20;
+}
+
+
+.home-location-search-section
+.container {
+  max-width: 900px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .home-location-search-section {
+    padding:
+      20px 0
+      8px;
+  }
+
 }
 
 /* =========================================================
@@ -1394,4 +1427,524 @@
     min-width: 0;
     flex-wrap: wrap;
   }
+}
+/* =========================================================
+   PRAYER TIMES HEADER + SEARCH
+========================================================= */
+
+.home-prayer-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 45px;
+  margin-bottom: 32px;
+}
+
+.home-prayer-header .home-section-heading {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+}
+
+.home-prayer-search {
+  width: 350px;
+  flex: 0 0 350px;
+}
+
+.home-prayer-search__box {
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 4px 5px 4px 16px;
+  box-sizing: border-box;
+
+  background: #fff;
+  border: 1px solid rgba(13, 48, 37, 0.1);
+  border-radius: 28px;
+
+  box-shadow: 0 8px 24px rgba(13, 48, 37, 0.07);
+}
+
+.home-prayer-search__icon {
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 20px;
+  margin-right: 11px;
+
+  color: #507067;
+}
+
+.home-prayer-search__box input {
+  flex: 1;
+  min-width: 0;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0;
+
+  border: 0;
+  outline: none;
+
+  background: transparent;
+
+  color: var(--home-text);
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.home-prayer-search__box input::placeholder {
+  color: #8a9691;
+}
+
+.home-prayer-search__box input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.home-prayer-search__box button {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 40px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: var(--home-green);
+  color: var(--home-white);
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.home-prayer-search__box button:hover {
+  background: var(--home-green-light);
+  transform: translateX(2px);
+}
+
+.home-prayer-search__error {
+  margin: 7px 5px 0;
+
+  color: #b42318;
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .home-prayer-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+
+  .home-prayer-header .home-section-heading {
+    width: 100%;
+    text-align: center;
+  }
+
+  .home-prayer-search {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+
+}
+
+/* Search box */
+
+.home-prayer-search__box {
+  width: 100%;
+  min-height: 46px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 5px 6px 5px 13px;
+
+  box-sizing: border-box;
+
+  background: var(--home-white);
+
+  border: 1px solid var(--home-border);
+
+  border-radius: 10px;
+
+  box-shadow: var(--home-shadow);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Focus */
+
+.home-prayer-search__box:focus-within {
+  border-color: var(--home-gold);
+
+  box-shadow:
+    0 0 0 3px rgba(214, 177, 92, 0.12),
+    var(--home-shadow);
+}
+
+/* Search icon */
+
+.home-prayer-search__icon {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 22px;
+  height: 22px;
+
+  color: var(--home-gold-dark);
+
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* Input */
+
+.home-prayer-search__box input {
+  flex: 1;
+
+  min-width: 0;
+
+  width: 100%;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: var(--home-text);
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Placeholder */
+
+.home-prayer-search__box input::placeholder {
+  color: #8a938e;
+}
+
+/* Search button */
+
+.home-prayer-search__box button {
+  flex: 0 0 auto;
+
+  border: 0;
+
+  border-radius: 7px;
+
+  padding: 10px 15px;
+
+  background: var(--home-green);
+
+  color: var(--home-white);
+
+  font-family: inherit;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.home-prayer-search__box button:hover {
+  background: var(--home-green-light);
+
+  transform: translateY(-1px);
+}
+
+.home-prayer-search__box button:active {
+  transform: translateY(0);
+}
+
+/* Error */
+
+.home-prayer-search__error {
+  margin: 7px 2px 0;
+
+  color: #b42318;
+
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+
+  .home-prayer-header {
+    gap: 20px;
+  }
+
+  .home-prayer-search {
+    flex: 0 0 300px;
+    width: 300px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .home-prayer-header {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 16px;
+
+    margin-bottom: 24px;
+  }
+
+  .home-prayer-header .home-section-heading {
+    width: 100%;
+
+    text-align: center;
+  }
+
+  .home-prayer-search {
+    width: 100%;
+
+    flex: 0 0 auto;
+  }
+
+  .home-prayer-search__box {
+    min-height: 48px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .home-prayer-search__box {
+    padding-left: 11px;
+  }
+
+  .home-prayer-search__box button {
+    padding: 10px 12px;
+  }
+
+  .home-prayer-search__box input {
+    font-size: 12px;
+  }
+
+}
+/* =========================================================
+   HOME LOCATION SEARCH
+========================================================= */
+
+.home-prayer-search {
+  width: 350px;
+  flex: 0 0 350px;
+}
+
+.home-prayer-search .location-search {
+  width: 100%;
+}
+
+.home-prayer-search .location-search__fields {
+  display: flex;
+  gap: 8px;
+}
+
+.home-prayer-search .location-search__field {
+  flex: 1;
+  min-width: 0;
+}
+
+.home-prayer-search .location-search__field input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 14px;
+  border: 1px solid var(--home-border);
+  border-radius: 9px;
+  outline: none;
+  background: var(--home-white);
+  color: var(--home-text);
+  font-family: inherit;
+  font-size: 13px;
+  box-shadow: var(--home-shadow);
+  box-sizing: border-box;
+}
+
+.home-prayer-search .location-search__field input:focus {
+  border-color: var(--home-gold);
+  box-shadow:
+    0 0 0 3px rgba(214, 177, 92, 0.12),
+    var(--home-shadow);
+}
+
+.home-prayer-search .location-search__actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 9px;
+}
+
+.home-prayer-search .location-search__actions button {
+  min-height: 40px;
+  padding: 8px 13px;
+  border-radius: 7px;
+  font-size: 11px;
+}
+
+.home-prayer-search .location-search__suggestions {
+  width: 100%;
+  margin-top: 7px;
+  padding: 5px;
+  border: 1px solid var(--home-border);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(13, 48, 37, 0.12);
+}
+
+.home-prayer-search .location-search__suggestion {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.home-prayer-search .location-search__suggestion:hover {
+  background: #f7f5e9;
+}
+
+.home-prayer-search .location-search__suggestion-city {
+  color: var(--home-green);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.home-prayer-search .location-search__suggestion-country {
+  color: var(--home-muted);
+  font-size: 10px;
+}
+
+.home-prayer-search .location-search__message {
+  margin: 8px 10px;
+  color: var(--home-muted);
+  font-size: 11px;
+}
+
+.home-prayer-search .location-search__error {
+  margin-top: 7px;
+  color: #b42318;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   HOME SEARCH — TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+
+  .home-prayer-search {
+    width: 300px;
+    flex: 0 0 300px;
+  }
+
+}
+
+
+/* =========================================================
+   HOME SEARCH — MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .home-prayer-search {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+
+  .home-prayer-search .location-search__fields {
+    flex-direction: column;
+  }
+
+  .home-prayer-search .location-search__actions {
+    flex-direction: column;
+  }
+
+  .home-prayer-search .location-search__actions button {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   HOME SEARCH — SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .home-prayer-search .location-search__field input {
+    min-height: 44px;
+    font-size: 12px;
+  }
+
+  .home-prayer-search .location-search__suggestion-city {
+    font-size: 12px;
+  }
+
+  .home-prayer-search .location-search__suggestion-country {
+    font-size: 9px;
+  }
+
 }
