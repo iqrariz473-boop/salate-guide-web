@@ -1,21 +1,34 @@
 import { Link } from "react-router-dom";
 import "./Footer.css";
 
-const FOOTER_LINKS = [
-  { label: "Home", to: "/" },
+const QUICK_LINKS = [
   { label: "Prayer Times", to: "/prayer-times" },
-  { label: "Cities", to: "/cities" },
-  { label: "Prayer Guide", to: "/prayer-guide" },
-  { label: "Pillars", to: "/pillars" },
-  { label: "Qibla", to: "/qibla" },
-  { label: "About", to: "/about" },
+  { label: "Ramadan Times", to: "/ramadan-times" },
+  { label: "Hijri Calendar", to: "/hijri-calendar" },
+  { label: "Blog", to: "/blog" },
+  { label: "About Us", to: "/about" },
   { label: "Contact", to: "/contact" },
 ];
 
+const USEFUL_LINKS = [
+  { label: "Privacy Policy", to: "/privacy" },
+  { label: "Terms and Conditions", to: "/terms" },
+  { label: "FAQ", to: "/faq" },
+];
+
 const SOCIAL_LINKS = [
-  { label: "Facebook", href: "#" },
-  { label: "Instagram", href: "#" },
-  { label: "X", href: "#" },
+  {
+    label: "Facebook",
+    href: "#",
+  },
+  {
+    label: "Instagram",
+    href: "#",
+  },
+  {
+    label: "X",
+    href: "#",
+  },
 ];
 
 function Footer() {
@@ -35,7 +48,7 @@ function Footer() {
           <Link to="/" className="footer__brand">
 
             <span
-              className="footer__moon"
+              className="footer__logo"
               aria-hidden="true"
             >
               ☾
@@ -45,12 +58,12 @@ function Footer() {
 
           </Link>
 
-
           <p className="footer__description">
-            Accurate Islamic prayer times, Qibla direction,
-            and prayer guidance for Muslims worldwide.
+            Salat Guide offers free, accurate prayer
+            times, Ramadan timetables, and a full
+            Islamic calendar for Muslims in cities
+            across the world.
           </p>
-
 
           {/* SOCIAL */}
 
@@ -72,80 +85,73 @@ function Footer() {
 
 
         {/* =================================================
-            EXPLORE + LEGAL
+            QUICK LINKS
         ================================================= */}
 
-        <div className="footer__explore-legal">
+        <nav
+          className="footer__column"
+          aria-label="Quick Links"
+        >
 
-          {/* =================================================
-              EXPLORE
-          ================================================= */}
+          <h3>Quick Links</h3>
 
-          <nav
-            className="footer__column footer__explore"
-            aria-label="Explore"
-          >
+          <span
+            className="footer__line"
+            aria-hidden="true"
+          />
 
-            <h3>Explore</h3>
+          <ul>
 
-            <span
-              className="footer__line"
-              aria-hidden="true"
-            ></span>
+            {QUICK_LINKS.map((link) => (
+              <li key={link.to}>
 
-            <ul>
-
-              {FOOTER_LINKS.map((link) => (
-                <li key={link.to}>
-
-                  <Link to={link.to}>
-                    {link.label}
-                  </Link>
-
-                </li>
-              ))}
-
-            </ul>
-
-          </nav>
-
-
-          {/* =================================================
-              LEGAL - BELOW EXPLORE
-          ================================================= */}
-
-          <div className="footer__column footer__legal">
-
-            <h3>Legal</h3>
-
-            <span
-              className="footer__line"
-              aria-hidden="true"
-            ></span>
-
-            <ul>
-
-              <li>
-                <Link to="/privacy">
-                  Privacy Policy
+                <Link to={link.to}>
+                  {link.label}
                 </Link>
+
               </li>
+            ))}
 
-              <li>
-                <Link to="/terms">
-                  Terms
-                </Link>
-              </li>
+          </ul>
 
-            </ul>
-
-          </div>
-
-        </div>
+        </nav>
 
 
         {/* =================================================
-            CONTACT
+            USEFUL LINKS
+        ================================================= */}
+
+        <nav
+          className="footer__column"
+          aria-label="Useful Links"
+        >
+
+          <h3>Useful Links</h3>
+
+          <span
+            className="footer__line"
+            aria-hidden="true"
+          />
+
+          <ul>
+
+            {USEFUL_LINKS.map((link) => (
+              <li key={link.to}>
+
+                <Link to={link.to}>
+                  {link.label}
+                </Link>
+
+              </li>
+            ))}
+
+          </ul>
+
+        </nav>
+
+
+        {/* =================================================
+            STAY CONNECTED
         ================================================= */}
 
         <div className="footer__column footer__contact">
@@ -155,7 +161,7 @@ function Footer() {
           <span
             className="footer__line"
             aria-hidden="true"
-          ></span>
+          />
 
 
           {/* WORLDWIDE */}
@@ -166,7 +172,7 @@ function Footer() {
               className="footer__contact-icon"
               aria-hidden="true"
             >
-              ✦
+              ⌖
             </span>
 
             <div>
@@ -190,7 +196,7 @@ function Footer() {
               className="footer__contact-icon"
               aria-hidden="true"
             >
-              @
+              ✉
             </span>
 
             <div>
@@ -199,6 +205,30 @@ function Footer() {
 
               <p>
                 contact@salatguide.com
+              </p>
+
+            </div>
+
+          </div>
+
+
+          {/* PHONE */}
+
+          <div className="footer__contact-item">
+
+            <span
+              className="footer__contact-icon"
+              aria-hidden="true"
+            >
+              ☎
+            </span>
+
+            <div>
+
+              <strong>Phone</strong>
+
+              <p>
+                +92 318 6868582
               </p>
 
             </div>
@@ -219,13 +249,11 @@ function Footer() {
         <div className="footer__bottom">
 
           <p>
-            © {year}{" "}
-            <strong>Salat Guide</strong>.
-            All rights reserved.
+            Free Islamic prayer times at salatguide.com
           </p>
 
-          <p className="footer__tagline">
-            A simple companion for your daily prayers.
+          <p>
+            Copyright © {year} Salat Guide. All rights reserved.
           </p>
 
         </div>

@@ -34,13 +34,15 @@
 
   background:
     linear-gradient(
-      135deg,
-      #f9f8f1 0%,
-      #f4f5e9 55%,
-      #edf1e5 100%
-    );
+      90deg,
+      rgba(4, 48, 35, 0.82) 0%,
+      rgba(4, 48, 35, 0.62) 42%,
+      rgba(4, 48, 35, 0.18) 75%,
+      rgba(4, 48, 35, 0.08) 100%
+    ),
+    url("/images/c803bb48-59b5-46e1-bbcb-423ac2b2051c.png")
+      center center / cover no-repeat;
 }
-
 
 /* =========================================================
    HERO OVERLAY
@@ -54,18 +56,12 @@
   pointer-events: none;
 
   background:
-    radial-gradient(
-      circle at 15% 30%,
-      rgba(214, 177, 92, 0.08),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 90% 75%,
-      rgba(8, 75, 55, 0.06),
-      transparent 30%
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.08),
+      rgba(0, 0, 0, 0.12)
     );
 }
-
 
 /* =========================================================
    HERO DECORATIVE PATTERN
@@ -236,17 +232,24 @@
 
   letter-spacing: -2.5px;
 
-  color: #0b3328;
+  color: #ffffff;
+
+  text-shadow:
+    0 3px 15px rgba(0, 0, 0, 0.28);
 }
+
 
 .qibla-hero-content h1 span {
   display: block;
 
   margin-top: 7px;
 
-  color: #ae791e;
+  color: #e2bb62;
 
   font-style: italic;
+
+  text-shadow:
+    0 3px 15px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -257,16 +260,16 @@
 .qibla-hero-description {
   max-width: 520px;
 
-  margin:
-    18px
-    0
-    20px;
+  margin: 18px 0 20px;
 
-  color: #53665e;
+  color: rgba(255, 255, 255, 0.88);
 
   font-size: 13px;
 
   line-height: 1.6;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 

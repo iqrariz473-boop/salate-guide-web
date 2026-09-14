@@ -1,15 +1,15 @@
 /* =========================================================
    DUA BANNER
 ========================================================= */
-
 .dua-banner {
   position: relative;
-
   width: 100%;
-  margin: 0;
+
+  /* Hero aur Dua card ke darmiyan space */
+  margin-top: 60px;
+  margin-bottom: 0;
 
   overflow: hidden;
-
   border-radius: 18px;
 
   background:
@@ -25,7 +25,6 @@
   box-shadow:
     0 12px 30px rgba(5, 35, 25, 0.18);
 }
-
 
 /* =========================================================
    TOP GLOW

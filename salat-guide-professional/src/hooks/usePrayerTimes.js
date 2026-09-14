@@ -7,14 +7,18 @@ import {
   getPrayerTimes,
 } from "../services/prayerService.js";
 
-
-export default function usePrayerTimes(
+function usePrayerTimes(
   city,
   country
 ) {
-
   const [prayers, setPrayers] =
     useState([]);
+
+  const [status, setStatus] =
+    useState("idle");
+
+  const [errorMessage, setErrorMessage] =
+    useState("");
 
   const [hijriDate, setHijriDate] =
     useState("");
@@ -28,138 +32,86 @@ export default function usePrayerTimes(
   const [isFallback, setIsFallback] =
     useState(false);
 
-  const [status, setStatus] =
-    useState("loading");
-
-  const [errorMessage, setErrorMessage] =
-    useState("");
-
-
   useEffect(() => {
+    let cancelled = false;
 
-    if (!city || !country) {
-      setPrayers([]);
-      setStatus("error");
-      setErrorMessage(
-        "Please select a city and country."
-      );
-      return;
-    }
+    async function loadPrayerTimes() {
+      if (!city || !country) {
+        setPrayers([]);
+        setStatus("idle");
+        setErrorMessage("");
+        return;
+      }
 
-
-    let isCancelled = false;
-
-
-    async function loadTimes() {
+      if (cancelled) return;
 
       setStatus("loading");
       setErrorMessage("");
 
-
-      try {
-
-        console.log(
-          "Loading prayer times for:",
+      const result =
+        await getPrayerTimes(
           city,
           country
         );
 
+      if (cancelled) return;
 
-        const result =
-          await getPrayerTimes(
-            city,
-            country
-          );
+      setPrayers(
+        Array.isArray(
+          result?.prayers
+        )
+          ? result.prayers
+          : []
+      );
 
+      setHijriDate(
+        result?.hijriDate || ""
+      );
 
-        if (isCancelled) {
-          return;
-        }
+      setGregorianDate(
+        result?.gregorianDate || ""
+      );
 
+      setMethodName(
+        result?.methodName || ""
+      );
 
-        if (
-          !result?.prayers ||
-          result.prayers.every(
-            (prayer) => !prayer.time
-          )
-        ) {
+      setIsFallback(
+        Boolean(
+          result?.isFallback
+        )
+      );
 
-          setStatus("error");
+      /*
+        API failure is handled internally.
+        UI continues with fallback data.
+      */
 
-          setErrorMessage(
-            "No prayer time data available for this city."
-          );
+      setErrorMessage("");
 
-          return;
-        }
-
-
-        setPrayers(
-          result.prayers
-        );
-
-        setHijriDate(
-          result.hijriDate
-        );
-
-        setGregorianDate(
-          result.gregorianDate
-        );
-
-        setMethodName(
-          result.methodName
-        );
-
-        setIsFallback(
-          result.isFallback
-        );
-
-        setStatus("success");
-
-      } catch (error) {
-
-        if (isCancelled) {
-          return;
-        }
-
-
-        console.error(
-          "usePrayerTimes error:",
-          error
-        );
-
-
-        setPrayers([]);
-
-        setErrorMessage(
-          error?.message ||
-          "Unable to load prayer times. Please try again."
-        );
-
-        setStatus("error");
-
-      }
-
+      setStatus(
+        result?.isFallback
+          ? "fallback"
+          : "success"
+      );
     }
 
-
-    loadTimes();
-
+    loadPrayerTimes();
 
     return () => {
-      isCancelled = true;
+      cancelled = true;
     };
-
   }, [city, country]);
-
 
   return {
     prayers,
+    status,
+    errorMessage,
     hijriDate,
     gregorianDate,
     methodName,
     isFallback,
-    status,
-    errorMessage,
   };
 }
+
+export default usePrayerTimes;

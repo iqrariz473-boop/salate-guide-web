@@ -1,5 +1,9 @@
+import { useEffect, useState } from "react";
+
 import Seo from "../components/Seo.jsx";
 import DuaBanner from "../components/DuaBanner.jsx";
+
+import { getDuasByChapter } from "../services/duaApi.js";
 
 import "./Duas.css";
 
@@ -134,8 +138,38 @@ const DUA_TIPS = [
 /* =========================================================
    COMPONENT
 ========================================================= */
-
 function Duas() {
+  const [duas, setDuas] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+ useEffect(() => {
+  async function fetchDuas() {
+    try {
+      setLoading(true);
+      setError("");
+
+      const data = await getDuasByChapter(
+        1,
+        "urdu",
+        1,
+        25
+      );
+
+      console.log("DUA API RESPONSE:", data);
+
+      setDuas(data?.items || []);
+    } catch (error) {
+      console.error("DUA FETCH ERROR:", error);
+      setError(error.message || "Unable to load duas.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  fetchDuas();
+}, []);
+
   return (
     <>
       <Seo
@@ -237,49 +271,118 @@ function Duas() {
 
           </div>
 
-          <div className="dua-list">
+         <div className="dua-list">
 
-            {DUAS.map((dua) => (
-              <article className="dua-card" key={dua.title}>
+  {loading && (
+    <p className="dua-api-status">
+      Loading duas...
+    </p>
+  )}
 
-                <div className="dua-card__header">
+  {!loading && error && (
+    <p className="dua-api-status dua-api-status--error">
+      {error}
+    </p>
+  )}
 
-                  <div>
-                    <span className="dua-card__category">
-                      {dua.category}
-                    </span>
+  {!loading && !error && duas.length === 0 && (
+    <p className="dua-api-status">
+      No duas found.
+    </p>
+  )}
 
-                    <h3>{dua.title}</h3>
-                  </div>
+ {!loading &&
+  !error &&
+  duas.map((dua, index) => (
+      <article
+  className="dua-card"
+  key={dua.id || index}
+>
 
-                  <button
-                    type="button"
-                    className="dua-card__bookmark"
-                    aria-label={`Bookmark ${dua.title}`}
-                  >
-                    ♡
-                  </button>
+  <div className="dua-card__header">
 
-                </div>
+    <div>
 
-                <div className="dua-card__arabic">
-                  {dua.arabic}
-                </div>
+      <span className="dua-card__category">
+        Daily Dua
+      </span>
 
-                <div className="dua-card__divider"></div>
+      <h3>
+        Dua {index + 1}
+      </h3>
 
-                <p className="dua-card__transliteration">
-                  {dua.transliteration}
-                </p>
+    </div>
 
-                <p className="dua-card__meaning">
-                  <strong>Meaning:</strong> {dua.meaning}
-                </p>
+    <button
+      type="button"
+      className="dua-card__bookmark"
+      aria-label="Bookmark dua"
+    >
+      ♡
+    </button>
 
-              </article>
-            ))}
+  </div>
 
-          </div>
+
+  {/* API ARABIC */}
+
+  <div
+    className="dua-card__arabic"
+    dir="rtl"
+  >
+    {dua.arabic}
+  </div>
+
+
+  <div className="dua-card__divider"></div>
+
+
+  {/* API TRANSLITERATION */}
+
+  {dua.transliteration && (
+    <p className="dua-card__transliteration">
+      {dua.transliteration}
+    </p>
+  )}
+
+
+  {/* API URDU TRANSLATION */}
+
+  {dua.translation && (
+    <p
+      className="dua-card__meaning"
+      dir="rtl"
+    >
+      <strong>ترجمہ:</strong>{" "}
+      {dua.translation}
+    </p>
+  )}
+
+
+  {/* API REFERENCE */}
+
+  {dua.reference && (
+    <p className="dua-card__reference">
+      <strong>Reference:</strong>{" "}
+      {dua.reference}
+    </p>
+  )}
+
+
+  {/* API AUDIO */}
+
+  {dua.url && (
+   <audio controls>
+<source
+  src={`https://prayertimes.al-muslims.com${dua.url}`}
+/>
+</audio>
+  )}
+
+</article>
+
+    ))}
+</div>
 
         </section>
 
@@ -287,54 +390,58 @@ function Duas() {
             CATEGORIES
         ================================================= */}
 
-        <section className="dua-page__categories">
+       <section className="dua-page__categories">
 
-          <div className="dua-section-heading">
+  <div className="dua-section-heading">
 
-            <span className="dua-section-heading__label">
-              EXPLORE
-            </span>
+    <span className="dua-section-heading__label">
+      EXPLORE
+    </span>
 
-            <h2>Browse Duas by Category</h2>
+    <h2>Browse Duas by Category</h2>
 
-            <p>
-              Find meaningful duas for every moment of your daily life.
-            </p>
+    <p>
+      Find meaningful duas for every moment of your daily life.
+    </p>
 
-            <div className="dua-section-heading__line">
-              <span></span>
-              <b>✦</b>
-              <span></span>
-            </div>
+    <div className="dua-section-heading__line">
+      <span></span>
+      <b>✦</b>
+      <span></span>
+    </div>
 
-          </div>
+  </div>
 
-          <div className="dua-category-grid">
+  <div className="dua-category-grid">
 
-            {DUA_CATEGORIES.map((category) => (
-              <article
-                className="dua-category-card"
-                key={category.title}
-              >
+    {DUA_CATEGORIES.map((category) => (
+      <article
+        className="dua-category-card"
+        key={category.title}
+      >
 
-                <div className="dua-category-card__icon">
-                  {category.icon}
-                </div>
+        <div className="dua-category-card__icon">
+          {category.icon}
+        </div>
 
-                <h3>{category.title}</h3>
+        <h3>
+          {category.title}
+        </h3>
 
-                <p>{category.text}</p>
+        <p>
+          {category.text}
+        </p>
 
-                <span className="dua-category-card__arrow">
-                  →
-                </span>
+        <span className="dua-category-card__arrow">
+          →
+        </span>
 
-              </article>
-            ))}
+      </article>
+    ))}
 
-          </div>
+  </div>
 
-        </section>
+</section>
 
         {/* =================================================
             TIPS
