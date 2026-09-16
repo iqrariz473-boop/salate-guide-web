@@ -1,4 +1,1774 @@
 /* =========================================================
+   PRAYER TIMES PAGE
+========================================================= */
+
+.prayer-times-page {
+  min-height: 100vh;
+  background: #f7f5e9;
+  color: #17352b;
+}
+
+.prayer-times-page .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PRAYER TIMES HERO
+   FULL IMAGE / NO CROP
+========================================================= */
+
+.prayer-times-hero {
+  position: relative;
+
+  width: 100%;
+  height: 520px;
+  min-height: 520px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background-color: #0d3025;
+
+  background-image:
+    url("/images/0bba1c40-7980-44fc-a6bb-c7a0e8d74c57.png");
+
+  background-repeat: no-repeat;
+
+  /*
+    IMPORTANT:
+    Complete image visible.
+    No cover because cover crops image.
+  */
+  background-size: 100% 100%;
+
+  background-position: center center;
+
+  isolation: isolate;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HERO OVERLAY
+========================================================= */
+
+.prayer-times-hero__overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 27, 21, 0.55) 0%,
+      rgba(5, 27, 21, 0.30) 35%,
+      rgba(5, 27, 21, 0.10) 68%,
+      rgba(5, 27, 21, 0.02) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO INNER
+========================================================= */
+
+.prayer-times-hero__inner {
+  position: relative;
+
+  z-index: 3;
+
+  width: 100%;
+  max-width: 1200px;
+
+  height: 520px;
+  min-height: 520px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  padding: 55px 32px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.prayer-times-hero__content {
+  width: 100%;
+  max-width: 650px;
+
+  margin: 0 auto 0 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.prayer-times-hero__eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 15px;
+
+  color: #d6b15c;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  line-height: 1.3;
+
+  text-transform: uppercase;
+}
+
+.prayer-times-hero__eyebrow > span {
+  width: 27px;
+  height: 1px;
+
+  flex-shrink: 0;
+
+  display: block;
+
+  background: #d6b15c;
+}
+
+.prayer-times-hero__eyebrow b {
+  color: #d6b15c;
+
+  font-size: 13px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.prayer-times-hero__content h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(44px, 5.3vw, 68px);
+
+  line-height: 1.03;
+
+  letter-spacing: -2.5px;
+
+  font-weight: 800;
+
+  text-shadow:
+    0 4px 18px rgba(0, 0, 0, 0.28);
+}
+
+
+/* =========================================================
+   HERO TITLE SECOND LINE
+========================================================= */
+
+.prayer-times-hero__content h1 span {
+  display: block;
+
+  margin-top: 7px;
+
+  color: #d6b15c;
+
+  font-size: 0.72em;
+
+  line-height: 1.1;
+
+  font-weight: 700;
+
+  letter-spacing: -1px;
+
+  text-shadow:
+    0 3px 15px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.prayer-times-hero__divider {
+  width: 190px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin: 21px 0 17px;
+}
+
+.prayer-times-hero__divider i {
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    rgba(214, 177, 92, 0.55);
+}
+
+.prayer-times-hero__divider b {
+  flex-shrink: 0;
+
+  color: #d6b15c;
+
+  font-size: 13px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.prayer-times-hero__content > p {
+  width: 100%;
+  max-width: 570px;
+
+  margin: 0 0 26px;
+
+  color:
+    rgba(255, 255, 255, 0.88);
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  font-weight: 400;
+
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.22);
+}
+
+
+/* =========================================================
+   HERO BADGES
+========================================================= */
+
+.prayer-times-hero__badges {
+  width: 100%;
+  max-width: 620px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 10px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HERO BADGE
+========================================================= */
+
+.prayer-times-hero__badge {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 13px 14px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.18);
+
+  border-radius: 14px;
+
+  background:
+    rgba(13, 48, 37, 0.38);
+
+  backdrop-filter: blur(6px);
+
+  -webkit-backdrop-filter: blur(6px);
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.prayer-times-hero__badge:hover {
+  transform: translateY(-3px);
+
+  background:
+    rgba(13, 48, 37, 0.55);
+
+  border-color:
+    rgba(214, 177, 92, 0.42);
+}
+
+
+/* =========================================================
+   BADGE ICON
+========================================================= */
+
+.prayer-times-hero__badge > span {
+  width: 34px;
+  height: 34px;
+
+  flex: 0 0 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid rgba(214, 177, 92, 0.38);
+
+  border-radius: 50%;
+
+  color: #d6b15c;
+
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  font-size: 16px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BADGE TEXT
+========================================================= */
+
+.prayer-times-hero__badge div {
+  min-width: 0;
+}
+
+.prayer-times-hero__badge strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  line-height: 1.3;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.prayer-times-hero__badge small {
+  display: block;
+
+  margin-top: 3px;
+
+  color:
+    rgba(255, 255, 255, 0.62);
+
+  font-size: 8px;
+
+  line-height: 1.3;
+}
+
+
+/* =========================================================
+   DECORATIVE GLOW
+========================================================= */
+
+.prayer-times-hero__glow {
+  position: absolute;
+
+  z-index: 2;
+
+  right: -150px;
+  bottom: -220px;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(214, 177, 92, 0.20);
+
+  box-shadow:
+    0 0 0 35px rgba(214, 177, 92, 0.035),
+    0 0 0 70px rgba(214, 177, 92, 0.02);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO BOTTOM LINE
+========================================================= */
+
+.prayer-times-hero__bottom {
+  position: absolute;
+
+  z-index: 4;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #d6b15c,
+      transparent
+    );
+
+  opacity: 0.75;
+}
+
+
+/* =========================================================
+   MAIN PRAYER SECTION
+========================================================= */
+
+.home-prayer-section {
+  padding-top: 55px;
+  padding-bottom: 30px;
+}
+
+
+/* =========================================================
+   PRAYER HEADING
+========================================================= */
+
+.prayer-heading-row {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  margin-bottom: 30px;
+}
+
+.prayer-heading-row .section-heading {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.section-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 9px;
+
+  color: #b48c35;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+.prayer-heading-row h1 {
+  margin: 0 0 9px;
+
+  color: #0d3025;
+
+  font-size: 42px;
+
+  line-height: 1.15;
+
+  font-weight: 800;
+}
+
+.prayer-heading-row p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #68736d;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.prayer-heading-search {
+  width: 420px;
+  max-width: 100%;
+
+  min-width: 0;
+
+  flex-shrink: 1;
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+.prayer-heading-search > *,
+.prayer-heading-search form {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+.prayer-heading-search input,
+.prayer-heading-search select,
+.prayer-heading-search button {
+  max-width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CALENDAR
+========================================================= */
+
+.calendar-section {
+  width: 100%;
+
+  margin-top: 30px;
+  margin-bottom: 50px;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+footer {
+  margin-top: 0 !important;
+}
+
+
+/* =========================================================
+   PRAYER DETAILS
+========================================================= */
+
+.prayer-details-section {
+  padding: 75px 0;
+
+  background: #ffffff;
+
+  border-top:
+    1px solid rgba(13, 48, 37, 0.06);
+}
+
+.prayer-details-header {
+  max-width: 700px;
+
+  margin-bottom: 30px;
+}
+
+.prayer-details-header h2,
+.pakistan-cities-header h2,
+.prayer-tips-header h2,
+.prayer-faq-header h2 {
+  margin: 0 0 10px;
+
+  color: #0d3025;
+
+  font-size: 34px;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+}
+
+.prayer-details-header p,
+.pakistan-cities-header p,
+.prayer-tips-header p,
+.prayer-faq-header p {
+  margin: 0;
+
+  color: #6c756f;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CALCULATION CARD
+========================================================= */
+
+.prayer-calculation-card {
+  padding: 26px;
+
+  margin-bottom: 20px;
+
+  background: #f8f9f4;
+
+  border:
+    1px solid rgba(13, 48, 37, 0.08);
+
+  border-radius: 18px;
+
+  box-sizing: border-box;
+}
+
+.calculation-top {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 23px;
+}
+
+.calculation-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 14px;
+
+  background: #0d3025;
+
+  color: #d6b15c;
+
+  font-size: 22px;
+}
+
+.info-label {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #b48c35;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.1px;
+
+  text-transform: uppercase;
+}
+
+.calculation-top h3,
+.sun-position-header h3,
+.date-card-header h3,
+.qibla-card-header h3 {
+  margin: 0;
+
+  color: #0d3025;
+
+  font-size: 21px;
+}
+
+.calculation-content {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 15px;
+}
+
+.calculation-method-box,
+.asr-method-box {
+  padding: 18px;
+
+  background: #ffffff;
+
+  border:
+    1px solid rgba(13, 48, 37, 0.08);
+
+  border-radius: 13px;
+
+  box-sizing: border-box;
+}
+
+.calculation-method-box span,
+.asr-method-box span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #78817c;
+
+  font-size: 12px;
+}
+
+.calculation-method-box strong,
+.asr-method-box strong {
+  display: block;
+
+  color: #17392e;
+
+  font-size: 15px;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.prayer-location-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 15px;
+
+  margin-bottom: 20px;
+}
+
+.prayer-detail-box {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 20px;
+
+  background: #ffffff;
+
+  border:
+    1px solid rgba(13, 48, 37, 0.08);
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 25px rgba(13, 48, 37, 0.04);
+
+  box-sizing: border-box;
+}
+
+.detail-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #eef3ed;
+
+  color: #0d3025;
+
+  font-size: 16px;
+
+  font-weight: 800;
+}
+
+.prayer-detail-box > div {
+  min-width: 0;
+}
+
+.prayer-detail-box span:not(.detail-icon) {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #7a837e;
+
+  font-size: 11px;
+}
+
+.prayer-detail-box strong {
+  display: block;
+
+  color: #17392e;
+
+  font-size: 14px;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   SUN POSITION
+========================================================= */
+
+.sun-position-card {
+  padding: 26px;
+
+  margin-bottom: 20px;
+
+  background: #0d3025;
+
+  border-radius: 18px;
+
+  color: #ffffff;
+
+  box-sizing: border-box;
+}
+
+.sun-position-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+.sun-position-header h3 {
+  color: #ffffff;
+}
+
+.sun-symbol {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid rgba(214, 177, 92, 0.4);
+
+  border-radius: 50%;
+
+  color: #d6b15c;
+
+  font-size: 23px;
+}
+
+.sun-position-items {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.sun-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  min-width: 0;
+}
+
+.sun-item-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border:
+    1px solid rgba(214, 177, 92, 0.35);
+
+  border-radius: 50%;
+
+  color: #d6b15c;
+}
+
+.sun-item span {
+  display: block;
+
+  color:
+    rgba(255, 255, 255, 0.62);
+
+  font-size: 11px;
+}
+
+.sun-item strong {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #ffffff;
+
+  font-size: 17px;
+}
+
+.sun-line {
+  width: 1px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  background:
+    rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================================
+   DATE + QIBLA
+========================================================= */
+
+.prayer-extra-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.2fr 0.8fr;
+
+  gap: 20px;
+}
+
+.date-information-card,
+.qibla-information-card {
+  padding: 26px;
+
+  background: #ffffff;
+
+  border:
+    1px solid rgba(13, 48, 37, 0.08);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 8px 30px rgba(13, 48, 37, 0.04);
+
+  box-sizing: border-box;
+}
+
+.date-card-header,
+.qibla-card-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.date-symbol,
+.qibla-symbol {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #f1eee0;
+
+  color: #b48c35;
+
+  font-size: 20px;
+}
+
+.islamic-date {
+  margin: 24px 0;
+
+  color: #0d3025;
+
+  font-size: 25px;
+
+  font-weight: 800;
+}
+
+.islamic-date small {
+  margin-left: 8px;
+
+  color: #b48c35;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.date-details {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.date-details div {
+  min-width: 0;
+
+  padding: 14px;
+
+  background: #f8f9f4;
+
+  border-radius: 12px;
+
+  box-sizing: border-box;
+}
+
+.date-details span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #7a837e;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+.date-details strong {
+  display: block;
+
+  color: #17392e;
+
+  font-size: 13px;
+
+  line-height: 1.45;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   QIBLA
+========================================================= */
+
+.qibla-content {
+  min-height: 190px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 35px;
+}
+
+.qibla-compass {
+  position: relative;
+
+  width: 145px;
+  height: 145px;
+
+  flex-shrink: 0;
+
+  border:
+    1px solid rgba(13, 48, 37, 0.14);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #f7f5e9 0 54%,
+      transparent 55%
+    );
+}
+
+.qibla-compass::before,
+.qibla-compass::after {
+  content: "";
+
+  position: absolute;
+
+  background:
+    rgba(13, 48, 37, 0.08);
+}
+
+.qibla-compass::before {
+  width: 1px;
+  height: 100%;
+
+  left: 50%;
+  top: 0;
+}
+
+.qibla-compass::after {
+  width: 100%;
+  height: 1px;
+
+  left: 0;
+  top: 50%;
+}
+
+.compass-n,
+.compass-e,
+.compass-s,
+.compass-w {
+  position: absolute;
+
+  z-index: 2;
+
+  color: #6f7973;
+
+  font-size: 10px;
+
+  font-weight: 800;
+}
+
+.compass-n {
+  top: 9px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+}
+
+.compass-e {
+  right: 10px;
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+}
+
+.compass-s {
+  bottom: 9px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+}
+
+.compass-w {
+  left: 10px;
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+}
+
+.compass-center {
+  position: absolute;
+
+  z-index: 3;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-28deg);
+
+  color: #b48c35;
+
+  font-size: 42px;
+
+  font-weight: 300;
+}
+
+.qibla-degree {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.qibla-degree strong {
+  color: #0d3025;
+
+  font-size: 38px;
+
+  line-height: 1;
+}
+
+.qibla-degree span {
+  margin-top: 7px;
+
+  color: #737c77;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   PAKISTAN CITIES
+========================================================= */
+
+.pakistan-cities-section {
+  padding: 75px 0;
+
+  background: #f7f5e9;
+}
+
+.pakistan-cities-header {
+  max-width: 720px;
+
+  margin-bottom: 28px;
+}
+
+.city-search-box {
+  width: 100%;
+  max-width: 600px;
+
+  height: 54px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 25px;
+
+  padding: 0 16px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border:
+    1px solid rgba(13, 48, 37, 0.1);
+
+  border-radius: 14px;
+}
+
+.city-search-box > span {
+  flex-shrink: 0;
+
+  color: #b48c35;
+
+  font-size: 22px;
+}
+
+.city-search-box input {
+  width: 100%;
+
+  min-width: 0;
+
+  height: 100%;
+
+  border: 0;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #17392e;
+
+  font-size: 14px;
+}
+
+.city-search-box input::placeholder {
+  color: #a1a8a3;
+}
+
+.city-search-box input:focus {
+  outline: none;
+
+  box-shadow: none;
+}
+
+.city-search-box button {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: #eef3ed;
+
+  color: #0d3025;
+
+  cursor: pointer;
+
+  font-size: 18px;
+}
+
+.pakistan-city-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.pakistan-city {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 15px;
+
+  border:
+    1px solid rgba(13, 48, 37, 0.08);
+
+  border-radius: 13px;
+
+  background: #ffffff;
+
+  color: #17392e;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  box-sizing: border-box;
+}
+
+.pakistan-city:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(180, 140, 53, 0.45);
+
+  box-shadow:
+    0 8px 22px rgba(13, 48, 37, 0.07);
+}
+
+.pakistan-city.active {
+  border-color: #b48c35;
+
+  background: #f2f0df;
+}
+
+.city-pin {
+  flex-shrink: 0;
+
+  color: #b48c35;
+
+  font-size: 16px;
+}
+
+.pakistan-city > span:nth-child(2) {
+  flex: 1;
+
+  min-width: 0;
+
+  overflow-wrap: anywhere;
+
+  font-size: 13px;
+
+  font-weight: 650;
+}
+
+.city-arrow {
+  flex-shrink: 0;
+
+  color: #9aa39e;
+
+  font-size: 15px;
+}
+
+.city-load-more {
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 30px;
+}
+
+.city-load-more button {
+  padding: 12px 25px;
+
+  border:
+    1px solid #0d3025;
+
+  border-radius: 30px;
+
+  background: transparent;
+
+  color: #0d3025;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.city-load-more button:hover {
+  background: #0d3025;
+
+  color: #ffffff;
+}
+
+.city-empty {
+  padding: 45px 20px;
+
+  text-align: center;
+
+  border:
+    1px dashed rgba(13, 48, 37, 0.18);
+
+  border-radius: 16px;
+
+  background: #ffffff;
+}
+
+.city-empty > span {
+  color: #b48c35;
+
+  font-size: 28px;
+}
+
+.city-empty h3 {
+  margin: 10px 0 5px;
+
+  color: #0d3025;
+}
+
+.city-empty p {
+  margin: 0;
+
+  color: #7a837e;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   PRAYER TIPS
+========================================================= */
+
+.prayer-tips-section {
+  padding: 75px 0;
+
+  background: #ffffff;
+}
+
+.prayer-tips-header {
+  max-width: 700px;
+
+  margin-bottom: 30px;
+}
+
+.prayer-tips-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.prayer-tip-card {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 28px;
+
+  background: #f8f9f4;
+
+  border:
+    1px solid rgba(13, 48, 37, 0.08);
+
+  border-radius: 18px;
+
+  box-sizing: border-box;
+}
+
+.tip-number {
+  position: absolute;
+
+  top: 20px;
+  right: 22px;
+
+  color:
+    rgba(180, 140, 53, 0.55);
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+.tip-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 22px;
+
+  border-radius: 14px;
+
+  background: #0d3025;
+
+  color: #d6b15c;
+
+  font-size: 20px;
+}
+
+.prayer-tip-card h3 {
+  margin: 0 0 9px;
+
+  color: #0d3025;
+
+  font-size: 19px;
+}
+
+.prayer-tip-card p {
+  margin: 0;
+
+  color: #727b76;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.prayer-faq-section {
+  padding: 75px 0 85px;
+
+  background: #f7f5e9;
+}
+
+.prayer-faq-header {
+  max-width: 700px;
+
+  margin-bottom: 30px;
+}
+
+.prayer-faq-list {
+  max-width: 900px;
+
+  border-top:
+    1px solid rgba(13, 48, 37, 0.12);
+}
+
+.prayer-faq-item {
+  border-bottom:
+    1px solid rgba(13, 48, 37, 0.12);
+}
+
+.prayer-faq-question {
+  width: 100%;
+
+  min-height: 72px;
+
+  display: grid;
+
+  grid-template-columns:
+    48px minmax(0, 1fr) 35px;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 12px 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #17392e;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+}
+
+.faq-number {
+  color: #b48c35;
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+.faq-question-text {
+  min-width: 0;
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+.faq-plus {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid rgba(13, 48, 37, 0.13);
+
+  border-radius: 50%;
+
+  color: #0d3025;
+
+  font-size: 19px;
+}
+
+.prayer-faq-item.open .faq-plus {
+  background: #0d3025;
+
+  color: #d6b15c;
+
+  border-color: #0d3025;
+}
+
+.prayer-faq-answer {
+  padding:
+    0 50px 22px 63px;
+}
+
+.prayer-faq-answer p {
+  max-width: 750px;
+
+  margin: 0;
+
+  color: #6e7872;
+
+  font-size: 13px;
+
+  line-height: 1.75;
+}
+
+.prayer-faq-note {
+  max-width: 900px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 30px;
+
+  padding: 20px 22px;
+
+  border-radius: 15px;
+
+  background: #0d3025;
+
+  color: #ffffff;
+
+  box-sizing: border-box;
+}
+
+.prayer-faq-note > span {
+  flex-shrink: 0;
+
+  color: #d6b15c;
+
+  font-size: 25px;
+}
+
+.prayer-faq-note strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 14px;
+}
+
+.prayer-faq-note p {
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.65);
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
    MOBILE PRAYER CARD
 ========================================================= */
 
@@ -13,19 +1783,17 @@
       auto !important;
 
     align-items: center !important;
+
     column-gap: 10px !important;
 
     width: 100% !important;
+
     max-width: 100% !important;
 
     box-sizing: border-box !important;
+
     overflow: hidden !important;
   }
-
-
-  /* =====================================================
-     PRAYER ICON
-  ===================================================== */
 
   .prayer-card__icon,
   .prayer-icon {
@@ -46,18 +1814,15 @@
     border-radius: 50% !important;
 
     background: #eef3ed !important;
+
     color: #12352a !important;
 
     visibility: visible !important;
+
     opacity: 1 !important;
 
     flex-shrink: 0 !important;
   }
-
-
-  /* =====================================================
-     PRAYER ICON SVG
-  ===================================================== */
 
   .prayer-card__icon svg,
   .prayer-icon svg {
@@ -70,20 +1835,19 @@
     min-height: 17px !important;
 
     stroke: currentColor !important;
+
     fill: none !important;
+
     stroke-width: 1.8 !important;
 
     visibility: visible !important;
+
     opacity: 1 !important;
   }
 
-
-  /* =====================================================
-     PRAYER NAME
-  ===================================================== */
-
   .prayer-card__name {
     min-width: 0 !important;
+
     max-width: 100% !important;
 
     margin: 0 !important;
@@ -91,17 +1855,15 @@
     text-align: left !important;
 
     font-size: 14px !important;
+
     font-weight: 600 !important;
+
     line-height: 1.3 !important;
 
     white-space: normal !important;
+
     overflow-wrap: break-word !important;
   }
-
-
-  /* =====================================================
-     PRAYER TIME
-  ===================================================== */
 
   .prayer-card__time {
     margin: 0 !important;
@@ -109,56 +1871,15 @@
     text-align: right !important;
 
     font-size: 16px !important;
+
     font-weight: 700 !important;
+
     line-height: 1.3 !important;
 
     white-space: nowrap !important;
 
     flex-shrink: 0 !important;
   }
-
-}
-
-
-/* =========================================================
-   CALENDAR → FOOTER SPACE
-========================================================= */
-
-.calendar-section {
-  width: 100% !important;
-  box-sizing: border-box !important;
-
-  margin-bottom: 50px !important;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-  margin-top: 0 !important;
-}
-
-/* =========================================================
-   PRAYER HEADING + SEARCH
-========================================================= */
-
-.prayer-heading-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  margin-bottom: 30px;
-}
-
-.prayer-heading-row .section-heading {
-  flex: 1;
-}
-
-.prayer-location-search {
-  width: 420px;
-  flex-shrink: 0;
 }
 
 
@@ -168,122 +1889,169 @@ footer {
 
 @media (max-width: 900px) {
 
+  /* -------------------------------------------------------
+     HERO
+  ------------------------------------------------------- */
+
+  .prayer-times-hero {
+
+    width: 100%;
+
+    height: 460px;
+    min-height: 460px;
+
+    /*
+      COMPLETE IMAGE
+    */
+    background-size: 100% 100%;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+  }
+
+  .prayer-times-hero__inner {
+
+    width: 100%;
+
+    height: 460px;
+    min-height: 460px;
+
+    padding:
+      40px 28px;
+
+    align-items: center;
+  }
+
+  .prayer-times-hero__content {
+
+    max-width: 570px;
+  }
+
+  .prayer-times-hero__content h1 {
+
+    font-size: 50px;
+
+    letter-spacing: -1.5px;
+  }
+
+  .prayer-times-hero__content > p {
+
+    max-width: 500px;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+  }
+
+  .prayer-times-hero__badges {
+
+    max-width: 550px;
+
+    gap: 7px;
+  }
+
+  .prayer-times-hero__badge {
+
+    padding:
+      10px;
+
+    gap: 7px;
+  }
+
+  .prayer-times-hero__badge > span {
+
+    width: 29px;
+    height: 29px;
+
+    flex-basis: 29px;
+
+    font-size: 13px;
+  }
+
+  .prayer-times-hero__badge strong {
+
+    font-size: 10px;
+  }
+
+  .prayer-times-hero__badge small {
+
+    font-size: 7px;
+  }
+
+
+  /* -------------------------------------------------------
+     MAIN
+  ------------------------------------------------------- */
+
   .prayer-heading-row {
+
     flex-direction: column;
+
     align-items: stretch;
 
-    gap: 24px;
-  }
-
-
-  .prayer-location-search {
-    width: 100%;
-    max-width: 600px;
-  }
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-  .prayer-heading-row {
-    gap: 20px;
-    margin-bottom: 25px;
-  }
-
-}
-
-/* =========================================================
-   SEARCH WRAPPER
-========================================================= */
-
-.prayer-heading-search {
-  width: 420px;
-  max-width: 100%;
-  min-width: 0;
-  flex-shrink: 0;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
-
-}
-
-.prayer-heading-search > * {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-
-  box-sizing: border-box;
-}
-
-
-.prayer-heading-search form {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-
-  margin: 0;
-  padding: 0;
-
-  box-sizing: border-box;
-}
-
-
-.prayer-heading-search input,
-.prayer-heading-search select,
-.prayer-heading-search button {
-  max-width: 100%;
-  min-width: 0;
-
-  box-sizing: border-box;
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 900px) {
-
-  .prayer-heading-row {
     gap: 25px;
 
     margin-top: 30px;
+
     margin-bottom: 30px;
   }
 
-
-  .prayer-heading-row .section-heading {
-    flex: 1 1 0;
-    min-width: 0;
-  }
-
-
   .prayer-heading-row h1 {
+
     font-size: 32px;
-    line-height: 1.2;
   }
-
-
-  .prayer-heading-row p {
-    font-size: 15px;
-    line-height: 1.55;
-  }
-
 
   .prayer-heading-search {
-    width: 330px;
-    max-width: 42%;
 
-    min-width: 0;
-    flex-shrink: 1;
+    width: 330px;
+
+    max-width: 100%;
+
+    align-self: flex-start;
   }
 
+
+  /* -------------------------------------------------------
+     LOCATION
+  ------------------------------------------------------- */
+
+  .prayer-location-grid {
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  /* -------------------------------------------------------
+     CITIES
+  ------------------------------------------------------- */
+
+  .pakistan-city-grid {
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+
+  /* -------------------------------------------------------
+     TIPS
+  ------------------------------------------------------- */
+
+  .prayer-tips-grid {
+
+    grid-template-columns: 1fr;
+  }
+
+
+  /* -------------------------------------------------------
+     DATE + QIBLA
+  ------------------------------------------------------- */
+
+  .prayer-extra-grid {
+
+    grid-template-columns: 1fr;
+  }
 }
 
 
@@ -293,113 +2061,478 @@ footer {
 
 @media (max-width: 700px) {
 
-  .prayer-heading-row {
-    width: 100%;
-    max-width: 100%;
+  .prayer-times-page .container {
 
-    display: flex;
-    flex-direction: column;
+    padding-left: 15px;
 
-    align-items: stretch;
-    justify-content: flex-start;
-
-    gap: 14px;
-
-    /* TOP MARGIN KAM */
-    margin-top: 10px;
-    margin-bottom: 20px;
-
-    padding: 0;
-
-    box-sizing: border-box;
-    overflow: visible;
+    padding-right: 15px;
   }
 
-  .prayer-heading-row .section-heading {
+
+  /* =======================================================
+     HERO
+     COMPLETE IMAGE
+  ======================================================= */
+
+  .prayer-times-hero {
+
     width: 100%;
+
+    /*
+      Image complete visible
+    */
+    height: 390px;
+
+    min-height: 390px;
+
+    background-size: 100% 100%;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+  }
+
+
+  /* LIGHT MOBILE OVERLAY */
+
+  .prayer-times-hero__overlay {
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(5, 27, 21, 0.04) 0%,
+        rgba(5, 27, 21, 0.12) 48%,
+        rgba(5, 27, 21, 0.48) 100%
+      );
+  }
+
+
+  /* HERO INNER */
+
+  .prayer-times-hero__inner {
+
+    width: 100%;
+
+    height: 390px;
+
+    min-height: 390px;
+
+    padding:
+      22px 15px 20px;
+
+    align-items: flex-end;
+  }
+
+
+  /* HERO CONTENT */
+
+  .prayer-times-hero__content {
+
+    width: 100%;
+
     max-width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+  }
+
+
+  /* EYEBROW */
+
+  .prayer-times-hero__eyebrow {
+
+    gap: 6px;
+
+    margin-bottom: 8px;
+
+    font-size: 8px;
+
+    letter-spacing: 1.2px;
+  }
+
+  .prayer-times-hero__eyebrow > span {
+
+    width: 18px;
+  }
+
+
+  /* TITLE */
+
+  .prayer-times-hero__content h1 {
+
+    font-size: 34px;
+
+    line-height: 1.04;
+
+    letter-spacing: -1px;
+  }
+
+  .prayer-times-hero__content h1 span {
+
+    margin-top: 4px;
+
+    font-size: 0.72em;
+
+    letter-spacing: -0.4px;
+  }
+
+
+  /* DIVIDER */
+
+  .prayer-times-hero__divider {
+
+    width: 125px;
+
+    margin:
+      12px 0 10px;
+  }
+
+
+  /* DESCRIPTION */
+
+  .prayer-times-hero__content > p {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin:
+      0 0 13px;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+  }
+
+
+  /* BADGES */
+
+  .prayer-times-hero__badges {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 5px;
+  }
+
+  .prayer-times-hero__badge {
+
     min-width: 0;
 
-    flex: none;
+    padding:
+      7px 5px;
 
-    margin: 0 !important;
-    padding: 0;
+    flex-direction: column;
 
-    box-sizing: border-box;
+    align-items: flex-start;
+
+    gap: 5px;
+
+    border-radius: 9px;
+  }
+
+  .prayer-times-hero__badge > span {
+
+    width: 25px;
+    height: 25px;
+
+    flex-basis: 25px;
+
+    font-size: 11px;
+  }
+
+  .prayer-times-hero__badge strong {
+
+    font-size: 8px;
+
+    white-space: nowrap;
+  }
+
+  .prayer-times-hero__badge small {
+
+    display: none;
+  }
+
+  .prayer-times-hero__glow {
+
+    display: none;
+  }
+
+
+  /* =======================================================
+     MAIN SECTION
+  ======================================================= */
+
+  .home-prayer-section {
+
+    padding-top: 35px;
+
+    padding-bottom: 20px;
+  }
+
+  .prayer-heading-row {
+
+    gap: 18px;
+
+    margin-top: 0;
+
+    margin-bottom: 25px;
   }
 
   .prayer-heading-row h1 {
-    width: 100%;
-    max-width: 100%;
 
-    margin: 0 0 6px 0 !important;
-    padding: 0;
+    font-size: 28px;
 
-    font-size: 27px;
-    line-height: 1.25;
-
-    white-space: normal !important;
-    overflow-wrap: anywhere !important;
+    line-height: 1.2;
   }
 
   .prayer-heading-row p {
-    width: 100%;
-    max-width: 100%;
 
-    margin: 0 !important;
-    padding: 0;
+    font-size: 13px;
 
-    font-size: 14px;
-    line-height: 1.5;
-
-    white-space: normal !important;
-    overflow-wrap: anywhere !important;
+    line-height: 1.6;
   }
-
-  /* =======================================================
-     MOBILE SEARCH
-  ======================================================= */
 
   .prayer-heading-search {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
 
-    margin: 0 !important;
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    align-self: stretch;
+
     padding: 0 !important;
-
-    box-sizing: border-box !important;
-    overflow: hidden !important;
   }
 
-  .prayer-heading-search > * {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
 
-    margin: 0 !important;
+  /* =======================================================
+     CALENDAR
+  ======================================================= */
 
-    box-sizing: border-box !important;
+  .calendar-section {
+
+    margin-top: 20px;
+
+    margin-bottom: 40px !important;
+
+    overflow: hidden;
   }
 
-  .prayer-heading-search form {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
 
-    margin: 0 !important;
-    padding: 0 !important;
+  /* =======================================================
+     DETAILS
+  ======================================================= */
 
-    box-sizing: border-box !important;
+  .prayer-details-section {
+
+    padding: 55px 0;
   }
 
-  .prayer-heading-search input,
-  .prayer-heading-search select,
-  .prayer-heading-search button {
-    min-width: 0 !important;
-    max-width: 100% !important;
+  .prayer-details-header,
+  .pakistan-cities-header,
+  .prayer-tips-header,
+  .prayer-faq-header {
 
-    box-sizing: border-box !important;
+    margin-bottom: 25px;
+  }
+
+  .prayer-details-header h2,
+  .pakistan-cities-header h2,
+  .prayer-tips-header h2,
+  .prayer-faq-header h2 {
+
+    font-size: 28px;
+  }
+
+  .prayer-details-header p,
+  .pakistan-cities-header p,
+  .prayer-tips-header p,
+  .prayer-faq-header p {
+
+    font-size: 13px;
+
+    line-height: 1.65;
+  }
+
+
+  /* =======================================================
+     CALCULATION
+  ======================================================= */
+
+  .prayer-calculation-card {
+
+    padding: 20px;
+
+    border-radius: 16px;
+  }
+
+  .calculation-content {
+
+    grid-template-columns: 1fr;
+  }
+
+
+  /* =======================================================
+     LOCATION
+  ======================================================= */
+
+  .prayer-location-grid {
+
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .prayer-detail-box {
+
+    padding: 16px;
+  }
+
+
+  /* =======================================================
+     SUN
+  ======================================================= */
+
+  .sun-position-card {
+
+    padding: 20px;
+
+    border-radius: 16px;
+  }
+
+  .sun-position-items {
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+  }
+
+  .sun-line {
+
+    display: none;
+  }
+
+
+  /* =======================================================
+     DATE + QIBLA
+  ======================================================= */
+
+  .date-information-card,
+  .qibla-information-card {
+
+    padding: 20px;
+
+    border-radius: 16px;
+  }
+
+  .date-details {
+
+    grid-template-columns: 1fr;
+  }
+
+  .qibla-content {
+
+    min-height: 0;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+    padding:
+      20px 0 10px;
+  }
+
+
+  /* =======================================================
+     CITIES
+  ======================================================= */
+
+  .pakistan-cities-section {
+
+    padding: 55px 0;
+  }
+
+  .city-search-box {
+
+    height: 52px;
+
+    margin-bottom: 20px;
+  }
+
+  .pakistan-city-grid {
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+  }
+
+  .pakistan-city {
+
+    padding:
+      13px 12px;
+  }
+
+
+  /* =======================================================
+     TIPS
+  ======================================================= */
+
+  .prayer-tips-section {
+
+    padding: 55px 0;
+  }
+
+  .prayer-tip-card {
+
+    padding: 22px;
+  }
+
+
+  /* =======================================================
+     FAQ
+  ======================================================= */
+
+  .prayer-faq-section {
+
+    padding:
+      55px 0 65px;
+  }
+
+  .prayer-faq-question {
+
+    min-height: 65px;
+
+    grid-template-columns:
+      35px minmax(0, 1fr) 32px;
+
+    gap: 10px;
+  }
+
+  .faq-question-text {
+
+    font-size: 14px;
+  }
+
+  .prayer-faq-answer {
+
+    padding:
+      0 10px 20px 45px;
+  }
+
+  .prayer-faq-note {
+
+    align-items: flex-start;
+
+    padding: 17px;
   }
 }
 
@@ -410,32 +2543,359 @@ footer {
 
 @media (max-width: 400px) {
 
+  .prayer-times-page .container {
+
+    padding-left: 12px;
+
+    padding-right: 12px;
+  }
+
+
+  /* =======================================================
+     HERO
+     COMPLETE IMAGE
+  ======================================================= */
+
+  .prayer-times-hero {
+
+    width: 100%;
+
+    height: 350px;
+
+    min-height: 350px;
+
+    background-size: 100% 100%;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+  }
+
+
+  .prayer-times-hero__inner {
+
+    width: 100%;
+
+    height: 350px;
+
+    min-height: 350px;
+
+    padding:
+      18px 12px 16px;
+  }
+
+
+  .prayer-times-hero__content h1 {
+
+    font-size: 30px;
+
+    letter-spacing: -0.8px;
+  }
+
+  .prayer-times-hero__content > p {
+
+    font-size: 10px;
+
+    line-height: 1.45;
+
+    margin-bottom: 10px;
+  }
+
+  .prayer-times-hero__badges {
+
+    gap: 4px;
+  }
+
+  .prayer-times-hero__badge {
+
+    padding:
+      6px 4px;
+
+    gap: 4px;
+  }
+
+  .prayer-times-hero__badge > span {
+
+    width: 23px;
+    height: 23px;
+
+    flex-basis: 23px;
+
+    font-size: 10px;
+  }
+
+  .prayer-times-hero__badge strong {
+
+    font-size: 7px;
+  }
+
+
+  /* =======================================================
+     MAIN
+  ======================================================= */
+
   .prayer-heading-row {
+
     gap: 10px;
 
-    /* AUR KAM TOP SPACE */
     margin-top: 5px;
+
     margin-bottom: 18px;
   }
 
   .prayer-heading-row h1 {
+
     font-size: 24px;
+
     line-height: 1.25;
   }
 
   .prayer-heading-row p {
+
     font-size: 13px;
+
     line-height: 1.5;
   }
 
   .prayer-heading-search {
+
     width: 100% !important;
+
     max-width: 100% !important;
 
     padding: 0 !important;
   }
 
+
+  /* =======================================================
+     CALENDAR
+  ======================================================= */
+
   .calendar-section {
+
     margin-bottom: 40px !important;
+  }
+
+
+  /* =======================================================
+     CARDS
+  ======================================================= */
+
+  .prayer-calculation-card,
+  .sun-position-card,
+  .date-information-card,
+  .qibla-information-card {
+
+    padding: 18px;
+  }
+
+
+  /* =======================================================
+     SUN
+  ======================================================= */
+
+  .sun-position-items {
+
+    grid-template-columns: 1fr;
+  }
+
+
+  /* =======================================================
+     CITIES
+  ======================================================= */
+
+  .pakistan-city-grid {
+
+    grid-template-columns: 1fr;
+  }
+
+
+  /* =======================================================
+     TIPS
+  ======================================================= */
+
+  .prayer-tip-card {
+
+    padding: 20px;
+  }
+
+
+  /* =======================================================
+     FAQ
+  ======================================================= */
+
+  .prayer-faq-question {
+
+    min-height: 60px;
+
+    grid-template-columns:
+      30px minmax(0, 1fr) 30px;
+
+    gap: 8px;
+  }
+
+  .prayer-faq-answer {
+
+    padding-left: 38px;
+
+    padding-right: 8px;
+  }
+
+  .faq-question-text {
+
+    font-size: 13px;
+  }
+
+
+  /* =======================================================
+     QIBLA
+  ======================================================= */
+
+  .qibla-content {
+
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+  .qibla-compass {
+
+    width: 135px;
+
+    height: 135px;
+  }
+
+  .qibla-degree strong {
+
+    font-size: 32px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 340px) {
+
+  /* =======================================================
+     HERO
+  ======================================================= */
+
+  .prayer-times-hero {
+
+    height: 320px;
+
+    min-height: 320px;
+
+    background-size: 100% 100%;
+
+    background-position: center center;
+  }
+
+  .prayer-times-hero__inner {
+
+    height: 320px;
+
+    min-height: 320px;
+
+    padding:
+      14px 9px 13px;
+  }
+
+  .prayer-times-hero__eyebrow {
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 6px;
+  }
+
+  .prayer-times-hero__content h1 {
+
+    font-size: 27px;
+
+    letter-spacing: -0.6px;
+  }
+
+  .prayer-times-hero__divider {
+
+    width: 105px;
+
+    margin:
+      8px 0;
+  }
+
+  .prayer-times-hero__content > p {
+
+    font-size: 9px;
+
+    line-height: 1.4;
+
+    margin-bottom: 8px;
+  }
+
+  .prayer-times-hero__badges {
+
+    gap: 3px;
+  }
+
+  .prayer-times-hero__badge {
+
+    padding:
+      5px 3px;
+  }
+
+  .prayer-times-hero__badge > span {
+
+    width: 21px;
+    height: 21px;
+
+    flex-basis: 21px;
+
+    font-size: 9px;
+  }
+
+  .prayer-times-hero__badge strong {
+
+    font-size: 6.5px;
+  }
+
+
+  /* =======================================================
+     PRAYER CARD
+  ======================================================= */
+
+  .prayer-card {
+
+    grid-template-columns:
+      30px
+      minmax(0, 1fr)
+      auto !important;
+
+    column-gap: 7px !important;
+  }
+
+  .prayer-card__icon,
+  .prayer-icon {
+
+    width: 28px !important;
+
+    height: 28px !important;
+
+    min-width: 28px !important;
+
+    min-height: 28px !important;
+  }
+
+  .prayer-card__name {
+
+    font-size: 13px !important;
+  }
+
+  .prayer-card__time {
+
+    font-size: 14px !important;
   }
 }

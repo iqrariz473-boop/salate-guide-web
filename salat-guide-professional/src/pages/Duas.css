@@ -1,263 +1,771 @@
-/* =====================================================
-   DUA PAGE
-===================================================== */
+/* =========================================================
+   DUAS PAGE
+========================================================= */
 
-.dua-page {
-  position: relative;
-  width: 100%;
+.duas-page {
   min-height: 100vh;
-  margin: 0;
-  padding: 0 0 30px;
-  background: #f9f6ed;
-  overflow: hidden;
-  box-sizing: border-box;
+  background: #f8f8f4;
+  color: #202a25;
+  overflow-x: hidden;
 }
 
+/* =========================================================
+   TOP IMAGE / HERO
+========================================================= */
 
-/* =====================================================
-   BACKGROUND OVERLAY
-===================================================== */
-
-.dua-page__overlay {
-  display: none;
-}
-
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.dua-page__hero {
+.duas-top-image {
   position: relative;
-  z-index: 1;
   width: 100%;
-  min-height: 360px;
+  height: 310px;
   margin: 0;
-  padding: 55px 20px 45px;
-  box-sizing: border-box;
-  text-align: center;
+  padding: 0;
+  overflow: hidden;
+  background: #0d3025;
+}
 
+.duas-top-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.duas-top-image__overlay {
+  position: absolute;
+  inset: 0;
   background:
     linear-gradient(
       90deg,
-      rgba(4, 48, 35, 0.82) 0%,
-      rgba(4, 48, 35, 0.62) 42%,
-      rgba(4, 48, 35, 0.25) 75%,
-      rgba(4, 48, 35, 0.12) 100%
-    ),
-    url("/images/5d0f10c3-342d-480e-8c6e-dd402ce82f01.png")
-      center center / cover no-repeat;
-}
-
-
-/* =====================================================
-   BREADCRUMB
-===================================================== */
-
-.dua-page__breadcrumb {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-
-  margin-top: 25px;
-  margin-bottom: 7px;
-
-  color: #637068;
-  font-size: 11px;
-}
-
-.dua-page__breadcrumb span:first-child {
-  color: #0d4938;
-  font-size: 14px;
-}
-
-.dua-page__breadcrumb b {
-  color: #b78a38;
-  font-weight: 400;
-}
-
-/* =====================================================
-   HERO DECORATION
-===================================================== */
-
-.dua-page__decoration {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 1px;
-}
-
-.dua-page__decoration span {
-  width: 65px;
-  height: 1px;
-  background: #bd9349;
-}
-
-.dua-page__decoration i {
-  color: #bd9349;
-  font-size: 16px;
-  font-style: normal;
-}
-
-
-/* =====================================================
-   HERO TITLE
-===================================================== */
-
-.dua-page__hero h1 {
-  margin: 0;
-
-  color: #073b2e;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: 58px;
-  line-height: 0.92;
-  font-weight: 600;
-  letter-spacing: -2px;
-}
-
-.dua-page__hero > p {
-  max-width: 560px;
-  margin: 8px auto 0;
-
-  color: #3d514a;
-
-  font-size: 13px;
-  line-height: 1.4;
-}
-
-
-/* =====================================================
-   HERO ORNAMENT
-===================================================== */
-
-.dua-page__ornament {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  margin-top: 8px;
-}
-
-.dua-page__ornament span {
-  width: 65px;
-  height: 1px;
-  background: #bd9349;
-}
-
-.dua-page__ornament b {
-  color: #bd9349;
-  font-size: 16px;
-  font-weight: 400;
-}
-
-
-/* =====================================================
-   MAIN DUA CARD
-===================================================== */
-
-.dua-page__main-card {
-  position: relative;
-  z-index: 1;
-
-  width: min(900px, calc(100% - 40px));
-
-  /* HERO AUR CARD KE BEECH SPACE */
-  margin: 70px auto 0;
-
-  padding: 13px 18px 9px;
-
-  border-radius: 22px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #063a2e,
-      #082c25
+      rgba(13, 48, 37, 0.92) 0%,
+      rgba(13, 48, 37, 0.72) 45%,
+      rgba(13, 48, 37, 0.36) 100%
     );
-
-  border: 1px solid rgba(214, 175, 91, 0.25);
-
-  box-shadow:
-    0 14px 35px rgba(20, 55, 43, 0.22);
-
-  overflow: hidden;
 }
 
-@media (max-width: 600px) {
-  .dua-page__main-card {
-    width: calc(100% - 12px);
-
-    /* HERO KE NEECHAY SPACE */
-    margin-top: 35px;
-
-    padding: 9px 8px 5px;
-    border-radius: 17px;
-  }
-}
-
-
-/* =====================================================
-   CARD HEADER
-===================================================== */
-
-.dua-page__card-header {
-  position: relative;
+.duas-top-image__content {
+  position: absolute;
+  inset: 0;
   z-index: 2;
 
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 
-  margin-bottom: 0;
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
-
-/* =====================================================
-   BADGE
-===================================================== */
-
-.dua-page__badge {
+.duas-top-image__content span {
   display: inline-flex;
   align-items: center;
+  gap: 10px;
 
-  padding: 6px 11px;
+  margin-bottom: 12px;
 
-  border: 1px solid #d4a84f;
-  border-radius: 30px;
-
-  color: #f1ca70;
-
-  font-size: 10px;
-  font-weight: 600;
+  color: #d6b15c;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
 }
 
+.duas-top-image__content span::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: #d6b15c;
+}
 
-/* =====================================================
-   MAIN BOOKMARK
-===================================================== */
+.duas-top-image__content h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(40px, 5vw, 62px);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -1.4px;
+}
 
-.dua-page__bookmark {
-  width: 32px;
-  height: 32px;
+/* =========================================================
+   PAGE HEADER
+========================================================= */
 
-  display: grid;
-  place-items: center;
+.duas-header {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(13, 48, 37, 0.08);
+}
 
-  border: 1px solid rgba(226, 187, 100, 0.55);
+.duas-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+.duas-header__content {
+  max-width: 760px;
+}
+
+.duas-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 10px;
+
+  color: #b48c35;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.duas-eyebrow::before {
+  content: "✦";
+  font-size: 12px;
+}
+
+.duas-header__content h1 {
+  margin: 0;
+  color: #0d3025;
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.12;
+  font-weight: 750;
+  letter-spacing: -0.8px;
+}
+
+.duas-header__content p {
+  max-width: 680px;
+  margin: 14px 0 0;
+
+  color: #69746e;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.duas-header__count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 125px;
+  height: 125px;
+
+  background: #0d3025;
+  border: 1px solid rgba(214, 177, 92, 0.35);
   border-radius: 50%;
 
-  background: rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 15px 35px rgba(13, 48, 37, 0.14),
+    inset 0 0 0 7px rgba(214, 177, 92, 0.06);
+}
 
-  color: #f0ca70;
+.duas-header__count strong {
+  color: #d6b15c;
+  font-size: 32px;
+  line-height: 1;
+}
 
+.duas-header__count span {
+  margin-top: 7px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.duas-content {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 42px 0 80px;
+}
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.duas-controls {
+  position: relative;
+  z-index: 20;
+
+  display: grid;
+  grid-template-columns: 225px minmax(260px, 1fr) 220px;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+/* =========================================================
+   LANGUAGE
+========================================================= */
+
+.duas-language {
+  position: relative;
+  min-width: 0;
+}
+
+.duas-language__button {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  width: 100%;
+  min-height: 54px;
+  padding: 8px 13px;
+
+  border: 1px solid rgba(13, 48, 37, 0.13);
+  border-radius: 13px;
+
+  background: #ffffff;
+  color: #173b2f;
+
+  cursor: pointer;
+  text-align: left;
+
+  box-shadow: 0 5px 18px rgba(13, 48, 37, 0.035);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.duas-language__button:hover,
+.duas-language__button.is-open {
+  border-color: rgba(214, 177, 92, 0.65);
+  box-shadow: 0 8px 24px rgba(13, 48, 37, 0.07);
+}
+
+.duas-language__button:focus {
+  outline: none;
+}
+
+.duas-language__globe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+
+  border-radius: 10px;
+  background: #edf3ef;
+
+  font-size: 16px;
+}
+
+.duas-language__current {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.duas-language__label {
+  color: #173b2f;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.duas-language__native {
+  margin-top: 2px;
+  color: #8a938e;
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.duas-language__arrow {
+  color: #557168;
+  font-size: 17px;
+  transition: transform 0.2s ease;
+}
+
+.duas-language__arrow.is-open {
+  transform: rotate(180deg);
+}
+
+/* =========================================================
+   LANGUAGE MENU
+========================================================= */
+
+.duas-language__menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 100;
+
+  width: 290px;
+  max-height: 420px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+  border: 1px solid rgba(13, 48, 37, 0.1);
+  border-radius: 15px;
+
+  box-shadow:
+    0 20px 55px rgba(13, 48, 37, 0.15),
+    0 3px 10px rgba(13, 48, 37, 0.05);
+
+  animation: duaMenuIn 0.18s ease;
+}
+
+@keyframes duaMenuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.duas-language__menu-header {
+  display: flex;
+  flex-direction: column;
+
+  padding: 15px 16px;
+
+  border-bottom: 1px solid rgba(13, 48, 37, 0.07);
+  background: #fafbf8;
+}
+
+.duas-language__menu-header span {
+  color: #173b2f;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.duas-language__menu-header small {
+  margin-top: 3px;
+  color: #87918b;
+  font-size: 11px;
+}
+
+.duas-language__options {
+  max-height: 350px;
+  overflow-y: auto;
+  padding: 7px;
+}
+
+.duas-language__options::-webkit-scrollbar {
+  width: 5px;
+}
+
+.duas-language__options::-webkit-scrollbar-thumb {
+  background: rgba(13, 48, 37, 0.18);
+  border-radius: 20px;
+}
+
+.duas-language__option {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  width: 100%;
+  padding: 10px 9px;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: transparent;
+  color: #25372f;
+
+  cursor: pointer;
+  text-align: left;
+
+  transition:
+    background 0.18s ease,
+    color 0.18s ease;
+}
+
+.duas-language__option:hover {
+  background: #f0f5f1;
+}
+
+.duas-language__option.is-selected {
+  background: #e9f1ec;
+  color: #0d3025;
+}
+
+.duas-language__option-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 27px;
+  height: 27px;
+  flex: 0 0 27px;
+
+  border-radius: 50%;
+
+  background: #f2f5f2;
+  color: #819087;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.duas-language__option.is-selected
+  .duas-language__option-icon {
+  background: #0d3025;
+  color: #d6b15c;
+}
+
+.duas-language__option-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.duas-language__option-label {
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.duas-language__option-native {
+  margin-top: 2px;
+  color: #8a938e;
+  font-size: 11px;
+}
+
+/* =========================================================
+   DUAS SEARCH BAR
+========================================================= */
+
+.duas-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 48px;
+
+  border: 1px solid #d9ded9;
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow: 0 6px 20px rgba(13, 48, 37, 0.06);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Remove yellow focus line from whole search */
+
+.duas-search:focus,
+.duas-search:focus-within {
+  outline: none !important;
+  border-color: #d9ded9 !important;
+
+  box-shadow:
+    0 6px 20px rgba(13, 48, 37, 0.06) !important;
+}
+
+/* =========================================================
+   SEARCH INPUT
+========================================================= */
+
+.duas-search input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 45px 0 43px;
+
+  border: none !important;
+  outline: none !important;
+
+  background: transparent !important;
+
+  color: #173d30;
+
+  font-family: inherit;
   font-size: 14px;
+
+  box-shadow: none !important;
+}
+
+/* VERY IMPORTANT */
+
+.duas-search input:focus,
+.duas-search input:focus-visible,
+.duas-search input:active {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  background: transparent !important;
+}
+
+/* Placeholder */
+
+.duas-search input::placeholder {
+  color: #929b96;
+}
+
+/* =========================================================
+   SEARCH ICON
+========================================================= */
+
+.duas-search__icon {
+  position: absolute;
+  left: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 20px;
+  height: 20px;
+
+  color: #b48c35;
+
+  font-size: 21px;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   CLEAR BUTTON
+========================================================= */
+
+.duas-search__clear {
+  position: absolute;
+  right: 10px;
+
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none !important;
+  outline: none !important;
+  border-radius: 50%;
+
+  background: #f7f5e9;
+
+  color: #0d3025;
+
+  font-size: 19px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Remove yellow line from × button */
+
+.duas-search__clear:focus,
+.duas-search__clear:focus-visible,
+.duas-search__clear:active {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Hover */
+
+.duas-search__clear:hover {
+  background: #d6b15c;
+  color: #0d3025;
+}
+
+/* =========================================================
+   CATEGORY SELECT
+========================================================= */
+
+.duas-category {
+  width: 100%;
+  min-height: 54px;
+  padding: 0 39px 0 15px;
+
+  border: 1px solid rgba(13, 48, 37, 0.13);
+  border-radius: 13px;
+
+  background-color: #ffffff;
+  color: #294239;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+  outline: none;
+
+  box-shadow: 0 5px 18px rgba(13, 48, 37, 0.035);
+
+  appearance: none;
+
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent 50%,
+      #587066 50%
+    ),
+    linear-gradient(
+      135deg,
+      #587066 50%,
+      transparent 50%
+    );
+
+  background-position:
+    calc(100% - 17px) 23px,
+    calc(100% - 12px) 23px;
+
+  background-size:
+    5px 5px,
+    5px 5px;
+
+  background-repeat: no-repeat;
+}
+
+.duas-category:hover,
+.duas-category:focus {
+  border-color: rgba(23, 70, 55, 0.35);
+}
+
+/* =========================================================
+   RESULTS INFO
+========================================================= */
+
+.duas-results-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  margin-bottom: 17px;
+  padding: 0 3px;
+
+  color: #77827c;
+  font-size: 13px;
+}
+
+.duas-results-info strong {
+  color: #34483f;
+  font-weight: 700;
+}
+
+.duas-results-info > div > span {
+  color: #9aa29e;
+}
+
+.duas-results-favorites {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  color: #a77d29;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   STATES
+========================================================= */
+
+.duas-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 300px;
+  padding: 50px 25px;
+
+  background: #ffffff;
+  border: 1px solid rgba(13, 48, 37, 0.08);
+  border-radius: 18px;
+
+  text-align: center;
+
+  box-shadow: 0 8px 28px rgba(13, 48, 37, 0.04);
+}
+
+.duas-state--loading {
+  min-height: 330px;
+}
+
+.duas-state__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 55px;
+  height: 55px;
+  margin-bottom: 16px;
+
+  border-radius: 50%;
+
+  background: #edf3ef;
+  color: #174637;
+
+  font-size: 22px;
+  font-weight: 750;
+}
+
+.duas-state--error .duas-state__icon {
+  background: #f8eeee;
+  color: #9b4848;
+}
+
+.duas-state h3 {
+  margin: 0;
+  color: #173b2f;
+  font-size: 20px;
+  font-weight: 750;
+}
+
+.duas-state p {
+  max-width: 480px;
+  margin: 9px 0 0;
+
+  color: #78827d;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.duas-state__button {
+  min-height: 44px;
+  margin-top: 20px;
+  padding: 0 19px;
+
+  border: 1px solid #0d3025;
+  border-radius: 10px;
+
+  background: #0d3025;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
 
   cursor: pointer;
 
@@ -266,186 +774,1614 @@
     transform 0.2s ease;
 }
 
-.dua-page__bookmark:hover {
-  background: rgba(220, 178, 88, 0.16);
-  transform: translateY(-2px);
+.duas-state__button:hover {
+  background: #174637;
+  transform: translateY(-1px);
 }
 
+.duas-spinner {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 17px;
 
-/* =====================================================
-   DUA BANNER
-===================================================== */
+  border: 3px solid rgba(13, 48, 37, 0.1);
+  border-top-color: #d6b15c;
+  border-radius: 50%;
 
-.dua-page .dua-banner {
-  position: relative;
-  z-index: 1;
-
-  margin: 0;
-  padding: 0;
-
-  background: transparent;
-
-  border: 0;
-
-  box-shadow: none;
+  animation: duasSpin 0.75s linear infinite;
 }
 
-.dua-page .dua-banner__inner {
-  padding: 17px 22px 5px;
+@keyframes duasSpin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.dua-page .dua-banner__eyebrow {
-  color: #e7bd61;
-}
+/* =========================================================
+   DESKTOP TABLE
+========================================================= */
 
-.dua-page .dua-banner__decoration {
-  color: #d4a44d;
-}
+.duas-table {
+  width: 100%;
 
-.dua-page .dua-banner__arabic {
-  color: #ffffff;
-}
+  overflow: hidden;
 
-.dua-page .dua-banner__translation {
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.dua-page .dua-banner__citation {
-  color: #e9bd5f;
-}
-
-
-/* =====================================================
-   BEAUTIFUL DUAS COLLECTION
-===================================================== */
-
-.dua-page__collection {
-  position: relative;
-  z-index: 1;
-
-  width: min(1120px, calc(100% - 40px));
-
-  /*
-    HERO KE NEECHE SPACE
-    60px ka clean gap
-  */
-  margin: 60px auto 0;
-
-  padding: 19px 22px 21px;
-
-  box-sizing: border-box;
-
-  border-radius: 19px;
-
-  background: rgba(255, 253, 247, 0.94);
-
-  border: 1px solid rgba(120, 94, 48, 0.12);
+  background: #ffffff;
+  border: 1px solid rgba(13, 48, 37, 0.09);
+  border-radius: 18px;
 
   box-shadow:
-    0 8px 25px rgba(65, 52, 30, 0.06);
+    0 10px 32px rgba(13, 48, 37, 0.045);
 }
 
+.duas-table__head {
+  display: grid;
+  grid-template-columns:
+    70px
+    minmax(240px, 1.25fr)
+    minmax(230px, 1fr)
+    90px
+    110px;
 
-/* =====================================================
-   MODERN SECTION HEADING
-===================================================== */
+  align-items: center;
 
-.dua-section-heading {
-  text-align: center;
-  margin-bottom: 18px;
+  min-height: 52px;
+  padding: 0 20px;
+
+  background: #0d3025;
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
 }
 
-.dua-section-heading__label {
-  display: inline-block;
-
-  margin-bottom: 4px;
-
-  color: #b78a38;
-
-  font-size: 8px;
-  font-weight: 700;
-
-  letter-spacing: 2px;
+.duas-table__body {
+  width: 100%;
 }
 
-.dua-section-heading h2 {
-  margin: 0;
+.duas-table__row {
+  display: grid;
+  grid-template-columns:
+    70px
+    minmax(240px, 1.25fr)
+    minmax(230px, 1fr)
+    90px
+    110px;
 
-  color: #123f31;
+  align-items: center;
 
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  min-height: 108px;
+  padding: 14px 20px;
 
-  font-size: 23px;
-  line-height: 1.2;
-  font-weight: 600;
+  border-bottom: 1px solid rgba(13, 48, 37, 0.07);
+
+  transition:
+    background 0.2s ease;
 }
 
-.dua-section-heading p {
-  max-width: 420px;
-
-  margin: 5px auto 7px;
-
-  color: #737973;
-
-  font-size: 9px;
-  line-height: 1.5;
+.duas-table__row:last-child {
+  border-bottom: 0;
 }
 
-.dua-section-heading__line {
+.duas-table__row:hover {
+  background: #fbfcfa;
+}
+
+.duas-table__cell {
+  min-width: 0;
+}
+
+.duas-table__cell--id {
+  display: flex;
+  align-items: center;
+}
+
+.duas-number {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  width: 39px;
+  height: 39px;
+
+  border-radius: 11px;
+
+  background: #edf3ef;
+  color: #174637;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.duas-chapter-info {
+  min-width: 0;
+  padding-right: 15px;
+}
+
+.duas-chapter-info__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 7px;
 }
 
-.dua-section-heading__line span {
-  width: 32px;
-  height: 1px;
-  background: #bd9349;
+.duas-chapter-info__top h3 {
+  min-width: 0;
+  margin: 0;
+
+  color: #19372d;
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 700;
 }
 
-.dua-section-heading__line b {
-  color: #bd9349;
-  font-size: 8px;
-  font-weight: 400;
+.duas-chapter-info__arabic {
+  margin: 6px 0 0;
+
+  color: #8a7444;
+  font-family: "Noto Naskh Arabic", "Amiri", serif;
+  font-size: 16px;
+  line-height: 1.65;
 }
 
+.duas-category-badge {
+  display: inline-flex;
+  align-items: center;
 
-/* =====================================================
-   DUA LIST
-===================================================== */
+  min-height: 22px;
+  padding: 0 7px;
 
-.dua-list {
-  display: grid;
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+  border: 1px solid rgba(214, 177, 92, 0.22);
+  border-radius: 20px;
 
-  gap: 10px;
+  background: #faf6e9;
+  color: #9a742a;
+
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 0.35px;
+  white-space: nowrap;
 }
 
+.duas-table__cell--preview p {
+  margin: 0;
 
-/* =====================================================
-   DUA CARD
-===================================================== */
+  color: #7b8580;
+  font-size: 12px;
+  line-height: 1.65;
 
-.dua-card {
-  position: relative;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
 
-  padding: 15px;
+.duas-table__cell--favorite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  box-sizing: border-box;
+.duas-favorite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  border: 1px solid rgba(113, 91, 52, 0.13);
+  width: 39px;
+  height: 39px;
 
-  border-radius: 12px;
+  border: 1px solid rgba(13, 48, 37, 0.09);
+  border-radius: 50%;
 
-  background: #fffdf8;
+  background: #f6f8f6;
+  color: #7a8982;
+
+  font-size: 20px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.duas-favorite:hover {
+  transform: scale(1.05);
+  background: #fdf8e9;
+  border-color: rgba(214, 177, 92, 0.45);
+  color: #b48c35;
+}
+
+.duas-favorite.is-active {
+  background: #fff8e7;
+  border-color: rgba(214, 177, 92, 0.45);
+  color: #b48c35;
+}
+
+.duas-open-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  min-height: 39px;
+  padding: 0 12px;
+
+  border: 1px solid rgba(23, 70, 55, 0.15);
+  border-radius: 9px;
+
+  background: #f0f5f1;
+  color: #174637;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.duas-open-button:hover {
+  background: #e5efe9;
+  border-color: rgba(23, 70, 55, 0.25);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.duas-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(7, 27, 21, 0.72);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+
+  animation: duasModalFade 0.2s ease;
+}
+
+@keyframes duasModalFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.duas-modal__panel {
+  display: flex;
+  flex-direction: column;
+
+  width: min(100%, 980px);
+  max-height: calc(100vh - 48px);
+
+  overflow: hidden;
+
+  background: #f8f9f5;
+  border: 1px solid rgba(214, 177, 92, 0.22);
+  border-radius: 20px;
 
   box-shadow:
-    0 5px 15px rgba(65, 52, 30, 0.05);
+    0 30px 90px rgba(0, 0, 0, 0.28);
+
+  animation: duasModalPanelIn 0.24s ease;
+}
+
+@keyframes duasModalPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.duas-modal__header {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 17px;
+
+  flex: 0 0 auto;
+
+  padding: 22px 24px;
+
+  background: #0d3025;
+  border-bottom: 1px solid rgba(214, 177, 92, 0.2);
+}
+
+.duas-modal__chapter-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
+
+  border: 1px solid rgba(214, 177, 92, 0.35);
+  border-radius: 15px;
+
+  background: rgba(214, 177, 92, 0.09);
+  color: #d6b15c;
+
+  font-size: 24px;
+}
+
+.duas-modal__header-content {
+  min-width: 0;
+  padding-right: 48px;
+}
+
+.duas-modal__eyebrow {
+  display: block;
+  margin-bottom: 4px;
+
+  color: rgba(214, 177, 92, 0.82);
+
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.duas-modal__header-content h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 23px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.duas-modal__arabic-title {
+  margin: 5px 0 0;
+
+  color: rgba(255, 255, 255, 0.76);
+
+  font-family: "Noto Naskh Arabic", "Amiri", serif;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.duas-modal__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-top: 7px;
+
+  color: rgba(255, 255, 255, 0.52);
+
+  font-size: 10px;
+}
+
+.duas-modal__close {
+  position: absolute;
+  top: 18px;
+  right: 19px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 39px;
+  height: 39px;
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 24px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.duas-modal__close:hover {
+  background: rgba(214, 177, 92, 0.15);
+  color: #d6b15c;
+  transform: rotate(4deg);
+}
+
+/* =========================================================
+   MODAL BODY
+========================================================= */
+
+.duas-modal__body {
+  flex: 1 1 auto;
+
+  min-height: 0;
+
+  overflow-y: auto;
+
+  padding: 24px;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+}
+
+.duas-modal__body::-webkit-scrollbar {
+  width: 7px;
+}
+
+.duas-modal__body::-webkit-scrollbar-track {
+  background: #f0f2ed;
+}
+
+.duas-modal__body::-webkit-scrollbar-thumb {
+  background: rgba(13, 48, 37, 0.22);
+  border-radius: 20px;
+}
+
+.duas-modal__state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 280px;
+
+  text-align: center;
+}
+
+.duas-modal__state .duas-spinner {
+  margin-bottom: 14px;
+}
+
+.duas-modal__state p {
+  margin: 0;
+  color: #758079;
+  font-size: 14px;
+}
+
+.duas-modal__state h3 {
+  margin: 0;
+  color: #173b2f;
+  font-size: 19px;
+}
+
+.duas-modal__state--error p {
+  max-width: 450px;
+  margin-top: 8px;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   DETAIL LIST
+========================================================= */
+
+.dua-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+/* =========================================================
+   DETAIL CARD
+========================================================= */
+
+.dua-detail-card {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 55px minmax(0, 1fr);
+  gap: 17px;
+
+  padding: 21px;
+
+  background: #ffffff;
+  border: 1px solid rgba(13, 48, 37, 0.09);
+  border-radius: 17px;
+
+  box-shadow:
+    0 7px 25px rgba(13, 48, 37, 0.045);
+}
+
+.dua-detail-card__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: 13px;
+
+  background: #0d3025;
+  color: #d6b15c;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.dua-detail-card__content {
+  min-width: 0;
+}
+
+.dua-detail-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+.dua-detail-card__badge {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 25px;
+  padding: 0 9px;
+
+  border-radius: 20px;
+
+  background: #edf3ef;
+  color: #174637;
+
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.dua-detail-card__source {
+  color: #aa8130;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.dua-detail-card__section {
+  margin-top: 19px;
+}
+
+.dua-detail-card__section:first-of-type {
+  margin-top: 0;
+}
+
+.dua-detail-card__section--arabic {
+  padding: 19px;
+
+  background: #fafbf7;
+  border: 1px solid rgba(214, 177, 92, 0.14);
+  border-radius: 13px;
+}
+
+.dua-detail-card__label {
+  display: block;
+  margin-bottom: 8px;
+
+  color: #9b7b38;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.dua-detail-card__arabic-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dua-detail-card__ornament {
+  flex: 0 0 auto;
+
+  color: rgba(180, 140, 53, 0.55);
+  font-size: 17px;
+}
+
+.dua-detail-card__arabic {
+  flex: 1;
+
+  margin: 0;
+
+  color: #263f35;
+
+  font-family:
+    "Noto Naskh Arabic",
+    "Amiri",
+    "Scheherazade New",
+    serif;
+
+  font-size: clamp(23px, 3vw, 31px);
+  line-height: 2;
+
+  text-align: center;
+}
+
+.dua-detail-card__transliteration {
+  margin: 0;
+
+  color: #52635b;
+
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.8;
+}
+
+.dua-detail-card__translation {
+  margin: 0;
+
+  color: #35483f;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.dua-detail-card__reference {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+
+  margin-top: 20px;
+  padding: 13px 14px;
+
+  background: #f7f8f5;
+  border-left: 3px solid #d6b15c;
+  border-radius: 9px;
+}
+
+.dua-detail-card__reference-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 26px;
+  height: 26px;
+  flex: 0 0 26px;
+
+  border-radius: 50%;
+
+  background: #fff8e8;
+  color: #b48c35;
+
+  font-size: 11px;
+}
+
+.dua-detail-card__reference span {
+  display: block;
+  color: #8e7542;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.dua-detail-card__reference p {
+  margin: 3px 0 0;
+  color: #65716b;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   AUDIO
+========================================================= */
+
+.dua-detail-card__audio {
+  margin-top: 20px;
+  padding: 15px;
+
+  background: #f2f6f3;
+  border: 1px solid rgba(23, 70, 55, 0.1);
+  border-radius: 12px;
+}
+
+.dua-detail-card__audio-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 12px;
+}
+
+.dua-detail-card__audio-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+
+  border-radius: 10px;
+
+  background: #0d3025;
+  color: #d6b15c;
+
+  font-size: 16px;
+}
+
+.dua-detail-card__audio-head strong {
+  display: block;
+  color: #214238;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.dua-detail-card__audio-head span {
+  display: block;
+  margin-top: 2px;
+  color: #87928c;
+  font-size: 10px;
+}
+
+.dua-audio-player {
+  display: block;
+  width: 100%;
+  height: 40px;
+}
+
+.dua-detail-card__audio-url {
+  margin-top: 7px;
+  color: #87928c;
+  font-size: 9px;
+}
+
+.dua-detail-card__audio-unavailable {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 20px;
+  padding: 13px 15px;
+
+  background: #f7f7f3;
+  border: 1px solid rgba(13, 48, 37, 0.07);
+  border-radius: 11px;
+
+  color: #8a928d;
+}
+
+.dua-detail-card__audio-unavailable > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 9px;
+
+  background: #eaf0ec;
+  color: #5c756b;
+}
+
+.dua-detail-card__audio-unavailable strong {
+  display: block;
+  color: #5f6c65;
+  font-size: 11px;
+}
+
+.dua-detail-card__audio-unavailable small {
+  display: block;
+  margin-top: 2px;
+  font-size: 9px;
+}
+
+/* =========================================================
+   LOAD MORE
+========================================================= */
+
+.duas-load-more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 32px 15px 12px;
+
+  text-align: center;
+}
+
+.duas-load-more__decoration {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-bottom: 8px;
+
+  color: #c39d4b;
+  font-size: 10px;
+}
+
+.duas-load-more > p {
+  margin: 0 0 15px;
+  color: #7d8781;
+  font-size: 12px;
+}
+
+.duas-load-more__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  min-height: 44px;
+  padding: 0 20px;
+
+  border: 1px solid #0d3025;
+  border-radius: 10px;
+
+  background: #0d3025;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.duas-load-more__button:hover:not(:disabled) {
+  background: #174637;
+  transform: translateY(-1px);
+}
+
+.duas-load-more__button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.duas-load-more__spinner {
+  width: 15px;
+  height: 15px;
+
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+
+  animation: duasSpin 0.7s linear infinite;
+}
+
+.duas-end-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 32px 15px 15px;
+
+  color: #a08a56;
+  text-align: center;
+}
+
+.duas-end-message p {
+  margin: 0;
+  color: #89918c;
+  font-size: 11px;
+}
+
+/* =========================================================
+   COMMON SECTION EYEBROW
+========================================================= */
+
+.dua-section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #b48c35;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+.dua-section-eyebrow::before,
+.dua-section-eyebrow::after {
+  content: "✦";
+  font-size: 8px;
+}
+
+/* =========================================================
+   EXPLORE BY INTENTION
+========================================================= */
+
+.dua-category-explorer {
+  position: relative;
+
+  width: 100%;
+  padding: 82px 0;
+
+  background: #ffffff;
+}
+
+.dua-category-explorer__header {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto 35px;
+}
+
+.dua-category-explorer__header h2 {
+  margin: 9px 0 0;
+
+  color: #0d3025;
+  font-size: clamp(29px, 4vw, 40px);
+  line-height: 1.2;
+  font-weight: 750;
+  letter-spacing: -0.6px;
+}
+
+.dua-category-explorer__header p {
+  max-width: 650px;
+  margin: 11px 0 0;
+
+  color: #758079;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.dua-category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 13px;
+
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.dua-category-card {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  min-width: 0;
+  min-height: 91px;
+  padding: 14px;
+
+  border: 1px solid rgba(13, 48, 37, 0.08);
+  border-radius: 14px;
+
+  background: #fbfcfa;
+  color: #19382e;
+
+  text-align: left;
+  cursor: pointer;
+
+  box-shadow: 0 5px 17px rgba(13, 48, 37, 0.025);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.dua-category-card:hover {
+  transform: translateY(-3px);
+
+  background: #ffffff;
+  border-color: rgba(214, 177, 92, 0.36);
+
+  box-shadow:
+    0 12px 28px rgba(13, 48, 37, 0.075);
+}
+
+.dua-category-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+
+  border-radius: 11px;
+
+  background: #eaf1ec;
+  color: #174637;
+
+  font-size: 18px;
+}
+
+.dua-category-card__content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.dua-category-card__content strong {
+  color: #244138;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.dua-category-card__content small {
+  margin-top: 3px;
+  color: #8a948e;
+  font-size: 10px;
+}
+
+.dua-category-card__arrow {
+  color: #a68a4b;
+  font-size: 17px;
+  transition: transform 0.2s ease;
+}
+
+.dua-category-card:hover .dua-category-card__arrow {
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   DUA JOURNEY
+========================================================= */
+
+.dua-journey {
+  position: relative;
+  width: 100%;
+  padding: 82px 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0d3025 0%,
+      #174637 100%
+    );
+
+  overflow: hidden;
+}
+
+.dua-journey::before {
+  content: "";
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  top: -300px;
+  right: -180px;
+
+  border: 1px solid rgba(214, 177, 92, 0.11);
+  border-radius: 50%;
+}
+
+.dua-journey::after {
+  content: "";
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  bottom: -240px;
+  left: -150px;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+}
+
+.dua-journey__inner {
+  position: relative;
+  z-index: 2;
+
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.dua-journey__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+
+  margin-bottom: 35px;
+}
+
+.dua-journey__header .dua-section-eyebrow {
+  color: #d6b15c;
+}
+
+.dua-journey__header h2 {
+  margin: 9px 0 0;
+
+  color: #ffffff;
+  font-size: clamp(29px, 4vw, 40px);
+  line-height: 1.2;
+  font-weight: 750;
+}
+
+.dua-journey__header p {
+  max-width: 630px;
+  margin: 11px 0 0;
+
+  color: rgba(255, 255, 255, 0.63);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.dua-journey__percentage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 95px;
+  height: 95px;
+  flex: 0 0 95px;
+
+  border: 1px solid rgba(214, 177, 92, 0.28);
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.dua-journey__percentage strong {
+  color: #d6b15c;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.dua-journey__percentage span {
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+.dua-journey__progress {
+  margin-bottom: 32px;
+}
+
+.dua-journey__progress-track {
+  width: 100%;
+  height: 7px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.dua-journey__progress-track span {
+  display: block;
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: #d6b15c;
+
+  transition: width 0.5s ease;
+}
+
+.dua-journey__progress-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 8px;
+
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 10px;
+}
+
+.dua-journey__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 13px;
+
+  margin-bottom: 18px;
+}
+
+.dua-journey__stat {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  min-height: 78px;
+  padding: 13px 15px;
+
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 13px;
+}
+
+.dua-journey__stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+
+  border-radius: 10px;
+
+  background: rgba(214, 177, 92, 0.11);
+  color: #d6b15c;
+
+  font-size: 15px;
+}
+
+.dua-journey__stat div {
+  display: flex;
+  flex-direction: column;
+}
+
+.dua-journey__stat strong {
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.1;
+}
+
+.dua-journey__stat span {
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.49);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dua-journey__continue {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 16px;
+
+  border: 1px solid rgba(214, 177, 92, 0.18);
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.dua-journey__continue-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 45px;
+  height: 45px;
+  flex: 0 0 45px;
+
+  border-radius: 11px;
+
+  background: rgba(214, 177, 92, 0.12);
+  color: #d6b15c;
+
+  font-size: 20px;
+}
+
+.dua-journey__continue-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.dua-journey__continue-content > span {
+  display: block;
+  color: rgba(255, 255, 255, 0.43);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.dua-journey__continue-content strong {
+  display: block;
+  margin-top: 4px;
+
+  overflow: hidden;
+
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 1.4;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dua-journey__continue-content p {
+  margin: 2px 0 0;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-family: "Noto Naskh Arabic", "Amiri", serif;
+  font-size: 14px;
+}
+
+.dua-journey__continue button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  min-height: 39px;
+  padding: 0 14px;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: #d6b15c;
+  color: #0d3025;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.dua-journey__continue button:hover:not(:disabled) {
+  background: #e0c276;
+  transform: translateY(-1px);
+}
+
+.dua-journey__continue button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.dua-journey__empty {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 18px;
+
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.dua-journey__empty > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+
+  border-radius: 11px;
+
+  background: rgba(214, 177, 92, 0.1);
+  color: #d6b15c;
+}
+
+.dua-journey__empty strong {
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.dua-journey__empty p {
+  margin: 4px 0 0;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   PAUSE & REFLECT
+========================================================= */
+
+.dua-reflection {
+  width: 100%;
+  padding: 30px 24px;
+
+  background: #f7f5e9;
+}
+
+.dua-reflection__inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  width: min(1050px, 100%);
+  margin: 0 auto;
+  padding: 27px 30px;
+
+  border: 1px solid rgba(214, 177, 92, 0.23);
+  border-radius: 17px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 9px 30px rgba(13, 48, 37, 0.05);
+}
+
+.dua-reflection__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 55px;
+  height: 55px;
+  flex: 0 0 55px;
+
+  border-radius: 50%;
+
+  background: #0d3025;
+  color: #d6b15c;
+
+  font-size: 22px;
+}
+
+.dua-reflection__content {
+  min-width: 0;
+  flex: 1;
+}
+
+.dua-reflection__content > span {
+  display: block;
+
+  color: #b48c35;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.dua-reflection__content h2 {
+  margin: 5px 0 0;
+
+  color: #173b2f;
+  font-size: 19px;
+  line-height: 1.3;
+}
+
+.dua-reflection__arabic {
+  margin: 8px 0 0;
+
+  color: #6e5a31;
+
+  font-family: "Noto Naskh Arabic", "Amiri", serif;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.dua-reflection__text {
+  margin: 4px 0 0;
+
+  color: #69746e;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.dua-reflection__content small {
+  display: block;
+  margin-top: 5px;
+  color: #9a8b68;
+  font-size: 9px;
+}
+
+.dua-reflection__next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 43px;
+  height: 43px;
+  flex: 0 0 43px;
+
+  border: 1px solid rgba(13, 48, 37, 0.11);
+  border-radius: 50%;
+
+  background: #f2f6f3;
+  color: #174637;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.2s ease;
+}
+
+.dua-reflection__next:hover {
+  transform: rotate(35deg);
+  background: #e8f0eb;
+}
+
+/* =========================================================
+   QUICK DASHBOARD
+========================================================= */
+
+.dua-quick-dashboard {
+  width: 100%;
+  padding: 82px 0;
+
+  background: #ffffff;
+}
+
+.dua-quick-dashboard__inner {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.dua-quick-dashboard__header {
+  margin-bottom: 35px;
+}
+
+.dua-quick-dashboard__header h2 {
+  margin: 9px 0 0;
+
+  color: #0d3025;
+  font-size: clamp(29px, 4vw, 40px);
+  line-height: 1.2;
+  font-weight: 750;
+}
+
+.dua-quick-dashboard__header p {
+  max-width: 640px;
+  margin: 11px 0 0;
+
+  color: #758079;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.dua-quick-dashboard__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.dua-quick-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 225px;
+  padding: 20px;
+
+  background: #fbfcfa;
+  border: 1px solid rgba(13, 48, 37, 0.08);
+  border-radius: 16px;
+
+  box-shadow: 0 6px 22px rgba(13, 48, 37, 0.035);
 
   transition:
     transform 0.2s ease,
@@ -453,1034 +2389,2148 @@
     border-color 0.2s ease;
 }
 
-.dua-card:hover {
+.dua-quick-card:hover {
   transform: translateY(-3px);
 
-  border-color:
-    rgba(189, 147, 73, 0.4);
+  border-color: rgba(214, 177, 92, 0.27);
 
   box-shadow:
-    0 8px 20px rgba(65, 52, 30, 0.08);
+    0 13px 30px rgba(13, 48, 37, 0.075);
 }
 
-
-/* =====================================================
-   DUA CARD HEADER
-===================================================== */
-
-.dua-card__header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-
-  gap: 10px;
-}
-
-.dua-card__category {
-  display: inline-block;
-
-  padding: 4px 8px;
-
-  border-radius: 20px;
-
-  background: #edf1e5;
-
-  color: #55715f;
-
-  font-size: 8px;
-  font-weight: 700;
-
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-}
-
-.dua-card h3 {
-  margin: 6px 0 0;
-
-  color: #183d31;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: 14px;
-  font-weight: 600;
-}
-
-
-/* =====================================================
-   DUA BOOKMARK
-===================================================== */
-
-.dua-card__bookmark {
-  width: 29px;
-  height: 29px;
-
-  flex-shrink: 0;
-
-  display: grid;
-  place-items: center;
-
-  padding: 0;
-
-  border: 1px solid rgba(189, 147, 73, 0.35);
-
-  border-radius: 50%;
-
-  background: transparent;
-
-  color: #a87c31;
-
-  font-size: 15px;
-
-  cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
-}
-
-.dua-card__bookmark:hover {
-  background: #123f31;
-
-  color: #f1ca70;
-
-  border-color: #123f31;
-}
-
-
-/* =====================================================
-   ARABIC
-===================================================== */
-
-.dua-card__arabic {
-  margin-top: 14px;
-
-  padding: 12px 6px;
-
-  color: #123f31;
-
-  direction: rtl;
-  text-align: right;
-
-  font-family:
-    "Amiri",
-    "Noto Naskh Arabic",
-    Georgia,
-    serif;
-
-  font-size: 21px;
-
-  line-height: 1.9;
-
-  overflow-wrap: anywhere;
-}
-
-
-/* =====================================================
-   DIVIDER
-===================================================== */
-
-.dua-card__divider {
-  width: 100%;
-  height: 1px;
-
-  margin: 4px 0 10px;
-
+.dua-quick-card--featured {
   background:
-    rgba(189, 147, 73, 0.18);
+    linear-gradient(
+      145deg,
+      #0d3025,
+      #174637
+    );
+
+  border-color: rgba(214, 177, 92, 0.2);
 }
 
-
-/* =====================================================
-   TRANSLITERATION
-===================================================== */
-
-.dua-card__transliteration {
-  margin: 0 0 7px;
-
-  color: #55715f;
-
-  font-size: 9px;
-
-  line-height: 1.5;
-
-  font-style: italic;
+.dua-quick-card--streak {
+  background: #f8f4e8;
+  border-color: rgba(214, 177, 92, 0.18);
 }
 
-
-/* =====================================================
-   MEANING
-===================================================== */
-
-.dua-card__meaning {
-  margin: 0;
-
-  color: #737973;
-
-  font-size: 9px;
-
-  line-height: 1.55;
+.dua-quick-card--random {
+  background: #f1f6f2;
 }
 
-.dua-card__meaning strong {
-  color: #183d31;
-  font-weight: 700;
-}
-
-
-/* =====================================================
-   MODERN CATEGORIES
-===================================================== */
-
-.dua-page__categories {
-  position: relative;
-  z-index: 1;
-
-  width: min(1120px, calc(100% - 40px));
-
-  margin: 18px auto 0;
-
-  padding: 22px;
-
-  box-sizing: border-box;
-
-  border-radius: 20px;
-
-  background:
-    rgba(255, 253, 247, 0.92);
-
-  border: 1px solid rgba(120, 94, 48, 0.1);
-
-  box-shadow:
-    0 8px 25px rgba(65, 52, 30, 0.05);
-}
-
-
-/* =====================================================
-   CATEGORY GRID
-===================================================== */
-
-.dua-category-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(5, minmax(0, 1fr));
-
-  gap: 10px;
-}
-
-
-/* =====================================================
-   CATEGORY CARD
-===================================================== */
-
-.dua-category-card {
-  position: relative;
-
-  min-height: 125px;
-
-  padding: 13px;
-
-  box-sizing: border-box;
-
-  border-radius: 13px;
-
-  background: #fffefa;
-
-  border: 1px solid rgba(113, 91, 52, 0.11);
-
-  transition:
-    transform 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.dua-category-card:hover {
-  transform: translateY(-3px);
-
-  border-color:
-    rgba(189, 147, 73, 0.4);
-
-  box-shadow:
-    0 8px 20px rgba(65, 52, 30, 0.08);
-}
-
-
-/* =====================================================
-   CATEGORY CARD TOP
-===================================================== */
-
-.dua-category-card__top {
+.dua-quick-card__top {
   display: flex;
-
   align-items: center;
-  justify-content: space-between;
-
-  margin-bottom: 10px;
+  gap: 9px;
 }
 
-
-/* =====================================================
-   CATEGORY ICON
-===================================================== */
-
-.dua-category-card__icon {
-  width: 36px;
-  height: 36px;
-
-  display: grid;
-  place-items: center;
-
-  border-radius: 10px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #eef2e6,
-      #f7f3e5
-    );
-
-  color: #a87c31;
-
-  font-size: 18px;
-}
-
-
-/* =====================================================
-   CATEGORY ARROW
-===================================================== */
-
-.dua-category-card__arrow {
-  width: 25px;
-  height: 25px;
-
-  display: grid;
-  place-items: center;
-
-  border-radius: 50%;
-
-  background: #f3f4ed;
-
-  color: #a37832;
-
-  font-size: 13px;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.dua-category-card:hover
-.dua-category-card__arrow {
-  background: #123f31;
-
-  color: #f1ca70;
-
-  transform:
-    translate(2px, -2px);
-}
-
-
-/* =====================================================
-   CATEGORY TITLE
-===================================================== */
-
-.dua-category-card h3 {
-  margin: 0 0 5px;
-
-  color: #183d31;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: 13px;
-
-  font-weight: 600;
-
-  line-height: 1.3;
-}
-
-
-/* =====================================================
-   CATEGORY DESCRIPTION
-===================================================== */
-
-.dua-category-card p {
-  margin: 0;
-
-  color: #737973;
-
-  font-size: 8px;
-
-  line-height: 1.5;
-}
-
-
-/* =====================================================
-   TIPS
-===================================================== */
-
-.dua-page__tips {
-  position: relative;
-  z-index: 1;
-
-  width: min(1060px, calc(100% - 60px));
-
-  margin: 14px auto 0;
-
-  padding: 15px 22px;
-
-  border-radius: 16px;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(224, 237, 226, 0.96),
-      rgba(238, 240, 229, 0.96)
-    );
-
-  border: 1px solid rgba(68, 103, 75, 0.1);
-
-  box-sizing: border-box;
-}
-
-
-/* =====================================================
-   TIPS TITLE
-===================================================== */
-
-.dua-page__tips-title {
-  margin-bottom: 10px;
-}
-
-.dua-page__tips-title h2 {
-  margin: 0 0 4px;
-
-  color: #173c30;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: 17px;
-
-  font-weight: 600;
-}
-
-.dua-page__tips-title span {
-  display: block;
-
-  width: 26px;
-  height: 2px;
-
-  background: #bd9349;
-}
-
-
-/* =====================================================
-   TIPS GRID
-===================================================== */
-
-.dua-tips-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(4, 1fr);
-}
-
-
-/* =====================================================
-   TIP
-===================================================== */
-
-.dua-tip {
+.dua-quick-card__icon {
   display: flex;
-
-  align-items: flex-start;
-
-  gap: 8px;
-
-  padding: 1px 15px;
-
-  border-right:
-    1px solid rgba(67, 92, 70, 0.16);
-}
-
-.dua-tip:first-child {
-  padding-left: 0;
-}
-
-.dua-tip:last-child {
-  padding-right: 0;
-  border-right: 0;
-}
-
-
-/* =====================================================
-   TIP ICON
-===================================================== */
-
-.dua-tip__icon {
-  flex-shrink: 0;
-
-  color: #4d7b57;
-
-  font-size: 18px;
-}
-
-
-/* =====================================================
-   TIP TITLE
-===================================================== */
-
-.dua-tip h3 {
-  margin: 0 0 3px;
-
-  color: #183c31;
-
-  font-size: 10px;
-
-  font-weight: 700;
-}
-
-
-/* =====================================================
-   TIP DESCRIPTION
-===================================================== */
-
-.dua-tip p {
-  margin: 0;
-
-  color: #6a746c;
-
-  font-size: 8px;
-
-  line-height: 1.4;
-}
-
-
-/* =====================================================
-   QUOTE
-===================================================== */
-
-.dua-page__quote {
-  position: relative;
-  z-index: 1;
-
-  width: min(760px, calc(100% - 40px));
-
-  margin: 14px auto 0;
-
-  display: flex;
-
-  flex-wrap: wrap;
-
   align-items: center;
   justify-content: center;
 
-  column-gap: 3px;
+  width: 35px;
+  height: 35px;
+
+  border-radius: 9px;
+
+  background: #e7efea;
+  color: #174637;
+
+  font-size: 15px;
+}
+
+.dua-quick-card--featured
+  .dua-quick-card__icon {
+  background: rgba(214, 177, 92, 0.12);
+  color: #d6b15c;
+}
+
+.dua-quick-card__label {
+  color: #78857e;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+.dua-quick-card--featured
+  .dua-quick-card__label {
+  color: rgba(255, 255, 255, 0.52);
+}
+
+.dua-quick-card h3 {
+  margin: 18px 0 0;
+
+  color: #18382d;
+  font-size: 17px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.dua-quick-card--featured h3 {
+  color: #ffffff;
+}
+
+.dua-quick-card p {
+  margin: 8px 0 0;
+
+  color: #7c8781;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.dua-quick-card--featured p {
+  color: rgba(255, 255, 255, 0.59);
+}
+
+.dua-quick-card__stat {
+  margin-top: 17px;
+
+  color: #174637;
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.dua-quick-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  width: fit-content;
+
+  margin-top: auto;
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+  color: #174637;
+
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.dua-quick-card__link:hover {
+  color: #b48c35;
+}
+
+.dua-quick-card--featured
+  .dua-quick-card__link {
+  color: #d6b15c;
+}
+
+.dua-quick-card__time {
+  display: block;
+  margin-top: 6px;
+
+  color: #a2aaa5;
+  font-size: 9px;
+}
+
+.dua-quick-card__streak-number {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+
+  margin-top: 20px;
+}
+
+.dua-quick-card__streak-number strong {
+  color: #174637;
+  font-size: 36px;
+  line-height: 1;
+}
+
+.dua-quick-card__streak-number span {
+  color: #8a7650;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.dua-streak-dots {
+  display: flex;
+  gap: 5px;
+
+  margin-top: auto;
+}
+
+.dua-streak-dots span {
+  width: 15px;
+  height: 15px;
+
+  border: 1px solid rgba(23, 70, 55, 0.13);
+  border-radius: 50%;
+
+  background: #e7ebe7;
+}
+
+.dua-streak-dots .is-active {
+  background: #d6b15c;
+  border-color: #d6b15c;
+}
+
+/* =========================================================
+   DAILY DUA
+========================================================= */
+
+.daily-dua-feature {
+  position: relative;
+
+  width: 100%;
+  padding: 90px 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0d3025 0%,
+      #123b2e 50%,
+      #174637 100%
+    );
+
+  overflow: hidden;
+}
+
+.daily-dua-feature__pattern {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.25;
+
+  background-image:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(214, 177, 92, 0.15) 0 1px,
+      transparent 1px
+    );
+
+  background-size: 35px 35px;
+
+  pointer-events: none;
+}
+
+.daily-dua-feature::before {
+  content: "";
+
+  position: absolute;
+
+  width: 550px;
+  height: 550px;
+
+  top: -330px;
+  right: -200px;
+
+  border: 1px solid rgba(214, 177, 92, 0.12);
+  border-radius: 50%;
+}
+
+.daily-dua-feature::after {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  bottom: -300px;
+  left: -220px;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+}
+
+.daily-dua-feature__inner {
+  position: relative;
+  z-index: 2;
+
+  width: min(950px, 100%);
+  margin: 0 auto;
+}
+
+.daily-dua-feature__header {
+  max-width: 680px;
+  margin: 0 auto 36px;
 
   text-align: center;
 }
 
-.dua-page__quote p {
+.daily-dua-feature__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #d6b15c;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+.daily-dua-feature__eyebrow::before,
+.daily-dua-feature__eyebrow::after {
+  content: "✦";
+  font-size: 8px;
+}
+
+.daily-dua-feature__header h2 {
+  margin: 9px 0 0;
+
+  color: #ffffff;
+  font-size: clamp(30px, 4vw, 43px);
+  line-height: 1.15;
+  font-weight: 750;
+}
+
+.daily-dua-feature__header p {
+  margin: 12px auto 0;
+
+  color: rgba(255, 255, 255, 0.59);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.daily-dua-card {
+  position: relative;
+
+  padding: 39px;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(214, 177, 92, 0.28);
+  border-radius: 21px;
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.18);
+}
+
+.daily-dua-card__ornament {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 43px;
+  height: 43px;
+
+  border: 1px solid rgba(214, 177, 92, 0.25);
+  border-radius: 50%;
+
+  background: #fffaf0;
+  color: #b48c35;
+
+  transform: translateX(-50%);
+}
+
+.daily-dua-card__ornament::before,
+.daily-dua-card__ornament::after {
+  content: "";
+
+  position: absolute;
+
+  width: 80px;
+  height: 1px;
+
+  background: rgba(214, 177, 92, 0.25);
+}
+
+.daily-dua-card__ornament::before {
+  right: calc(100% + 12px);
+}
+
+.daily-dua-card__ornament::after {
+  left: calc(100% + 12px);
+}
+
+.daily-dua-card__content {
+  padding-top: 28px;
+}
+
+.daily-dua-card__arabic {
+  padding: 20px 15px;
+
+  background: #fafbf7;
+  border-radius: 15px;
+
+  text-align: center;
+}
+
+.daily-dua-card__arabic p {
   margin: 0;
 
-  color: #294138;
+  color: #254237;
 
   font-family:
-    Georgia,
-    "Times New Roman",
+    "Noto Naskh Arabic",
+    "Amiri",
+    "Scheherazade New",
     serif;
 
-  font-size: 14px;
-
-  line-height: 1.4;
+  font-size: clamp(26px, 4vw, 38px);
+  line-height: 2;
 }
 
-.dua-page__quote-mark {
-  color: #b78a3b;
-
-  font-family: Georgia, serif;
-
-  font-size: 23px;
-
-  line-height: 1;
+.daily-dua-card__translation-block {
+  margin-top: 22px;
+  text-align: center;
 }
 
-.dua-page__quote small {
-  width: 100%;
+.daily-dua-card__translation-block span {
+  display: block;
 
-  margin-top: 3px;
-
-  color: #777970;
+  color: #b48c35;
 
   font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
 }
 
+.daily-dua-card__translation-block p {
+  max-width: 720px;
+  margin: 8px auto 0;
 
-/* =====================================================
+  color: #5e6b64;
+
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.daily-dua-card__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  margin-top: 28px;
+}
+
+.daily-dua-card__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  min-height: 42px;
+  padding: 0 15px;
+
+  border: 1px solid rgba(13, 48, 37, 0.12);
+  border-radius: 9px;
+
+  background: #f2f5f2;
+  color: #174637;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.daily-dua-card__button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: #e7efea;
+}
+
+.daily-dua-card__button--primary {
+  background: #0d3025;
+  border-color: #0d3025;
+  color: #ffffff;
+}
+
+.daily-dua-card__button--primary:hover:not(:disabled) {
+  background: #174637;
+}
+
+.daily-dua-card__button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.daily-dua-feature__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 22px;
+}
+
+.daily-dua-feature__footer span {
+  color: #d6b15c;
+  font-size: 8px;
+}
+
+.daily-dua-feature__footer p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 10px;
+}
+
+/* =========================================================
+   DUA FAQ
+========================================================= */
+
+.dua-faq {
+  position: relative;
+
+  width: 100%;
+  padding: 90px 24px;
+
+  background: #f7f5e9;
+
+  overflow: hidden;
+}
+
+.dua-faq::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  top: -220px;
+  right: -180px;
+
+  border-radius: 50%;
+
+  background: rgba(214, 177, 92, 0.08);
+
+  pointer-events: none;
+}
+
+.dua-faq::after {
+  content: "";
+
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  bottom: -180px;
+  left: -160px;
+
+  border-radius: 50%;
+
+  background: rgba(23, 70, 55, 0.06);
+
+  pointer-events: none;
+}
+
+.dua-faq__inner {
+  position: relative;
+  z-index: 1;
+
+  width: min(960px, 100%);
+  margin: 0 auto;
+}
+
+.dua-faq__header {
+  max-width: 720px;
+  margin: 0 auto 48px;
+
+  text-align: center;
+}
+
+.dua-faq__header .dua-section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 12px;
+
+  color: #b48c35;
+}
+
+.dua-faq__header h2 {
+  margin: 0;
+
+  color: #0d3025;
+
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.15;
+  font-weight: 700;
+
+  letter-spacing: -0.6px;
+}
+
+.dua-faq__header p {
+  max-width: 650px;
+  margin: 16px auto 0;
+
+  color: #68736d;
+
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.dua-faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.dua-faq__item {
+  position: relative;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(13, 48, 37, 0.1);
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 28px rgba(13, 48, 37, 0.055);
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.dua-faq__item:hover {
+  border-color: rgba(214, 177, 92, 0.35);
+
+  box-shadow:
+    0 12px 34px rgba(13, 48, 37, 0.09);
+}
+
+.dua-faq__item.is-open {
+  border-color: rgba(214, 177, 92, 0.45);
+
+  box-shadow:
+    0 14px 38px rgba(13, 48, 37, 0.1);
+}
+
+.dua-faq__question {
+  display: grid;
+  grid-template-columns:
+    42px
+    minmax(0, 1fr)
+    36px;
+
+  align-items: center;
+  gap: 16px;
+
+  width: 100%;
+  min-height: 76px;
+
+  padding: 16px 20px;
+
+  border: 0;
+
+  background: transparent;
+  color: #0d3025;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.dua-faq__question:hover {
+  background: rgba(13, 48, 37, 0.018);
+}
+
+.dua-faq__question:focus {
+  outline: none;
+}
+
+.dua-faq__question:focus-visible {
+  outline: 3px solid rgba(214, 177, 92, 0.35);
+  outline-offset: -3px;
+}
+
+.dua-faq__question-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: #edf3ef;
+  border: 1px solid rgba(13, 48, 37, 0.08);
+
+  color: #174637;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.dua-faq__item.is-open
+  .dua-faq__question-icon {
+  background: #0d3025;
+  border-color: #0d3025;
+  color: #d6b15c;
+}
+
+.dua-faq__question-text {
+  min-width: 0;
+
+  color: #1e3028;
+
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 650;
+}
+
+.dua-faq__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+
+  background: #f4f6f2;
+  color: #174637;
+
+  font-size: 23px;
+  line-height: 1;
+  font-weight: 400;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.dua-faq__arrow.is-open {
+  transform: rotate(45deg);
+
+  background: #d6b15c;
+  color: #0d3025;
+}
+
+.dua-faq__answer {
+  display: grid;
+
+  grid-template-rows: 0fr;
+
+  transition:
+    grid-template-rows 0.3s ease;
+}
+
+.dua-faq__answer.is-open {
+  grid-template-rows: 1fr;
+}
+
+.dua-faq__answer-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.dua-faq__answer p {
+  margin: 0;
+
+  padding: 0 76px 24px;
+
+  color: #69756f;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.dua-faq__item.is-open
+  .dua-faq__answer-inner {
+  border-top: 1px solid rgba(214, 177, 92, 0.14);
+}
+
+.dua-faq__note {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  margin-top: 42px;
+  padding: 22px 24px;
+
+  background: #0d3025;
+
+  border: 1px solid rgba(214, 177, 92, 0.22);
+  border-radius: 18px;
+
+  box-shadow:
+    0 16px 36px rgba(13, 48, 37, 0.13);
+}
+
+.dua-faq__note-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 48px;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background: rgba(214, 177, 92, 0.13);
+  border: 1px solid rgba(214, 177, 92, 0.3);
+
+  color: #d6b15c;
+
+  font-size: 22px;
+}
+
+.dua-faq__note strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.dua-faq__note p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* =========================================================
    TABLET
-===================================================== */
+========================================================= */
+
+@media (max-width: 1050px) {
+  .duas-controls {
+    grid-template-columns:
+      200px
+      minmax(220px, 1fr)
+      190px;
+  }
+
+  .duas-table__head,
+  .duas-table__row {
+    grid-template-columns:
+      58px
+      minmax(210px, 1.15fr)
+      minmax(190px, 1fr)
+      75px
+      95px;
+  }
+
+  .dua-category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .dua-quick-dashboard__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================================
+   TABLET / SMALL DESKTOP
+========================================================= */
 
 @media (max-width: 900px) {
-
-  .dua-page {
-    background-attachment: scroll;
+  .duas-top-image {
+    height: 280px;
   }
 
-  .dua-page__hero {
-    padding-top: 18px;
+  .duas-header__inner {
+    padding: 39px 0;
   }
 
-  .dua-page__hero h1 {
-    font-size: 50px;
+  .duas-controls {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .dua-page__main-card {
-    width: min(850px, calc(100% - 30px));
+  .duas-language {
+    grid-column: 1;
   }
 
-  .dua-page__collection,
-  .dua-page__categories {
-    width: calc(100% - 30px);
+  .duas-search {
+    grid-column: 2;
   }
 
-  .dua-list {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+  .duas-category {
+    grid-column: 1 / -1;
+  }
+
+  .duas-table__head {
+    display: none;
+  }
+
+  .duas-table {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+  .duas-table__body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .duas-table__row {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr) auto;
+    gap: 12px;
+
+    min-height: 0;
+    padding: 17px;
+
+    background: #ffffff;
+    border: 1px solid rgba(13, 48, 37, 0.08);
+    border-radius: 15px;
+
+    box-shadow:
+      0 6px 22px rgba(13, 48, 37, 0.04);
+  }
+
+  .duas-table__row:hover {
+    background: #ffffff;
+  }
+
+  .duas-table__cell--id {
+    grid-row: 1 / span 3;
+  }
+
+  .duas-table__cell--title {
+    grid-column: 2;
+  }
+
+  .duas-table__cell--preview {
+    grid-column: 2 / 4;
+    margin-top: 1px;
+  }
+
+  .duas-table__cell--favorite {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .duas-table__cell--action {
+    grid-column: 2 / 4;
+    margin-top: 5px;
+  }
+
+  .duas-open-button {
+    width: 100%;
+  }
+
+  .duas-table__cell--preview p {
+    -webkit-line-clamp: 2;
+  }
+
+  .dua-category-explorer,
+  .dua-journey,
+  .dua-quick-dashboard {
+    padding-top: 70px;
+    padding-bottom: 70px;
   }
 
   .dua-category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dua-journey__stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .dua-faq {
+    padding: 75px 20px;
+  }
+
+  .dua-faq__header {
+    margin-bottom: 38px;
+  }
+
+  .dua-faq__question {
     grid-template-columns:
-      repeat(3, 1fr);
+      40px
+      minmax(0, 1fr)
+      34px;
+
+    gap: 14px;
+
+    min-height: 72px;
+    padding: 14px 18px;
   }
 
-  .dua-tips-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
-
-    row-gap: 12px;
+  .dua-faq__question-icon {
+    width: 40px;
+    height: 40px;
   }
 
-  .dua-tip:nth-child(2) {
-    border-right: 0;
-  }
-
-  .dua-card__arabic {
-    font-size: 19px;
+  .dua-faq__answer p {
+    padding: 0 70px 22px;
   }
 }
 
-
-/* =====================================================
+/* =========================================================
    MOBILE
-===================================================== */
+========================================================= */
 
 @media (max-width: 600px) {
-
-  .dua-page {
-    padding-bottom: 20px;
-
-    background-position:
-      center top;
-
-    background-size:
-      auto 100%;
+  .duas-top-image {
+    height: 235px;
   }
 
-
-  /* HERO */
-
-  .dua-page__hero {
-    width: 100%;
-
-    min-height: 300px;
-
-    padding: 40px 14px 35px;
+  .duas-top-image__content {
+    width: calc(100% - 32px);
   }
 
-  .dua-page__breadcrumb {
-    gap: 5px;
+  .duas-top-image__content h2 {
+    font-size: 40px;
+  }
 
-    margin-bottom: 6px;
-
+  .duas-top-image__content span {
     font-size: 9px;
+    letter-spacing: 1.8px;
   }
 
-  .dua-page__decoration {
-    gap: 6px;
+  .duas-header__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+
+    width: calc(100% - 32px);
+
+    padding: 34px 0;
   }
 
-  .dua-page__decoration span {
-    width: 35px;
+  .duas-header__content h1 {
+    font-size: 32px;
   }
 
-  .dua-page__decoration i {
-    font-size: 13px;
-  }
-
-  .dua-page__hero h1 {
-    font-size: 39px;
-
-    letter-spacing: -1px;
-  }
-
-  .dua-page__hero > p {
-    margin-top: 6px;
-
-    font-size: 10px;
-
-    line-height: 1.4;
-  }
-
-  .dua-page__ornament {
-    margin-top: 6px;
-  }
-
-  .dua-page__ornament span {
-    width: 38px;
-  }
-
-  .dua-page__ornament b {
+  .duas-header__content p {
+    margin-top: 10px;
     font-size: 14px;
+    line-height: 1.7;
   }
 
+  .duas-header__count {
+    width: 82px;
+    height: 82px;
+    min-width: 82px;
 
-  /* MAIN CARD */
-
-  .dua-page__main-card {
-    width: calc(100% - 12px);
-
-    padding: 9px 8px 5px;
-
-    border-radius: 17px;
+    box-shadow:
+      inset 0 0 0 5px rgba(214, 177, 92, 0.06);
   }
 
-  .dua-page__badge {
-    padding: 5px 8px;
+  .duas-header__count strong {
+    font-size: 23px;
+  }
 
+  .duas-header__count span {
     font-size: 8px;
   }
 
-  .dua-page__bookmark {
-    width: 29px;
-    height: 29px;
-
-    font-size: 12px;
+  .duas-content {
+    width: calc(100% - 32px);
+    padding: 28px 0 55px;
   }
 
-  .dua-page .dua-banner__inner {
-    padding: 13px 4px 5px;
+  .duas-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
   }
 
-  .dua-page .dua-banner__arabic {
-    font-size: 19px;
+  .duas-language,
+  .duas-search,
+  .duas-category {
+    width: 100%;
   }
 
-
-  /* BEAUTIFUL DUAS */
-
-  .dua-page__collection {
-    width: calc(100% - 12px);
-
-    /*
-      HERO KE NEECHE MOBILE SPACE
-    */
-    margin-top: 30px;
-
-    padding: 15px 8px;
-
-    border-radius: 15px;
+  .duas-language__menu {
+    width: 100%;
   }
 
-  .dua-section-heading {
-    margin-bottom: 13px;
-  }
-
-  .dua-section-heading__label {
-    margin-bottom: 3px;
-
-    font-size: 6px;
-
-    letter-spacing: 1.5px;
-  }
-
-  .dua-section-heading h2 {
-    font-size: 16px;
-  }
-
-  .dua-section-heading p {
-    max-width: 280px;
-
-    margin: 4px auto 6px;
-
-    font-size: 7px;
-  }
-
-  .dua-section-heading__line {
-    gap: 5px;
-  }
-
-  .dua-section-heading__line span {
-    width: 22px;
-  }
-
-  .dua-section-heading__line b {
-    font-size: 7px;
-  }
-
-  .dua-list {
-    grid-template-columns: 1fr;
-
+  .duas-results-info {
+    align-items: flex-start;
+    flex-direction: column;
     gap: 7px;
+
+    margin-bottom: 14px;
   }
 
-  .dua-card {
-    padding: 11px;
+  .duas-table__row {
+    grid-template-columns: 40px minmax(0, 1fr) auto;
+    gap: 10px;
 
-    border-radius: 9px;
-  }
-
-  .dua-card__category {
-    padding: 3px 7px;
-
-    font-size: 7px;
-  }
-
-  .dua-card h3 {
-    margin-top: 5px;
-
-    font-size: 11px;
-  }
-
-  .dua-card__bookmark {
-    width: 26px;
-    height: 26px;
-
-    font-size: 13px;
-  }
-
-  .dua-card__arabic {
-    margin-top: 10px;
-
-    padding: 9px 3px;
-
-    font-size: 18px;
-
-    line-height: 1.8;
-  }
-
-  .dua-card__divider {
-    margin: 3px 0 8px;
-  }
-
-  .dua-card__transliteration {
-    margin-bottom: 5px;
-
-    font-size: 8px;
-  }
-
-  .dua-card__meaning {
-    font-size: 8px;
-
-    line-height: 1.5;
-  }
-
-
-  /* CATEGORIES */
-
-  .dua-page__categories {
-    width: calc(100% - 12px);
-
-    margin-top: 12px;
-
-    padding: 15px 8px;
-
-    border-radius: 15px;
-  }
-
-  .dua-category-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
-
-    gap: 7px;
-  }
-
-  .dua-category-card {
-    min-height: 112px;
-
-    padding: 10px;
-
-    border-radius: 10px;
-  }
-
-  .dua-category-card__top {
-    margin-bottom: 7px;
-  }
-
-  .dua-category-card__icon {
-    width: 31px;
-    height: 31px;
-
-    border-radius: 8px;
-
-    font-size: 16px;
-  }
-
-  .dua-category-card__arrow {
-    width: 22px;
-    height: 22px;
-
-    font-size: 11px;
-  }
-
-  .dua-category-card h3 {
-    margin-bottom: 4px;
-
-    font-size: 10px;
-  }
-
-  .dua-category-card p {
-    font-size: 7px;
-
-    line-height: 1.45;
-  }
-
-
-  /* TIPS */
-
-  .dua-page__tips {
-    width: calc(100% - 18px);
-
-    margin-top: 10px;
-
-    padding: 13px 11px;
-
+    padding: 14px;
     border-radius: 13px;
   }
 
-  .dua-page__tips-title {
-    margin-bottom: 7px;
+  .duas-number {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 9px;
+
+    font-size: 10px;
   }
 
-  .dua-page__tips-title h2 {
+  .duas-chapter-info {
+    padding-right: 0;
+  }
+
+  .duas-chapter-info__top {
+    gap: 5px;
+  }
+
+  .duas-chapter-info__top h3 {
+    font-size: 13px;
+  }
+
+  .duas-chapter-info__arabic {
+    margin-top: 4px;
     font-size: 14px;
   }
 
-  .dua-tips-grid {
-    grid-template-columns: 1fr;
+  .duas-category-badge {
+    min-height: 19px;
+    padding: 0 6px;
+    font-size: 8px;
   }
 
-  .dua-tip,
-  .dua-tip:first-child,
-  .dua-tip:last-child {
-    padding: 7px 0;
-
-    border-right: 0;
-
-    border-bottom:
-      1px solid rgba(59, 87, 64, 0.12);
+  .duas-table__cell--preview p {
+    font-size: 10.5px;
+    line-height: 1.6;
   }
 
-  .dua-tip:last-child {
-    border-bottom: 0;
+  .duas-favorite {
+    width: 34px;
+    height: 34px;
+
+    font-size: 18px;
   }
 
-  .dua-tip__icon {
-    font-size: 16px;
+  .duas-open-button {
+    min-height: 37px;
+    font-size: 10px;
   }
 
-  .dua-tip h3 {
-    font-size: 9px;
+  /* =======================================================
+     MODAL MOBILE
+  ======================================================= */
+
+  .duas-modal {
+    align-items: flex-end;
+    padding: 0;
   }
 
-  .dua-tip p {
-    font-size: 7px;
+  .duas-modal__panel {
+    width: 100%;
+    max-height: 94vh;
+
+    border-radius: 19px 19px 0 0;
   }
 
-
-  /* QUOTE */
-
-  .dua-page__quote {
-    width: calc(100% - 16px);
-
-    margin-top: 10px;
+  .duas-modal__header {
+    gap: 11px;
+    padding: 16px 15px;
   }
 
-  .dua-page__quote p {
-    font-size: 11px;
-  }
+  .duas-modal__chapter-mark {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
 
-  .dua-page__quote-mark {
+    border-radius: 11px;
     font-size: 19px;
   }
 
-  .dua-page__quote small {
-    font-size: 8px;
-  }
-}
-
-
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
-
-@media (max-width: 400px) {
-
-  .dua-page__hero h1 {
-    font-size: 36px;
+  .duas-modal__header-content {
+    padding-right: 38px;
   }
 
-  .dua-page__hero > p {
-    font-size: 9px;
-  }
-
-  .dua-page__main-card {
-    width: calc(100% - 10px);
-
-    padding: 8px 6px 4px;
-  }
-
-  .dua-page__collection,
-  .dua-page__categories {
-    width: calc(100% - 10px);
-  }
-
-  .dua-category-card {
-    min-height: 108px;
-
-    padding: 9px;
-  }
-
-  .dua-category-card__icon {
-    width: 29px;
-    height: 29px;
-
-    font-size: 15px;
-  }
-
-  .dua-category-card h3 {
-    font-size: 9px;
-  }
-
-  .dua-category-card p {
-    font-size: 6.5px;
-  }
-
-  .dua-card__arabic {
+  .duas-modal__header-content h2 {
     font-size: 16px;
   }
 
-  .dua-card__transliteration,
-  .dua-card__meaning {
+  .duas-modal__arabic-title {
+    font-size: 14px;
+  }
+
+  .duas-modal__meta {
+    font-size: 8px;
+  }
+
+  .duas-modal__close {
+    top: 13px;
+    right: 12px;
+
+    width: 34px;
+    height: 34px;
+
+    font-size: 21px;
+  }
+
+  .duas-modal__body {
+    padding: 14px;
+  }
+
+  .dua-details-list {
+    gap: 11px;
+  }
+
+  .dua-detail-card {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 10px;
+
+    padding: 14px;
+    border-radius: 13px;
+  }
+
+  .dua-detail-card__number {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 9px;
+
+    font-size: 9px;
+  }
+
+  .dua-detail-card__top {
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+
+  .dua-detail-card__badge {
+    min-height: 21px;
+    padding: 0 7px;
+    font-size: 8px;
+  }
+
+  .dua-detail-card__source {
     font-size: 7px;
+    text-align: right;
+  }
+
+  .dua-detail-card__section {
+    margin-top: 15px;
+  }
+
+  .dua-detail-card__section--arabic {
+    padding: 13px;
+  }
+
+  .dua-detail-card__label {
+    margin-bottom: 5px;
+    font-size: 8px;
+  }
+
+  .dua-detail-card__arabic-wrap {
+    gap: 5px;
+  }
+
+  .dua-detail-card__ornament {
+    font-size: 11px;
+  }
+
+  .dua-detail-card__arabic {
+    font-size: 22px;
+    line-height: 1.9;
+  }
+
+  .dua-detail-card__transliteration {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .dua-detail-card__translation {
+    font-size: 12px;
+    line-height: 1.75;
+  }
+
+  .dua-detail-card__reference {
+    gap: 8px;
+    margin-top: 15px;
+    padding: 10px;
+  }
+
+  .dua-detail-card__reference-icon {
+    width: 23px;
+    height: 23px;
+    flex-basis: 23px;
+    font-size: 9px;
+  }
+
+  .dua-detail-card__reference span {
+    font-size: 8px;
+  }
+
+  .dua-detail-card__reference p {
+    font-size: 10px;
+  }
+
+  .dua-detail-card__audio {
+    margin-top: 15px;
+    padding: 11px;
+  }
+
+  .dua-detail-card__audio-head {
+    margin-bottom: 8px;
+  }
+
+  .dua-detail-card__audio-icon {
+    width: 31px;
+    height: 31px;
+    flex-basis: 31px;
+  }
+
+  .dua-detail-card__audio-head strong {
+    font-size: 10px;
+  }
+
+  .dua-detail-card__audio-head span {
+    font-size: 8px;
+  }
+
+  .dua-audio-player {
+    height: 36px;
+  }
+
+  /* =======================================================
+     SECTIONS MOBILE
+  ======================================================= */
+
+  .dua-category-explorer,
+  .dua-journey,
+  .dua-quick-dashboard {
+    padding-top: 58px;
+    padding-bottom: 58px;
+  }
+
+  .dua-category-explorer__header,
+  .dua-quick-dashboard__inner,
+  .dua-journey__inner {
+    width: calc(100% - 32px);
+  }
+
+  .dua-category-explorer__header {
+    margin-bottom: 25px;
+  }
+
+  .dua-category-explorer__header h2,
+  .dua-quick-dashboard__header h2,
+  .dua-journey__header h2 {
+    font-size: 29px;
+  }
+
+  .dua-category-explorer__header p,
+  .dua-quick-dashboard__header p,
+  .dua-journey__header p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .dua-category-grid {
+    grid-template-columns: 1fr;
+    gap: 9px;
+
+    width: calc(100% - 32px);
+  }
+
+  .dua-category-card {
+    min-height: 72px;
+    padding: 11px;
+  }
+
+  .dua-category-card__icon {
+    width: 37px;
+    height: 37px;
+    flex-basis: 37px;
+  }
+
+  .dua-category-card__content strong {
+    font-size: 11px;
+  }
+
+  .dua-journey__header {
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 25px;
+  }
+
+  .dua-journey__percentage {
+    width: 72px;
+    height: 72px;
+    flex-basis: 72px;
+  }
+
+  .dua-journey__percentage strong {
+    font-size: 20px;
+  }
+
+  .dua-journey__percentage span {
+    font-size: 7px;
+  }
+
+  .dua-journey__stats {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .dua-journey__stat {
+    min-height: 62px;
+  }
+
+  .dua-journey__continue {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 11px;
+  }
+
+  .dua-journey__continue-content {
+    max-width: calc(100% - 58px);
+  }
+
+  .dua-journey__continue button {
+    width: 100%;
+    margin-top: 2px;
+  }
+
+  /* =======================================================
+     REFLECTION MOBILE
+  ======================================================= */
+
+  .dua-reflection {
+    padding: 22px 16px;
+  }
+
+  .dua-reflection__inner {
+    align-items: flex-start;
+    gap: 12px;
+
+    padding: 18px;
+
+    border-radius: 14px;
+  }
+
+  .dua-reflection__icon {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+
+    font-size: 18px;
+  }
+
+  .dua-reflection__content h2 {
+    font-size: 16px;
+  }
+
+  .dua-reflection__arabic {
+    font-size: 16px;
+  }
+
+  .dua-reflection__text {
+    font-size: 11px;
+  }
+
+  .dua-reflection__next {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+    font-size: 17px;
+  }
+
+  /* =======================================================
+     QUICK DASHBOARD MOBILE
+  ======================================================= */
+
+  .dua-quick-dashboard__header {
+    margin-bottom: 25px;
+  }
+
+  .dua-quick-dashboard__grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .dua-quick-card {
+    min-height: 200px;
+    padding: 17px;
+  }
+
+  /* =======================================================
+     DAILY DUA MOBILE
+  ======================================================= */
+
+  .daily-dua-feature {
+    padding: 65px 16px;
+  }
+
+  .daily-dua-feature__header {
+    margin-bottom: 28px;
+  }
+
+  .daily-dua-feature__header h2 {
+    font-size: 30px;
+  }
+
+  .daily-dua-feature__header p {
+    font-size: 12px;
+  }
+
+  .daily-dua-card {
+    padding: 25px 16px;
+    border-radius: 16px;
+  }
+
+  .daily-dua-card__ornament {
+    width: 37px;
+    height: 37px;
+    top: 14px;
+  }
+
+  .daily-dua-card__ornament::before,
+  .daily-dua-card__ornament::after {
+    width: 42px;
+  }
+
+  .daily-dua-card__content {
+    padding-top: 25px;
+  }
+
+  .daily-dua-card__arabic {
+    padding: 14px 9px;
+  }
+
+  .daily-dua-card__arabic p {
+    font-size: 24px;
+    line-height: 1.9;
+  }
+
+  .daily-dua-card__translation-block {
+    margin-top: 16px;
+  }
+
+  .daily-dua-card__translation-block p {
+    font-size: 12px;
+    line-height: 1.75;
+  }
+
+  .daily-dua-card__actions {
+    flex-direction: column;
+
+    margin-top: 22px;
+  }
+
+  .daily-dua-card__button {
+    width: 100%;
+  }
+
+  .daily-dua-feature__footer {
+    gap: 7px;
+  }
+
+  .daily-dua-feature__footer p {
+    font-size: 9px;
+  }
+
+  /* =======================================================
+     FAQ MOBILE
+  ======================================================= */
+
+  .dua-faq {
+    padding: 60px 16px;
+  }
+
+  .dua-faq__header {
+    margin-bottom: 30px;
+  }
+
+  .dua-faq__header h2 {
+    font-size: 29px;
+  }
+
+  .dua-faq__header p {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .dua-faq__list {
+    gap: 10px;
+  }
+
+  .dua-faq__item {
+    border-radius: 14px;
+  }
+
+  .dua-faq__question {
+    grid-template-columns:
+      36px
+      minmax(0, 1fr)
+      32px;
+
+    gap: 11px;
+
+    min-height: 68px;
+    padding: 13px 14px;
+  }
+
+  .dua-faq__question-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .dua-faq__question-text {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .dua-faq__arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+
+  .dua-faq__answer p {
+    padding: 0 16px 20px;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .dua-faq__note {
+    align-items: flex-start;
+    gap: 14px;
+
+    margin-top: 30px;
+    padding: 18px;
+
+    border-radius: 15px;
+  }
+
+  .dua-faq__note-icon {
+    flex-basis: 42px;
+
+    width: 42px;
+    height: 42px;
+
+    font-size: 19px;
+  }
+
+  .dua-faq__note strong {
+    font-size: 14px;
+  }
+
+  .dua-faq__note p {
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .duas-top-image {
+    height: 210px;
+  }
+
+  .duas-top-image__content h2 {
+    font-size: 34px;
+  }
+
+  .duas-header__content h1 {
+    font-size: 29px;
+  }
+
+  .duas-content {
+    width: calc(100% - 24px);
+  }
+
+  .duas-table__row {
+    grid-template-columns: 36px minmax(0, 1fr) auto;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .duas-number {
+    width: 32px;
+    height: 32px;
+  }
+
+  .duas-chapter-info__top h3 {
+    font-size: 12px;
+  }
+
+  .duas-chapter-info__arabic {
+    font-size: 13px;
+  }
+
+  .dua-category-explorer__header,
+  .dua-quick-dashboard__inner,
+  .dua-journey__inner,
+  .dua-category-grid {
+    width: calc(100% - 24px);
+  }
+
+  .dua-faq {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .dua-faq__question {
+    grid-template-columns:
+      34px
+      minmax(0, 1fr)
+      30px;
+
+    gap: 9px;
+    padding: 12px;
+  }
+
+  .dua-faq__question-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .dua-faq__question-text {
+    font-size: 13.5px;
+  }
+
+  .dua-faq__answer p {
+    padding-left: 13px;
+    padding-right: 13px;
+    font-size: 13.5px;
+  }
+
+  .daily-dua-feature {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .daily-dua-card {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+button:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 3px solid rgba(214, 177, 92, 0.35);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+/* =========================================================
+   TODAY'S DUA - LAST SECTION
+========================================================= */
+
+.todays-dua-section {
+  width: 100%;
+  margin: 70px 0 30px;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.todays-dua-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.todays-dua-label {
+  display: inline-block;
+  margin-bottom: 8px;
+
+  color: #b48c35;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.todays-dua-header h2 {
+  margin: 0;
+
+  color: #0d3025;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.todays-dua-header p {
+  max-width: 620px;
+  margin: 10px auto 0;
+
+  color: #6c716c;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.todays-dua-card {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 28px;
+
+  width: 100%;
+  max-width: 950px;
+
+  margin: 0 auto;
+  padding: 32px;
+
+  background: #fffdf4;
+
+  border: 1px solid rgba(180, 140, 53, 0.25);
+  border-radius: 22px;
+
+  box-shadow:
+    0 12px 35px rgba(13, 48, 37, 0.08),
+    0 3px 10px rgba(13, 48, 37, 0.04);
+
+  overflow: hidden;
+}
+
+/* Gold left accent */
+
+.todays-dua-card::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 5px;
+
+  background: #d6b15c;
+}
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.todays-dua-icon {
+  flex: 0 0 82px;
+
+  width: 82px;
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #0d3025;
+  color: #ffffff;
+
+  border-radius: 20px;
+
+  font-size: 38px;
+
+  box-shadow:
+    0 8px 20px rgba(13, 48, 37, 0.18);
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.todays-dua-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.todays-dua-badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 12px;
+
+  background: rgba(214, 177, 92, 0.14);
+  color: #b48c35;
+
+  border-radius: 50px;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.todays-dua-content h3 {
+  margin: 10px 0 12px;
+
+  color: #0d3025;
+
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.todays-dua-arabic {
+  margin: 8px 0 14px;
+
+  color: #174637;
+
+  font-size: 24px;
+  line-height: 2;
+
+  direction: rtl;
+  text-align: left;
+}
+
+.todays-dua-description {
+  max-width: 720px;
+
+  margin: 0 0 18px;
+
+  color: #666b66;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   CONTINUE READING
+========================================================= */
+
+.todays-dua-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #b48c35;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
+}
+
+.todays-dua-link span {
+  font-size: 18px;
+
+  transition: transform 0.2s ease;
+}
+
+.todays-dua-link:hover {
+  color: #0d3025;
+  gap: 12px;
+}
+
+.todays-dua-link:hover span {
+  transform: translateX(4px);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .todays-dua-section {
+    margin: 55px 0 25px;
+  }
+
+  .todays-dua-header h2 {
+    font-size: 28px;
+  }
+
+  .todays-dua-card {
+    gap: 20px;
+    padding: 26px;
+  }
+
+  .todays-dua-icon {
+    flex: 0 0 68px;
+
+    width: 68px;
+    height: 68px;
+
+    border-radius: 17px;
+
+    font-size: 31px;
+  }
+
+  .todays-dua-content h3 {
+    font-size: 20px;
+  }
+
+  .todays-dua-arabic {
+    font-size: 22px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .todays-dua-section {
+    margin: 45px 0 20px;
+  }
+
+  .todays-dua-header {
+    margin-bottom: 20px;
+  }
+
+  .todays-dua-label {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+  }
+
+  .todays-dua-header h2 {
+    font-size: 25px;
+  }
+
+  .todays-dua-header p {
+    padding: 0 12px;
+
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .todays-dua-card {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 22px 20px;
+
+    border-radius: 18px;
+  }
+
+  .todays-dua-card::before {
+    width: 4px;
+  }
+
+  .todays-dua-icon {
+    flex: 0 0 58px;
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 15px;
+
+    font-size: 27px;
+  }
+
+  .todays-dua-content {
+    width: 100%;
+  }
+
+  .todays-dua-badge {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+
+  .todays-dua-content h3 {
+    margin: 9px 0 10px;
+
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .todays-dua-arabic {
+    margin: 8px 0 12px;
+
+    font-size: 20px;
+    line-height: 1.9;
+  }
+
+  .todays-dua-description {
+    margin-bottom: 16px;
+
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .todays-dua-link {
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .todays-dua-card {
+    padding: 20px 17px;
+  }
+
+  .todays-dua-header h2 {
+    font-size: 23px;
+  }
+
+  .todays-dua-content h3 {
+    font-size: 17px;
+  }
+
+  .todays-dua-arabic {
+    font-size: 18px;
+  }
+
+  .todays-dua-description {
+    font-size: 12.5px;
   }
 }

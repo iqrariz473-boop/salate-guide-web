@@ -513,6 +513,96 @@ function Home() {
           </div>
         </div>
       </section>
+      {/* =====================================================
+                      MOSQUE & PRAYER MOMENT
+          ===================================================== */}
+
+<section className="home-mosque-section">
+  <div className="container">
+
+    <div className="home-mosque-card">
+
+      {/* IMAGE */}
+
+     <div className="home-mosque-card__image">
+
+  <div
+    className="home-mosque-card__image-overlay"
+    aria-hidden="true"
+  />
+
+  <div className="home-mosque-card__image-badge">
+    <span>☾</span>
+
+    <div>
+      <strong>Prayer & Peace</strong>
+      <small>A moment closer to Allah</small>
+    </div>
+  </div>
+
+</div>
+
+      {/* CONTENT */}
+      <div className="home-mosque-card__content">
+
+        <span className="home-mosque-card__eyebrow">
+          A Moment of Peace
+        </span>
+
+        <h2>
+          Let your prayer
+          <span> be your peaceful pause.</span>
+        </h2>
+
+        <p>
+          Step away from the noise of everyday life and
+          take a moment to reconnect with Allah. Keep your
+          prayer times, Quran, Qibla and daily duas close
+          wherever your day takes you.
+        </p>
+
+        <div className="home-mosque-card__features">
+
+          <div className="home-mosque-card__feature">
+            <span>◷</span>
+            <div>
+              <strong>Five Daily Prayers</strong>
+              <small>Stay connected throughout the day</small>
+            </div>
+          </div>
+
+          <div className="home-mosque-card__feature">
+            <span>✦</span>
+            <div>
+              <strong>Heartful Reflection</strong>
+              <small>Make time for faith and gratitude</small>
+            </div>
+          </div>
+
+          <div className="home-mosque-card__feature">
+            <span>☾</span>
+            <div>
+              <strong>Peaceful Worship</strong>
+              <small>Create meaningful daily habits</small>
+            </div>
+          </div>
+
+        </div>
+
+        <Link
+          to="/prayer-times"
+          className="home-mosque-card__button"
+        >
+          Begin Your Prayer Journey
+          <span aria-hidden="true">→</span>
+        </Link>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
     </>
   );
 }

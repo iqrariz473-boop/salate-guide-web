@@ -1,14 +1,10 @@
 import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-import LocationSearch from "./LocationSearch.jsx";
 import {
   MenuIcon,
   CloseIcon,
-  SearchIcon,
 } from "./Icons.jsx";
-
-import { useCityContext } from "../context/LocationContext.jsx";
 
 import "./Navbar.css";
 
@@ -31,23 +27,7 @@ const NAV_LINKS = [
 ========================================================= */
 
 function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] =
-    useState(false);
-
-  const [search, setSearch] =
-    useState("");
-
-  const navigate = useNavigate();
-
-  /* =======================================================
-     LOCATION CONTEXT
-  ======================================================= */
-
-  const {
-    city,
-    country,
-    selectCity,
-  } = useCityContext();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   /* =======================================================
      CLOSE MENU
@@ -55,96 +35,6 @@ function Navbar() {
 
   function closeMenu() {
     setIsMenuOpen(false);
-  }
-
-  /* =======================================================
-     SEARCH CITY
-  ======================================================= */
-
-  function handleSearchSubmit(event) {
-    event.preventDefault();
-
-    const value = search.trim();
-
-    if (!value) {
-      return;
-    }
-
-    /*
-      Allow:
-
-      Lahore
-
-      OR
-
-      Dubai, UAE
-
-      OR
-
-      London, United Kingdom
-    */
-
-    let selectedCity = value;
-    let selectedCountry = country;
-
-    /*
-      If user writes:
-
-      Dubai, UAE
-
-      split city + country
-    */
-
-    if (value.includes(",")) {
-      const parts = value
-        .split(",")
-        .map((item) => item.trim())
-        .filter(Boolean);
-
-      if (parts.length >= 2) {
-        selectedCity = parts[0];
-        selectedCountry = parts
-          .slice(1)
-          .join(", ");
-      }
-    }
-
-    /*
-      IMPORTANT:
-
-      Update shared LocationContext.
-
-      This automatically causes:
-
-      usePrayerTimes(city, country)
-
-      to run again.
-    */
-
-    selectCity(
-      selectedCity,
-      selectedCountry
-    );
-
-    /*
-      Go to Prayer Times page using React Router.
-
-      This is NOT a browser reload.
-    */
-
-    navigate("/prayer-times");
-
-    /*
-      Clear search input.
-    */
-
-    setSearch("");
-
-    /*
-      Close mobile menu.
-    */
-
-    closeMenu();
   }
 
   /* =======================================================
@@ -169,14 +59,21 @@ function Navbar() {
             className="navbar__brand-mark"
             aria-hidden="true"
           >
+            <span className="navbar__brand-glow" />
+
             <span className="navbar__brand-moon">
               ☾
             </span>
           </span>
 
           <span className="navbar__brand-text">
-            <span>Salat</span>
-            <span>Guide</span>
+            <span className="navbar__brand-main">
+              Salat
+            </span>
+
+            <span className="navbar__brand-sub">
+              Guide
+            </span>
           </span>
         </NavLink>
 
@@ -195,7 +92,6 @@ function Navbar() {
           <ul>
             {NAV_LINKS.map((link) => (
               <li key={link.to}>
-
                 <NavLink
                   to={link.to}
                   end={link.to === "/"}
@@ -206,77 +102,31 @@ function Navbar() {
                       : "navbar__link"
                   }
                 >
-                  {link.label}
+                  <span className="navbar__link-text">
+                    {link.label}
+                  </span>
                 </NavLink>
-
               </li>
             ))}
           </ul>
-
-          {/* ===============================================
-              MOBILE SEARCH
-          =============================================== */}
-
-          <form
-            className="navbar__search navbar__search--mobile"
-            onSubmit={handleSearchSubmit}
-          >
-
-            <SearchIcon
-              width={17}
-              height={17}
-            />
-
-            <input
-              type="search"
-              value={search}
-              onChange={(event) =>
-                setSearch(event.target.value)
-              }
-              placeholder="Search city..."
-              aria-label="Search city"
-            />
-
-            <button type="submit">
-              Search
-            </button>
-
-          </form>
-
         </nav>
 
         {/* =================================================
-            DESKTOP SEARCH
+            CONTACT CTA
         ================================================= */}
 
         <div className="navbar__actions">
-
-          <form
-            className="navbar__search"
-            onSubmit={handleSearchSubmit}
+          <NavLink
+            to="/contact"
+            className="navbar__contact-btn"
+            onClick={closeMenu}
           >
+            <span className="navbar__contact-icon">
+              ✦
+            </span>
 
-            <SearchIcon
-              width={18}
-              height={18}
-            />
-
-            <input
-              type="search"
-              value={search}
-              onChange={(event) =>
-                setSearch(event.target.value)
-              }
-              placeholder="Search city..."
-              aria-label="Search city"
-            />
-
-            <button type="submit">
-              Search
-            </button>
-
-          </form>
-
+            <span>Contact</span>
+          </NavLink>
         </div>
 
         {/* =================================================
@@ -289,20 +139,19 @@ function Navbar() {
           aria-expanded={isMenuOpen}
           aria-label="Toggle navigation menu"
           onClick={() =>
-            setIsMenuOpen(
-              (open) => !open
-            )
+            setIsMenuOpen((open) => !open)
           }
         >
-          {isMenuOpen ? (
-            <CloseIcon />
-          ) : (
-            <MenuIcon />
-          )}
+          <span className="navbar__toggle-inner">
+            {isMenuOpen ? (
+              <CloseIcon />
+            ) : (
+              <MenuIcon />
+            )}
+          </span>
         </button>
 
       </div>
-
     </header>
   );
 }

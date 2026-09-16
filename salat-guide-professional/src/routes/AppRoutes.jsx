@@ -8,17 +8,28 @@ import Calendar from "../pages/Calendar";
 import Blog from "../pages/Blog";
 import About from "../pages/About";
 import NotFound from "../pages/NotFound";
+import QuranReader from "../pages/QuranReader.jsx";
 
 function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+
       <Route path="/duas" element={<Duas />} />
       <Route path="/prayer-times" element={<PrayerTimes />} />
       <Route path="/qibla" element={<Qibla />} />
       <Route path="/calendar" element={<Calendar />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/about" element={<About />} />
+
+      {/* Quran Library */}
+      <Route path="/quran" element={<NotFound />} />
+
+      {/* Individual Surah */}
+      <Route
+        path="/quran/:surahId"
+        element={<QuranReader />}
+      />
 
       <Route path="*" element={<NotFound />} />
     </Routes>

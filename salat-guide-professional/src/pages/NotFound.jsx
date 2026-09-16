@@ -495,6 +495,444 @@ function NotFound() {
 
         </section>
 
+{/* ===================================================
+    QURAN SURAH EXPLORER
+=================================================== */}
+
+<section className="quran-explorer-section">
+
+  <div className="quran-explorer-container">
+
+    {/* =================================================
+        HEADER
+    ================================================= */}
+
+    <div className="quran-explorer-header">
+
+      <div>
+
+        <span className="quran-explorer-label">
+          QURAN LIBRARY
+        </span>
+
+        <h2>
+          Explore the Surahs
+        </h2>
+
+        <p>
+          Choose a Surah and continue your journey
+          through the words of the Quran.
+        </p>
+
+      </div>
+
+      <Link
+        to="/quran"
+        className="view-all-quran"
+      >
+        View All
+        <span>→</span>
+      </Link>
+
+    </div>
+
+
+    {/* =================================================
+        SURAH GRID
+    ================================================= */}
+
+    <div className="surah-explorer-grid">
+
+
+      {/* =================================================
+          SURAH AL-FATIHAH
+      ================================================= */}
+
+      <div className="surah-explorer-card">
+
+        <div className="surah-number">
+          01
+        </div>
+
+        <div className="surah-main">
+
+          <div className="surah-title-row">
+
+            <div>
+
+              <h3>
+                Al-Fatihah
+              </h3>
+
+              <span>
+                The Opening
+              </span>
+
+            </div>
+
+            <strong className="surah-arabic-small">
+              الْفَاتِحَة
+            </strong>
+
+          </div>
+
+          <div className="surah-info">
+            <span>7 Ayahs</span>
+            <span>•</span>
+            <span>Makki</span>
+          </div>
+
+        </div>
+
+        <div className="surah-actions">
+
+          <Link
+            to="/quran/1"
+            className="surah-read-btn"
+            aria-label="Read Surah Al-Fatihah"
+          >
+            Read
+            <span>→</span>
+          </Link>
+
+          <Link
+            to="/quran/1?bookmark=true"
+            className="surah-bookmark-btn"
+            aria-label="Bookmark Surah Al-Fatihah"
+          >
+            🔖
+          </Link>
+
+        </div>
+
+      </div>
+
+
+      {/* =================================================
+          SURAH YA-SIN
+      ================================================= */}
+
+      <div className="surah-explorer-card">
+
+        <div className="surah-number">
+          36
+        </div>
+
+        <div className="surah-main">
+
+          <div className="surah-title-row">
+
+            <div>
+
+              <h3>
+                Ya-Sin
+              </h3>
+
+              <span>
+                Ya-Sin
+              </span>
+
+            </div>
+
+            <strong className="surah-arabic-small">
+              يسٓ
+            </strong>
+
+          </div>
+
+          <div className="surah-info">
+            <span>83 Ayahs</span>
+            <span>•</span>
+            <span>Makki</span>
+          </div>
+
+        </div>
+
+        <div className="surah-actions">
+
+          <Link
+            to="/quran/36"
+            className="surah-read-btn"
+            aria-label="Read Surah Ya-Sin"
+          >
+            Read
+            <span>→</span>
+          </Link>
+
+          <Link
+            to="/quran/36?bookmark=true"
+            className="surah-bookmark-btn"
+            aria-label="Bookmark Surah Ya-Sin"
+          >
+            🔖
+          </Link>
+
+        </div>
+
+      </div>
+
+
+      {/* =================================================
+          SURAH AR-RAHMAN
+      ================================================= */}
+
+      <div className="surah-explorer-card">
+
+        <div className="surah-number">
+          55
+        </div>
+
+        <div className="surah-main">
+
+          <div className="surah-title-row">
+
+            <div>
+
+              <h3>
+                Ar-Rahman
+              </h3>
+
+              <span>
+                The Most Merciful
+              </span>
+
+            </div>
+
+            <strong className="surah-arabic-small">
+              الرَّحْمَٰن
+            </strong>
+
+          </div>
+
+          <div className="surah-info">
+            <span>78 Ayahs</span>
+            <span>•</span>
+            <span>Makki</span>
+          </div>
+
+        </div>
+
+        <div className="surah-actions">
+
+          <Link
+            to="/quran/55"
+            className="surah-read-btn"
+            aria-label="Read Surah Ar-Rahman"
+          >
+            Read
+            <span>→</span>
+          </Link>
+
+          <Link
+            to="/quran/55?bookmark=true"
+            className="surah-bookmark-btn"
+            aria-label="Bookmark Surah Ar-Rahman"
+          >
+            🔖
+          </Link>
+
+        </div>
+
+      </div>
+
+
+      {/* =================================================
+          SURAH AL-MULK
+      ================================================= */}
+
+      <div className="surah-explorer-card">
+
+        <div className="surah-number">
+          67
+        </div>
+
+        <div className="surah-main">
+
+          <div className="surah-title-row">
+
+            <div>
+
+              <h3>
+                Al-Mulk
+              </h3>
+
+              <span>
+                The Sovereignty
+              </span>
+
+            </div>
+
+            <strong className="surah-arabic-small">
+              الْمُلْك
+            </strong>
+
+          </div>
+
+          <div className="surah-info">
+            <span>30 Ayahs</span>
+            <span>•</span>
+            <span>Makki</span>
+          </div>
+
+        </div>
+
+        <div className="surah-actions">
+
+          <Link
+            to="/quran/67"
+            className="surah-read-btn"
+            aria-label="Read Surah Al-Mulk"
+          >
+            Read
+            <span>→</span>
+          </Link>
+
+          <Link
+            to="/quran/67?bookmark=true"
+            className="surah-bookmark-btn"
+            aria-label="Bookmark Surah Al-Mulk"
+          >
+            🔖
+          </Link>
+
+        </div>
+
+      </div>
+
+
+      {/* =================================================
+          SURAH AL-KAHF
+      ================================================= */}
+
+      <div className="surah-explorer-card">
+
+        <div className="surah-number">
+          18
+        </div>
+
+        <div className="surah-main">
+
+          <div className="surah-title-row">
+
+            <div>
+
+              <h3>
+                Al-Kahf
+              </h3>
+
+              <span>
+                The Cave
+              </span>
+
+            </div>
+
+            <strong className="surah-arabic-small">
+              الْكَهْف
+            </strong>
+
+          </div>
+
+          <div className="surah-info">
+            <span>110 Ayahs</span>
+            <span>•</span>
+            <span>Makki</span>
+          </div>
+
+        </div>
+
+        <div className="surah-actions">
+
+          <Link
+            to="/quran/18"
+            className="surah-read-btn"
+            aria-label="Read Surah Al-Kahf"
+          >
+            Read
+            <span>→</span>
+          </Link>
+
+          <Link
+            to="/quran/18?bookmark=true"
+            className="surah-bookmark-btn"
+            aria-label="Bookmark Surah Al-Kahf"
+          >
+            🔖
+          </Link>
+
+        </div>
+
+      </div>
+
+
+      {/* =================================================
+          SURAH AL-IKHLAS
+      ================================================= */}
+
+      <div className="surah-explorer-card">
+
+        <div className="surah-number">
+          112
+        </div>
+
+        <div className="surah-main">
+
+          <div className="surah-title-row">
+
+            <div>
+
+              <h3>
+                Al-Ikhlas
+              </h3>
+
+              <span>
+                The Sincerity
+              </span>
+
+            </div>
+
+            <strong className="surah-arabic-small">
+              الْإِخْلَاص
+            </strong>
+
+          </div>
+
+          <div className="surah-info">
+            <span>4 Ayahs</span>
+            <span>•</span>
+            <span>Makki</span>
+          </div>
+
+        </div>
+
+        <div className="surah-actions">
+
+          <Link
+            to="/quran/112"
+            className="surah-read-btn"
+            aria-label="Read Surah Al-Ikhlas"
+          >
+            Read
+            <span>→</span>
+          </Link>
+
+          <Link
+            to="/quran/112?bookmark=true"
+            className="surah-bookmark-btn"
+            aria-label="Bookmark Surah Al-Ikhlas"
+          >
+            🔖
+          </Link>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
 
         {/* ===================================================
             DAILY IBADAH
@@ -724,8 +1162,269 @@ function NotFound() {
         </div>
 
       </section>
+      {/* =========================================================
+    QURAN QUESTIONS
+========================================================= */}
+
+<section className="faq-modern-section">
+
+  <div className="faq-modern-container">
+
+    {/* =====================================================
+        LEFT INTRO
+    ===================================================== */}
+
+    <div className="faq-modern-intro">
+
+      <span className="faq-modern-eyebrow">
+        QURAN • REFLECTION
+      </span>
+
+      <h2>
+        Questions to
+        <span> Reflect On</span>
+      </h2>
+
+      <p>
+        Take a moment after reading the Quran to think
+        about its message, guidance and how its lessons
+        can shape your everyday life.
+      </p>
+
+      <div className="faq-intro-note">
+
+        <div className="faq-note-icon">
+          ۞
+        </div>
+
+        <div>
+          <strong>
+            Read. Understand. Reflect.
+          </strong>
+
+          <span>
+            Let every verse inspire meaningful thought.
+          </span>
+        </div>
+
+      </div>
 
     </div>
+
+
+    {/* =====================================================
+        QURAN QUESTIONS
+    ===================================================== */}
+
+    <div className="faq-modern-list">
+
+
+      {/* QUESTION 01 */}
+
+      <details className="faq-modern-item">
+
+        <summary>
+
+          <span className="faq-number">
+            01
+          </span>
+
+          <span className="faq-question">
+            What message is this Surah teaching me?
+          </span>
+
+          <span className="faq-toggle">
+            +
+          </span>
+
+        </summary>
+
+        <div className="faq-answer">
+
+          <p>
+            Think about the central message of the Surah
+            and the lessons it presents. Consider what
+            you can learn from it and carry into your life.
+          </p>
+
+        </div>
+
+      </details>
+
+
+      {/* QUESTION 02 */}
+
+      <details className="faq-modern-item">
+
+        <summary>
+
+          <span className="faq-number">
+            02
+          </span>
+
+          <span className="faq-question">
+            Which verse speaks to my heart the most?
+          </span>
+
+          <span className="faq-toggle">
+            +
+          </span>
+
+        </summary>
+
+        <div className="faq-answer">
+
+          <p>
+            Choose an Ayah that feels meaningful to you.
+            Read it slowly, consider its meaning and think
+            about why it stands out to you.
+          </p>
+
+        </div>
+
+      </details>
+
+
+      {/* QUESTION 03 */}
+
+      <details className="faq-modern-item">
+
+        <summary>
+
+          <span className="faq-number">
+            03
+          </span>
+
+          <span className="faq-question">
+            What does this Surah teach me about Allah?
+          </span>
+
+          <span className="faq-toggle">
+            +
+          </span>
+
+        </summary>
+
+        <div className="faq-answer">
+
+          <p>
+            Reflect on the names, attributes, commands,
+            mercy and guidance of Allah mentioned in the
+            Surah.
+          </p>
+
+        </div>
+
+      </details>
+
+
+      {/* QUESTION 04 */}
+
+      <details className="faq-modern-item">
+
+        <summary>
+
+          <span className="faq-number">
+            04
+          </span>
+
+          <span className="faq-question">
+            Is there a lesson here that I need to practice?
+          </span>
+
+          <span className="faq-toggle">
+            +
+          </span>
+
+        </summary>
+
+        <div className="faq-answer">
+
+          <p>
+            Look for a teaching that can become a practical
+            action — such as patience, gratitude, kindness,
+            forgiveness, honesty or remembrance of Allah.
+          </p>
+
+        </div>
+
+      </details>
+
+
+      {/* QUESTION 05 */}
+
+      <details className="faq-modern-item">
+
+        <summary>
+
+          <span className="faq-number">
+            05
+          </span>
+
+          <span className="faq-question">
+            How can I apply this Quranic guidance today?
+          </span>
+
+          <span className="faq-toggle">
+            +
+          </span>
+
+        </summary>
+
+        <div className="faq-answer">
+
+          <p>
+            Think of one small and realistic action you can
+            take today based on what you have read. Turning
+            reflection into action makes your reading more
+            meaningful.
+          </p>
+
+        </div>
+
+      </details>
+
+
+      {/* QUESTION 06 */}
+
+      <details className="faq-modern-item">
+
+        <summary>
+
+          <span className="faq-number">
+            06
+          </span>
+
+          <span className="faq-question">
+            What dua can I make after reading this Surah?
+          </span>
+
+          <span className="faq-toggle">
+            +
+          </span>
+
+        </summary>
+
+        <div className="faq-answer">
+
+          <p>
+            Think about what you need from Allah and make
+            a sincere dua related to the lessons, hopes or
+            reminders you received from your reading.
+          </p>
+
+        </div>
+
+      </details>
+
+    </div>
+
+  </div>
+
+</section>
+
+    </div>
+
   );
 }
 

@@ -410,10 +410,542 @@ function Qibla() {
               </div>
 
             </div>
+            {/* =================================================
+    QIBLA JOURNEY / FINAL SECTION
+================================================= */}
+
+<section className="qibla-journey">
+
+  <div className="qibla-journey-container">
+
+    {/* =================================================
+        SECTION INTRO
+    ================================================= */}
+
+    <div className="qibla-journey-intro">
+
+      <div className="qibla-journey-heading">
+
+        <span className="qibla-journey-kicker">
+          QIBLA • SALAH • MINDFULNESS
+        </span>
+
+        <h2>
+          Make Your Direction
+          <br />
+          <span>Part of Your Preparation.</span>
+        </h2>
+
+      </div>
+
+      <p>
+        Finding the Qibla is the beginning. Take a moment
+        before Salah to slow down, prepare yourself and
+        give your attention to the prayer ahead.
+      </p>
+
+    </div>
+
+
+    {/* =================================================
+        FEATURE AREA
+    ================================================= */}
+
+    <div className="qibla-journey-layout">
+
+
+      {/* =================================================
+          LARGE LEFT PANEL
+      ================================================= */}
+
+      <div className="qibla-preparation-panel">
+
+        <div className="preparation-top">
+
+          <span>
+            BEFORE SALAH
+          </span>
+
+          <div className="preparation-icon">
+            ۞
+          </div>
+
+        </div>
+
+        <div className="preparation-content">
+
+          <h3>
+            Create a moment
+            <br />
+            <em>of presence.</em>
+          </h3>
+
+          <p>
+            Before beginning your prayer, step away from
+            distractions and allow yourself a quiet moment.
+            Knowing your direction can help you physically
+            prepare for the Salah ahead.
+          </p>
+
+        </div>
+
+
+        {/* Decorative compass */}
+
+        <div className="preparation-compass">
+
+          <div className="mini-compass-ring">
+
+            <span className="compass-north">
+              N
+            </span>
+
+            <span className="compass-east">
+              E
+            </span>
+
+            <span className="compass-south">
+              S
+            </span>
+
+            <span className="compass-west">
+              W
+            </span>
+
+            <div className="mini-compass-arrow">
+              ↑
+            </div>
+
+            <div className="mini-compass-center">
+              🕋
+            </div>
 
           </div>
 
+        </div>
+
+      </div>
+
+
+      {/* =================================================
+          RIGHT CHECKLIST
+      ================================================= */}
+
+      <div className="qibla-checklist">
+
+        <div className="checklist-header">
+
+          <span>
+            QUICK CHECK
+          </span>
+
+          <h3>
+            Before you begin
+          </h3>
+
+        </div>
+
+
+        {/* CHECK 01 */}
+
+        <div className="qibla-check-item">
+
+          <div className="check-number">
+            01
+          </div>
+
+          <div className="check-content">
+
+            <h4>
+              Find a suitable place
+            </h4>
+
+            <p>
+              Choose a clean and peaceful place where
+              you can perform Salah comfortably.
+            </p>
+
+          </div>
+
+          <div className="check-mark">
+            ✓
+          </div>
+
+        </div>
+
+
+        {/* CHECK 02 */}
+
+        <div className="qibla-check-item">
+
+          <div className="check-number">
+            02
+          </div>
+
+          <div className="check-content">
+
+            <h4>
+              Check your direction
+            </h4>
+
+            <p>
+              Use the compass to identify the Qibla
+              direction before starting your prayer.
+            </p>
+
+          </div>
+
+          <div className="check-mark">
+            ✓
+          </div>
+
+        </div>
+
+
+        {/* CHECK 03 */}
+
+        <div className="qibla-check-item">
+
+          <div className="check-number">
+            03
+          </div>
+
+          <div className="check-content">
+
+            <h4>
+              Reduce distractions
+            </h4>
+
+            <p>
+              Put aside unnecessary notifications and
+              give yourself space to focus on Salah.
+            </p>
+
+          </div>
+
+          <div className="check-mark">
+            ✓
+          </div>
+
+        </div>
+
+
+        {/* CHECK 04 */}
+
+        <div className="qibla-check-item">
+
+          <div className="check-number">
+            04
+          </div>
+
+          <div className="check-content">
+
+            <h4>
+              Begin with intention
+            </h4>
+
+            <p>
+              Prepare your heart and mind before
+              beginning your prayer.
+            </p>
+
+          </div>
+
+          <div className="check-mark">
+            ✓
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    {/* =================================================
+        WORLDWIDE STRIP
+    ================================================= */}
+
+    <div className="qibla-world-strip">
+
+      <div className="world-strip-main">
+
+        <span className="world-strip-label">
+          A SHARED DIRECTION
+        </span>
+
+        <h3>
+          From every corner of the world,
+          <span> Muslims face the Kaaba.</span>
+        </h3>
+
+      </div>
+
+
+      <div className="world-locations">
+
+        <div className="world-location">
+          <strong>01</strong>
+          <span>Asia</span>
+        </div>
+
+        <div className="world-location">
+          <strong>02</strong>
+          <span>Europe</span>
+        </div>
+
+        <div className="world-location">
+          <strong>03</strong>
+          <span>Africa</span>
+        </div>
+
+        <div className="world-location">
+          <strong>04</strong>
+          <span>Americas</span>
+        </div>
+
+        <div className="world-location">
+          <strong>05</strong>
+          <span>Oceania</span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    {/* =================================================
+        FINAL MESSAGE
+    ================================================= */}
+
+    <div className="qibla-journey-footer">
+
+      <span>✦</span>
+
+      <p>
+        A precise direction can help prepare the body.
+        <strong> A sincere intention prepares the heart.</strong>
+      </p>
+
+      <span>✦</span>
+
+    </div>
+
+  </div>
+
+</section>
+
+          </div>
+
+
         </section>
+{/* =================================================
+    QIBLA FAQ SECTION
+================================================= */}
+
+<section className="qibla-faq-section">
+
+  <div className="qibla-faq-container">
+
+    {/* =================================================
+        FAQ INTRO
+    ================================================= */}
+
+    <div className="qibla-faq-intro">
+
+      <div className="qibla-faq-intro-top">
+
+        <span className="qibla-faq-badge">
+          QIBLA GUIDE
+        </span>
+
+        <span className="qibla-faq-line"></span>
+
+      </div>
+
+      <h2>
+        Questions about
+        <span> Qibla?</span>
+      </h2>
+
+      <p>
+        Learn more about the Qibla direction, compass
+        accuracy, location access and how Muslims
+        determine the direction of the Kaaba.
+      </p>
+
+      <div className="qibla-faq-mini-note">
+        <span>✦</span>
+        <p>
+          Simple answers for a more confident Qibla experience.
+        </p>
+      </div>
+
+    </div>
+
+
+    {/* =================================================
+        FAQ LIST
+    ================================================= */}
+
+    <div className="qibla-faq-list">
+
+      <details className="qibla-faq-item">
+        <summary>
+          <span className="qibla-faq-number">
+            01
+          </span>
+
+          <span className="qibla-faq-question">
+            What is the Qibla?
+          </span>
+
+          <span className="qibla-faq-toggle">
+            +
+          </span>
+        </summary>
+
+        <div className="qibla-faq-answer">
+          <p>
+            The Qibla is the direction Muslims face during
+            Salah. It is the direction towards the Kaaba,
+            located in Masjid al-Haram in Makkah.
+          </p>
+        </div>
+      </details>
+
+
+      <details className="qibla-faq-item">
+        <summary>
+          <span className="qibla-faq-number">
+            02
+          </span>
+
+          <span className="qibla-faq-question">
+            Why does the Qibla direction matter?
+          </span>
+
+          <span className="qibla-faq-toggle">
+            +
+          </span>
+        </summary>
+
+        <div className="qibla-faq-answer">
+          <p>
+            Facing the Qibla is part of the prescribed
+            direction for Salah. It gives Muslims around
+            the world a shared direction of worship.
+          </p>
+        </div>
+      </details>
+
+
+      <details className="qibla-faq-item">
+        <summary>
+          <span className="qibla-faq-number">
+            03
+          </span>
+
+          <span className="qibla-faq-question">
+            How does the Qibla compass work?
+          </span>
+
+          <span className="qibla-faq-toggle">
+            +
+          </span>
+        </summary>
+
+        <div className="qibla-faq-answer">
+          <p>
+            The compass uses your device's location and
+            orientation sensors to determine the direction
+            towards the Kaaba from your current position.
+          </p>
+        </div>
+      </details>
+
+
+      <details className="qibla-faq-item">
+        <summary>
+          <span className="qibla-faq-number">
+            04
+          </span>
+
+          <span className="qibla-faq-question">
+            Why should I keep my phone flat?
+          </span>
+
+          <span className="qibla-faq-toggle">
+            +
+          </span>
+        </summary>
+
+        <div className="qibla-faq-answer">
+          <p>
+            Keeping your phone flat can help the device
+            sensors determine its orientation more
+            consistently. Follow the instructions shown
+            by the compass on your device.
+          </p>
+        </div>
+      </details>
+
+
+      <details className="qibla-faq-item">
+        <summary>
+          <span className="qibla-faq-number">
+            05
+          </span>
+
+          <span className="qibla-faq-question">
+            Why is my compass direction changing?
+          </span>
+
+          <span className="qibla-faq-toggle">
+            +
+          </span>
+        </summary>
+
+        <div className="qibla-faq-answer">
+          <p>
+            Phone compass readings can be affected by
+            movement, magnetic objects and sensor
+            calibration. Move away from magnetic
+            interference and keep the device steady.
+          </p>
+        </div>
+      </details>
+
+
+      <details className="qibla-faq-item">
+        <summary>
+          <span className="qibla-faq-number">
+            06
+          </span>
+
+          <span className="qibla-faq-question">
+            Can I find the Qibla anywhere in the world?
+          </span>
+
+          <span className="qibla-faq-toggle">
+            +
+          </span>
+        </summary>
+
+        <div className="qibla-faq-answer">
+          <p>
+            Yes. Once your location is available, the
+            Qibla direction can be calculated from
+            different places around the world.
+          </p>
+        </div>
+      </details>
+
+    </div>
+
+  </div>
+
+</section>
 
       </main>
     </>

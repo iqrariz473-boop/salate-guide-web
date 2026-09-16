@@ -1948,3 +1948,680 @@
   }
 
 }
+/* =========================================================
+   MOSQUE & PRAYER MOMENT
+========================================================= */
+
+.home-mosque-section {
+  position: relative;
+
+  padding: 90px 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f7f5e9 0%,
+      #f1eee1 100%
+    );
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATION
+========================================================= */
+
+.home-mosque-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  top: -220px;
+  left: -160px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(180, 140, 53, 0.13);
+
+  box-shadow:
+    0 0 0 40px rgba(180, 140, 53, 0.025),
+    0 0 0 80px rgba(180, 140, 53, 0.018);
+
+  pointer-events: none;
+}
+
+.home-mosque-section::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  right: -130px;
+  bottom: -160px;
+
+  border-radius: 50%;
+
+  background: rgba(13, 48, 37, 0.035);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.home-mosque-card {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(0, 1.05fr);
+
+  min-height: 500px;
+
+  overflow: hidden;
+
+  border-radius: 26px;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(180, 140, 53, 0.18);
+
+  box-shadow:
+    0 20px 55px rgba(13, 48, 37, 0.10);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.home-mosque-card__image {
+  position: relative;
+  min-height: 500px;
+  overflow: hidden;
+
+  background-image: url("/images/images.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.home-mosque-card__image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(13, 48, 37, 0.04) 10%,
+      rgba(13, 48, 37, 0.18) 50%,
+      rgba(13, 48, 37, 0.78) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   IMAGE BADGE
+========================================================= */
+
+.home-mosque-card__image-badge {
+  position: absolute;
+  left: 25px;
+  right: 25px;
+  bottom: 25px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 13px 15px;
+
+  border-radius: 14px;
+
+  background: rgba(13, 48, 37, 0.72);
+
+  border: 1px solid rgba(214, 177, 92, 0.28);
+
+  color: #ffffff;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+
+/* =========================================================
+   BADGE ICON
+========================================================= */
+
+.home-mosque-card__image-badge > span {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: rgba(214, 177, 92, 0.16);
+
+  color: #d6b15c;
+
+  font-size: 22px;
+}
+
+
+/* =========================================================
+   BADGE TEXT
+========================================================= */
+
+.home-mosque-card__image-badge div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.home-mosque-card__image-badge strong {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.home-mosque-card__image-badge small {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+  .home-mosque-card__image {
+    min-height: 420px;
+  }
+
+  .home-mosque-card__image img {
+    min-height: 420px;
+  }
+
+  .home-mosque-card__image-badge {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .home-mosque-card__image {
+    min-height: 340px;
+  }
+
+  .home-mosque-card__image img {
+    min-height: 340px;
+  }
+
+  .home-mosque-card__image-badge {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .home-mosque-card__image-badge > span {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+  }
+
+  .home-mosque-card__image-badge strong {
+    font-size: 13px;
+  }
+
+  .home-mosque-card__image-badge small {
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.home-mosque-card__content {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 58px 55px;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.home-mosque-card__eyebrow {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 13px;
+
+  color: #b48c35;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 1.7px;
+
+  text-transform: uppercase;
+}
+
+.home-mosque-card__eyebrow::before {
+  content: "";
+
+  width: 26px;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: #d6b15c;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.home-mosque-card__content h2 {
+  max-width: 520px;
+
+  margin: 0 0 17px;
+
+  color: #0d3025;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(32px, 3.2vw, 48px);
+
+  line-height: 1.12;
+
+  letter-spacing: -1.1px;
+}
+
+.home-mosque-card__content h2 span {
+  color: #b48c35;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.home-mosque-card__content > p {
+  max-width: 550px;
+
+  margin: 0 0 27px;
+
+  color: #66756e;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.home-mosque-card__features {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 10px;
+
+  margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   FEATURE
+========================================================= */
+
+.home-mosque-card__feature {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px 12px;
+
+  border-radius: 12px;
+
+  background: #f8f7f0;
+
+  border: 1px solid #eeeade;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.home-mosque-card__feature:hover {
+  transform: translateX(4px);
+
+  background: #ffffff;
+
+  border-color: rgba(214, 177, 92, 0.35);
+}
+
+
+/* =========================================================
+   FEATURE ICON
+========================================================= */
+
+.home-mosque-card__feature > span {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  background: rgba(13, 48, 37, 0.07);
+
+  color: #b48c35;
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   FEATURE CONTENT
+========================================================= */
+
+.home-mosque-card__feature div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.home-mosque-card__feature strong {
+  color: #0d3025;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.home-mosque-card__feature small {
+  color: #7c8983;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.home-mosque-card__button {
+  width: fit-content;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  min-height: 46px;
+
+  padding: 0 19px;
+
+  border-radius: 10px;
+
+  background: #0d3025;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  box-shadow:
+    0 7px 18px rgba(13, 48, 37, 0.15);
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.home-mosque-card__button span {
+  font-size: 17px;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.home-mosque-card__button:hover {
+  background: #174637;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 23px rgba(13, 48, 37, 0.19);
+}
+
+.home-mosque-card__button:hover span {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .home-mosque-section {
+    padding: 70px 0;
+  }
+
+  .home-mosque-card {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+  }
+
+  .home-mosque-card__image {
+    min-height: 390px;
+  }
+
+  .home-mosque-card__content {
+    padding: 42px 35px;
+  }
+
+  .home-mosque-card__content h2 {
+    max-width: 650px;
+  }
+
+  .home-mosque-card__content > p {
+    max-width: 650px;
+  }
+
+  .home-mosque-card__features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .home-mosque-card__feature {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    padding: 14px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .home-mosque-section {
+    padding: 55px 0;
+  }
+
+  .home-mosque-card {
+    border-radius: 20px;
+  }
+
+  .home-mosque-card__image {
+    min-height: 300px;
+  }
+
+  .home-mosque-card__image-badge {
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+
+    padding: 10px 12px;
+  }
+
+  .home-mosque-card__image-badge > span {
+    width: 35px;
+    height: 35px;
+
+    font-size: 19px;
+  }
+
+  .home-mosque-card__image-badge strong {
+    font-size: 12px;
+  }
+
+  .home-mosque-card__image-badge small {
+    font-size: 9px;
+  }
+
+  .home-mosque-card__content {
+    padding: 32px 22px;
+  }
+
+  .home-mosque-card__eyebrow {
+    font-size: 10px;
+
+    letter-spacing: 1.3px;
+  }
+
+  .home-mosque-card__content h2 {
+    margin-bottom: 14px;
+
+    font-size: 30px;
+
+    letter-spacing: -0.7px;
+  }
+
+  .home-mosque-card__content > p {
+    margin-bottom: 22px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+  .home-mosque-card__features {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+
+    margin-bottom: 23px;
+  }
+
+  .home-mosque-card__feature {
+    flex-direction: row;
+
+    align-items: center;
+
+    padding: 9px;
+  }
+
+  .home-mosque-card__feature > span {
+    width: 32px;
+    height: 32px;
+  }
+
+  .home-mosque-card__button {
+    width: 100%;
+
+    min-height: 44px;
+
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .home-mosque-card__image {
+    min-height: 260px;
+  }
+
+  .home-mosque-card__content {
+    padding: 27px 17px;
+  }
+
+  .home-mosque-card__content h2 {
+    font-size: 27px;
+  }
+
+  .home-mosque-card__content > p {
+    font-size: 12px;
+  }
+}

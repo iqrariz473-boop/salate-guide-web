@@ -1819,3 +1819,1288 @@
   }
 
 }
+/* =========================================================
+   QIBLA JOURNEY
+   DIFFERENT STRUCTURE / MODERN SECTION
+========================================================= */
+
+.qibla-journey {
+  position: relative;
+
+  width: 100%;
+
+  padding: 100px 20px;
+
+  background: #ece9df;
+
+  color: #1d2925;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.qibla-journey-container {
+  width: 100%;
+  max-width: 1180px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.qibla-journey-intro {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(280px, 0.65fr);
+
+  gap: 80px;
+
+  align-items: end;
+
+  margin-bottom: 55px;
+}
+
+.qibla-journey-kicker {
+  display: inline-block;
+
+  margin-bottom: 17px;
+
+  color: #617a70;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 2.2px;
+}
+
+.qibla-journey-heading h2 {
+  margin: 0;
+
+  color: #1d2925;
+
+  font-size: 46px;
+
+  line-height: 1.08;
+
+  font-weight: 800;
+
+  letter-spacing: -1.5px;
+}
+
+.qibla-journey-heading h2 span {
+  color: #607b70;
+}
+
+.qibla-journey-intro > p {
+  margin: 0;
+
+  color: #69736e;
+
+  font-size: 14px;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.qibla-journey-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 0.85fr);
+
+  gap: 20px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   PREPARATION PANEL
+========================================================= */
+
+.qibla-preparation-panel {
+  position: relative;
+
+  min-height: 500px;
+
+  padding: 38px;
+
+  background: #1e302a;
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  color: #f5f2e9;
+}
+
+.qibla-preparation-panel::before {
+  content: "";
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  right: -150px;
+  bottom: -180px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(194, 210, 202, 0.12);
+}
+
+.qibla-preparation-panel::after {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  right: -100px;
+  bottom: -130px;
+
+  border-radius: 50%;
+
+  border: 1px dashed rgba(194, 210, 202, 0.1);
+}
+
+
+/* =========================================================
+   PREPARATION TOP
+========================================================= */
+
+.preparation-top {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.preparation-top > span {
+  color: #a9bbb3;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.preparation-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  color: #c0cec8;
+
+  font-size: 19px;
+}
+
+
+/* =========================================================
+   PREPARATION CONTENT
+========================================================= */
+
+.preparation-content {
+  position: relative;
+  z-index: 2;
+
+  margin-top: 85px;
+}
+
+.preparation-content h3 {
+  margin: 0;
+
+  color: #f6f2e8;
+
+  font-size: 34px;
+
+  line-height: 1.2;
+
+  font-weight: 750;
+}
+
+.preparation-content h3 em {
+  color: #a9c0b6;
+
+  font-style: normal;
+}
+
+.preparation-content p {
+  max-width: 470px;
+
+  margin: 22px 0 0;
+
+  color: rgba(246, 242, 232, 0.55);
+
+  font-size: 13px;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   MINI COMPASS
+========================================================= */
+
+.preparation-compass {
+  position: absolute;
+
+  right: 50px;
+  bottom: 45px;
+
+  z-index: 2;
+}
+
+.mini-compass-ring {
+  position: relative;
+
+  width: 145px;
+  height: 145px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(194, 210, 202, 0.2);
+}
+
+.mini-compass-ring::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 12px;
+
+  border-radius: 50%;
+
+  border: 1px dashed rgba(194, 210, 202, 0.16);
+}
+
+.compass-north,
+.compass-east,
+.compass-south,
+.compass-west {
+  position: absolute;
+
+  color: rgba(220, 228, 222, 0.4);
+
+  font-size: 7px;
+
+  font-weight: 800;
+}
+
+.compass-north {
+  top: 7px;
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+.compass-east {
+  right: 8px;
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+.compass-south {
+  bottom: 7px;
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+.compass-west {
+  left: 8px;
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+.mini-compass-arrow {
+  position: absolute;
+
+  top: 25px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: #b5c8bf;
+
+  font-size: 27px;
+}
+
+.mini-compass-center {
+  position: relative;
+  z-index: 2;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #34483f;
+
+  border: 1px solid rgba(194, 210, 202, 0.2);
+
+  font-size: 21px;
+}
+
+
+/* =========================================================
+   CHECKLIST
+========================================================= */
+
+.qibla-checklist {
+  padding: 35px 38px;
+
+  background: #f8f6ef;
+
+  border: 1px solid #ddd9cd;
+
+  border-radius: 24px;
+}
+
+.checklist-header {
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid #ddd9cd;
+}
+
+.checklist-header > span {
+  color: #72877e;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.checklist-header h3 {
+  margin: 8px 0 0;
+
+  color: #23332d;
+
+  font-size: 24px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   CHECK ITEM
+========================================================= */
+
+.qibla-check-item {
+  display: grid;
+
+  grid-template-columns: 36px minmax(0, 1fr) 25px;
+
+  gap: 13px;
+
+  align-items: start;
+
+  padding: 21px 0;
+
+  border-bottom: 1px solid #e3dfd4;
+}
+
+.qibla-check-item:last-child {
+  border-bottom: none;
+
+  padding-bottom: 5px;
+}
+
+.check-number {
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: #e8ece8;
+
+  color: #657c72;
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+.check-content h4 {
+  margin: 1px 0 5px;
+
+  color: #283831;
+
+  font-size: 13px;
+
+  font-weight: 750;
+}
+
+.check-content p {
+  margin: 0;
+
+  color: #7b827e;
+
+  font-size: 11px;
+
+  line-height: 1.7;
+}
+
+.check-mark {
+  color: #819b90;
+
+  font-size: 14px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   WORLD STRIP
+========================================================= */
+
+.qibla-world-strip {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(0, 1fr);
+
+  gap: 40px;
+
+  align-items: center;
+
+  margin-top: 20px;
+
+  padding: 32px 38px;
+
+  background: #dfe4df;
+
+  border-radius: 20px;
+
+  border: 1px solid #d1d8d1;
+}
+
+.world-strip-label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #6e847a;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.world-strip-main h3 {
+  margin: 0;
+
+  color: #263730;
+
+  font-size: 19px;
+
+  line-height: 1.45;
+
+  font-weight: 700;
+}
+
+.world-strip-main h3 span {
+  color: #617d72;
+}
+
+
+/* =========================================================
+   WORLD LOCATIONS
+========================================================= */
+
+.world-locations {
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
+
+.world-location {
+  min-width: 66px;
+
+  padding: 10px 11px;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.55);
+
+  border: 1px solid rgba(122, 142, 133, 0.16);
+
+  text-align: center;
+}
+
+.world-location strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #71887d;
+
+  font-size: 8px;
+}
+
+.world-location span {
+  color: #43564e;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   FOOTER MESSAGE
+========================================================= */
+
+.qibla-journey-footer {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 17px;
+
+  margin-top: 45px;
+
+  text-align: center;
+}
+
+.qibla-journey-footer > span {
+  color: #789188;
+
+  font-size: 9px;
+}
+
+.qibla-journey-footer p {
+  margin: 0;
+
+  color: #737c78;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+.qibla-journey-footer strong {
+  color: #415d52;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .qibla-journey {
+    padding: 80px 20px;
+  }
+
+  .qibla-journey-intro {
+    grid-template-columns: 1fr 0.7fr;
+
+    gap: 40px;
+  }
+
+  .qibla-journey-heading h2 {
+    font-size: 38px;
+  }
+
+  .qibla-journey-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .qibla-preparation-panel {
+    min-height: 420px;
+  }
+
+  .qibla-world-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .world-locations {
+    justify-content: flex-start;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .qibla-journey {
+    padding: 65px 15px;
+  }
+
+  .qibla-journey-intro {
+    display: block;
+
+    margin-bottom: 38px;
+  }
+
+  .qibla-journey-heading h2 {
+    font-size: 31px;
+  }
+
+  .qibla-journey-intro > p {
+    margin-top: 18px;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+  }
+
+  .qibla-preparation-panel {
+    min-height: 430px;
+
+    padding: 28px 23px;
+
+    border-radius: 20px;
+  }
+
+  .preparation-content {
+    margin-top: 70px;
+  }
+
+  .preparation-content h3 {
+    font-size: 27px;
+  }
+
+  .preparation-content p {
+    font-size: 12px;
+  }
+
+  .preparation-compass {
+    right: 25px;
+    bottom: 25px;
+  }
+
+  .mini-compass-ring {
+    width: 115px;
+    height: 115px;
+  }
+
+  .mini-compass-center {
+    width: 40px;
+    height: 40px;
+
+    font-size: 18px;
+  }
+
+  .mini-compass-arrow {
+    top: 19px;
+
+    font-size: 22px;
+  }
+
+  .qibla-checklist {
+    padding: 27px 22px;
+
+    border-radius: 20px;
+  }
+
+  .checklist-header h3 {
+    font-size: 21px;
+  }
+
+  .qibla-check-item {
+    grid-template-columns: 34px minmax(0, 1fr) 20px;
+
+    gap: 10px;
+  }
+
+  .qibla-world-strip {
+    padding: 25px 22px;
+
+    border-radius: 18px;
+  }
+
+  .world-strip-main h3 {
+    font-size: 17px;
+  }
+
+  .world-locations {
+    justify-content: flex-start;
+  }
+
+  .world-location {
+    min-width: 58px;
+  }
+
+  .qibla-journey-footer {
+    gap: 9px;
+  }
+
+  .qibla-journey-footer p {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .qibla-journey {
+    padding: 55px 13px;
+  }
+
+  .qibla-journey-heading h2 {
+    font-size: 27px;
+  }
+
+  .qibla-preparation-panel {
+    min-height: 450px;
+  }
+
+  .preparation-content h3 {
+    font-size: 24px;
+  }
+
+  .preparation-compass {
+    right: 20px;
+  }
+
+  .mini-compass-ring {
+    width: 100px;
+    height: 100px;
+  }
+
+  .qibla-checklist {
+    padding: 23px 18px;
+  }
+
+  .check-content h4 {
+    font-size: 12px;
+  }
+
+  .check-content p {
+    font-size: 10px;
+  }
+
+  .world-location {
+    min-width: 54px;
+
+    padding: 9px 7px;
+  }
+
+  .world-location span {
+    font-size: 9px;
+  }
+}
+/* =========================================================
+   QIBLA FAQ SECTION
+========================================================= */
+
+.qibla-faq-section {
+  position: relative;
+  padding: 105px 20px 110px;
+  background: #f3f0e8;
+  overflow: hidden;
+}
+
+.qibla-faq-section::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  right: -180px;
+  top: -180px;
+  border: 1px solid rgba(55, 82, 72, 0.12);
+  border-radius: 50%;
+}
+
+.qibla-faq-section::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  left: -150px;
+  bottom: -150px;
+  border: 1px solid rgba(55, 82, 72, 0.1);
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.qibla-faq-container {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+
+  gap: 75px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.qibla-faq-intro {
+  position: sticky;
+  top: 100px;
+}
+
+.qibla-faq-intro-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 22px;
+}
+
+.qibla-faq-badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 7px 12px;
+
+  border-radius: 30px;
+
+  background: #29483e;
+  color: #e9dfc5;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+.qibla-faq-line {
+  width: 45px;
+  height: 1px;
+
+  background: #9b927d;
+}
+
+
+.qibla-faq-intro h2 {
+  margin: 0;
+
+  color: #1e302a;
+
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 1.02;
+  letter-spacing: -2px;
+
+  font-weight: 750;
+}
+
+.qibla-faq-intro h2 span {
+  display: block;
+
+  color: #8b7547;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+
+.qibla-faq-intro > p {
+  max-width: 430px;
+
+  margin: 24px 0 0;
+
+  color: #68766f;
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   MINI NOTE
+========================================================= */
+
+.qibla-faq-mini-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  max-width: 390px;
+
+  margin-top: 35px;
+  padding-top: 20px;
+
+  border-top: 1px solid #d6d1c5;
+}
+
+.qibla-faq-mini-note span {
+  flex-shrink: 0;
+
+  color: #9b7940;
+
+  font-size: 15px;
+}
+
+.qibla-faq-mini-note p {
+  margin: 0;
+
+  color: #78827d;
+
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   FAQ LIST
+========================================================= */
+
+.qibla-faq-list {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+/* =========================================================
+   FAQ ITEM
+========================================================= */
+
+.qibla-faq-item {
+  overflow: hidden;
+
+  background: #fbfaf5;
+
+  border: 1px solid #ddd9ce;
+  border-radius: 14px;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.qibla-faq-item:hover {
+  border-color: #b9ad91;
+
+  box-shadow:
+    0 10px 28px rgba(31, 48, 42, 0.06);
+}
+
+.qibla-faq-item[open] {
+  background: #ffffff;
+
+  border-color: #a99b79;
+
+  box-shadow:
+    0 12px 30px rgba(31, 48, 42, 0.07);
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.qibla-faq-item summary {
+  display: grid;
+
+  grid-template-columns: 42px minmax(0, 1fr) 34px;
+
+  align-items: center;
+
+  gap: 16px;
+
+  min-height: 78px;
+
+  padding: 14px 18px;
+
+  cursor: pointer;
+
+  list-style: none;
+
+  user-select: none;
+}
+
+.qibla-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.qibla-faq-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 11px;
+
+  background: #e8ece6;
+
+  color: #60766c;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   QUESTION
+========================================================= */
+
+.qibla-faq-question {
+  color: #24372f;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   TOGGLE
+========================================================= */
+
+.qibla-faq-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+
+  background: #eeeade;
+
+  color: #766743;
+
+  font-size: 20px;
+  font-weight: 400;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.qibla-faq-item[open] .qibla-faq-toggle {
+  transform: rotate(45deg);
+
+  background: #29483e;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   ANSWER
+========================================================= */
+
+.qibla-faq-answer {
+  padding: 0 68px 22px 76px;
+}
+
+.qibla-faq-answer p {
+  margin: 0;
+
+  color: #6e7974;
+
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .qibla-faq-container {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .qibla-faq-intro {
+    position: static;
+
+    max-width: 650px;
+  }
+
+  .qibla-faq-intro > p {
+    max-width: 600px;
+  }
+
+  .qibla-faq-mini-note {
+    max-width: 500px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .qibla-faq-section {
+    padding: 70px 15px 75px;
+  }
+
+  .qibla-faq-intro h2 {
+    font-size: 38px;
+    letter-spacing: -1.3px;
+  }
+
+  .qibla-faq-intro > p {
+    font-size: 13px;
+  }
+
+  .qibla-faq-item summary {
+    grid-template-columns: 38px minmax(0, 1fr) 30px;
+
+    gap: 11px;
+
+    min-height: 70px;
+
+    padding: 12px;
+  }
+
+  .qibla-faq-number {
+    width: 36px;
+    height: 36px;
+
+    border-radius: 10px;
+  }
+
+  .qibla-faq-question {
+    font-size: 13px;
+  }
+
+  .qibla-faq-toggle {
+    width: 29px;
+    height: 29px;
+
+    font-size: 18px;
+  }
+
+  .qibla-faq-answer {
+    padding: 0 15px 20px 61px;
+  }
+
+  .qibla-faq-answer p {
+    font-size: 11.5px;
+    line-height: 1.75;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .qibla-faq-section {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .qibla-faq-intro h2 {
+    font-size: 33px;
+  }
+
+  .qibla-faq-item summary {
+    grid-template-columns: 34px minmax(0, 1fr) 28px;
+  }
+
+  .qibla-faq-number {
+    width: 33px;
+    height: 33px;
+  }
+
+  .qibla-faq-question {
+    font-size: 12px;
+  }
+
+  .qibla-faq-answer {
+    padding-left: 55px;
+  }
+
+}
