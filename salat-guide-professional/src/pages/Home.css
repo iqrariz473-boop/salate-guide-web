@@ -5,16 +5,19 @@
 :root {
   --home-green: #0d3025;
   --home-green-light: #174637;
-  --home-gold: #d6b15c;
-  --home-gold-dark: #b48c35;
-  --home-bg: #f7f5e9;
-  --home-border: #e5e0d3;
-  --home-text: #17372d;
-  --home-muted: #68766f;
+  --home-gold: #0d3025;
+  --home-gold-dark: #174637;
+  --home-bg: #ffffff;
+  --home-border: rgba(13, 48, 37, 0.14);
+  --home-text: #0d3025;
+  --home-muted: rgba(13, 48, 37, 0.68);
   --home-white: #ffffff;
+
   --home-radius: 14px;
+
   --home-shadow: 0 8px 24px rgba(13, 48, 37, 0.07);
 }
+
 
 /* =========================================================
    GLOBAL
@@ -44,6 +47,7 @@
   box-sizing: border-box;
 }
 
+
 /* =========================================================
    SECTION HEADING
 ========================================================= */
@@ -72,7 +76,6 @@
 .home-section-heading h2 {
   margin: 0 0 10px;
   color: var(--home-green);
-  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(26px, 3vw, 36px);
   font-weight: 700;
   line-height: 1.15;
@@ -84,6 +87,7 @@
   font-size: 14px;
   line-height: 1.65;
 }
+
 
 /* =========================================================
    PRAYER SECTION
@@ -112,22 +116,19 @@
   }
 }
 
+
 /* =========================================================
    LOCATION SEARCH BELOW HERO
 ========================================================= */
 
 .home-location-search-section {
   position: relative;
-
   padding:
     28px 0
     10px;
-
-  background: #fbf8f1;
-
+  background: #ffffff;
   z-index: 20;
 }
-
 
 .home-location-search-section
 .container {
@@ -140,14 +141,13 @@
 ========================================================= */
 
 @media (max-width: 600px) {
-
   .home-location-search-section {
     padding:
       20px 0
       8px;
   }
-
 }
+
 
 /* =========================================================
    QURAN SECTION
@@ -165,14 +165,14 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  border: 1px solid rgba(214, 177, 92, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 20px;
   background: linear-gradient(
     135deg,
     var(--home-green),
     var(--home-green-light)
   );
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 18px 45px rgba(13, 48, 37, 0.16);
 }
 
 .home-quran-card__pattern {
@@ -183,8 +183,8 @@
   background-image: linear-gradient(
     45deg,
     transparent 45%,
-    var(--home-gold) 45%,
-    var(--home-gold) 55%,
+    #ffffff 45%,
+    #ffffff 55%,
     transparent 55%
   );
   background-size: 45px 45px;
@@ -203,7 +203,7 @@
   align-items: center;
   gap: 8px;
   margin-bottom: 18px;
-  color: var(--home-gold);
+  color: #ffffff;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -212,7 +212,7 @@
 
 .home-quran-card__arabic {
   margin: 0 0 14px;
-  color: #fff;
+  color: #ffffff;
   font-family: "Times New Roman", serif;
   font-size: clamp(25px, 3vw, 34px);
   line-height: 1.6;
@@ -244,10 +244,11 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--home-gold);
+  color: #ffffff;
   font-weight: 700;
   text-decoration: none;
 }
+
 
 /* =========================================================
    TOOLS
@@ -255,7 +256,7 @@
 
 .home-tools-section {
   padding: 65px 0;
-  background: #fff;
+  background: #ffffff;
 }
 
 .home-tools-grid {
@@ -273,7 +274,7 @@
   padding: 24px;
   border: 1px solid var(--home-border);
   border-radius: var(--home-radius);
-  background: #fff;
+  background: #ffffff;
   text-decoration: none;
   box-shadow: var(--home-shadow);
   transition: transform 0.25s ease, box-shadow 0.25s ease,
@@ -282,7 +283,7 @@
 
 .home-tool-card:hover {
   transform: translateY(-4px);
-  border-color: var(--home-gold);
+  border-color: var(--home-green);
   box-shadow: 0 15px 32px rgba(13, 48, 37, 0.11);
 }
 
@@ -295,8 +296,8 @@
   justify-content: center;
   margin-bottom: 16px;
   border-radius: 50%;
-  background: #f1ead8;
-  color: var(--home-green);
+  background: var(--home-green);
+  color: #ffffff;
   font-size: 20px;
 }
 
@@ -324,7 +325,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--home-gold-dark);
+  color: var(--home-green-light);
   font-size: 11px;
   font-weight: 700;
 }
@@ -338,13 +339,14 @@
   transform: translateX(4px);
 }
 
+
 /* =========================================================
    FEATURES
 ========================================================= */
 
 .home-features-section {
   padding: 65px 0;
-  background: #fffdf7;
+  background: #ffffff;
 }
 
 .home-features-grid {
@@ -362,7 +364,7 @@
   padding: 20px;
   border: 1px solid var(--home-border);
   border-radius: var(--home-radius);
-  background: #fff;
+  background: #ffffff;
   box-shadow: 0 6px 20px rgba(13, 48, 37, 0.045);
   transition: transform 0.2s ease, border-color 0.2s ease,
     box-shadow 0.2s ease;
@@ -370,7 +372,7 @@
 
 .home-feature-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(180, 140, 53, 0.5);
+  border-color: var(--home-green);
   box-shadow: 0 12px 28px rgba(13, 48, 37, 0.08);
 }
 
@@ -382,8 +384,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 11px;
-  background: #f1ead8;
-  color: var(--home-green);
+  background: var(--home-green);
+  color: #ffffff;
   font-size: 17px;
 }
 
@@ -407,13 +409,14 @@
   line-height: 1.55;
 }
 
+
 /* =========================================================
    CITIES
 ========================================================= */
 
 .home-cities-section {
   padding: 65px 0;
-  background: var(--home-bg);
+  background: #ffffff;
 }
 
 .home-cities-grid {
@@ -431,9 +434,9 @@
   align-items: center;
   gap: 12px;
   padding: 12px 15px;
-  border: 1px solid #e3dece;
+  border: 1px solid var(--home-border);
   border-radius: 12px;
-  background: #fff;
+  background: #ffffff;
   cursor: pointer;
   text-align: left;
   transition: transform 0.2s ease, border-color 0.2s ease,
@@ -442,7 +445,7 @@
 
 .home-city-card:hover {
   transform: translateY(-3px);
-  border-color: var(--home-gold);
+  border-color: var(--home-green);
   box-shadow: 0 9px 22px rgba(13, 48, 37, 0.08);
 }
 
@@ -454,8 +457,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: #f1ead8;
-  color: var(--home-green);
+  background: var(--home-green);
+  color: #ffffff;
   font-size: 16px;
 }
 
@@ -478,20 +481,21 @@
 
 .home-city-card__info small {
   margin-top: 3px;
-  color: #7b857f;
+  color: var(--home-muted);
   font-size: 10px;
   line-height: 1.3;
 }
 
 .home-city-card__arrow {
   flex: 0 0 auto;
-  color: var(--home-gold-dark);
+  color: var(--home-green-light);
   font-size: 16px;
 }
 
 .home-city-card:hover .home-city-card__arrow {
   transform: translateX(4px);
 }
+
 
 /* =========================================================
    CITIES BUTTON
@@ -511,6 +515,7 @@
   border: 1px solid var(--home-green);
   border-radius: 8px;
   color: var(--home-green);
+  background: #ffffff;
   font-size: 12px;
   font-weight: 700;
   text-decoration: none;
@@ -519,9 +524,10 @@
 
 .home-outline-btn:hover {
   background: var(--home-green);
-  color: #fff;
+  color: #ffffff;
   gap: 11px;
 }
+
 
 /* =========================================================
    DAILY REMINDER
@@ -529,7 +535,7 @@
 
 .home-reminder-section {
   padding: 60px 0;
-  background: #fff;
+  background: #ffffff;
 }
 
 .home-reminder {
@@ -539,7 +545,7 @@
   padding: 30px;
   border: 1px solid var(--home-border);
   border-radius: 18px;
-  background: #fffdf7;
+  background: #ffffff;
   box-shadow: 0 8px 25px rgba(13, 48, 37, 0.05);
 }
 
@@ -551,8 +557,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: #f1ead8;
-  color: var(--home-gold-dark);
+  background: var(--home-green);
+  color: #ffffff;
   font-size: 22px;
 }
 
@@ -564,7 +570,7 @@
 .home-reminder__content > span {
   display: block;
   margin-bottom: 6px;
-  color: var(--home-gold-dark);
+  color: var(--home-green-light);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -585,13 +591,14 @@
   font-size: 11px;
 }
 
+
 /* =========================================================
    CTA
 ========================================================= */
 
 .home-cta-section {
   padding: 55px 0;
-  background: #fff;
+  background: #ffffff;
 }
 
 .home-cta {
@@ -617,7 +624,7 @@
 .home-cta__eyebrow {
   display: block;
   margin-bottom: 7px;
-  color: var(--home-gold);
+  color: #ffffff;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -626,7 +633,7 @@
 
 .home-cta h2 {
   margin: 0 0 8px;
-  color: #fff;
+  color: #ffffff;
   font-family: Georgia, serif;
   font-size: 29px;
   line-height: 1.2;
@@ -647,8 +654,8 @@
   gap: 7px;
   padding: 12px 19px;
   border-radius: 8px;
-  background: var(--home-gold);
-  color: #102f25;
+  background: #ffffff;
+  color: var(--home-green);
   font-size: 12px;
   font-weight: 700;
   text-decoration: none;
@@ -658,9 +665,11 @@
 
 .home-cta__button:hover {
   transform: translateY(-2px);
-  background: #e1bd69;
+  background: var(--home-green-light);
+  color: #ffffff;
   gap: 11px;
 }
+
 
 /* =========================================================
    TABLET
@@ -713,6 +722,7 @@
   }
 }
 
+
 /* =========================================================
    TABLET
 ========================================================= */
@@ -724,6 +734,7 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
 
 /* =========================================================
    MOBILE
@@ -981,6 +992,7 @@
   }
 }
 
+
 /* =========================================================
    SMALL MOBILE
 ========================================================= */
@@ -1216,6 +1228,7 @@
   }
 }
 
+
 /* =========================================================
    VERY SMALL MOBILE
 ========================================================= */
@@ -1362,6 +1375,7 @@
   }
 }
 
+
 /* =========================================================
    TOUCH DEVICES
 ========================================================= */
@@ -1390,6 +1404,7 @@
     transform: none;
   }
 }
+
 
 /* =========================================================
    MOBILE OVERFLOW PROTECTION
@@ -1428,6 +1443,8 @@
     flex-wrap: wrap;
   }
 }
+
+
 /* =========================================================
    PRAYER TIMES HEADER + SEARCH
 ========================================================= */
@@ -1455,55 +1472,43 @@
 .home-prayer-search__box {
   width: 100%;
   height: 50px;
-
   display: flex;
   align-items: center;
-
   padding: 4px 5px 4px 16px;
   box-sizing: border-box;
-
-  background: #fff;
+  background: #ffffff;
   border: 1px solid rgba(13, 48, 37, 0.1);
   border-radius: 28px;
-
   box-shadow: 0 8px 24px rgba(13, 48, 37, 0.07);
 }
 
 .home-prayer-search__icon {
   width: 20px;
   height: 20px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex: 0 0 20px;
   margin-right: 11px;
-
-  color: #507067;
+  color: var(--home-green);
 }
 
 .home-prayer-search__box input {
   flex: 1;
   min-width: 0;
-
   width: 100%;
   height: 100%;
-
   padding: 0;
-
   border: 0;
   outline: none;
-
   background: transparent;
-
   color: var(--home-text);
   font-family: inherit;
   font-size: 14px;
 }
 
 .home-prayer-search__box input::placeholder {
-  color: #8a9691;
+  color: rgba(13, 48, 37, 0.5);
 }
 
 .home-prayer-search__box input::-webkit-search-cancel-button {
@@ -1513,23 +1518,16 @@
 .home-prayer-search__box button {
   width: 40px;
   height: 40px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex: 0 0 40px;
-
   padding: 0;
-
   border: 0;
   border-radius: 50%;
-
   background: var(--home-green);
   color: var(--home-white);
-
   cursor: pointer;
-
   transition:
     background 0.2s ease,
     transform 0.2s ease;
@@ -1542,8 +1540,7 @@
 
 .home-prayer-search__error {
   margin: 7px 5px 0;
-
-  color: #b42318;
+  color: var(--home-green);
   font-size: 11px;
 }
 
@@ -1553,7 +1550,6 @@
 ========================================================= */
 
 @media (max-width: 768px) {
-
   .home-prayer-header {
     flex-direction: column;
     align-items: stretch;
@@ -1569,115 +1565,90 @@
     width: 100%;
     flex: 0 0 auto;
   }
-
 }
+
 
 /* Search box */
 
 .home-prayer-search__box {
   width: 100%;
   min-height: 46px;
-
   display: flex;
   align-items: center;
-
   gap: 8px;
-
   padding: 5px 6px 5px 13px;
-
   box-sizing: border-box;
-
   background: var(--home-white);
-
   border: 1px solid var(--home-border);
-
   border-radius: 10px;
-
   box-shadow: var(--home-shadow);
-
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease;
 }
 
+
 /* Focus */
 
 .home-prayer-search__box:focus-within {
-  border-color: var(--home-gold);
-
+  border-color: var(--home-green);
   box-shadow:
-    0 0 0 3px rgba(214, 177, 92, 0.12),
+    0 0 0 3px rgba(13, 48, 37, 0.10),
     var(--home-shadow);
 }
+
 
 /* Search icon */
 
 .home-prayer-search__icon {
   flex: 0 0 auto;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 22px;
   height: 22px;
-
-  color: var(--home-gold-dark);
-
+  color: var(--home-green);
   font-size: 20px;
   line-height: 1;
 }
+
 
 /* Input */
 
 .home-prayer-search__box input {
   flex: 1;
-
   min-width: 0;
-
   width: 100%;
-
   border: 0;
   outline: 0;
-
   background: transparent;
-
   color: var(--home-text);
-
   font-family: inherit;
-
   font-size: 13px;
   font-weight: 500;
 }
 
+
 /* Placeholder */
 
 .home-prayer-search__box input::placeholder {
-  color: #8a938e;
+  color: rgba(13, 48, 37, 0.5);
 }
+
 
 /* Search button */
 
 .home-prayer-search__box button {
   flex: 0 0 auto;
-
   border: 0;
-
   border-radius: 7px;
-
   padding: 10px 15px;
-
   background: var(--home-green);
-
   color: var(--home-white);
-
   font-family: inherit;
-
   font-size: 11px;
   font-weight: 700;
-
   cursor: pointer;
-
   transition:
     background 0.2s ease,
     transform 0.2s ease;
@@ -1685,7 +1656,6 @@
 
 .home-prayer-search__box button:hover {
   background: var(--home-green-light);
-
   transform: translateY(-1px);
 }
 
@@ -1693,13 +1663,12 @@
   transform: translateY(0);
 }
 
+
 /* Error */
 
 .home-prayer-search__error {
   margin: 7px 2px 0;
-
-  color: #b42318;
-
+  color: var(--home-green);
   font-size: 11px;
   line-height: 1.4;
 }
@@ -1710,7 +1679,6 @@
 ========================================================= */
 
 @media (max-width: 1024px) {
-
   .home-prayer-header {
     gap: 20px;
   }
@@ -1719,7 +1687,6 @@
     flex: 0 0 300px;
     width: 300px;
   }
-
 }
 
 
@@ -1728,33 +1695,26 @@
 ========================================================= */
 
 @media (max-width: 768px) {
-
   .home-prayer-header {
     flex-direction: column;
-
     align-items: stretch;
-
     gap: 16px;
-
     margin-bottom: 24px;
   }
 
   .home-prayer-header .home-section-heading {
     width: 100%;
-
     text-align: center;
   }
 
   .home-prayer-search {
     width: 100%;
-
     flex: 0 0 auto;
   }
 
   .home-prayer-search__box {
     min-height: 48px;
   }
-
 }
 
 
@@ -1763,7 +1723,6 @@
 ========================================================= */
 
 @media (max-width: 480px) {
-
   .home-prayer-search__box {
     padding-left: 11px;
   }
@@ -1775,8 +1734,9 @@
   .home-prayer-search__box input {
     font-size: 12px;
   }
-
 }
+
+
 /* =========================================================
    HOME LOCATION SEARCH
 ========================================================= */
@@ -1816,9 +1776,9 @@
 }
 
 .home-prayer-search .location-search__field input:focus {
-  border-color: var(--home-gold);
+  border-color: var(--home-green);
   box-shadow:
-    0 0 0 3px rgba(214, 177, 92, 0.12),
+    0 0 0 3px rgba(13, 48, 37, 0.10),
     var(--home-shadow);
 }
 
@@ -1841,7 +1801,7 @@
   padding: 5px;
   border: 1px solid var(--home-border);
   border-radius: 10px;
-  background: #fff;
+  background: #ffffff;
   box-shadow: 0 10px 28px rgba(13, 48, 37, 0.12);
 }
 
@@ -1860,7 +1820,7 @@
 }
 
 .home-prayer-search .location-search__suggestion:hover {
-  background: #f7f5e9;
+  background: rgba(13, 48, 37, 0.05);
 }
 
 .home-prayer-search .location-search__suggestion-city {
@@ -1882,7 +1842,7 @@
 
 .home-prayer-search .location-search__error {
   margin-top: 7px;
-  color: #b42318;
+  color: var(--home-green);
   font-size: 11px;
   line-height: 1.4;
 }
@@ -1893,12 +1853,10 @@
 ========================================================= */
 
 @media (max-width: 1024px) {
-
   .home-prayer-search {
     width: 300px;
     flex: 0 0 300px;
   }
-
 }
 
 
@@ -1907,7 +1865,6 @@
 ========================================================= */
 
 @media (max-width: 768px) {
-
   .home-prayer-search {
     width: 100%;
     flex: 0 0 auto;
@@ -1924,7 +1881,6 @@
   .home-prayer-search .location-search__actions button {
     width: 100%;
   }
-
 }
 
 
@@ -1933,7 +1889,6 @@
 ========================================================= */
 
 @media (max-width: 480px) {
-
   .home-prayer-search .location-search__field input {
     min-height: 44px;
     font-size: 12px;
@@ -1946,24 +1901,17 @@
   .home-prayer-search .location-search__suggestion-country {
     font-size: 9px;
   }
-
 }
+
+
 /* =========================================================
    MOSQUE & PRAYER MOMENT
 ========================================================= */
 
 .home-mosque-section {
   position: relative;
-
   padding: 90px 0;
-
-  background:
-    linear-gradient(
-      180deg,
-      #f7f5e9 0%,
-      #f1eee1 100%
-    );
-
+  background: #ffffff;
   overflow: hidden;
 }
 
@@ -1974,41 +1922,28 @@
 
 .home-mosque-section::before {
   content: "";
-
   position: absolute;
-
   width: 420px;
   height: 420px;
-
   top: -220px;
   left: -160px;
-
   border-radius: 50%;
-
-  border: 1px solid rgba(180, 140, 53, 0.13);
-
+  border: 1px solid rgba(13, 48, 37, 0.13);
   box-shadow:
-    0 0 0 40px rgba(180, 140, 53, 0.025),
-    0 0 0 80px rgba(180, 140, 53, 0.018);
-
+    0 0 0 40px rgba(13, 48, 37, 0.025),
+    0 0 0 80px rgba(13, 48, 37, 0.018);
   pointer-events: none;
 }
 
 .home-mosque-section::after {
   content: "";
-
   position: absolute;
-
   width: 300px;
   height: 300px;
-
   right: -130px;
   bottom: -160px;
-
   border-radius: 50%;
-
   background: rgba(13, 48, 37, 0.035);
-
   pointer-events: none;
 }
 
@@ -2020,23 +1955,15 @@
 .home-mosque-card {
   position: relative;
   z-index: 2;
-
   display: grid;
-
   grid-template-columns:
     minmax(0, 0.95fr)
     minmax(0, 1.05fr);
-
   min-height: 500px;
-
   overflow: hidden;
-
   border-radius: 26px;
-
   background: #ffffff;
-
-  border: 1px solid rgba(180, 140, 53, 0.18);
-
+  border: 1px solid rgba(13, 48, 37, 0.18);
   box-shadow:
     0 20px 55px rgba(13, 48, 37, 0.10);
 }
@@ -2050,12 +1977,12 @@
   position: relative;
   min-height: 500px;
   overflow: hidden;
-
   background-image: url("/images/images.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+
 
 /* =========================================================
    IMAGE OVERLAY
@@ -2064,7 +1991,6 @@
 .home-mosque-card__image-overlay {
   position: absolute;
   inset: 0;
-
   background:
     linear-gradient(
       180deg,
@@ -2072,7 +1998,6 @@
       rgba(13, 48, 37, 0.18) 50%,
       rgba(13, 48, 37, 0.78) 100%
     );
-
   pointer-events: none;
 }
 
@@ -2086,21 +2011,14 @@
   left: 25px;
   right: 25px;
   bottom: 25px;
-
   display: flex;
   align-items: center;
   gap: 12px;
-
   padding: 13px 15px;
-
   border-radius: 14px;
-
   background: rgba(13, 48, 37, 0.72);
-
-  border: 1px solid rgba(214, 177, 92, 0.28);
-
+  border: 1px solid rgba(255, 255, 255, 0.28);
   color: #ffffff;
-
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -2113,19 +2031,13 @@
 .home-mosque-card__image-badge > span {
   width: 40px;
   height: 40px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex-shrink: 0;
-
   border-radius: 50%;
-
-  background: rgba(214, 177, 92, 0.16);
-
-  color: #d6b15c;
-
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
   font-size: 22px;
 }
 
@@ -2189,7 +2101,6 @@
     left: 12px;
     right: 12px;
     bottom: 12px;
-
     padding: 10px 12px;
     gap: 10px;
   }
@@ -2209,17 +2120,15 @@
   }
 }
 
+
 /* =========================================================
    CONTENT
 ========================================================= */
 
 .home-mosque-card__content {
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
-
   padding: 58px 55px;
 }
 
@@ -2231,30 +2140,21 @@
 .home-mosque-card__eyebrow {
   display: inline-flex;
   align-items: center;
-
   gap: 9px;
-
   margin-bottom: 13px;
-
-  color: #b48c35;
-
+  color: var(--home-green-light);
   font-size: 12px;
   font-weight: 800;
-
   letter-spacing: 1.7px;
-
   text-transform: uppercase;
 }
 
 .home-mosque-card__eyebrow::before {
   content: "";
-
   width: 26px;
   height: 2px;
-
   border-radius: 999px;
-
-  background: #d6b15c;
+  background: var(--home-green);
 }
 
 
@@ -2264,25 +2164,19 @@
 
 .home-mosque-card__content h2 {
   max-width: 520px;
-
   margin: 0 0 17px;
-
-  color: #0d3025;
-
+  color: var(--home-green);
   font-family:
     Georgia,
     "Times New Roman",
     serif;
-
   font-size: clamp(32px, 3.2vw, 48px);
-
   line-height: 1.12;
-
   letter-spacing: -1.1px;
 }
 
 .home-mosque-card__content h2 span {
-  color: #b48c35;
+  color: var(--home-green-light);
 }
 
 
@@ -2292,13 +2186,9 @@
 
 .home-mosque-card__content > p {
   max-width: 550px;
-
   margin: 0 0 27px;
-
-  color: #66756e;
-
+  color: var(--home-muted);
   font-size: 15px;
-
   line-height: 1.8;
 }
 
@@ -2309,11 +2199,8 @@
 
 .home-mosque-card__features {
   display: grid;
-
   grid-template-columns: 1fr;
-
   gap: 10px;
-
   margin-bottom: 28px;
 }
 
@@ -2325,17 +2212,11 @@
 .home-mosque-card__feature {
   display: flex;
   align-items: center;
-
   gap: 12px;
-
   padding: 10px 12px;
-
   border-radius: 12px;
-
-  background: #f8f7f0;
-
-  border: 1px solid #eeeade;
-
+  background: #ffffff;
+  border: 1px solid var(--home-border);
   transition:
     transform 0.25s ease,
     background 0.25s ease,
@@ -2344,10 +2225,8 @@
 
 .home-mosque-card__feature:hover {
   transform: translateX(4px);
-
   background: #ffffff;
-
-  border-color: rgba(214, 177, 92, 0.35);
+  border-color: var(--home-green);
 }
 
 
@@ -2358,19 +2237,13 @@
 .home-mosque-card__feature > span {
   width: 35px;
   height: 35px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex-shrink: 0;
-
   border-radius: 10px;
-
-  background: rgba(13, 48, 37, 0.07);
-
-  color: #b48c35;
-
+  background: var(--home-green);
+  color: #ffffff;
   font-size: 16px;
 }
 
@@ -2381,22 +2254,18 @@
 
 .home-mosque-card__feature div {
   display: flex;
-
   flex-direction: column;
-
   gap: 2px;
 }
 
 .home-mosque-card__feature strong {
-  color: #0d3025;
-
+  color: var(--home-green);
   font-size: 12px;
   font-weight: 700;
 }
 
 .home-mosque-card__feature small {
-  color: #7c8983;
-
+  color: var(--home-muted);
   font-size: 10px;
 }
 
@@ -2407,31 +2276,20 @@
 
 .home-mosque-card__button {
   width: fit-content;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   gap: 10px;
-
   min-height: 46px;
-
   padding: 0 19px;
-
   border-radius: 10px;
-
-  background: #0d3025;
-
+  background: var(--home-green);
   color: #ffffff;
-
   text-decoration: none;
-
   font-size: 13px;
   font-weight: 700;
-
   box-shadow:
     0 7px 18px rgba(13, 48, 37, 0.15);
-
   transition:
     background 0.25s ease,
     transform 0.25s ease,
@@ -2440,16 +2298,13 @@
 
 .home-mosque-card__button span {
   font-size: 17px;
-
   transition:
     transform 0.25s ease;
 }
 
 .home-mosque-card__button:hover {
-  background: #174637;
-
+  background: var(--home-green-light);
   transform: translateY(-2px);
-
   box-shadow:
     0 10px 23px rgba(13, 48, 37, 0.19);
 }
@@ -2464,14 +2319,12 @@
 ========================================================= */
 
 @media (max-width: 900px) {
-
   .home-mosque-section {
     padding: 70px 0;
   }
 
   .home-mosque-card {
     grid-template-columns: 1fr;
-
     min-height: auto;
   }
 
@@ -2497,9 +2350,7 @@
 
   .home-mosque-card__feature {
     align-items: flex-start;
-
     flex-direction: column;
-
     padding: 14px;
   }
 }
@@ -2510,7 +2361,6 @@
 ========================================================= */
 
 @media (max-width: 600px) {
-
   .home-mosque-section {
     padding: 55px 0;
   }
@@ -2527,14 +2377,12 @@
     left: 15px;
     right: 15px;
     bottom: 15px;
-
     padding: 10px 12px;
   }
 
   .home-mosque-card__image-badge > span {
     width: 35px;
     height: 35px;
-
     font-size: 19px;
   }
 
@@ -2552,39 +2400,30 @@
 
   .home-mosque-card__eyebrow {
     font-size: 10px;
-
     letter-spacing: 1.3px;
   }
 
   .home-mosque-card__content h2 {
     margin-bottom: 14px;
-
     font-size: 30px;
-
     letter-spacing: -0.7px;
   }
 
   .home-mosque-card__content > p {
     margin-bottom: 22px;
-
     font-size: 13px;
-
     line-height: 1.7;
   }
 
   .home-mosque-card__features {
     grid-template-columns: 1fr;
-
     gap: 8px;
-
     margin-bottom: 23px;
   }
 
   .home-mosque-card__feature {
     flex-direction: row;
-
     align-items: center;
-
     padding: 9px;
   }
 
@@ -2595,9 +2434,7 @@
 
   .home-mosque-card__button {
     width: 100%;
-
     min-height: 44px;
-
     font-size: 12px;
   }
 }
@@ -2608,7 +2445,6 @@
 ========================================================= */
 
 @media (max-width: 380px) {
-
   .home-mosque-card__image {
     min-height: 260px;
   }

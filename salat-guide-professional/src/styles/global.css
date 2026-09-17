@@ -1,97 +1,169 @@
 /* ==========================================================
-   Design tokens
-   ========================================================== */
+SALAT GUIDE — MODERN WHITE & GREEN DESIGN SYSTEM
+========================================================== */
+
 :root {
-  --primary-dark: #0f3320;
-  --primary: #1a6b34;
-  --primary-mid: #1f7d3d;
-  --primary-light: #eaf6ec;
-  --primary-lighter: #f5faf6;
-  --gold: #ecb92e;
-  --gold-dark: #c99a1e;
-  --cream: #fffdf6;
-  --white: #ffffff;
-  --text: #17241b;
-  --muted: #5c6b60;
-  --border: #dcebde;
-  --danger: #34c261;
-  --danger-light: #fbe9e7;
-  --success: #1a6b34;
 
-  --font-display: "Outfit", "Segoe UI", sans-serif;
-  --font-body: "Inter", "Segoe UI", sans-serif;
+/* ========================================================
+PRIMARY GREEN
+======================================================== */
 
-  --radius-sm: 10px;
-  --radius-md: 16px;
-  --radius-lg: 26px;
-  --radius-pill: 999px;
+--primary-dark: #0b3d32;
+--primary: #146b5b;
+--primary-mid: #1b806d;
 
-  --shadow-card: 0 4px 18px rgba(15, 51, 32, 0.08);
-  --shadow-card-hover: 0 10px 28px rgba(15, 51, 32, 0.14);
-  --max-width: 1180px;
+/* ========================================================
+SOFT GREEN
+======================================================== */
+
+--primary-light: #eaf5f1;
+--primary-lighter: #f5faf8;
+
+/* ========================================================
+GOLD — SMALL ACCENT ONLY
+======================================================== */
+
+--gold: #c8a95b;
+--gold-dark: #a8893f;
+
+/* ========================================================
+BACKGROUNDS
+======================================================== */
+
+--cream: #f5faf8;
+--white: #ffffff;
+
+/* ========================================================
+TEXT
+======================================================== */
+
+--text: #163a32;
+--muted: #657872;
+
+/* ========================================================
+BORDERS
+======================================================== */
+
+--border: #dce9e5;
+
+/* ========================================================
+STATUS
+======================================================== */
+
+--danger: #b94a48;
+--danger-light: #f8e9e7;
+
+--success: #146b5b;
+
+/* ========================================================
+FONTS
+======================================================== */
+
+--font-display: "Outfit", "Segoe UI", sans-serif;
+--font-body: "Inter", "Segoe UI", sans-serif;
+
+/* ========================================================
+RADIUS
+======================================================== */
+
+--radius-sm: 10px;
+--radius-md: 16px;
+--radius-lg: 26px;
+--radius-pill: 999px;
+
+/* ========================================================
+SHADOWS
+======================================================== */
+
+--shadow-card:
+0 4px 20px rgba(11, 61, 50, 0.07);
+
+--shadow-card-hover:
+0 12px 32px rgba(11, 61, 50, 0.13);
+
+/* ========================================================
+LAYOUT
+======================================================== */
+
+--max-width: 1180px;
 }
 
 /* ==========================================================
-   Reset
-   ========================================================== */
+RESET
+========================================================== */
+
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  font-family: var(--font-body);
-  color: var(--text);
-  background: var(--cream);
-  -webkit-font-smoothing: antialiased;
+margin: 0;
+
+font-family: var(--font-body);
+
+color: var(--text);
+
+background: var(--cream);
+
+-webkit-font-smoothing: antialiased;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-display);
-  margin: 0;
-  line-height: 1.15;
-  color: var(--text);
+margin: 0;
+
+font-family: var(--font-display);
+
+line-height: 1.15;
+
+color: var(--primary-dark);
 }
 
 p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.65;
+margin: 0;
+
+color: var(--muted);
+
+line-height: 1.65;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+color: inherit;
+text-decoration: none;
 }
 
 ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+list-style: none;
+
+margin: 0;
+padding: 0;
 }
 
 button,
 input,
 textarea,
 select {
-  font-family: inherit;
-  font-size: inherit;
+font-family: inherit;
+font-size: inherit;
 }
 
 img,
 svg {
-  max-width: 100%;
-  display: block;
+max-width: 100%;
+display: block;
 }
+
+/* ==========================================================
+ACCESSIBILITY / FOCUS
+========================================================== */
 
 a:focus-visible,
 button:focus-visible,
@@ -99,212 +171,528 @@ input:focus-visible,
 textarea:focus-visible,
 select:focus-visible,
 [tabindex]:focus-visible {
-  outline: 3px solid var(--gold);
-  outline-offset: 2px;
-}
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  * {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
+outline: 3px solid rgba(20, 107, 91, 0.30);
+
+outline-offset: 2px;
 }
 
 /* ==========================================================
-   Layout helpers
-   ========================================================== */
+REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+html {
+scroll-behavior: auto;
+}
+
+*,
+*::before,
+*::after {
+
+
+animation-duration: 0.01ms !important;
+
+transition-duration: 0.01ms !important;
+
+
+}
+}
+
+/* ==========================================================
+LAYOUT HELPERS
+========================================================== */
+
 .container {
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 24px;
+
+width: 100%;
+
+max-width: var(--max-width);
+
+margin: 0 auto;
+
+padding: 0 24px;
 }
 
 .page {
-  min-height: 60vh;
+min-height: 60vh;
 }
 
 .section {
-  padding: 68px 0;
+padding: 68px 0;
+
+background: var(--white);
 }
 
 .section--alt {
-  background: var(--primary-lighter);
+
+background:
+linear-gradient(
+180deg,
+#f5faf8 0%,
+#eaf5f1 100%
+);
 }
 
 .section-heading {
-  text-align: center;
-  max-width: 640px;
-  margin: 0 auto 44px;
+
+text-align: center;
+
+max-width: 640px;
+
+margin: 0 auto 44px;
 }
 
 .section-heading--left {
-  text-align: left;
-  margin: 0 0 32px;
+
+text-align: left;
+
+margin: 0 0 32px;
 }
 
 .section-eyebrow {
-  display: inline-block;
-  color: var(--primary);
-  font-weight: 600;
-  font-size: 13px;
-  letter-spacing: 0.03em;
-  margin-bottom: 10px;
+
+display: inline-block;
+
+color: var(--primary);
+
+font-weight: 700;
+
+font-size: 13px;
+
+letter-spacing: 0.05em;
+
+margin-bottom: 10px;
+
+text-transform: uppercase;
 }
 
 .section-heading h2 {
-  font-size: clamp(26px, 3vw, 34px);
-  margin-bottom: 12px;
+
+font-size:
+clamp(26px, 3vw, 34px);
+
+margin-bottom: 12px;
+
+color: var(--primary-dark);
 }
 
 .visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
+
+position: absolute;
+
+width: 1px;
+height: 1px;
+
+overflow: hidden;
+
+clip: rect(0 0 0 0);
+
+white-space: nowrap;
 }
 
 /* ==========================================================
-   Buttons
-   ========================================================== */
+BUTTONS
+========================================================== */
+
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  border: 1px solid transparent;
-  border-radius: var(--radius-pill);
-  padding: 12px 22px;
-  font-weight: 600;
-  font-size: 14px;
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-  white-space: nowrap;
+
+display: inline-flex;
+
+align-items: center;
+
+justify-content: center;
+
+gap: 8px;
+
+border: 1px solid transparent;
+
+border-radius: var(--radius-pill);
+
+padding: 12px 22px;
+
+font-weight: 600;
+
+font-size: 14px;
+
+cursor: pointer;
+
+transition:
+transform 0.15s ease,
+box-shadow 0.15s ease,
+background 0.15s ease,
+border-color 0.15s ease,
+color 0.15s ease;
+
+white-space: nowrap;
 }
 
 .btn:hover {
-  transform: translateY(-1px);
+transform: translateY(-1px);
 }
 
 .btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
+
+opacity: 0.6;
+
+cursor: not-allowed;
+
+transform: none;
 }
 
+/* ==========================================================
+PRIMARY BUTTON
+========================================================== */
+
 .btn-primary {
-  background: var(--primary);
-  color: var(--white);
+
+background:
+linear-gradient(
+135deg,
+#146b5b,
+#0b3d32
+);
+
+color: var(--white);
+
+border-color: transparent;
+
+box-shadow:
+0 5px 16px rgba(11, 61, 50, 0.16);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 6px 16px rgba(26, 107, 52, 0.35);
+
+background:
+linear-gradient(
+135deg,
+#1b806d,
+#146b5b
+);
+
+box-shadow:
+0 8px 22px rgba(11, 61, 50, 0.22);
 }
 
+/* ==========================================================
+GOLD BUTTON
+========================================================== */
+
 .btn-gold {
-  background: var(--gold);
-  color: var(--primary-dark);
+
+background:
+linear-gradient(
+135deg,
+#d4b96e,
+#b4934b
+);
+
+color: var(--primary-dark);
+
+border-color: transparent;
 }
 
 .btn-gold:hover {
-  box-shadow: 0 6px 16px rgba(236, 185, 46, 0.4);
+
+background:
+linear-gradient(
+135deg,
+#dfc77f,
+#c5a75b
+);
+
+box-shadow:
+0 6px 18px rgba(180, 140, 53, 0.22);
 }
 
+/* ==========================================================
+OUTLINE BUTTON
+========================================================== */
+
 .btn-outline {
-  background: transparent;
-  border-color: var(--border);
-  color: var(--text);
+
+background: var(--white);
+
+border-color: var(--border);
+
+color: var(--primary);
 }
 
 .btn-outline:hover {
-  border-color: var(--primary);
-  color: var(--primary);
+
+border-color: var(--primary);
+
+color: var(--primary-dark);
+
+background: var(--primary-light);
 }
 
+/* ==========================================================
+GHOST BUTTON
+========================================================== */
+
 .btn-ghost {
-  background: rgba(255, 255, 255, 0.12);
-  color: var(--white);
-  border-color: rgba(255, 255, 255, 0.4);
+
+background:
+rgba(255, 255, 255, 0.12);
+
+color: var(--white);
+
+border-color:
+rgba(255, 255, 255, 0.30);
 }
 
 .btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.22);
+
+background:
+rgba(255, 255, 255, 0.20);
+
+border-color:
+rgba(255, 255, 255, 0.55);
+
+color: var(--white);
 }
+
+/* ==========================================================
+LINK BUTTON
+========================================================== */
 
 .btn-link {
-  background: transparent;
-  border: none;
-  padding: 4px 2px;
-  color: var(--primary);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  font-weight: 600;
+
+background: transparent;
+
+border: none;
+
+padding: 4px 2px;
+
+color: var(--primary);
+
+text-decoration: underline;
+
+text-underline-offset: 3px;
+
+font-weight: 600;
+
+cursor: pointer;
 }
 
+.btn-link:hover {
+color: var(--primary-dark);
+}
+
+/* ==========================================================
+BUTTON SIZES
+========================================================== */
+
 .btn-sm {
-  padding: 8px 16px;
-  font-size: 13px;
+
+padding: 8px 16px;
+
+font-size: 13px;
 }
 
 .btn-block {
-  width: 100%;
+width: 100%;
 }
 
 /* ==========================================================
-   Cards
-   ========================================================== */
+MODERN CARDS
+========================================================== */
+
 .card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
+
+background: var(--white);
+
+border:
+1px solid var(--border);
+
+border-radius: var(--radius-md);
+
+box-shadow:
+var(--shadow-card);
+
+transition:
+transform 0.2s ease,
+box-shadow 0.2s ease,
+border-color 0.2s ease;
+}
+
+.card:hover {
+
+transform: translateY(-3px);
+
+box-shadow:
+var(--shadow-card-hover);
+
+border-color:
+rgba(20, 107, 91, 0.25);
 }
 
 /* ==========================================================
-   Forms
-   ========================================================== */
+FORMS
+========================================================== */
+
 .field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 18px;
+
+display: flex;
+
+flex-direction: column;
+
+gap: 6px;
+
+margin-bottom: 18px;
 }
 
 .field label {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text);
+
+font-size: 13px;
+
+font-weight: 600;
+
+color: var(--primary-dark);
 }
 
 .field input,
-.field textarea {
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 12px 14px;
-  color: var(--text);
-  background: var(--cream);
-  resize: vertical;
+.field textarea,
+.field select {
+
+width: 100%;
+
+border:
+1px solid var(--border);
+
+border-radius: var(--radius-sm);
+
+padding: 12px 14px;
+
+color: var(--text);
+
+background: var(--white);
+
+resize: vertical;
+
+transition:
+border-color 0.2s ease,
+box-shadow 0.2s ease,
+background 0.2s ease;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+
+color: #879891;
+}
+
+.field input:hover,
+.field textarea:hover,
+.field select:hover {
+
+border-color:
+rgba(20, 107, 91, 0.38);
 }
 
 .field input:focus,
-.field textarea:focus {
-  outline: none;
-  border-color: var(--primary);
-  background: var(--white);
+.field textarea:focus,
+.field select:focus {
+
+outline: none;
+
+border-color:
+var(--primary);
+
+background:
+var(--white);
+
+box-shadow:
+0 0 0 3px rgba(20, 107, 91, 0.10);
 }
 
+/* ==========================================================
+FIELD ERROR
+========================================================== */
+
 .field-error {
-  color: var(--danger);
-  font-size: 12px;
-  font-weight: 500;
+
+color: var(--danger);
+
+font-size: 12px;
+
+font-weight: 500;
 }
 
 .field--invalid input,
-.field--invalid textarea {
-  border-color: var(--danger);
+.field--invalid textarea,
+.field--invalid select {
+
+border-color: var(--danger);
+}
+
+.field--invalid input:focus,
+.field--invalid textarea:focus,
+.field--invalid select:focus {
+
+border-color: var(--danger);
+
+box-shadow:
+0 0 0 3px rgba(185, 74, 72, 0.10);
+}
+
+/* ==========================================================
+RESPONSIVE CONTAINER
+========================================================== */
+
+@media (max-width: 768px) {
+
+.container {
+padding-left: 18px;
+
+padding-right: 18px;
+
+
+}
+
+.section {
+
+
+padding: 52px 0;
+
+
+}
+
+.section-heading {
+
+
+margin-bottom: 32px;
+
+
+}
+}
+
+@media (max-width: 480px) {
+
+.container {
+
+
+padding-left: 15px;
+
+padding-right: 15px;
+
+
+}
+
+.section {
+
+padding: 44px 0;
+
+
+}
+
+.btn {
+
+
+padding: 11px 18px;
+
+
+}
 }

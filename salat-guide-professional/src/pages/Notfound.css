@@ -30,8 +30,8 @@
   background-image:
     linear-gradient(
       90deg,
-      rgba(3, 38, 29, 0.94) 0%,
-      rgba(3, 38, 29, 0.82) 35%,
+      rgba(58, 101, 94, 0.94) 0%,
+      rgba(16, 65, 51, 0.82) 35%,
       rgba(3, 38, 29, 0.48) 62%,
       rgba(3, 38, 29, 0.10) 100%
     ),
@@ -128,7 +128,7 @@
 
   margin-bottom: 25px;
 
-  color: #d6b15c;
+  color: #5cd65e;
 
   font-size: 12px;
 
@@ -140,7 +140,7 @@
 }
 
 .quran-top-label span {
-  color: #d6b15c;
+  color: #5cd66e;
 
   font-size: 13px;
 }
@@ -154,12 +154,6 @@
   max-width: 1050px;
 
   margin: 0;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
   font-size: clamp(
     45px,
     5vw,
@@ -176,7 +170,7 @@
 }
 
 .quran-hero h1 span {
-  color: #d6b15c;
+  color: #039032;
 
   font-style: italic;
 }
@@ -203,11 +197,11 @@
 
   height: 2px;
 
-  background: #d6b15c;
+  background: #6cd65c;
 }
 
 .heading-line b {
-  color: #d6b15c;
+  color: #5cd66c;
 
   font-size: 15px;
 }
@@ -449,7 +443,7 @@
 .not-found-card:hover {
   transform: translateY(-5px);
 
-  border-color: #d8c58e;
+  border-color: #9fd88e;
 
   box-shadow:
     0 14px 32px
@@ -495,16 +489,8 @@
 
 .not-found-card h3 {
   margin: 0 0 8px;
-
   color: #173d31;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
   font-size: 19px;
-
   font-weight: 600;
 }
 
@@ -625,7 +611,7 @@
 
   border-radius: 0 5px 5px 0;
 
-  background: #d6b15c;
+  background: #64d65c;
 }
 
 
@@ -638,12 +624,7 @@
 
   margin-right: 25px;
 
-  color: #e4b64d;
-
-  font-family:
-    Georgia,
-    serif;
-
+  color: #b9e44d;
   font-size: 58px;
 
   line-height: 1;
@@ -665,7 +646,7 @@
 
   margin-bottom: 10px;
 
-  color: #e3b64f;
+  color: #dee34f;
 
   font-size: 10px;
 
@@ -680,12 +661,6 @@
   margin: 0 0 10px;
 
   color: #ffffff;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
   font-size: clamp(
     20px,
     2.2vw,
@@ -716,7 +691,7 @@
 
   margin-left: 30px;
 
-  color: #d6b15c;
+  color: #d6c25c;
 
   font-size: 48px;
 
@@ -739,7 +714,7 @@
 
   margin-bottom: 7px;
 
-  color: #bd9232;
+  color: #b6bd32;
 
   font-size: 9px;
 
@@ -791,7 +766,7 @@
 
   margin-bottom: 9px;
 
-  color: #b99034;
+  color: #a5b934;
 
   font-size: 9px;
 
@@ -804,12 +779,6 @@
   margin: 0 0 10px;
 
   color: #173d31;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
   font-size: clamp(
     28px,
     4vw,
@@ -962,12 +931,6 @@
   margin: 0 0 8px;
 
   color: #173d31;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
   font-size: 23px;
 }
 
@@ -1216,12 +1179,6 @@
   margin: 0 0 10px;
 
   color: #ffffff;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
   font-size: clamp(
     28px,
     4vw,
@@ -1805,12 +1762,6 @@
   flex-shrink: 0;
 
   color: #9d7937;
-
-  font-family:
-    "Noto Naskh Arabic",
-    "Amiri",
-    serif;
-
   font-size: 20px;
 
   font-weight: 500;

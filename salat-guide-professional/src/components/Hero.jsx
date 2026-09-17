@@ -1,15 +1,23 @@
 import modernMosque from "../assets/images/modern-mosque.jpg";
+
+import {
+  MoonStar,
+  Compass,
+  BookOpenText,
+  Sparkles,
+} from "lucide-react";
+
 import "./Hero.css";
 
 function Hero() {
   return (
-  <section
-  className="hero"
-  id="home"
-  style={{
-    backgroundImage: `url(${modernMosque})`,
-  }}
->
+    <section
+      className="hero"
+      id="home"
+      style={{
+        backgroundImage: `url(${modernMosque})`,
+      }}
+    >
       <div className="hero__overlay" aria-hidden="true"></div>
 
       <div className="hero__pattern" aria-hidden="true"></div>
@@ -20,67 +28,120 @@ function Hero() {
       <div className="container hero__inner">
         <div className="hero__content">
 
+          {/* EYEBROW */}
           <span className="hero__eyebrow">
             <span className="hero__eyebrow-line"></span>
-            YOUR DAILY ISLAMIC COMPANION
-            <span className="hero__eyebrow-star">✦</span>
+
+            YOUR ISLAMIC GUIDE
+
+            <Sparkles
+              className="hero__eyebrow-star"
+              size={15}
+              strokeWidth={1.8}
+              aria-hidden="true"
+            />
           </span>
 
+          {/* TITLE */}
           <h1 className="hero__title">
             Stay Connected
             <br />
             <span>With Your Salah</span>
           </h1>
 
-          <div className="hero__divider">
+          {/* DIVIDER */}
+          <div className="hero__divider" aria-hidden="true">
             <span></span>
-            <b>✦</b>
+
+            <Sparkles
+              size={14}
+              strokeWidth={1.8}
+              aria-hidden="true"
+            />
+
             <span></span>
           </div>
 
+          {/* DESCRIPTION */}
           <p className="hero__description">
-            Accurate prayer times, Qibla direction, Quran reading,
-            and daily Islamic tools — all in one peaceful place.
+            Get prayer times, Qibla direction, Quran,
+            and daily Islamic tools in one peaceful place.
           </p>
 
+          {/* FEATURES */}
           <div className="hero__features">
 
+            {/* Prayer Times */}
             <div className="hero__feature">
-              <div className="hero__feature-icon">☪</div>
+              <div className="hero__feature-icon">
+                <MoonStar
+                  size={21}
+                  strokeWidth={1.7}
+                  aria-hidden="true"
+                />
+              </div>
+
               <div className="hero__feature-text">
-                <strong>Accurate Times</strong>
-                <small>Reliable prayer schedule</small>
+                <strong>Prayer Times</strong>
+                <small>Never miss your Salah</small>
               </div>
             </div>
 
+            {/* Qibla */}
             <div className="hero__feature">
-              <div className="hero__feature-icon">⌖</div>
+              <div className="hero__feature-icon">
+                <Compass
+                  size={21}
+                  strokeWidth={1.7}
+                  aria-hidden="true"
+                />
+              </div>
+
               <div className="hero__feature-text">
-                <strong>Any Location</strong>
-                <small>Worldwide coverage</small>
+                <strong>Qibla Direction</strong>
+                <small>Find the Kaaba direction</small>
               </div>
             </div>
 
+            {/* Quran & Duas */}
             <div className="hero__feature">
-              <div className="hero__feature-icon">◷</div>
+              <div className="hero__feature-icon">
+                <BookOpenText
+                  size={21}
+                  strokeWidth={1.7}
+                  aria-hidden="true"
+                />
+              </div>
+
               <div className="hero__feature-text">
-                <strong>Always Updated</strong>
-                <small>Current prayer times</small>
+                <strong>Quran & Duas</strong>
+                <small>Daily spiritual guidance</small>
               </div>
             </div>
 
+            {/* Islamic Tools */}
             <div className="hero__feature">
-              <div className="hero__feature-icon">✓</div>
+              <div className="hero__feature-icon">
+                <Sparkles
+                  size={21}
+                  strokeWidth={1.7}
+                  aria-hidden="true"
+                />
+              </div>
+
               <div className="hero__feature-text">
-                <strong>100% Free</strong>
-                <small>Open for everyone</small>
+                <strong>Islamic Tools</strong>
+                <small>Useful tools for your journey</small>
               </div>
             </div>
 
           </div>
 
+          {/* QUOTE */}
           <div className="hero__quote">
-            <span className="hero__quote-icon">۞</span>
+            <span className="hero__quote-icon">
+              ۞
+            </span>
 
             <div>
               <p>
@@ -88,7 +149,9 @@ function Hero() {
                 a decree of specified times.”
               </p>
 
-              <small>— Surah An-Nisa 4:103</small>
+              <small>
+                — Surah An-Nisa 4:103
+              </small>
             </div>
           </div>
 
@@ -96,7 +159,6 @@ function Hero() {
       </div>
 
       <div className="hero__bottom-shape"></div>
-
     </section>
   );
 }

@@ -1,11 +1,12 @@
-/* =====================================================
-   HERO
-===================================================== */
+/* =========================================================
+   HERO — PROFESSIONAL MODERN
+========================================================= */
 
 .hero {
   position: relative;
   width: 100%;
   min-height: 500px;
+
   overflow: hidden;
   isolation: isolate;
 
@@ -17,9 +18,9 @@
 }
 
 
-/* =====================================================
+/* =========================================================
    BACKGROUND OVERLAY
-===================================================== */
+========================================================= */
 
 .hero__overlay {
   position: absolute;
@@ -29,19 +30,19 @@
   background:
     linear-gradient(
       90deg,
-      rgba(2, 45, 34, 0.82) 0%,
-      rgba(2, 45, 34, 0.68) 28%,
-      rgba(2, 45, 34, 0.38) 55%,
-      rgba(2, 45, 34, 0.12) 100%
+      rgba(7, 49, 38, 0.94) 0%,
+      rgba(7, 49, 38, 0.82) 28%,
+      rgba(7, 65, 50, 0.60) 58%,
+      rgba(7, 49, 38, 0.34) 100%
     );
 
   pointer-events: none;
 }
 
 
-/* =====================================================
-   TOP / BOTTOM SOFT OVERLAY
-===================================================== */
+/* =========================================================
+   TOP / BOTTOM OVERLAY
+========================================================= */
 
 .hero::after {
   content: "";
@@ -53,19 +54,19 @@
   background:
     linear-gradient(
       180deg,
-      rgba(0, 25, 19, 0.15) 0%,
-      transparent 30%,
+      rgba(0, 20, 15, 0.18) 0%,
+      transparent 28%,
       transparent 72%,
-      rgba(1, 31, 23, 0.35) 100%
+      rgba(1, 25, 19, 0.42) 100%
     );
 
   pointer-events: none;
 }
 
 
-/* =====================================================
+/* =========================================================
    ISLAMIC PATTERN
-===================================================== */
+========================================================= */
 
 .hero__pattern {
   position: absolute;
@@ -96,9 +97,9 @@
 }
 
 
-/* =====================================================
+/* =========================================================
    DECORATIVE GLOW
-===================================================== */
+========================================================= */
 
 .hero__glow {
   position: absolute;
@@ -115,14 +116,12 @@
   pointer-events: none;
 }
 
-
 .hero__glow--one {
   top: -120px;
   right: 18%;
 
-  background: rgba(230, 190, 90, 0.8);
+  background: rgba(214, 177, 92, 0.8);
 }
-
 
 .hero__glow--two {
   left: -90px;
@@ -132,9 +131,9 @@
 }
 
 
-/* =====================================================
+/* =========================================================
    INNER
-===================================================== */
+========================================================= */
 
 .hero__inner {
   position: relative;
@@ -151,9 +150,9 @@
 }
 
 
-/* =====================================================
+/* =========================================================
    CONTENT
-===================================================== */
+========================================================= */
 
 .hero__content {
   width: 100%;
@@ -161,87 +160,80 @@
 }
 
 
-/* =====================================================
+/* =========================================================
    EYEBROW
-===================================================== */
+========================================================= */
 
 .hero__eyebrow {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 9px;
 
   margin-bottom: 13px;
 
-  color: #e4bd62;
+  color: #03a92a;
 
   font-size: 11px;
   font-weight: 700;
 
   letter-spacing: 0.15em;
-
   text-transform: uppercase;
 }
-
 
 .hero__eyebrow-line {
   width: 40px;
   height: 1px;
 
-  background: #dcb45c;
-}
+  background: #079b04;
 
+  flex-shrink: 0;
+}
 
 .hero__eyebrow-star {
-  color: #e0b75e;
+  display: inline-flex;
 
-  font-size: 13px;
+  color: #0ca30c;
+
+  flex-shrink: 0;
 }
 
 
-/* =====================================================
+/* =========================================================
    MAIN TITLE
-===================================================== */
+========================================================= */
 
 .hero__title {
   margin: 0;
 
-  max-width: 780px;
-
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: clamp(44px, 5vw, 64px);
-
-  font-weight: 700;
-
-  line-height: 0.98;
-
-  letter-spacing: -0.04em;
-
   color: #ffffff;
 
+  font-size: clamp(44px, 5.3vw, 68px);
+  line-height: 1.03;
+
+  letter-spacing: -2.5px;
+
+  font-weight: 800;
+
   text-shadow:
-    0 4px 20px rgba(0, 0, 0, 0.25);
+    0 4px 18px rgba(0, 0, 0, 0.28);
 }
 
 
-/* =====================================================
-   TITLE GOLD TEXT
-===================================================== */
+/* =========================================================
+   TITLE ACCENT
+========================================================= */
 
 .hero__title span {
-  color: #e4b957;
+  color: #05a91b;
 
   text-shadow:
-    0 3px 18px rgba(0, 0, 0, 0.2);
+    0 3px 18px rgba(0, 0, 0, 0.20);
 }
 
 
-/* =====================================================
+/* =========================================================
    DIVIDER
-===================================================== */
+========================================================= */
 
 .hero__divider {
   display: flex;
@@ -254,7 +246,6 @@
   margin: 18px 0 15px;
 }
 
-
 .hero__divider span {
   flex: 1;
 
@@ -264,41 +255,39 @@
     linear-gradient(
       90deg,
       transparent,
-      rgba(224, 184, 89, 0.9)
+      rgba(214, 177, 92, 0.9)
     );
 }
-
 
 .hero__divider span:last-child {
   background:
     linear-gradient(
       90deg,
-      rgba(224, 184, 89, 0.9),
+      rgba(214, 177, 92, 0.9),
       transparent
     );
 }
 
+.hero__divider b,
+.hero__divider svg {
+  color: #d6b15c;
 
-.hero__divider b {
-  color: #e0b75b;
-
-  font-size: 14px;
+  flex-shrink: 0;
 }
 
 
-/* =====================================================
+/* =========================================================
    DESCRIPTION
-===================================================== */
+========================================================= */
 
 .hero__description {
   max-width: 690px;
 
   margin: 0 0 20px;
 
-  color: rgba(255, 255, 255, 0.94);
+  color: rgba(255, 255, 255, 0.92);
 
   font-size: 14px;
-
   line-height: 1.55;
 
   text-shadow:
@@ -306,15 +295,14 @@
 }
 
 
-/* =====================================================
+/* =========================================================
    FEATURES
-===================================================== */
+========================================================= */
 
 .hero__features {
   display: grid;
 
-  grid-template-columns:
-    repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 
   gap: 10px;
 
@@ -322,32 +310,31 @@
 }
 
 
-/* =====================================================
+/* =========================================================
    FEATURE CARD
-===================================================== */
+========================================================= */
 
 .hero__feature {
   min-height: 88px;
 
   display: flex;
   flex-direction: column;
-
   align-items: center;
   justify-content: center;
 
   padding: 10px 7px;
 
-  border:
-    1px solid
-    rgba(222, 183, 88, 0.48);
+  box-sizing: border-box;
+
+  border: 1px solid rgba(214, 177, 92, 0.34);
 
   border-radius: 13px;
 
   background:
     linear-gradient(
       145deg,
-      rgba(2, 65, 48, 0.72),
-      rgba(2, 47, 37, 0.58)
+      rgba(5, 62, 48, 0.78),
+      rgba(4, 43, 34, 0.62)
     );
 
   backdrop-filter: blur(12px);
@@ -357,37 +344,37 @@
     0 8px 24px rgba(0, 0, 0, 0.10);
 
   transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    background 0.25s ease,
-    box-shadow 0.25s ease;
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease,
+    box-shadow 0.22s ease;
 }
 
 
-/* =====================================================
+/* =========================================================
    FEATURE HOVER
-===================================================== */
+========================================================= */
 
 .hero__feature:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
 
-  border-color: #e4bd62;
+  border-color: rgba(214, 177, 92, 0.75);
 
   background:
     linear-gradient(
       145deg,
-      rgba(4, 79, 58, 0.84),
-      rgba(2, 56, 43, 0.76)
+      rgba(5, 75, 57, 0.88),
+      rgba(3, 53, 41, 0.78)
     );
 
   box-shadow:
-    0 14px 30px rgba(0, 0, 0, 0.22);
+    0 14px 30px rgba(0, 0, 0, 0.18);
 }
 
 
-/* =====================================================
+/* =========================================================
    FEATURE ICON
-===================================================== */
+========================================================= */
 
 .hero__feature-icon {
   width: 39px;
@@ -399,33 +386,45 @@
 
   margin-bottom: 6px;
 
-  border:
-    1.5px solid
-    #dfb95e;
+  border: 1px solid rgba(214, 177, 92, 0.75);
 
   border-radius: 50%;
 
-  color: #e6bd5e;
+  color: #d6b15c;
 
-  font-size: 17px;
-
-  background:
-    rgba(1, 52, 40, 0.38);
+  background: rgba(1, 52, 40, 0.42);
 
   box-shadow:
-    0 0 0 5px
-    rgba(224, 185, 92, 0.035);
+    0 0 0 5px rgba(214, 177, 92, 0.035);
+
+  transition:
+    transform 0.22s ease,
+    background 0.22s ease;
+}
+
+.hero__feature:hover .hero__feature-icon {
+  transform: scale(1.05);
+
+  background: rgba(214, 177, 92, 0.10);
+}
+
+.hero__feature-icon svg {
+  display: block;
+
+  width: 19px;
+  height: 19px;
+
+  stroke: currentColor;
 }
 
 
-/* =====================================================
+/* =========================================================
    FEATURE TEXT
-===================================================== */
+========================================================= */
 
 .hero__feature-text {
   text-align: center;
 }
-
 
 .hero__feature strong {
   display: block;
@@ -433,27 +432,26 @@
   color: #ffffff;
 
   font-size: 10px;
-
   font-weight: 700;
-}
 
+  line-height: 1.3;
+}
 
 .hero__feature small {
   display: block;
 
   margin-top: 3px;
 
-  color: #e2bd66;
+  color: #d6b15c;
 
   font-size: 8px;
-
   line-height: 1.3;
 }
 
 
-/* =====================================================
+/* =========================================================
    QUOTE
-===================================================== */
+========================================================= */
 
 .hero__quote {
   display: flex;
@@ -464,29 +462,24 @@
   max-width: 690px;
 
   margin-top: 14px;
-
   padding-top: 10px;
 
-  border-top:
-    1px solid
-    rgba(221, 183, 91, 0.35);
+  border-top: 1px solid rgba(214, 177, 92, 0.30);
 }
-
 
 .hero__quote-icon {
   flex-shrink: 0;
 
-  color: #dfb75b;
+  color: #d6b15c;
 
   font-size: 21px;
+  line-height: 1;
 }
-
 
 .hero__quote p {
   margin: 0 0 4px;
 
-  color:
-    rgba(255, 255, 255, 0.90);
+  color: rgba(255, 255, 255, 0.90);
 
   font-family:
     Georgia,
@@ -494,26 +487,24 @@
     serif;
 
   font-size: 11px;
-
   font-style: italic;
 
-  line-height: 1.4;
+  line-height: 1.45;
 
   text-shadow:
-    0 2px 7px rgba(0, 0, 0, 0.3);
+    0 2px 7px rgba(0, 0, 0, 0.30);
 }
 
-
 .hero__quote small {
-  color: #e2b95d;
+  color: #d6b15c;
 
   font-size: 8px;
 }
 
 
-/* =====================================================
+/* =========================================================
    BOTTOM SHAPE
-===================================================== */
+========================================================= */
 
 .hero__bottom-shape {
   position: absolute;
@@ -536,12 +527,116 @@
 }
 
 
-/* =====================================================
+/* =========================================================
+   PRAYER TIMES
+========================================================= */
+
+.hero__prayers {
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 8px;
+
+  max-width: 760px;
+
+  margin: 0 0 18px;
+}
+
+.hero__prayer {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  min-height: 58px;
+
+  padding: 9px 8px;
+
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border: 1px solid rgba(20, 107, 91, 0.15);
+
+  border-radius: 10px;
+
+  color: #163a32;
+
+  box-shadow:
+    0 5px 16px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.hero__prayer:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 20px rgba(0, 0, 0, 0.11);
+}
+
+
+/* =========================================================
+   PRAYER ICON
+========================================================= */
+
+.hero__prayer-icon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #eaf5f1;
+
+  color: #0d3025;
+
+  font-size: 14px;
+}
+
+.hero__prayer-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+
+/* =========================================================
+   PRAYER TEXT
+========================================================= */
+
+.hero__prayer strong {
+  display: block;
+
+  color: #0b3d32;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.hero__prayer small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #657872;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
    LARGE TABLET
-===================================================== */
+========================================================= */
 
 @media (max-width: 1100px) {
-
   .hero__inner {
     padding-left: 30px;
     padding-right: 30px;
@@ -557,16 +652,13 @@
 }
 
 
-/* =====================================================
+/* =========================================================
    TABLET
-===================================================== */
+========================================================= */
 
 @media (max-width: 1024px) {
-
   .hero {
     min-height: 470px;
-
-    background-position: center center;
   }
 
   .hero__inner {
@@ -590,12 +682,11 @@
 }
 
 
-/* =====================================================
+/* =========================================================
    SMALL TABLET
-===================================================== */
+========================================================= */
 
 @media (max-width: 768px) {
-
   .hero {
     min-height: 450px;
 
@@ -620,16 +711,18 @@
   }
 
   .hero__description {
-    font-size: 12px;
-
     max-width: 580px;
+
+    font-size: 12px;
 
     margin-bottom: 17px;
   }
 
+
+  /* FEATURES */
+
   .hero__features {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 
     max-width: 550px;
 
@@ -657,60 +750,70 @@
     height: 35px;
   }
 
+  .hero__feature-icon svg {
+    width: 17px;
+    height: 17px;
+  }
+
   .hero__feature-text {
     text-align: left;
   }
 
-  .hero__quote {
-    margin-top: 12px;
+
+  /* PRAYER TIMES */
+
+  .hero__prayers {
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 5px;
+  }
+
+  .hero__prayer {
+    flex-direction: column;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 7px 4px;
+  }
+
+  .hero__prayer-icon {
+    width: 28px;
+    height: 28px;
   }
 }
 
 
-/* =====================================================
+/* =========================================================
    MOBILE
-   FULL IMAGE - NO CROPPING
-===================================================== */
+========================================================= */
 
 @media (max-width: 600px) {
-
   .hero {
-    /*
-      IMPORTANT:
-      Mobile par image crop nahi hogi.
-      Image screen ki width ke according full show hogi.
-    */
-
     min-height: auto;
-
     height: auto;
 
     background-size: 100% auto;
-
     background-position: center top;
-
     background-repeat: no-repeat;
   }
 
 
-  /* ===================================================
-     MOBILE OVERLAY
-  =================================================== */
+  /* MOBILE OVERLAY */
 
   .hero__overlay {
     background:
       linear-gradient(
         180deg,
-        rgba(2, 43, 33, 0.58) 0%,
-        rgba(2, 43, 33, 0.72) 55%,
-        rgba(2, 43, 33, 0.94) 100%
+        rgba(2, 43, 33, 0.56) 0%,
+        rgba(2, 43, 33, 0.72) 50%,
+        rgba(2, 43, 33, 0.96) 100%
       );
   }
 
 
-  /* ===================================================
-     INNER
-  =================================================== */
+  /* INNER */
 
   .hero__inner {
     min-height: auto;
@@ -720,18 +823,16 @@
   }
 
 
-  /* ===================================================
-     CONTENT
-  =================================================== */
+  /* CONTENT */
 
   .hero__content {
+    max-width: 100%;
+
     text-align: center;
   }
 
 
-  /* ===================================================
-     EYEBROW
-  =================================================== */
+  /* EYEBROW */
 
   .hero__eyebrow {
     justify-content: center;
@@ -740,45 +841,37 @@
 
     margin-bottom: 11px;
 
-    font-size: 7px;
+    font-size: 8px;
 
     letter-spacing: 0.08em;
   }
-
 
   .hero__eyebrow-line {
     width: 22px;
   }
 
-
   .hero__eyebrow-star {
-    font-size: 10px;
+    width: 11px;
+    height: 11px;
   }
 
 
-  /* ===================================================
-     TITLE
-  =================================================== */
+  /* TITLE */
 
   .hero__title {
-    font-size: 31px;
+    font-size: 27px;
 
-    line-height: 1.02;
+    line-height: 1.08;
 
-    letter-spacing: -0.025em;
-
-    color: #ffffff;
+    letter-spacing: -0.8px;
   }
-
 
   .hero__title span {
-    color: #e4b957;
+    color: #d6b15c;
   }
 
 
-  /* ===================================================
-     DIVIDER
-  =================================================== */
+  /* DIVIDER */
 
   .hero__divider {
     width: 170px;
@@ -787,15 +880,12 @@
       12px auto 13px;
   }
 
-
   .hero__divider b {
     font-size: 11px;
   }
 
 
-  /* ===================================================
-     DESCRIPTION
-  =================================================== */
+  /* DESCRIPTION */
 
   .hero__description {
     max-width: 400px;
@@ -803,72 +893,69 @@
     margin:
       0 auto 15px;
 
-    font-size: 9px;
+    font-size: 10px;
 
     line-height: 1.5;
   }
 
 
-  /* ===================================================
-     FEATURES
-  =================================================== */
+  /* FEATURES */
 
   .hero__features {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 
-    gap: 6px;
+    gap: 7px;
 
     max-width: 400px;
 
-    margin: auto;
+    margin: 0 auto;
   }
 
 
-  /* ===================================================
-     FEATURE
-  =================================================== */
+  /* FEATURE */
 
   .hero__feature {
-    min-height: 60px;
+    min-height: 62px;
 
-    padding: 6px;
+    padding: 7px;
 
-    border-radius: 9px;
+    border-radius: 10px;
 
-    gap: 6px;
+    gap: 7px;
   }
 
 
-  /* ===================================================
-     FEATURE ICON
-  =================================================== */
+  /* FEATURE ICON */
 
   .hero__feature-icon {
-    width: 29px;
-    height: 29px;
+    width: 30px;
+    height: 30px;
 
-    font-size: 13px;
+    margin-bottom: 0;
+
+    flex-shrink: 0;
+  }
+
+  .hero__feature-icon svg {
+    width: 16px;
+    height: 16px;
   }
 
 
-  /* ===================================================
-     FEATURE TEXT
-  =================================================== */
+  /* FEATURE TEXT */
 
   .hero__feature strong {
-    font-size: 7px;
+    font-size: 8px;
   }
-
 
   .hero__feature small {
-    font-size: 5.5px;
+    margin-top: 2px;
+
+    font-size: 6.5px;
   }
 
 
-  /* ===================================================
-     QUOTE
-  =================================================== */
+  /* QUOTE */
 
   .hero__quote {
     justify-content: center;
@@ -883,25 +970,61 @@
     text-align: center;
   }
 
-
   .hero__quote-icon {
     display: none;
   }
 
-
   .hero__quote p {
+    font-size: 8px;
+
+    line-height: 1.45;
+  }
+
+  .hero__quote small {
+    font-size: 6.5px;
+  }
+
+
+  /* PRAYER TIMES */
+
+  .hero__prayers {
+    grid-template-columns: repeat(5, 1fr);
+
+    max-width: 100%;
+
+    gap: 4px;
+
+    margin-bottom: 14px;
+  }
+
+  .hero__prayer {
+    min-height: 55px;
+
+    padding: 5px 2px;
+
+    border-radius: 7px;
+  }
+
+  .hero__prayer-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .hero__prayer-icon svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .hero__prayer strong {
     font-size: 7px;
   }
 
-
-  .hero__quote small {
-    font-size: 5.5px;
+  .hero__prayer small {
+    font-size: 6px;
   }
 
 
-  /* ===================================================
-     BOTTOM SHAPE
-  =================================================== */
+  /* BOTTOM SHAPE */
 
   .hero__bottom-shape {
     height: 20px;
@@ -909,17 +1032,12 @@
 }
 
 
-/* =====================================================
+/* =========================================================
    VERY SMALL MOBILE
-===================================================== */
+========================================================= */
 
 @media (max-width: 400px) {
-
   .hero {
-    /*
-      Keep full image visible on very small screens too
-    */
-
     background-size: 100% auto;
 
     background-position: center top;
@@ -927,44 +1045,110 @@
     background-repeat: no-repeat;
   }
 
-
   .hero__inner {
     padding:
       24px 10px 30px;
   }
 
-
   .hero__title {
-    font-size: 28px;
+    font-size: 25px;
   }
 
-
   .hero__description {
-    font-size: 8px;
+    font-size: 9px;
 
     margin-bottom: 12px;
   }
-
 
   .hero__features {
     gap: 5px;
   }
 
-
   .hero__feature {
-    min-height: 56px;
+    min-height: 58px;
 
-    padding: 5px;
+    padding: 6px;
+
+    gap: 6px;
   }
-
 
   .hero__feature-icon {
-    width: 27px;
-    height: 27px;
+    width: 28px;
+    height: 28px;
   }
 
+  .hero__feature-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .hero__feature strong {
+    font-size: 7px;
+  }
+
+  .hero__feature small {
+    font-size: 6px;
+  }
 
   .hero__quote {
     margin-top: 8px;
+  }
+
+  .hero__quote p {
+    font-size: 7px;
+  }
+
+  .hero__quote small {
+    font-size: 6px;
+  }
+
+  .hero__bottom-shape {
+    height: 18px;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+========================================================= */
+
+@media (max-width: 340px) {
+  .hero__inner {
+    padding:
+      22px 8px 28px;
+  }
+
+  .hero__title {
+    font-size: 23px;
+  }
+
+  .hero__description {
+    font-size: 8px;
+  }
+
+  .hero__feature {
+    min-height: 55px;
+
+    padding: 5px;
+
+    gap: 5px;
+  }
+
+  .hero__feature-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .hero__feature-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .hero__feature strong {
+    font-size: 6.8px;
+  }
+
+  .hero__feature small {
+    font-size: 5.5px;
   }
 }

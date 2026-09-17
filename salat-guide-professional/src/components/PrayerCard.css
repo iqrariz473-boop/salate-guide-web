@@ -100,7 +100,6 @@
 .prayer-card__time {
   margin: 0;
   color: #123f31;
-  font-family: Georgia, "Times New Roman", serif;
   font-size: 17px;
   font-weight: 700;
   line-height: 1.1;
@@ -119,15 +118,26 @@
 }
 
 /* =========================================================
-   ARABIC
+   ARABIC PRAYER TEXT
 ========================================================= */
 
 .prayer-card__arabic {
-  margin: 3px 0 0;
+  margin: 5px 0 0;
   color: #a37832;
-  font-family: "Noto Naskh Arabic", "Amiri", "Times New Roman", serif;
-  font-size: 10px;
-  line-height: 1.4;
+
+  font-family:
+    "Noto Naskh Arabic",
+    "Amiri",
+    "Times New Roman",
+    serif;
+
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+
+  direction: rtl;
+  text-align: center;
 }
 
 /* =========================================================

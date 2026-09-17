@@ -1,6 +1,13 @@
 /* =========================================================
    NAVBAR
-   Professional | Modern | Responsive
+   SALAT GUIDE THEME
+
+   Clean White | Professional | Modern | Responsive
+========================================================= */
+
+
+/* =========================================================
+   NAVBAR
 ========================================================= */
 
 .navbar {
@@ -10,17 +17,12 @@
 
   width: 100%;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(247, 245, 233, 0.98) 0%,
-      rgba(233, 247, 238, 0.94) 100%
-    );
+  background: #ffffff;
 
-  border-bottom: 1px solid rgba(180, 140, 53, 0.18);
+  border-bottom: 1px solid rgba(53, 180, 68, 0.2);
 
   box-shadow:
-    0 8px 30px rgba(13, 48, 37, 0.045);
+    0 6px 24px rgba(13, 48, 37, 0.08);
 
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -89,14 +91,15 @@
     linear-gradient(
       145deg,
       #174637,
-      #0d3025
+      #0d3019
     );
 
-  border: 1px solid rgba(214, 177, 92, 0.4);
+  border:
+    1px solid rgba(10, 166, 18, 0.663);
 
   box-shadow:
-    0 6px 18px rgba(13, 48, 37, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    0 6px 18px rgba(13, 48, 37, 0.20),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
 
   overflow: hidden;
 
@@ -105,12 +108,19 @@
     box-shadow 0.3s ease;
 }
 
+
+/* =========================================================
+   BRAND MARK HOVER
+========================================================= */
+
 .navbar__brand:hover .navbar__brand-mark {
-  transform: translateY(-2px) rotate(-3deg);
+  transform:
+    translateY(-2px)
+    rotate(-3deg);
 
   box-shadow:
-    0 9px 22px rgba(13, 48, 37, 0.22),
-    0 0 0 4px rgba(214, 177, 92, 0.08);
+    0 9px 22px rgba(13, 48, 37, 0.24),
+    0 0 0 4px rgba(92, 214, 96, 0.12);
 }
 
 
@@ -126,7 +136,8 @@
 
   border-radius: 50%;
 
-  background: rgba(214, 177, 92, 0.16);
+  background:
+    rgba(92, 214, 96, 0.2);
 
   filter: blur(5px);
 
@@ -141,9 +152,10 @@
 
 .navbar__brand-moon {
   position: relative;
+
   z-index: 2;
 
-  color: #d6b15c;
+  color:  #b1e7b5;
 
   font-size: 28px;
 
@@ -152,7 +164,7 @@
   transform: rotate(-18deg);
 
   text-shadow:
-    0 2px 8px rgba(214, 177, 92, 0.22);
+    0 2px 8px rgba(92, 214, 127, 0.35);
 }
 
 
@@ -162,9 +174,10 @@
 
 .navbar__brand-text {
   display: flex;
+
   flex-direction: column;
 
-  color: #0d3025;
+  color: #17352b;
 
   font-family:
     Georgia,
@@ -174,19 +187,33 @@
   line-height: 1;
 }
 
+
+/* =========================================================
+   BRAND MAIN
+========================================================= */
+
 .navbar__brand-main {
   font-size: 20px;
+
   font-weight: 700;
 
   letter-spacing: -0.5px;
+
+  color: #0d3025;
 }
+
+
+/* =========================================================
+   BRAND SUB
+========================================================= */
 
 .navbar__brand-sub {
   margin-top: 3px;
 
-  color: #b48c35;
+  color: #0d8906;
 
   font-size: 14px;
+
   font-weight: 700;
 
   letter-spacing: 1.6px;
@@ -203,18 +230,26 @@
   flex: 1;
 
   display: flex;
+
   justify-content: center;
 
   min-width: 0;
 }
 
+
+/* =========================================================
+   NAVIGATION LIST
+========================================================= */
+
 .navbar__nav ul {
   display: flex;
+
   align-items: center;
 
   gap: 7px;
 
   margin: 0;
+
   padding: 0;
 
   list-style: none;
@@ -229,6 +264,7 @@
   position: relative;
 
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
@@ -238,11 +274,12 @@
 
   border-radius: 9px;
 
-  color: #40584e;
+  color: #365247;
 
   text-decoration: none;
 
   font-size: 14px;
+
   font-weight: 600;
 
   white-space: nowrap;
@@ -255,15 +292,17 @@
 
 
 /* =========================================================
-   LINK HOVER
+   NAV LINK HOVER
 ========================================================= */
 
 .navbar__link:hover {
   color: #0d3025;
 
-  background: rgba(214, 177, 92, 0.09);
+  background:
+    rgba(15, 168, 56, 0.314);
 
-  transform: translateY(-1px);
+  transform:
+    translateY(-1px);
 }
 
 
@@ -276,7 +315,8 @@
 
   font-weight: 700;
 
-  background: rgba(214, 177, 92, 0.11);
+  background:
+    rgba(92, 214, 106, 0.12);
 }
 
 
@@ -298,10 +338,15 @@
 
   border-radius: 999px;
 
-  background: #b48c35;
+  background:
+    linear-gradient(
+      90deg,
+      #0d3025,
+      #0d3025
+    );
 
   box-shadow:
-    0 1px 5px rgba(180, 140, 53, 0.25);
+    0 1px 5px rgba(53, 180, 93, 0.3);
 }
 
 
@@ -311,6 +356,7 @@
 
 .navbar__actions {
   display: flex;
+
   align-items: center;
 
   flex-shrink: 0;
@@ -325,9 +371,11 @@
   position: relative;
 
   min-width: 108px;
+
   min-height: 43px;
 
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
@@ -337,15 +385,16 @@
 
   box-sizing: border-box;
 
-  border: 1px solid #d6b15c;
+  border:
+    1px solid #02180a;
 
   border-radius: 10px;
 
   background:
     linear-gradient(
       135deg,
-      green
-      #765107
+       #eef4f2,
+        #588160
     );
 
   color: #0d3025;
@@ -353,6 +402,7 @@
   text-decoration: none;
 
   font-size: 13px;
+
   font-weight: 700;
 
   white-space: nowrap;
@@ -360,12 +410,13 @@
   overflow: hidden;
 
   box-shadow:
-    0 5px 15px rgba(180, 140, 53, 0.16);
+    0 5px 15px rgba(53, 180, 61, 0.2);
 
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
-    background 0.25s ease;
+    background 0.25s ease,
+    color 0.25s ease;
 }
 
 
@@ -388,14 +439,21 @@
     linear-gradient(
       90deg,
       transparent,
-      rgba(255, 255, 255, 0.22),
+      rgba(255, 255, 255, 0.30),
       transparent
     );
 
-  transform: skewX(-20deg);
+  transform:
+    skewX(-20deg);
 
-  transition: left 0.55s ease;
+  transition:
+    left 0.55s ease;
 }
+
+
+/* =========================================================
+   CONTACT SHINE HOVER
+========================================================= */
 
 .navbar__contact-btn:hover::before {
   left: 140%;
@@ -410,16 +468,21 @@
   background:
     linear-gradient(
       135deg,
-      #533c0a,
-      #3f2907
+      #174637,
+      #0d3025
     );
 
-  color: #ffffff;
+  border-color:
+    #5cd66a;
 
-  transform: translateY(-2px);
+  color:
+    #eaf7e9;
+
+  transform:
+    translateY(-2px);
 
   box-shadow:
-    0 9px 20px rgba(13, 48, 37, 0.16);
+    0 9px 20px rgba(13, 48, 37, 0.22);
 }
 
 
@@ -437,11 +500,16 @@
     color 0.25s ease;
 }
 
-.navbar__contact-btn:hover
-.navbar__contact-icon {
-  color: #ffffff;
 
-  transform: rotate(90deg);
+/* =========================================================
+   CONTACT ICON HOVER
+========================================================= */
+
+.navbar__contact-btn:hover .navbar__contact-icon {
+  color: #62d65c;
+
+  transform:
+    rotate(90deg);
 }
 
 
@@ -461,18 +529,21 @@
   margin: 0;
   padding: 0;
 
-  border: 1px solid rgba(180, 140, 53, 0.25);
+  border:
+    1px solid rgba(53, 180, 57, 0.3);
 
   border-radius: 10px;
 
-  background: rgba(255, 255, 255, 0.75);
+  background:
+    #e9f7eb;
 
-  color: #0d3025;
+  color:
+    #0d300e;
 
   cursor: pointer;
 
   box-shadow:
-    0 4px 12px rgba(13, 48, 37, 0.06);
+    0 4px 12px rgba(13, 48, 37, 0.08);
 
   transition:
     background 0.25s ease,
@@ -480,16 +551,33 @@
     transform 0.25s ease;
 }
 
+
+/* =========================================================
+   MOBILE TOGGLE HOVER
+========================================================= */
+
 .navbar__toggle:hover {
-  background: #ffffff;
+  background:
+    #ffffff;
 
-  border-color: #d6b15c;
+  border-color:
+    #5cd683;
 
-  transform: translateY(-1px);
+  color:
+    #0d3025;
+
+  transform:
+    translateY(-1px);
 }
+
+
+/* =========================================================
+   TOGGLE INNER
+========================================================= */
 
 .navbar__toggle-inner {
   display: flex;
+
   align-items: center;
   justify-content: center;
 }
@@ -519,6 +607,7 @@
 
   .navbar__contact-btn {
     min-width: 112px;
+
     min-height: 45px;
 
     font-size: 14px;
@@ -544,7 +633,8 @@
   }
 
   .navbar__link {
-    padding: 8px 9px;
+    padding:
+      8px 9px;
 
     font-size: 12px;
   }
@@ -564,9 +654,11 @@
 
   .navbar__contact-btn {
     min-width: 92px;
+
     min-height: 40px;
 
-    padding: 0 13px;
+    padding:
+      0 13px;
 
     font-size: 12px;
   }
@@ -622,7 +714,8 @@
   .navbar__link {
     min-height: 38px;
 
-    padding: 7px 6px;
+    padding:
+      7px 6px;
 
     font-size: 10px;
   }
@@ -637,9 +730,11 @@
 
   .navbar__contact-btn {
     min-width: 76px;
+
     min-height: 37px;
 
-    padding: 0 10px;
+    padding:
+      0 10px;
 
     gap: 4px;
 
@@ -711,21 +806,19 @@
 
     flex-direction: column;
 
-    padding: 14px 16px 18px;
+    padding:
+      14px 16px 18px;
 
     box-sizing: border-box;
 
     background:
-      linear-gradient(
-        180deg,
-        #f7f5e9,
-        #f3f1e5
-      );
+      #ffffff;
 
-    border-bottom: 1px solid #e3dece;
+    border-bottom:
+      1px solid rgba(66, 180, 53, 0.22);
 
     box-shadow:
-      0 16px 30px rgba(13, 48, 37, 0.10);
+      0 16px 30px rgba(13, 48, 37, 0.12);
   }
 
 
@@ -767,11 +860,13 @@
 
     min-height: 44px;
 
-    padding: 10px 13px;
+    padding:
+      10px 13px;
 
     box-sizing: border-box;
 
-    border: 1px solid transparent;
+    border:
+      1px solid transparent;
 
     border-radius: 9px;
 
@@ -780,20 +875,43 @@
     font-size: 14px;
   }
 
-  .navbar__link:hover {
-    background: #ffffff;
 
-    border-color: #e8e2d1;
+  /* =======================================================
+     MOBILE LINK HOVER
+  ======================================================= */
+
+  .navbar__link:hover {
+    background:
+      #e9f7eb;
+
+    border-color:
+      rgba(53, 180, 89, 0.2);
+
+    color:
+      #0d3025;
   }
+
+
+  /* =======================================================
+     MOBILE ACTIVE
+  ======================================================= */
 
   .navbar__link--active {
-    background: #ffffff;
+    background:
+      #e9f7eb;
 
-    border-color: #e8e2d1;
+    border-color:
+      rgba(102, 214, 92, 0.35);
+
+    color:
+      #0d3025;
 
     box-shadow:
-      0 3px 10px rgba(13, 48, 37, 0.04);
+      0 3px 10px rgba(13, 48, 37, 0.06);
   }
+
+
+  /* Remove desktop underline */
 
   .navbar__link--active::after {
     display: none;
@@ -825,7 +943,7 @@
 
 /* =========================================================
    SMALL MOBILE
-   481px - 600px
+   600px AND BELOW
 ========================================================= */
 
 @media (max-width: 600px) {
@@ -857,7 +975,8 @@
   }
 
   .navbar__nav {
-    padding: 12px 14px 16px;
+    padding:
+      12px 14px 16px;
   }
 
   .navbar__link {
@@ -912,13 +1031,15 @@
   }
 
   .navbar__nav {
-    padding: 10px 12px 14px;
+    padding:
+      10px 12px 14px;
   }
 
   .navbar__link {
     min-height: 40px;
 
-    padding: 9px 10px;
+    padding:
+      9px 10px;
 
     font-size: 12px;
   }
@@ -977,13 +1098,18 @@
 ========================================================= */
 
 @keyframes navbarMenuIn {
+
   from {
     opacity: 0;
-    transform: translateY(-6px);
+
+    transform:
+      translateY(-6px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+
+    transform:
+      translateY(0);
   }
 }
