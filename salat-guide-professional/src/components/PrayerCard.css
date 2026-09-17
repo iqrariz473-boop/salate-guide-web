@@ -7,19 +7,19 @@
   width: 100%;
   min-width: 0;
   box-sizing: border-box;
-  padding: 12px 10px;
-  border: 1px solid rgba(18, 63, 49, 0.1);
-  border-radius: 12px;
-  background: #fffdf7;
+  padding: 14px 12px 12px;
+  border: 1px solid rgba(18, 63, 49, 0.10);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.96);
   text-align: center;
-  box-shadow: 0 5px 16px rgba(30, 50, 40, 0.06);
+  box-shadow: 0 8px 22px rgba(16, 46, 37, 0.06);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .prayer-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   border-color: rgba(189, 147, 73, 0.35);
-  box-shadow: 0 8px 20px rgba(30, 50, 40, 0.1);
+  box-shadow: 0 14px 28px rgba(30, 50, 40, 0.10);
 }
 
 /* =========================================================
@@ -27,9 +27,9 @@
 ========================================================= */
 
 .prayer-card--active {
-  border-color: rgba(189, 147, 73, 0.55);
-  background: linear-gradient(145deg, #fffdf7, #f8f3e5);
-  box-shadow: 0 7px 20px rgba(189, 147, 73, 0.12);
+  border-color: rgba(189, 147, 73, 0.6);
+  background: #f9f4ea;
+  box-shadow: 0 10px 24px rgba(189, 147, 73, 0.12);
 }
 
 /* =========================================================
@@ -38,24 +38,24 @@
 ========================================================= */
 
 .prayer-card--next {
-  border: 2px solid #f2c94c;
-  background: linear-gradient(145deg, #1f5f42, #123f31);
-  box-shadow: 0 8px 22px rgba(18, 63, 49, 0.28);
+  border: 2px solid rgba(242, 201, 76, 0.9);
+  background: #123f31;
+  box-shadow: 0 12px 28px rgba(18, 63, 49, 0.22);
 }
 
 .prayer-card--next .prayer-card__time,
 .prayer-card--next .prayer-card__label {
-  color: #ffffff;
+  color: var(--color-surface);
 }
 
 .prayer-card--next .prayer-card__badge {
   position: absolute;
-  background: #ffffff;
+  background: var(--color-surface);
   color: #123f31;
 }
 
 .prayer-card--next .prayer-card__icon {
-  color: #ffffff;
+  color: var(--color-surface);
 }
 
 .prayer-card--next .prayer-card__arabic {
@@ -68,17 +68,17 @@
 
 .prayer-card__badge {
   position: absolute;
-  top: 5px;
-  right: 5px;
-  padding: 3px 6px;
-  border-radius: 5px;
+  top: 7px;
+  right: 7px;
+  padding: 4px 7px;
+  border-radius: 7px;
   background: #d6ad55;
-  color: #fff;
+  color: var(--color-surface);
   font-size: 6px;
   font-weight: 700;
   line-height: 1;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
 }
 
 /* =========================================================
@@ -87,10 +87,11 @@
 
 .prayer-card__icon {
   display: block;
-  width: 25px;
-  height: 25px;
-  margin: 4px auto 6px;
+  width: 28px;
+  height: 28px;
+  margin: 4px auto 8px;
   color: #a87c31;
+  opacity: 0.96;
 }
 
 /* =========================================================
@@ -101,7 +102,7 @@
   margin: 0;
   color: #123f31;
   font-size: 17px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.1;
 }
 
@@ -110,11 +111,12 @@
 ========================================================= */
 
 .prayer-card__label {
-  margin: 5px 0 0;
+  margin: 6px 0 0;
   color: #183d31;
   font-size: 9px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.2;
+  letter-spacing: 0.04em;
 }
 
 /* =========================================================
@@ -218,13 +220,13 @@
   .prayer-card--active .prayer-card__icon {
     background: #123f31;
     border-color: #123f31;
-    color: #fff;
+    color: var(--color-surface);
   }
 
   /* on the highlighted "next" card, the icon box turns white like the reference UI */
   .prayer-card--next .prayer-card__icon {
-    background: #ffffff;
-    border-color: #ffffff;
+    background: var(--color-surface);
+    border-color: var(--color-surface);
     color: #123f31;
   }
 

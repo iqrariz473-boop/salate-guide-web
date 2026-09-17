@@ -17,12 +17,11 @@
 
   width: 100%;
 
-  background: #ffffff;
+  background: var(--color-surface);
 
-  border-bottom: 1px solid rgba(53, 180, 68, 0.2);
+  border-bottom: 1px solid rgba(13, 48, 37, 0.12);
 
-  box-shadow:
-    0 6px 24px rgba(13, 48, 37, 0.08);
+  box-shadow: var(--shadow-md);
 
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -63,7 +62,7 @@
 
   flex-shrink: 0;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   text-decoration: none;
 }
@@ -87,12 +86,7 @@
 
   border-radius: 50%;
 
-  background:
-    linear-gradient(
-      145deg,
-      #174637,
-      #0d3019
-    );
+  background: var(--color-primary-light);
 
   border:
     1px solid rgba(10, 166, 18, 0.663);
@@ -177,7 +171,7 @@
 
   flex-direction: column;
 
-  color: #17352b;
+  color: var(--color-text);
 
   font-family:
     Georgia,
@@ -199,7 +193,7 @@
 
   letter-spacing: -0.5px;
 
-  color: #0d3025;
+  color: var(--color-primary);
 }
 
 
@@ -210,7 +204,7 @@
 .navbar__brand-sub {
   margin-top: 3px;
 
-  color: #0d8906;
+  color: var(--color-success);
 
   font-size: 14px;
 
@@ -296,7 +290,7 @@
 ========================================================= */
 
 .navbar__link:hover {
-  color: #0d3025;
+  color: var(--color-primary);
 
   background:
     rgba(15, 168, 56, 0.314);
@@ -311,7 +305,7 @@
 ========================================================= */
 
 .navbar__link--active {
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-weight: 700;
 
@@ -341,8 +335,8 @@
   background:
     linear-gradient(
       90deg,
-      #0d3025,
-      #0d3025
+      var(--color-primary),
+      var(--color-primary)
     );
 
   box-shadow:
@@ -397,7 +391,7 @@
         #588160
     );
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   text-decoration: none;
 
@@ -468,8 +462,8 @@
   background:
     linear-gradient(
       135deg,
-      #174637,
-      #0d3025
+      var(--color-primary-light),
+      var(--color-primary)
     );
 
   border-color:
@@ -493,7 +487,7 @@
 .navbar__contact-icon {
   font-size: 12px;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   transition:
     transform 0.25s ease,
@@ -558,13 +552,13 @@
 
 .navbar__toggle:hover {
   background:
-    #ffffff;
+    var(--color-surface);
 
   border-color:
     #5cd683;
 
   color:
-    #0d3025;
+    var(--color-primary);
 
   transform:
     translateY(-1px);
@@ -812,7 +806,7 @@
     box-sizing: border-box;
 
     background:
-      #ffffff;
+      var(--color-surface);
 
     border-bottom:
       1px solid rgba(66, 180, 53, 0.22);
@@ -888,7 +882,7 @@
       rgba(53, 180, 89, 0.2);
 
     color:
-      #0d3025;
+      var(--color-primary);
   }
 
 
@@ -904,7 +898,7 @@
       rgba(102, 214, 92, 0.35);
 
     color:
-      #0d3025;
+      var(--color-primary);
 
     box-shadow:
       0 3px 10px rgba(13, 48, 37, 0.06);

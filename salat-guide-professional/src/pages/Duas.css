@@ -20,7 +20,7 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: #0d3025;
+  background: var(--color-primary);
 }
 
 .duas-top-image img {
@@ -65,7 +65,7 @@
 
   margin-bottom: 12px;
 
-  color: #d6b15c;
+  color: var(--color-secondary);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 2.4px;
@@ -76,12 +76,12 @@
   content: "";
   width: 28px;
   height: 1px;
-  background: #d6b15c;
+  background: var(--color-secondary);
 }
 
 .duas-top-image__content h2 {
   margin: 0;
-  color: #ffffff;
+  color: var(--color-surface);
   font-size: clamp(40px, 5vw, 62px);
   line-height: 1.08;
   font-weight: 700;
@@ -94,7 +94,7 @@
 
 .duas-header {
   width: 100%;
-  background: #ffffff;
+  background: var(--color-surface);
   border-bottom: 1px solid rgba(13, 48, 37, 0.08);
 }
 
@@ -120,7 +120,7 @@
 
   margin-bottom: 10px;
 
-  color: #b48c35;
+  color: var(--color-secondary-dark);
   font-size: 11px;
   font-weight: 750;
   letter-spacing: 2px;
@@ -134,7 +134,7 @@
 
 .duas-header__content h1 {
   margin: 0;
-  color: #0d3025;
+  color: var(--color-primary);
   font-size: clamp(32px, 4vw, 46px);
   line-height: 1.12;
   font-weight: 750;
@@ -159,7 +159,7 @@
   min-width: 125px;
   height: 125px;
 
-  background: #0d3025;
+  background: var(--color-primary);
   border: 1px solid rgba(214, 177, 92, 0.35);
   border-radius: 50%;
 
@@ -169,7 +169,7 @@
 }
 
 .duas-header__count strong {
-  color: #d6b15c;
+  color: var(--color-secondary);
   font-size: 32px;
   line-height: 1;
 }
@@ -231,7 +231,7 @@
   border: 1px solid rgba(13, 48, 37, 0.13);
   border-radius: 13px;
 
-  background: #ffffff;
+  background: var(--color-surface);
   color: #173b2f;
 
   cursor: pointer;
@@ -315,7 +315,7 @@
 
   overflow: hidden;
 
-  background: #ffffff;
+  background: var(--color-surface);
   border: 1px solid rgba(13, 48, 37, 0.1);
   border-radius: 15px;
 
@@ -403,7 +403,7 @@
 
 .duas-language__option.is-selected {
   background: #e9f1ec;
-  color: #0d3025;
+  color: var(--color-primary);
 }
 
 .duas-language__option-icon {
@@ -426,8 +426,8 @@
 
 .duas-language__option.is-selected
   .duas-language__option-icon {
-  background: #0d3025;
-  color: #d6b15c;
+  background: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 .duas-language__option-text {
@@ -462,7 +462,7 @@
   border: 1px solid #d9ded9;
   border-radius: 14px;
 
-  background: #ffffff;
+  background: var(--color-surface);
 
   box-shadow: 0 6px 20px rgba(13, 48, 37, 0.06);
 
@@ -538,7 +538,7 @@
   width: 20px;
   height: 20px;
 
-  color: #b48c35;
+  color: var(--color-secondary-dark);
 
   font-size: 21px;
 
@@ -566,9 +566,9 @@
   outline: none !important;
   border-radius: 50%;
 
-  background: #f7f5e9;
+  background: var(--color-background);
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 19px;
   line-height: 1;
@@ -593,8 +593,8 @@
 /* Hover */
 
 .duas-search__clear:hover {
-  background: #d6b15c;
-  color: #0d3025;
+  background: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 /* =========================================================
@@ -609,7 +609,7 @@
   border: 1px solid rgba(13, 48, 37, 0.13);
   border-radius: 13px;
 
-  background-color: #ffffff;
+  background-color: var(--color-surface);
   color: #294239;
 
   font-family: inherit;
@@ -700,7 +700,7 @@
   min-height: 300px;
   padding: 50px 25px;
 
-  background: #ffffff;
+  background: var(--color-surface);
   border: 1px solid rgba(13, 48, 37, 0.08);
   border-radius: 18px;
 
@@ -725,7 +725,7 @@
   border-radius: 50%;
 
   background: #edf3ef;
-  color: #174637;
+  color: var(--color-primary-light);
 
   font-size: 22px;
   font-weight: 750;
@@ -757,11 +757,11 @@
   margin-top: 20px;
   padding: 0 19px;
 
-  border: 1px solid #0d3025;
+  border: 1px solid var(--color-primary);
   border-radius: 10px;
 
-  background: #0d3025;
-  color: #ffffff;
+  background: var(--color-primary);
+  color: var(--color-surface);
 
   font-family: inherit;
   font-size: 13px;
@@ -775,7 +775,7 @@
 }
 
 .duas-state__button:hover {
-  background: #174637;
+  background: var(--color-primary-light);
   transform: translateY(-1px);
 }
 
@@ -785,7 +785,7 @@
   margin-bottom: 17px;
 
   border: 3px solid rgba(13, 48, 37, 0.1);
-  border-top-color: #d6b15c;
+  border-top-color: var(--color-secondary);
   border-radius: 50%;
 
   animation: duasSpin 0.75s linear infinite;
@@ -806,7 +806,7 @@
 
   overflow: hidden;
 
-  background: #ffffff;
+  background: var(--color-surface);
   border: 1px solid rgba(13, 48, 37, 0.09);
   border-radius: 18px;
 
@@ -828,7 +828,7 @@
   min-height: 52px;
   padding: 0 20px;
 
-  background: #0d3025;
+  background: var(--color-primary);
   color: rgba(255, 255, 255, 0.72);
 
   font-size: 10px;
@@ -889,7 +889,7 @@
   border-radius: 11px;
 
   background: #edf3ef;
-  color: #174637;
+  color: var(--color-primary-light);
 
   font-size: 12px;
   font-weight: 800;
@@ -994,13 +994,13 @@
   transform: scale(1.05);
   background: #fdf8e9;
   border-color: rgba(214, 177, 92, 0.45);
-  color: #b48c35;
+  color: var(--color-secondary-dark);
 }
 
 .duas-favorite.is-active {
-  background: #fff8e7;
+  background: var(--color-surface)8e7;
   border-color: rgba(214, 177, 92, 0.45);
-  color: #b48c35;
+  color: var(--color-secondary-dark);
 }
 
 .duas-open-button {
@@ -1016,7 +1016,7 @@
   border-radius: 9px;
 
   background: #f0f5f1;
-  color: #174637;
+  color: var(--color-primary-light);
 
   font-family: inherit;
   font-size: 11px;
@@ -1114,7 +1114,7 @@
 
   padding: 22px 24px;
 
-  background: #0d3025;
+  background: var(--color-primary);
   border-bottom: 1px solid rgba(214, 177, 92, 0.2);
 }
 
@@ -1131,7 +1131,7 @@
   border-radius: 15px;
 
   background: rgba(214, 177, 92, 0.09);
-  color: #d6b15c;
+  color: var(--color-secondary);
 
   font-size: 24px;
 }
@@ -1156,7 +1156,7 @@
 .duas-modal__header-content h2 {
   margin: 0;
 
-  color: #ffffff;
+  color: var(--color-surface);
 
   font-size: 23px;
   line-height: 1.3;
@@ -1216,7 +1216,7 @@
 
 .duas-modal__close:hover {
   background: rgba(214, 177, 92, 0.15);
-  color: #d6b15c;
+  color: var(--color-secondary);
   transform: rotate(4deg);
 }
 
@@ -1305,7 +1305,7 @@
 
   padding: 21px;
 
-  background: #ffffff;
+  background: var(--color-surface);
   border: 1px solid rgba(13, 48, 37, 0.09);
   border-radius: 17px;
 
@@ -1323,8 +1323,8 @@
 
   border-radius: 13px;
 
-  background: #0d3025;
-  color: #d6b15c;
+  background: var(--color-primary);
+  color: var(--color-secondary);
 
   font-size: 12px;
   font-weight: 800;
@@ -1353,7 +1353,7 @@
   border-radius: 20px;
 
   background: #edf3ef;
-  color: #174637;
+  color: var(--color-primary-light);
 
   font-size: 9px;
   font-weight: 750;
@@ -1458,7 +1458,7 @@
   padding: 13px 14px;
 
   background: #f7f8f5;
-  border-left: 3px solid #d6b15c;
+  border-left: 3px solid var(--color-secondary);
   border-radius: 9px;
 }
 
@@ -1473,8 +1473,8 @@
 
   border-radius: 50%;
 
-  background: #fff8e8;
-  color: #b48c35;
+  background: var(--color-surface)8e8;
+  color: var(--color-secondary-dark);
 
   font-size: 11px;
 }
@@ -1527,8 +1527,8 @@
 
   border-radius: 10px;
 
-  background: #0d3025;
-  color: #d6b15c;
+  background: var(--color-primary);
+  color: var(--color-secondary);
 
   font-size: 16px;
 }
@@ -1640,11 +1640,11 @@
   min-height: 44px;
   padding: 0 20px;
 
-  border: 1px solid #0d3025;
+  border: 1px solid var(--color-primary);
   border-radius: 10px;
 
-  background: #0d3025;
-  color: #ffffff;
+  background: var(--color-primary);
+  color: var(--color-surface);
 
   font-family: inherit;
   font-size: 12px;
@@ -1658,7 +1658,7 @@
 }
 
 .duas-load-more__button:hover:not(:disabled) {
-  background: #174637;
+  background: var(--color-primary-light);
   transform: translateY(-1px);
 }
 
@@ -1672,7 +1672,7 @@
   height: 15px;
 
   border: 2px solid rgba(255, 255, 255, 0.3);
-  border-top-color: #ffffff;
+  border-top-color: var(--color-surface);
   border-radius: 50%;
 
   animation: duasSpin 0.7s linear infinite;
@@ -1705,7 +1705,7 @@
   align-items: center;
   gap: 8px;
 
-  color: #b48c35;
+  color: var(--color-secondary-dark);
 
   font-size: 10px;
   font-weight: 800;
@@ -1729,7 +1729,7 @@
   width: 100%;
   padding: 82px 0;
 
-  background: #ffffff;
+  background: var(--color-surface);
 }
 
 .dua-category-explorer__header {
@@ -1740,7 +1740,7 @@
 .dua-category-explorer__header h2 {
   margin: 9px 0 0;
 
-  color: #0d3025;
+  color: var(--color-primary);
   font-size: clamp(29px, 4vw, 40px);
   line-height: 1.2;
   font-weight: 750;
@@ -1795,7 +1795,7 @@
 .dua-category-card:hover {
   transform: translateY(-3px);
 
-  background: #ffffff;
+  background: var(--color-surface);
   border-color: rgba(214, 177, 92, 0.36);
 
   box-shadow:
@@ -1814,7 +1814,7 @@
   border-radius: 11px;
 
   background: #eaf1ec;
-  color: #174637;
+  color: var(--color-primary-light);
 
   font-size: 18px;
 }
@@ -1860,8 +1860,8 @@
   background:
     linear-gradient(
       135deg,
-      #0d3025 0%,
-      #174637 100%
+      var(--color-primary) 0%,
+      var(--color-primary-light) 100%
     );
 
   overflow: hidden;
@@ -1913,13 +1913,13 @@
 }
 
 .dua-journey__header .dua-section-eyebrow {
-  color: #d6b15c;
+  color: var(--color-secondary);
 }
 
 .dua-journey__header h2 {
   margin: 9px 0 0;
 
-  color: #ffffff;
+  color: var(--color-surface);
   font-size: clamp(29px, 4vw, 40px);
   line-height: 1.2;
   font-weight: 750;
@@ -1951,7 +1951,7 @@
 }
 
 .dua-journey__percentage strong {
-  color: #d6b15c;
+  color: var(--color-secondary);
   font-size: 25px;
   line-height: 1;
 }
@@ -1985,7 +1985,7 @@
 
   border-radius: inherit;
 
-  background: #d6b15c;
+  background: var(--color-secondary);
 
   transition: width 0.5s ease;
 }
@@ -2034,7 +2034,7 @@
   border-radius: 10px;
 
   background: rgba(214, 177, 92, 0.11);
-  color: #d6b15c;
+  color: var(--color-secondary);
 
   font-size: 15px;
 }
@@ -2045,7 +2045,7 @@
 }
 
 .dua-journey__stat strong {
-  color: #ffffff;
+  color: var(--color-surface);
   font-size: 18px;
   line-height: 1.1;
 }
@@ -2083,7 +2083,7 @@
   border-radius: 11px;
 
   background: rgba(214, 177, 92, 0.12);
-  color: #d6b15c;
+  color: var(--color-secondary);
 
   font-size: 20px;
 }
@@ -2108,7 +2108,7 @@
 
   overflow: hidden;
 
-  color: #ffffff;
+  color: var(--color-surface);
   font-size: 13px;
   line-height: 1.4;
 
@@ -2136,8 +2136,8 @@
   border: 0;
   border-radius: 9px;
 
-  background: #d6b15c;
-  color: #0d3025;
+  background: var(--color-secondary);
+  color: var(--color-primary);
 
   font-family: inherit;
   font-size: 11px;
@@ -2185,11 +2185,11 @@
   border-radius: 11px;
 
   background: rgba(214, 177, 92, 0.1);
-  color: #d6b15c;
+  color: var(--color-secondary);
 }
 
 .dua-journey__empty strong {
-  color: #ffffff;
+  color: var(--color-surface);
   font-size: 12px;
 }
 
@@ -2208,7 +2208,7 @@
   width: 100%;
   padding: 30px 24px;
 
-  background: #f7f5e9;
+  background: var(--color-background);
 }
 
 .dua-reflection__inner {
@@ -2223,7 +2223,7 @@
   border: 1px solid rgba(214, 177, 92, 0.23);
   border-radius: 17px;
 
-  background: #ffffff;
+  background: var(--color-surface);
 
   box-shadow:
     0 9px 30px rgba(13, 48, 37, 0.05);
@@ -2240,8 +2240,8 @@
 
   border-radius: 50%;
 
-  background: #0d3025;
-  color: #d6b15c;
+  background: var(--color-primary);
+  color: var(--color-secondary);
 
   font-size: 22px;
 }
@@ -2254,7 +2254,7 @@
 .dua-reflection__content > span {
   display: block;
 
-  color: #b48c35;
+  color: var(--color-secondary-dark);
 
   font-size: 9px;
   font-weight: 800;
@@ -2308,7 +2308,7 @@
   border-radius: 50%;
 
   background: #f2f6f3;
-  color: #174637;
+  color: var(--color-primary-light);
 
   font-size: 20px;
 
@@ -2332,7 +2332,7 @@
   width: 100%;
   padding: 82px 0;
 
-  background: #ffffff;
+  background: var(--color-surface);
 }
 
 .dua-quick-dashboard__inner {
@@ -2347,7 +2347,7 @@
 .dua-quick-dashboard__header h2 {
   margin: 9px 0 0;
 
-  color: #0d3025;
+  color: var(--color-primary);
   font-size: clamp(29px, 4vw, 40px);
   line-height: 1.2;
   font-weight: 750;
@@ -2402,8 +2402,8 @@
   background:
     linear-gradient(
       145deg,
-      #0d3025,
-      #174637
+      var(--color-primary),
+      var(--color-primary-light)
     );
 
   border-color: rgba(214, 177, 92, 0.2);
@@ -2435,7 +2435,7 @@
   border-radius: 9px;
 
   background: #e7efea;
-  color: #174637;
+  color: var(--color-primary-light);
 
   font-size: 15px;
 }
@@ -2443,7 +2443,7 @@
 .dua-quick-card--featured
   .dua-quick-card__icon {
   background: rgba(214, 177, 92, 0.12);
-  color: #d6b15c;
+  color: var(--color-secondary);
 }
 
 .dua-quick-card__label {
@@ -2470,7 +2470,7 @@
 }
 
 .dua-quick-card--featured h3 {
-  color: #ffffff;
+  color: var(--color-surface);
 }
 
 .dua-quick-card p {
@@ -2488,7 +2488,7 @@
 .dua-quick-card__stat {
   margin-top: 17px;
 
-  color: #174637;
+  color: var(--color-primary-light);
   font-size: 30px;
   line-height: 1;
   font-weight: 800;
@@ -2507,7 +2507,7 @@
   border: 0;
 
   background: transparent;
-  color: #174637;
+  color: var(--color-primary-light);
 
   font-family: inherit;
   font-size: 10px;
@@ -2517,12 +2517,12 @@
 }
 
 .dua-quick-card__link:hover {
-  color: #b48c35;
+  color: var(--color-secondary-dark);
 }
 
 .dua-quick-card--featured
   .dua-quick-card__link {
-  color: #d6b15c;
+  color: var(--color-secondary);
 }
 
 .dua-quick-card__time {
@@ -2542,7 +2542,7 @@
 }
 
 .dua-quick-card__streak-number strong {
-  color: #174637;
+  color: var(--color-primary-light);
   font-size: 36px;
   line-height: 1;
 }
@@ -2571,8 +2571,8 @@
 }
 
 .dua-streak-dots .is-active {
-  background: #d6b15c;
-  border-color: #d6b15c;
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
 }
 
 /* =========================================================
@@ -2588,9 +2588,9 @@
   background:
     linear-gradient(
       135deg,
-      #0d3025 0%,
+      var(--color-primary) 0%,
       #123b2e 50%,
-      #174637 100%
+      var(--color-primary-light) 100%
     );
 
   overflow: hidden;
@@ -2664,7 +2664,7 @@
   align-items: center;
   gap: 8px;
 
-  color: #d6b15c;
+  color: var(--color-secondary);
 
   font-size: 10px;
   font-weight: 800;
@@ -2681,7 +2681,7 @@
 .daily-dua-feature__header h2 {
   margin: 9px 0 0;
 
-  color: #ffffff;
+  color: var(--color-surface);
   font-size: clamp(30px, 4vw, 43px);
   line-height: 1.15;
   font-weight: 750;
@@ -2700,7 +2700,7 @@
 
   padding: 39px;
 
-  background: #ffffff;
+  background: var(--color-surface);
 
   border: 1px solid rgba(214, 177, 92, 0.28);
   border-radius: 21px;
@@ -2724,8 +2724,8 @@
   border: 1px solid rgba(214, 177, 92, 0.25);
   border-radius: 50%;
 
-  background: #fffaf0;
-  color: #b48c35;
+  background: var(--color-surface)af0;
+  color: var(--color-secondary-dark);
 
   transform: translateX(-50%);
 }
@@ -2786,7 +2786,7 @@
 .daily-dua-card__translation-block span {
   display: block;
 
-  color: #b48c35;
+  color: var(--color-secondary-dark);
 
   font-size: 9px;
   font-weight: 800;
@@ -2826,7 +2826,7 @@
   border-radius: 9px;
 
   background: #f2f5f2;
-  color: #174637;
+  color: var(--color-primary-light);
 
   font-family: inherit;
   font-size: 11px;
@@ -2845,13 +2845,13 @@
 }
 
 .daily-dua-card__button--primary {
-  background: #0d3025;
-  border-color: #0d3025;
-  color: #ffffff;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-surface);
 }
 
 .daily-dua-card__button--primary:hover:not(:disabled) {
-  background: #174637;
+  background: var(--color-primary-light);
 }
 
 .daily-dua-card__button:disabled {
@@ -2869,7 +2869,7 @@
 }
 
 .daily-dua-feature__footer span {
-  color: #d6b15c;
+  color: var(--color-secondary);
   font-size: 8px;
 }
 
@@ -2889,7 +2889,7 @@
   width: 100%;
   padding: 90px 24px;
 
-  background: #f7f5e9;
+  background: var(--color-background);
 
   overflow: hidden;
 }
@@ -2952,13 +2952,13 @@
 
   margin-bottom: 12px;
 
-  color: #b48c35;
+  color: var(--color-secondary-dark);
 }
 
 .dua-faq__header h2 {
   margin: 0;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: clamp(30px, 4vw, 44px);
   line-height: 1.15;
@@ -2988,7 +2988,7 @@
 
   overflow: hidden;
 
-  background: #ffffff;
+  background: var(--color-surface);
 
   border: 1px solid rgba(13, 48, 37, 0.1);
   border-radius: 16px;
@@ -3034,7 +3034,7 @@
   border: 0;
 
   background: transparent;
-  color: #0d3025;
+  color: var(--color-primary);
 
   text-align: left;
 
@@ -3070,7 +3070,7 @@
   background: #edf3ef;
   border: 1px solid rgba(13, 48, 37, 0.08);
 
-  color: #174637;
+  color: var(--color-primary-light);
 
   font-size: 18px;
   font-weight: 700;
@@ -3083,9 +3083,9 @@
 
 .dua-faq__item.is-open
   .dua-faq__question-icon {
-  background: #0d3025;
-  border-color: #0d3025;
-  color: #d6b15c;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 .dua-faq__question-text {
@@ -3109,7 +3109,7 @@
   border-radius: 50%;
 
   background: #f4f6f2;
-  color: #174637;
+  color: var(--color-primary-light);
 
   font-size: 23px;
   line-height: 1;
@@ -3124,8 +3124,8 @@
 .dua-faq__arrow.is-open {
   transform: rotate(45deg);
 
-  background: #d6b15c;
-  color: #0d3025;
+  background: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .dua-faq__answer {
@@ -3170,7 +3170,7 @@
   margin-top: 42px;
   padding: 22px 24px;
 
-  background: #0d3025;
+  background: var(--color-primary);
 
   border: 1px solid rgba(214, 177, 92, 0.22);
   border-radius: 18px;
@@ -3194,7 +3194,7 @@
   background: rgba(214, 177, 92, 0.13);
   border: 1px solid rgba(214, 177, 92, 0.3);
 
-  color: #d6b15c;
+  color: var(--color-secondary);
 
   font-size: 22px;
 }
@@ -3204,7 +3204,7 @@
 
   margin-bottom: 5px;
 
-  color: #ffffff;
+  color: var(--color-surface);
 
   font-size: 15px;
   font-weight: 650;
@@ -3304,7 +3304,7 @@
     min-height: 0;
     padding: 17px;
 
-    background: #ffffff;
+    background: var(--color-surface);
     border: 1px solid rgba(13, 48, 37, 0.08);
     border-radius: 15px;
 
@@ -3313,7 +3313,7 @@
   }
 
   .duas-table__row:hover {
-    background: #ffffff;
+    background: var(--color-surface);
   }
 
   .duas-table__cell--id {
@@ -4184,7 +4184,7 @@ input:focus-visible {
   display: inline-block;
   margin-bottom: 8px;
 
-  color: #b48c35;
+  color: var(--color-secondary-dark);
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 1.5px;
@@ -4194,7 +4194,7 @@ input:focus-visible {
 .todays-dua-header h2 {
   margin: 0;
 
-  color: #0d3025;
+  color: var(--color-primary);
   font-size: 32px;
   font-weight: 800;
   line-height: 1.2;
@@ -4226,7 +4226,7 @@ input:focus-visible {
   margin: 0 auto;
   padding: 32px;
 
-  background: #fffdf4;
+  background: var(--color-surface)df4;
 
   border: 1px solid rgba(180, 140, 53, 0.25);
   border-radius: 22px;
@@ -4250,7 +4250,7 @@ input:focus-visible {
 
   width: 5px;
 
-  background: #d6b15c;
+  background: var(--color-secondary);
 }
 
 /* =========================================================
@@ -4267,8 +4267,8 @@ input:focus-visible {
   align-items: center;
   justify-content: center;
 
-  background: #0d3025;
-  color: #ffffff;
+  background: var(--color-primary);
+  color: var(--color-surface);
 
   border-radius: 20px;
 
@@ -4294,7 +4294,7 @@ input:focus-visible {
   padding: 5px 12px;
 
   background: rgba(214, 177, 92, 0.14);
-  color: #b48c35;
+  color: var(--color-secondary-dark);
 
   border-radius: 50px;
 
@@ -4305,7 +4305,7 @@ input:focus-visible {
 .todays-dua-content h3 {
   margin: 10px 0 12px;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 22px;
   font-weight: 800;
@@ -4315,7 +4315,7 @@ input:focus-visible {
 .todays-dua-arabic {
   margin: 8px 0 14px;
 
-  color: #174637;
+  color: var(--color-primary-light);
 
   font-size: 24px;
   line-height: 2;
@@ -4351,7 +4351,7 @@ input:focus-visible {
 
   background: transparent;
 
-  color: #b48c35;
+  color: var(--color-secondary-dark);
 
   font-size: 14px;
   font-weight: 800;
@@ -4370,7 +4370,7 @@ input:focus-visible {
 }
 
 .todays-dua-link:hover {
-  color: #0d3025;
+  color: var(--color-primary);
   gap: 12px;
 }
 

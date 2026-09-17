@@ -4,8 +4,8 @@
 
 .prayer-times-page {
   min-height: 100vh;
-  background: #ffffff;
-  color: #0d3025;
+  background: var(--color-surface);
+  color: var(--color-primary);
 }
 
 .prayer-times-page .container {
@@ -118,7 +118,7 @@
 
   margin-bottom: 15px;
 
-  color: #ffffff;
+  color: var(--color-surface);
 
   font-size: 11px;
   font-weight: 800;
@@ -137,11 +137,11 @@
 
   display: block;
 
-  background: #ffffff;
+  background: var(--color-surface);
 }
 
 .prayer-times-hero__eyebrow b {
-  color: #ffffff;
+  color: var(--color-surface);
 
   font-size: 13px;
   line-height: 1;
@@ -291,7 +291,7 @@
 .prayer-times-hero__badge:hover {
   transform: translateY(-3px);
 
-  background: #0d3025;
+  background: var(--color-primary);
 
   border-color:
     rgba(255, 255, 255, 0.42);
@@ -317,7 +317,7 @@
 
   border-radius: 50%;
 
-  color: #ffffff;
+  color: var(--color-surface);
 
   background:
     rgba(255, 255, 255, 0.08);
@@ -339,7 +339,7 @@
 .prayer-times-hero__badge strong {
   display: block;
 
-  color: #ffffff;
+  color: var(--color-surface);
 
   font-size: 11px;
 
@@ -407,7 +407,7 @@
 
   height: 3px;
 
-  background: #ffffff;
+  background: var(--color-surface);
 
   opacity: 0.7;
 }
@@ -421,7 +421,7 @@
   padding-top: 55px;
   padding-bottom: 30px;
 
-  background: #ffffff;
+  background: var(--color-surface);
 }
 
 
@@ -450,7 +450,7 @@
 
   margin-bottom: 9px;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 12px;
   font-weight: 800;
@@ -463,7 +463,7 @@
 .prayer-heading-row h1 {
   margin: 0 0 9px;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 42px;
 
@@ -477,7 +477,7 @@
 
   margin: 0;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 15px;
 
@@ -549,7 +549,7 @@ footer {
 .prayer-details-section {
   padding: 75px 0;
 
-  background: #ffffff;
+  background: var(--color-surface);
 
   border-top:
     1px solid rgba(13, 48, 37, 0.08);
@@ -567,7 +567,7 @@ footer {
 .prayer-faq-header h2 {
   margin: 0 0 10px;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 34px;
 
@@ -582,7 +582,7 @@ footer {
 .prayer-faq-header p {
   margin: 0;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 15px;
 
@@ -599,7 +599,7 @@ footer {
 
   margin-bottom: 20px;
 
-  background: #ffffff;
+  background: var(--color-surface);
 
   border:
     1px solid rgba(13, 48, 37, 0.12);
@@ -630,8 +630,8 @@ footer {
 
   border-radius: 14px;
 
-  background: #0d3025;
-  color: #ffffff;
+  background: var(--color-primary);
+  color: var(--color-surface);
 
   font-size: 22px;
 }
@@ -641,7 +641,7 @@ footer {
 
   margin-bottom: 4px;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 11px;
   font-weight: 800;
@@ -657,7 +657,7 @@ footer {
 .qibla-card-header h3 {
   margin: 0;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 21px;
 }
@@ -675,7 +675,7 @@ footer {
 .asr-method-box {
   padding: 18px;
 
-  background: #ffffff;
+  background: var(--color-surface);
 
   border:
     1px solid rgba(13, 48, 37, 0.1);
@@ -691,7 +691,7 @@ footer {
 
   margin-bottom: 7px;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 12px;
 }
@@ -700,7 +700,7 @@ footer {
 .asr-method-box strong {
   display: block;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 15px;
 
@@ -733,7 +733,7 @@ footer {
 
   padding: 20px;
 
-  background: #ffffff;
+  background: var(--color-surface);
 
   border:
     1px solid rgba(13, 48, 37, 0.1);
@@ -758,8 +758,8 @@ footer {
 
   border-radius: 50%;
 
-  background: #0d3025;
-  color: #ffffff;
+  background: var(--color-primary);
+  color: var(--color-surface);
 
   font-size: 16px;
   font-weight: 800;
@@ -774,7 +774,7 @@ footer {
 
   margin-bottom: 5px;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 11px;
 }
@@ -782,7 +782,7 @@ footer {
 .prayer-detail-box strong {
   display: block;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 14px;
 
@@ -799,11 +799,11 @@ footer {
 
   margin-bottom: 20px;
 
-  background: #0d3025;
+  background: var(--color-primary);
 
   border-radius: 18px;
 
-  color: #ffffff;
+  color: var(--color-surface);
 
   box-sizing: border-box;
 }
@@ -817,7 +817,7 @@ footer {
 }
 
 .sun-position-header h3 {
-  color: #ffffff;
+  color: var(--color-surface);
 }
 
 .sun-symbol {
@@ -833,7 +833,7 @@ footer {
 
   border-radius: 50%;
 
-  color: #ffffff;
+  color: var(--color-surface);
 
   font-size: 23px;
 }
@@ -870,7 +870,7 @@ footer {
 
   border-radius: 50%;
 
-  color: #ffffff;
+  color: var(--color-surface);
 }
 
 .sun-item span {
@@ -887,7 +887,7 @@ footer {
 
   margin-top: 3px;
 
-  color: #ffffff;
+  color: var(--color-surface);
 
   font-size: 17px;
 }
@@ -920,7 +920,7 @@ footer {
 .qibla-information-card {
   padding: 26px;
 
-  background: #ffffff;
+  background: var(--color-surface);
 
   border:
     1px solid rgba(13, 48, 37, 0.1);
@@ -955,8 +955,8 @@ footer {
 
   border-radius: 50%;
 
-  background: #0d3025;
-  color: #ffffff;
+  background: var(--color-primary);
+  color: var(--color-surface);
 
   font-size: 20px;
 }
@@ -964,7 +964,7 @@ footer {
 .islamic-date {
   margin: 24px 0;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 25px;
 
@@ -974,7 +974,7 @@ footer {
 .islamic-date small {
   margin-left: 8px;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 13px;
 
@@ -995,7 +995,7 @@ footer {
 
   padding: 14px;
 
-  background: #ffffff;
+  background: var(--color-surface);
 
   border:
     1px solid rgba(13, 48, 37, 0.08);
@@ -1010,7 +1010,7 @@ footer {
 
   margin-bottom: 6px;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 10px;
 
@@ -1022,7 +1022,7 @@ footer {
 .date-details strong {
   display: block;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 13px;
 
@@ -1059,7 +1059,7 @@ footer {
 
   border-radius: 50%;
 
-  background: #ffffff;
+  background: var(--color-surface);
 }
 
 .qibla-compass::before,
@@ -1096,7 +1096,7 @@ footer {
 
   z-index: 2;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 10px;
 
@@ -1143,7 +1143,7 @@ footer {
     translate(-50%, -50%)
     rotate(-28deg);
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 42px;
 
@@ -1156,7 +1156,7 @@ footer {
 }
 
 .qibla-degree strong {
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 38px;
 
@@ -1166,7 +1166,7 @@ footer {
 .qibla-degree span {
   margin-top: 7px;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 12px;
 }
@@ -1179,7 +1179,7 @@ footer {
 .pakistan-cities-section {
   padding: 75px 0;
 
-  background: #ffffff;
+  background: var(--color-surface);
 }
 
 .pakistan-cities-header {
@@ -1205,7 +1205,7 @@ footer {
 
   box-sizing: border-box;
 
-  background: #ffffff;
+  background: var(--color-surface);
 
   border:
     1px solid rgba(13, 48, 37, 0.14);
@@ -1216,7 +1216,7 @@ footer {
 .city-search-box > span {
   flex-shrink: 0;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 22px;
 }
@@ -1232,7 +1232,7 @@ footer {
 
   background: transparent;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 14px;
 }
@@ -1262,8 +1262,8 @@ footer {
 
   border-radius: 50%;
 
-  background: #0d3025;
-  color: #ffffff;
+  background: var(--color-primary);
+  color: var(--color-surface);
 
   cursor: pointer;
 
@@ -1294,9 +1294,9 @@ footer {
 
   border-radius: 13px;
 
-  background: #ffffff;
+  background: var(--color-surface);
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   text-align: left;
 
@@ -1313,22 +1313,22 @@ footer {
 .pakistan-city:hover {
   transform: translateY(-2px);
 
-  border-color: #0d3025;
+  border-color: var(--color-primary);
 
   box-shadow:
     0 8px 22px rgba(13, 48, 37, 0.07);
 }
 
 .pakistan-city.active {
-  border-color: #0d3025;
+  border-color: var(--color-primary);
 
-  background: #ffffff;
+  background: var(--color-surface);
 }
 
 .city-pin {
   flex-shrink: 0;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 16px;
 }
@@ -1348,7 +1348,7 @@ footer {
 .city-arrow {
   flex-shrink: 0;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 15px;
 }
@@ -1365,13 +1365,13 @@ footer {
   padding: 12px 25px;
 
   border:
-    1px solid #0d3025;
+    1px solid var(--color-primary);
 
   border-radius: 30px;
 
-  background: #ffffff;
+  background: var(--color-surface);
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 13px;
 
@@ -1385,9 +1385,9 @@ footer {
 }
 
 .city-load-more button:hover {
-  background: #0d3025;
+  background: var(--color-primary);
 
-  color: #ffffff;
+  color: var(--color-surface);
 }
 
 .city-empty {
@@ -1400,11 +1400,11 @@ footer {
 
   border-radius: 16px;
 
-  background: #ffffff;
+  background: var(--color-surface);
 }
 
 .city-empty > span {
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 28px;
 }
@@ -1412,13 +1412,13 @@ footer {
 .city-empty h3 {
   margin: 10px 0 5px;
 
-  color: #0d3025;
+  color: var(--color-primary);
 }
 
 .city-empty p {
   margin: 0;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 13px;
 }
@@ -1431,7 +1431,7 @@ footer {
 .prayer-tips-section {
   padding: 75px 0;
 
-  background: #ffffff;
+  background: var(--color-surface);
 }
 
 .prayer-tips-header {
@@ -1456,7 +1456,7 @@ footer {
 
   padding: 28px;
 
-  background: #ffffff;
+  background: var(--color-surface);
 
   border:
     1px solid rgba(13, 48, 37, 0.1);
@@ -1492,8 +1492,8 @@ footer {
 
   border-radius: 14px;
 
-  background: #0d3025;
-  color: #ffffff;
+  background: var(--color-primary);
+  color: var(--color-surface);
 
   font-size: 20px;
 }
@@ -1501,7 +1501,7 @@ footer {
 .prayer-tip-card h3 {
   margin: 0 0 9px;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 19px;
 }
@@ -1509,7 +1509,7 @@ footer {
 .prayer-tip-card p {
   margin: 0;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 13px;
 
@@ -1524,7 +1524,7 @@ footer {
 .prayer-faq-section {
   padding: 75px 0 85px;
 
-  background: #ffffff;
+  background: var(--color-surface);
 }
 
 .prayer-faq-header {
@@ -1564,7 +1564,7 @@ footer {
 
   background: transparent;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   text-align: left;
 
@@ -1574,7 +1574,7 @@ footer {
 }
 
 .faq-number {
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 11px;
 
@@ -1602,17 +1602,17 @@ footer {
 
   border-radius: 50%;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 19px;
 }
 
 .prayer-faq-item.open .faq-plus {
-  background: #0d3025;
+  background: var(--color-primary);
 
-  color: #ffffff;
+  color: var(--color-surface);
 
-  border-color: #0d3025;
+  border-color: var(--color-primary);
 }
 
 .prayer-faq-answer {
@@ -1625,7 +1625,7 @@ footer {
 
   margin: 0;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 13px;
 
@@ -1646,9 +1646,9 @@ footer {
 
   border-radius: 15px;
 
-  background: #0d3025;
+  background: var(--color-primary);
 
-  color: #ffffff;
+  color: var(--color-surface);
 
   box-sizing: border-box;
 }
@@ -1656,7 +1656,7 @@ footer {
 .prayer-faq-note > span {
   flex-shrink: 0;
 
-  color: #ffffff;
+  color: var(--color-surface);
 
   font-size: 25px;
 }
@@ -1666,7 +1666,7 @@ footer {
 
   margin-bottom: 4px;
 
-  color: #ffffff;
+  color: var(--color-surface);
 
   font-size: 14px;
 }
@@ -1725,8 +1725,8 @@ footer {
 
     border-radius: 50% !important;
 
-    background: #0d3025 !important;
-    color: #ffffff !important;
+    background: var(--color-primary) !important;
+    color: var(--color-surface) !important;
 
     visibility: visible !important;
     opacity: 1 !important;
@@ -1762,7 +1762,7 @@ footer {
 
     text-align: left !important;
 
-    color: #0d3025 !important;
+    color: var(--color-primary) !important;
 
     font-size: 14px !important;
 
@@ -1780,7 +1780,7 @@ footer {
 
     text-align: right !important;
 
-    color: #0d3025 !important;
+    color: var(--color-primary) !important;
 
     font-size: 16px !important;
 
@@ -2559,20 +2559,20 @@ footer {
     min-width: 28px !important;
     min-height: 28px !important;
 
-    background: #0d3025 !important;
+    background: var(--color-primary) !important;
 
-    color: #ffffff !important;
+    color: var(--color-surface) !important;
   }
 
   .prayer-card__name {
     font-size: 13px !important;
 
-    color: #0d3025 !important;
+    color: var(--color-primary) !important;
   }
 
   .prayer-card__time {
     font-size: 14px !important;
 
-    color: #0d3025 !important;
+    color: var(--color-primary) !important;
   }
 }

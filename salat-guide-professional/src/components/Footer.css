@@ -9,13 +9,7 @@
   margin: 0;
   padding: 0;
 
-  background:
-    linear-gradient(
-      145deg,
-      #0d3025 0%,
-      #102f26 45%,
-      #174637 100%
-    );
+  background: var(--color-primary);
 
   color: rgba(247, 245, 233, 0.78);
 
@@ -44,12 +38,7 @@
 
   border-radius: 50%;
 
-  background:
-    radial-gradient(
-      circle,
-      rgba(214, 177, 92, 0.10),
-      transparent 68%
-    );
+  background: rgba(214, 177, 92, 0.10);
 
   pointer-events: none;
 }
@@ -67,12 +56,7 @@
 
   border-radius: 50%;
 
-  background:
-    radial-gradient(
-      circle,
-      rgba(23, 70, 55, 0.45),
-      transparent 70%
-    );
+  background: rgba(23, 70, 55, 0.45);
 
   pointer-events: none;
 }
@@ -132,7 +116,7 @@
 
   margin: 0 0 25px;
 
-  color: #f7f5e9;
+  color: var(--color-background);
 
   text-decoration: none;
 
@@ -153,7 +137,7 @@
 
 
 .footer__brand:hover {
-  color: #d6b15c;
+  color: var(--color-secondary);
 }
 
 
@@ -172,14 +156,9 @@
 
   border-radius: 50%;
 
-  background:
-    linear-gradient(
-      145deg,
-      #d6b15c,
-      #b48c35
-    );
+  background: var(--color-secondary);
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 25px;
 
@@ -276,16 +255,16 @@
 
 
 .footer__social a:hover {
-  color: #0d3025;
+  color: var(--color-primary);
 
   background:
     linear-gradient(
       135deg,
-      #d6b15c,
-      #b48c35
+      var(--color-secondary),
+      var(--color-secondary-dark)
     );
 
-  border-color: #d6b15c;
+  border-color: var(--color-secondary);
 
   transform: translateY(-2px);
 
@@ -315,7 +294,7 @@
 
   padding: 0;
 
-  color: #f7f5e9;
+  color: var(--color-background);
 
   font-size: 17px;
 
@@ -342,8 +321,8 @@
   background:
     linear-gradient(
       90deg,
-      #d6b15c,
-      #b48c35,
+      var(--color-secondary),
+      var(--color-secondary-dark),
       rgba(180, 140, 53, 0.15)
     );
 
@@ -405,7 +384,7 @@
 
 
 .footer__column li a:hover {
-  color: #d6b15c;
+  color: var(--color-secondary);
 
   transform: translateX(3px);
 }
@@ -457,7 +436,7 @@
 
   flex-shrink: 0;
 
-  color: #d6b15c;
+  color: var(--color-secondary);
 
   font-size: 21px;
 
@@ -470,7 +449,7 @@
 
 
 .footer__contact-item:hover .footer__contact-icon {
-  color: #b48c35;
+  color: var(--color-secondary-dark);
 
   transform: translateY(-2px);
 }
@@ -485,7 +464,7 @@
 
   margin: 0 0 5px;
 
-  color: #f7f5e9;
+  color: var(--color-background);
 
   font-size: 14px;
 

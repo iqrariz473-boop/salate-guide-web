@@ -166,7 +166,7 @@
 
   margin: 0 auto 13px;
 
-  color: #ffffff;
+  color: var(--color-surface);
 
   direction: rtl;
 

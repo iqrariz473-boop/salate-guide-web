@@ -6,7 +6,7 @@
   width: 100%;
   min-height: 100vh;
 
-  background: #f7f5e9;
+  background: var(--color-background);
 
   overflow: hidden;
 }
@@ -43,7 +43,7 @@
 
   background-repeat: no-repeat;
 
-  color: #ffffff;
+  color: var(--color-surface);
 }
 
 
@@ -88,8 +88,8 @@
     linear-gradient(
       45deg,
       transparent 45%,
-      #ffffff 46%,
-      #ffffff 54%,
+      var(--color-surface) 46%,
+      var(--color-surface) 54%,
       transparent 55%
     );
 
@@ -166,7 +166,7 @@
 
   letter-spacing: -2px;
 
-  color: #ffffff;
+  color: var(--color-surface);
 }
 
 .quran-hero h1 span {
@@ -363,7 +363,7 @@
 
   padding: 28px 20px 85px;
 
-  background: #f7f5e9;
+  background: var(--color-background);
 }
 
 
@@ -417,7 +417,7 @@
 
   border-radius: 17px;
 
-  background: #fffdf7;
+  background: var(--color-surface)df7;
 
   color: #173d31;
 
@@ -579,7 +579,7 @@
       #092f27
     );
 
-  color: #ffffff;
+  color: var(--color-surface);
 
   box-shadow:
     0 15px 40px
@@ -660,7 +660,7 @@
 
   margin: 0 0 10px;
 
-  color: #ffffff;
+  color: var(--color-surface);
   font-size: clamp(
     20px,
     2.2vw,
@@ -834,7 +834,7 @@
 
   border-radius: 18px;
 
-  background: #fffdf7;
+  background: var(--color-surface)df7;
 
   color: #173d31;
 
@@ -1086,10 +1086,10 @@
     linear-gradient(
       135deg,
       #07382b,
-      #0d3025
+      var(--color-primary)
     );
 
-  color: #ffffff;
+  color: var(--color-surface);
 }
 
 
@@ -1147,7 +1147,7 @@
       0.1
     );
 
-  color: #d6b15c;
+  color: var(--color-secondary);
 
   font-size: 29px;
 }
@@ -1166,7 +1166,7 @@
 
   margin-bottom: 8px;
 
-  color: #d6b15c;
+  color: var(--color-secondary);
 
   font-size: 9px;
 
@@ -1178,7 +1178,7 @@
 .reflection-content h2 {
   margin: 0 0 10px;
 
-  color: #ffffff;
+  color: var(--color-surface);
   font-size: clamp(
     28px,
     4vw,
@@ -1191,7 +1191,7 @@
 }
 
 .reflection-content h2 span {
-  color: #d6b15c;
+  color: var(--color-secondary);
 
   font-style: italic;
 }
@@ -1231,11 +1231,11 @@
 
   padding: 14px 22px;
 
-  border: 1px solid #d6b15c;
+  border: 1px solid var(--color-secondary);
 
   border-radius: 9px;
 
-  background: #d6b15c;
+  background: var(--color-secondary);
 
   color: #07382b;
 
@@ -1531,7 +1531,7 @@
 .quran-explorer-section {
   padding: 80px 20px;
 
-  background: #f7f5e9;
+  background: var(--color-background);
 }
 
 .quran-explorer-container {
@@ -1610,7 +1610,7 @@
 
   background: #19352c;
 
-  color: #fff;
+  color: var(--color-surface);
 
   text-decoration: none;
 
@@ -1671,7 +1671,7 @@
 
   border-radius: 17px;
 
-  background: #fffdf7;
+  background: var(--color-surface)df7;
 
   border: 1px solid #e7e1d2;
 
@@ -1807,7 +1807,7 @@
 
   background: #19352c;
 
-  color: #fff;
+  color: var(--color-surface);
 
   text-decoration: none;
 
@@ -1950,7 +1950,7 @@
   position: relative;
   width: 100%;
   padding: 90px 20px;
-  background: #f7f5e9;
+  background: var(--color-background);
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -2042,7 +2042,7 @@
 .faq-modern-intro h2 {
   margin: 0;
 
-  color: #0d3025;
+  color: var(--color-primary);
 
   font-size: 42px;
   line-height: 1.08;
@@ -2052,7 +2052,7 @@
 
 .faq-modern-intro h2 span {
   display: block;
-  color: #b48c35;
+  color: var(--color-secondary-dark);
 }
 
 
@@ -2256,7 +2256,7 @@
 
   border-radius: 50%;
 
-  background: #fffdf7;
+  background: var(--color-surface)df7;
   border: 1px solid #ddd6c5;
 
   color: #9d7937;
@@ -2286,7 +2286,7 @@
 }
 
 .faq-modern-item:hover .faq-question {
-  color: #0d3025;
+  color: var(--color-primary);
 }
 
 .faq-modern-item:hover .faq-toggle {
@@ -2299,18 +2299,18 @@
 ========================================================= */
 
 .faq-modern-item[open] {
-  background: #fffdf7;
+  background: var(--color-surface)df7;
 }
 
 .faq-modern-item[open] .faq-number {
   background: #19352c;
   border-color: #19352c;
 
-  color: #d6b15c;
+  color: var(--color-secondary);
 }
 
 .faq-modern-item[open] .faq-question {
-  color: #0d3025;
+  color: var(--color-primary);
 }
 
 .faq-modern-item[open] .faq-toggle {
@@ -2319,7 +2319,7 @@
   background: #19352c;
   border-color: #19352c;
 
-  color: #d6b15c;
+  color: var(--color-secondary);
 }
 
 

@@ -1,91 +1,122 @@
 /* ==========================================================
-SALAT GUIDE — MODERN WHITE & GREEN DESIGN SYSTEM
+SALAT GUIDE — GLOBAL THEME SYSTEM
 ========================================================== */
 
 :root {
+  /* ========================================================
+     BRAND COLORS
+  ======================================================== */
 
-/* ========================================================
-PRIMARY GREEN
-======================================================== */
+  --color-primary: #0d3025;
+  --color-primary-light: #174637;
+  --color-primary-dark: #08251c;
 
---primary-dark: #0b3d32;
---primary: #146b5b;
---primary-mid: #1b806d;
+  --color-secondary: #d6b15c;
+  --color-secondary-dark: #b48c35;
+  --color-secondary-light: #ead49a;
 
-/* ========================================================
-SOFT GREEN
-======================================================== */
+  /* ========================================================
+     BACKGROUNDS
+  ======================================================== */
 
---primary-light: #eaf5f1;
---primary-lighter: #f5faf8;
+  --color-background: #f7f5e9;
+  --color-background-soft: #f1efe2;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f5faf8;
+  --color-surface-dark: #102e25;
 
-/* ========================================================
-GOLD — SMALL ACCENT ONLY
-======================================================== */
+  /* ========================================================
+     TEXT
+  ======================================================== */
 
---gold: #c8a95b;
---gold-dark: #a8893f;
+  --color-text: #1d4138;
+  --color-text-muted: #587168;
+  --color-text-light: #ffffff;
+  --color-text-on-primary: #ffffff;
+  --color-text-on-secondary: #1d4138;
 
-/* ========================================================
-BACKGROUNDS
-======================================================== */
+  /* ========================================================
+     BORDERS
+  ======================================================== */
 
---cream: #f5faf8;
---white: #ffffff;
+  --color-border: #dce9e5;
+  --color-border-strong: #bdb8a5;
+  --color-border-soft: #ebe8da;
 
-/* ========================================================
-TEXT
-======================================================== */
+  /* ========================================================
+     STATUS
+  ======================================================== */
 
---text: #163a32;
---muted: #657872;
+  --color-success: #2e7d5b;
+  --color-warning: #c28a2c;
+  --color-danger: #b94a48;
+  --color-danger-soft: #f8e9e7;
+  --color-info: #3978a8;
 
-/* ========================================================
-BORDERS
-======================================================== */
+  /* ========================================================
+     OVERLAY / EFFECTS
+  ======================================================== */
 
---border: #dce9e5;
+  --color-overlay: rgba(13, 48, 37, 0.65);
+  --shadow-sm: 0 4px 18px rgba(13, 48, 37, 0.08);
+  --shadow-md: 0 8px 24px rgba(13, 48, 37, 0.12);
+  --shadow-lg: 0 16px 40px rgba(13, 48, 37, 0.18);
+  --shadow-card: 0 4px 20px rgba(11, 61, 50, 0.07);
+  --shadow-card-hover: 0 12px 32px rgba(11, 61, 50, 0.13);
 
-/* ========================================================
-STATUS
-======================================================== */
+  /* ========================================================
+     TYPOGRAPHY
+  ======================================================== */
 
---danger: #b94a48;
---danger-light: #f8e9e7;
+  --font-display: "Outfit", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
 
---success: #146b5b;
+  /* ========================================================
+     RADIUS
+  ======================================================== */
 
-/* ========================================================
-FONTS
-======================================================== */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 26px;
+  --radius-pill: 999px;
 
---font-display: "Outfit", "Segoe UI", sans-serif;
---font-body: "Inter", "Segoe UI", sans-serif;
+  /* ========================================================
+     TRANSITIONS
+  ======================================================== */
 
-/* ========================================================
-RADIUS
-======================================================== */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
 
---radius-sm: 10px;
---radius-md: 16px;
---radius-lg: 26px;
---radius-pill: 999px;
+  /* ========================================================
+     LEGACY ALIASES
+  ======================================================== */
 
-/* ========================================================
-SHADOWS
-======================================================== */
+  --primary-dark: var(--color-primary-dark);
+  --primary: var(--color-primary);
+  --primary-mid: var(--color-primary-light);
+  --primary-light: var(--color-background-soft);
+  --primary-lighter: var(--color-surface-alt);
+  --gold: var(--color-secondary);
+  --gold-dark: var(--color-secondary-dark);
+  --cream: var(--color-background);
+  --white: var(--color-surface);
+  --text: var(--color-text);
+  --muted: var(--color-text-muted);
+  --border: var(--color-border);
+  --danger: var(--color-danger);
+  --danger-light: var(--color-danger-soft);
+  --success: var(--color-success);
 
---shadow-card:
-0 4px 20px rgba(11, 61, 50, 0.07);
+  --max-width: 1180px;
+}
 
---shadow-card-hover:
-0 12px 32px rgba(11, 61, 50, 0.13);
-
-/* ========================================================
-LAYOUT
-======================================================== */
-
---max-width: 1180px;
+[data-theme="blue"] {
+  --color-primary: #123a5a;
+  --color-primary-light: #1d4d74;
+  --color-primary-dark: #0b243a;
+  --color-secondary: #d4a84f;
+  --color-secondary-dark: #b6842d;
+  --color-secondary-light: #f0d7a0;
 }
 
 /* ==========================================================
@@ -107,9 +138,9 @@ margin: 0;
 
 font-family: var(--font-body);
 
-color: var(--text);
+color: var(--color-text);
 
-background: var(--cream);
+background: var(--color-background);
 
 -webkit-font-smoothing: antialiased;
 }
@@ -222,17 +253,11 @@ min-height: 60vh;
 .section {
 padding: 68px 0;
 
-background: var(--white);
+background: var(--color-surface);
 }
 
 .section--alt {
-
-background:
-linear-gradient(
-180deg,
-#f5faf8 0%,
-#eaf5f1 100%
-);
+background: var(--color-background-soft);
 }
 
 .section-heading {
@@ -351,7 +376,7 @@ background:
 linear-gradient(
 135deg,
 #146b5b,
-#0b3d32
+var(--color-primary-dark)
 );
 
 color: var(--white);

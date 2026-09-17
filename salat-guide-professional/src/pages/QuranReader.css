@@ -4,7 +4,7 @@
 
 .quran-reader-page {
   min-height: 100vh;
-  background: #f7f5e9;
+  background: var(--color-background);
   color: #19352c;
 }
 
@@ -24,10 +24,10 @@
     ),
     linear-gradient(
       135deg,
-      #0d3025,
-      #174637
+      var(--color-primary),
+      var(--color-primary-light)
     );
-  color: #ffffff;
+  color: var(--color-surface);
   padding: 55px 20px 65px;
 }
 
@@ -41,8 +41,8 @@
     linear-gradient(
       45deg,
       transparent 48%,
-      #d6b15c 49%,
-      #d6b15c 51%,
+      var(--color-secondary) 49%,
+      var(--color-secondary) 51%,
       transparent 52%
     );
   background-size: 42px 42px;
@@ -77,7 +77,7 @@
 }
 
 .reader-back-link:hover {
-  color: #ffffff;
+  color: var(--color-surface);
   transform: translateX(-3px);
 }
 
@@ -125,7 +125,7 @@
 
 .quran-reader-header h1 {
   margin: 0;
-  color: #ffffff;
+  color: var(--color-surface);
   font-size: 42px;
   line-height: 1.15;
   font-weight: 800;
@@ -170,7 +170,7 @@
   padding: 12px 16px;
   border: 1px solid #ded5b8;
   border-radius: 12px;
-  background: #fffdf7;
+  background: var(--color-surface)df7;
   box-shadow:
     0 15px 40px rgba(20, 45, 36, 0.14);
 }
@@ -222,7 +222,7 @@
   padding: 16px 18px;
   border: 1px solid #e6dfca;
   border-radius: 14px;
-  background: #fffdf7;
+  background: var(--color-surface)df7;
   box-shadow:
     0 5px 18px rgba(26, 53, 44, 0.045);
 }
@@ -279,7 +279,7 @@
 .reader-bookmark.active {
   background: #19352c;
   border-color: #19352c;
-  color: #ffffff;
+  color: var(--color-surface);
 }
 
 .reader-bookmark span {
@@ -313,7 +313,7 @@
   padding: 65px 25px;
   border: 1px solid #e4decd;
   border-radius: 18px;
-  background: #fffdf7;
+  background: var(--color-surface)df7;
   text-align: center;
 }
 
@@ -358,7 +358,7 @@
   width: 35%;
   height: 100%;
   border-radius: 999px;
-  background: #b48c35;
+  background: var(--color-secondary-dark);
   animation: quranLoading 1.4s ease-in-out infinite;
 }
 
@@ -384,7 +384,7 @@
   border: 1px solid #e5dfce;
   border-radius: 18px;
   overflow: hidden;
-  background: #fffdf8;
+  background: var(--color-surface)df8;
 }
 
 
@@ -484,7 +484,7 @@
   padding: 60px 25px;
   border: 1px solid #e3ddce;
   border-radius: 18px;
-  background: #fffdf7;
+  background: var(--color-surface)df7;
   text-align: center;
 }
 
@@ -512,7 +512,7 @@
   border: none;
   border-radius: 9px;
   background: #19352c;
-  color: #ffffff;
+  color: var(--color-surface);
   cursor: pointer;
   font-size: 11px;
   font-weight: 800;
@@ -543,7 +543,7 @@
   height: 35px;
   border-radius: 50%;
   background: #19352c;
-  color: #ffffff;
+  color: var(--color-surface);
   font-size: 14px;
   font-weight: 800;
 }
@@ -580,7 +580,7 @@
   padding: 16px 18px;
   border: 1px solid #e1dbc8;
   border-radius: 13px;
-  background: #fffdf7;
+  background: var(--color-surface)df7;
   color: #19352c;
   text-decoration: none;
   transition:
@@ -645,7 +645,7 @@
 
 .reader-secondary-btn {
   border: 1px solid #ddd6c2;
-  background: #fffdf7;
+  background: var(--color-surface)df7;
   color: #365148;
 }
 
@@ -657,7 +657,7 @@
 .reader-primary-btn {
   border: 1px solid #19352c;
   background: #19352c;
-  color: #ffffff;
+  color: var(--color-surface);
 }
 
 .reader-primary-btn:hover {
@@ -716,7 +716,7 @@
   padding: 0 18px;
   border-radius: 10px;
   background: #19352c;
-  color: #ffffff;
+  color: var(--color-surface);
   text-decoration: none;
   font-size: 11px;
   font-weight: 800;

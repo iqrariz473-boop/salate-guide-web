@@ -484,7 +484,7 @@
   display: flex;
   flex-direction: column;
 
-  background: #fff;
+  background: var(--color-surface);
 
   border: 1px solid rgba(11, 61, 46, 0.08);
 
@@ -633,7 +633,7 @@
 
   padding: 30px;
 
-  background: #fff;
+  background: var(--color-surface);
 
   border: 1px solid rgba(11, 61, 46, 0.08);
 
@@ -859,7 +859,7 @@
 
   padding: 32px;
 
-  background: #fff;
+  background: var(--color-surface);
 
   border: 1px solid rgba(11, 61, 46, 0.08);
 
@@ -984,7 +984,7 @@
 .about-cta h2 {
   margin: 14px 0;
 
-  color: #fff;
+  color: var(--color-surface);
 
   font-size: clamp(36px, 4vw, 52px);
 }

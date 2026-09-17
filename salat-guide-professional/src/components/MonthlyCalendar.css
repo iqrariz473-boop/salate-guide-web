@@ -10,7 +10,7 @@
   max-width: 100%;
   box-sizing: border-box;
 
-  background: #ffffff;
+  background: var(--color-surface);
   border: 1px solid #c9eadc;
   border-radius: 20px;
 
@@ -44,7 +44,7 @@
   margin: 0 0 10px;
   padding: 4px;
 
-  background: #fffdf9;
+  background: var(--color-surface)df9;
 
   border: 1px solid #eadcc9;
   border-radius: 12px;
@@ -72,7 +72,7 @@
   border: 1px solid #eadcc9;
   border-radius: 9px;
 
-  background: #ffffff;
+  background: var(--color-surface);
   color: #285036;
 
   cursor: pointer;
@@ -86,7 +86,7 @@
 
 .monthly-calendar__nav-btn:hover {
   background: #285035;
-  color: #ffffff;
+  color: var(--color-surface);
   border-color: #28502d;
 
   transform: translateY(-1px);
@@ -171,7 +171,7 @@
   border: 1px solid #eadcc9;
   border-radius: 11px;
 
-  background: #fffdf9;
+  background: var(--color-surface)df9;
   color: #285045;
 
   cursor: pointer;
@@ -207,7 +207,7 @@
   background: #285033;
   border-color: #28502f;
 
-  color: #ffffff;
+  color: var(--color-surface);
 
   box-shadow:
     0 7px 16px rgba(40, 80, 52, 0.16);
@@ -284,7 +284,7 @@
 
   overflow: hidden;
 
-  background: #ffffff;
+  background: var(--color-surface);
 
   box-sizing: border-box;
 }
@@ -332,7 +332,7 @@
 
 .monthly-calendar__table thead {
   background: #285036;
-  color: #ffffff;
+  color: var(--color-surface);
 }
 
 .monthly-calendar__table th {
@@ -433,7 +433,7 @@
   border-radius: 5px;
 
   background: #28503c;
-  color: #ffffff;
+  color: var(--color-surface);
 
   font-size: 7px;
   font-weight: 700;

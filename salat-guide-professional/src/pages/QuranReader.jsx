@@ -7,7 +7,7 @@ function QuranReader() {
     <div
       style={{
         minHeight: "100vh",
-        background: "#f7f5e9",
+        background: "var(--color-background)",
         padding: "120px 20px",
       }}
     >
@@ -15,7 +15,7 @@ function QuranReader() {
         style={{
           maxWidth: "900px",
           margin: "0 auto",
-          background: "#ffffff",
+          background: "var(--color-surface)",
           borderRadius: "20px",
           padding: "50px 30px",
           textAlign: "center",
@@ -33,7 +33,7 @@ function QuranReader() {
 
         <h1
           style={{
-            color: "#0d3025",
+            color: "var(--color-primary)",
             marginBottom: "15px",
           }}
         >
@@ -42,7 +42,7 @@ function QuranReader() {
 
         <h2
           style={{
-            color: "#b48c35",
+            color: "var(--color-secondary-dark)",
             marginBottom: "20px",
           }}
         >
@@ -51,7 +51,7 @@ function QuranReader() {
 
         <p
           style={{
-            color: "#666",
+            color: "var(--color-text-muted)",
             marginBottom: "30px",
           }}
         >
@@ -64,8 +64,8 @@ function QuranReader() {
             display: "inline-block",
             padding: "12px 22px",
             borderRadius: "10px",
-            background: "#0d3025",
-            color: "#fff",
+            background: "var(--color-primary)",
+            color: "var(--color-text-light)",
             textDecoration: "none",
             fontWeight: "700",
           }}
